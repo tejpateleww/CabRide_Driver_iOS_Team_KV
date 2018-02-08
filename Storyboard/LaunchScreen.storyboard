@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_bg_img" translatesAutoresizingMaskIntoConstraints="NO" id="Ab1-lE-1d4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPickNGologo" translatesAutoresizingMaskIntoConstraints="NO" id="Uk7-UO-TlN">
+                                <rect key="frame" x="87" y="131" width="145" height="145"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Uk7-UO-TlN" secondAttribute="height" multiplier="1:1" id="T2O-WV-aqN"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ab1-lE-1d4" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="IcJ-Hf-gTc"/>
+                            <constraint firstItem="Ab1-lE-1d4" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="OP7-hw-TS8"/>
+                            <constraint firstItem="Uk7-UO-TlN" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="87" id="oew-IS-Q4w"/>
+                            <constraint firstItem="Ab1-lE-1d4" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="rbM-yg-ScW"/>
+                            <constraint firstAttribute="trailing" secondItem="Uk7-UO-TlN" secondAttribute="trailing" constant="88" id="s8F-O6-K3w"/>
+                            <constraint firstItem="Ab1-lE-1d4" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="uKy-TB-YWr"/>
+                            <constraint firstItem="Uk7-UO-TlN" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="111" id="vPG-UH-m0t"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="iconPickNGologo" width="150" height="150"/>
+        <image name="splash_bg_img" width="414" height="736"/>
+    </resources>
+</document>
