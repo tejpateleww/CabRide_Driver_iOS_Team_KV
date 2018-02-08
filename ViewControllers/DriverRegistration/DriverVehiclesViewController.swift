@@ -249,10 +249,12 @@ class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UIT
         userDefault.set(joined, forKey: RegistrationFinalKeys.kVehicleClass)
         
         let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
-        //        let x = self.view.frame.size.width * 4
-        //        driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
+                let x = self.view.frame.size.width * 4
+                driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
         
-        driverVC.segmentController.selectedIndex = 5
+//        driverVC.segmentController.selectedIndex = 5
+        driverVC.viewCarAttachment.backgroundColor = ThemeYellowColor
+        driverVC.imgAttachment.image = UIImage.init(named: iconAttachmentSelect)
     }
     // ------------------------------------------------------------
     
@@ -289,10 +291,10 @@ class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UIT
             else
             {
                 print(result)
-                let alert = UIAlertController(title: nil, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(ok)
-                self.present(alert, animated: true, completion: nil)
+//                let alert = UIAlertController(title: nil, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
+//                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+//                alert.addAction(ok)
+//                self.present(alert, animated: true, completion: nil)
             }
         }
     }

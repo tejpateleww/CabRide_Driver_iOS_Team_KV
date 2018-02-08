@@ -157,12 +157,13 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
     func CarAndTexis()
     {
         Singletons.sharedInstance.isDriverVehicleTypesViewControllerFilled = true
-        setData()
-        btnCarsAndTexis.setImage(UIImage(named: "iconCheckMarkSelected"), for: .normal)
-        btnDeliveryService.setImage(UIImage(named: "iconCheckMarkUnSelected"), for: .normal)
-        
-        viewCarsAndTexis.isHidden = false
-        viewDeliveryService.isHidden = true
+//        setData()
+//        btnCarsAndTexis.setImage(UIImage(named: "iconCheckMarkSelected"), for: .normal)
+//        btnDeliveryService.setImage(UIImage(named: "iconCheckMarkUnSelected"), for: .normal)
+//
+//        viewCarsAndTexis.isHidden = false
+//        viewDeliveryService.isHidden = true
+        self.performSegue(withIdentifier: "segueCarsAndTaxi", sender: nil)
     }
     
     func DeliveryService()

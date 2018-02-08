@@ -23,29 +23,42 @@ let Appdelegate = UIApplication.shared.delegate as! AppDelegate
 //let IS_IPHONE_X = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH == 812.0
 
 
-//let ThemeRedColor : UIColor = UIColor.color(string: "f21541")
-//let ThemeDarkColor : UIColor = UIColor.color(string: "0e0c22")
+let ThemeYellowColor : UIColor = UIColor.init(hex: "ffa300")
+let ThemeGrayColor : UIColor = UIColor.init(hex:  "2a2727")
 
-let navigationBar_Height_IphoneX_ = 84
+let navigationBarHeightIphoneX = 84
 
-let kBack_Icon : String = "back_icon"
-let kMenu_Icon : String = "menu_icon"
-let kRight_icon : String = "right_start_icon"
+let kBackIcon : String = "iconArrow"
+let kMenuIcon : String = "menu"
+let kRighticon : String = "right_start_icon"
+let kNavIcon : String = "nav_icon"
+
+let iconCheck : String = "check_icon"
+let iconUncheck : String = "uncheck_icon"
+
+let iconRadioSelect : String = "radio_select_icon"
+let iconRadioUnselect : String = "radio_unselect_icon"
 
 
-let icon_Check : String = "check_icon"
-let icon_Uncheck : String = "uncheck_icon"
+let iconMailSelect : String = "iconSegMailSelected"
+let iconDriverSelect : String = "iconSegUserProfileSelected"
+let iconBankSelect : String = "iconSegBankSelected"
+let iconCarSelect : String = "iconSegVehicleSelected"
+let iconAttachmentSelect : String = "iconSegAttachmentSelected"
 
-let icon_Radio_Select : String = "radio_select_icon"
-let icon_Radio_Unselect : String = "radio_unselect_icon"
+let iconMailUnselect : String = "iconSegMailUnSelected"
+let iconDriverUnselect : String = "iconSegUserProfileUnSelected"
+let iconBankUnselect : String = "iconSegBankUnSelected"
+let iconCarUnselect : String = "iconSegVehicleUnSelected"
+let iconAttachmentUnselect : String = "iconSegAttachmentUnSelected"
 
-let CustomeFont_ProximaNova_Bold : String = "ProximaNovaA-Bold"
-let CustomeFont_ProximaNova_Regular : String = "ProximaNovaA-Regular"
-let CustomeFont_ProximaNova_Black : String = "ProximaNovaA-Black"
-let CustomeFont_ProximaNova_Cond_Semibold : String = "ProximaNovaACond-Semibold"
-let CustomeFont_ProximaNova_Semibold : String = "ProximaNova-Semibold"
-let CustomeFont_ProximaNova_S_Thin : String = "ProximaNovaS-Thin"
-let CustomeFont_ProximaNova_T_Thin : String = "ProximaNovaT-Thin"
+let CustomeFontProximaNovaBold : String = "ProximaNovaA-Bold"
+let CustomeFontProximaNovaRegular : String = "ProximaNovaA-Regular"
+let CustomeFontProximaNovaBlack : String = "ProximaNovaA-Black"
+let CustomeFontProximaNovaCondSemibold : String = "ProximaNovaACond-Semibold"
+let CustomeFontProximaNovaSemibold : String = "ProximaNova-Semibold"
+let CustomeFontProximaNovaSThin : String = "ProximaNovaS-Thin"
+let CustomeFontProximaNovaTThin : String = "ProximaNovaT-Thin"
 
 let kGooglePlaceClientAPIKey : String = "AIzaSyBPXB2qNY-BZNn0RhLnoWVA6OHIGUaoNpI" //"AIzaSyAW9o_4ULlYZ9AF_Cxuqn2mPav4XKJJwGI"
 let kGoogleServiceAPIKey : String = "AIzaSyBPXB2qNY-BZNn0RhLnoWVA6OHIGUaoNpI"
@@ -55,13 +68,13 @@ let kGoogleReversedClientID : String = "com.googleusercontent.apps.47834603870-2
 
 let kTwitterConsumerAPIKey : String = "hP1bMN8z87nRv7JQpMdluArGy"
 let kTwitterConsumerSecretKey : String = "hhSbpPG8pC80B0F3ocsJ5YAZLKrEHweemsY1WHPmidbaBnULny"
-let CustomeFont_Ubuntu_Light : String = "Ubuntu-Light"
-let CustomeFont_Ubuntu_MediumItalic : String = "Ubuntu-MediumItalic"
-let CustomeFont_Ubuntu_LightItalic : String = "Ubuntu-LightItalic"
-let CustomeFont_Ubuntu_Medium : String = "Ubuntu-Medium"
-let CustomeFont_Ubuntu_Bold : String = "Ubuntu-Bold"
-let CustomeFont_Ubuntu_Italic : String = "Ubuntu-Italic"
-let CustomeFont_Ubuntu : String = "Ubuntu"
+let CustomeFontUbuntuLight : String = "Ubuntu-Light"
+let CustomeFontUbuntuMediumItalic : String = "Ubuntu-MediumItalic"
+let CustomeFontUbuntuLightItalic : String = "Ubuntu-LightItalic"
+let CustomeFontUbuntuMedium : String = "Ubuntu-Medium"
+let CustomeFontUbuntuBold : String = "Ubuntu-Bold"
+let CustomeFontUbuntuItalic : String = "Ubuntu-Italic"
+let CustomeFontUbuntu : String = "Ubuntu"
 
 let kMyBooking : String = "My Booking"
 let kPaymentOption : String = "Payment Option"

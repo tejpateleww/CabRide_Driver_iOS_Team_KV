@@ -9,16 +9,37 @@
 import UIKit
 import NVActivityIndicatorView
 
-class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActivityIndicatorViewable {
+class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActivityIndicatorViewable 
+{
 
     var userDefault = UserDefaults.standard
+    
+    @IBOutlet var btnNext: UIButton!
+    @IBOutlet var constrainViewOTPLeadingPosition: NSLayoutConstraint!
+    
+    @IBOutlet var viewOTP: UIView!
+    @IBOutlet var lblHaveAccount: UILabel!
+    
+    @IBOutlet var txtOTP: UITextField!
+    @IBOutlet var viewEmailData: UIView!
+    @IBOutlet var btnLogin: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.viewEmailData.isHidden = false
+        constrainViewOTPLeadingPosition.constant = self.view.frame.size.width
+        self.btnNext.setTitle("NEXT", for: .normal)
+        self.lblHaveAccount.isHidden = false
+        self.btnLogin.isHidden = false
 
     }
-
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        btnNext.layer.cornerRadius = btnNext.frame.size.height/2
+        btnNext.clipsToBounds = true
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -26,13 +47,45 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
     
     @IBOutlet weak var txtEmailId: UITextField!
     
-    @IBAction func btnNext(_ sender: Any) {
-   
-        if(checkValidation())
-        {
-            webserviceForGetOTPCode()
-        }
+    @IBAction func btnNext(_ sender: Any)
+    {
         
+        if btnNext.titleLabel?.text == "SUBMIT"
+        {
+//            constrainViewOTPLeadingPosition.constant = self.view.frame.size.width
+            UIView.animate(withDuration: 0.8, delay: 0.0, options: .curveEaseOut, animations:
+                {
+//                    self.view.layoutIfNeeded()
+//                    self.btnNext.setTitle("NEXT", for: .normal)
+            }) { (done) in
+//                self.viewEmailData.isHidden = false
+//                self.lblHaveAccount.isHidden = false
+//                self.btnLogin.isHidden = false
+            }
+            //        if(checkValidation())
+            //        {
+                        webserviceForGetOTPCode()
+            //        }
+        }
+        else
+        {
+            constrainViewOTPLeadingPosition.constant = -self.view.frame.size.width
+            self.viewEmailData.isHidden = true
+            self.lblHaveAccount.isHidden = true
+            self.btnLogin.isHidden = true
+            UIView.animate(withDuration: 0.8, delay: 0.0, options: .curveEaseOut, animations:
+                {
+                    self.view.layoutIfNeeded()
+                    self.btnNext.setTitle("SUBMIT", for: .normal)
+            })
+            { (done) in
+              
+            }
+            
+            
+            
+
+        }
     }
     
     @IBAction func btnLogin(_ sender: Any) {
@@ -104,54 +157,54 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
         dictData["Email"] = txtEmailId.text as AnyObject
 
         
-        webserviceForOTPDriverRegister(dictData as AnyObject) { (result, status) in
-            
-            if (status)
-            {
-                print(result)
-                
-                let otp = result.object(forKey: "otp") as! Int
-                self.aryOfCompany = result.object(forKey: "company") as! [[String : AnyObject]]
-                
-                self.userDefault.set(otp, forKey: OTPCodeStruct.kOTPCode)
-                self.userDefault.set(self.aryOfCompany, forKey: OTPCodeStruct.kCompanyList)
-                
-                let alert = UIAlertController(title: nil, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
-                
-                let ok = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
-                    
+//        webserviceForOTPDriverRegister(dictData as AnyObject) { (result, status) in
+//
+//            if (status)
+//            {
+//                print(result)
+//
+//                let otp = result.object(forKey: "otp") as! Int
+//                self.aryOfCompany = result.object(forKey: "company") as! [[String : AnyObject]]
+//
+//                self.userDefault.set(otp, forKey: OTPCodeStruct.kOTPCode)
+//                self.userDefault.set(self.aryOfCompany, forKey: OTPCodeStruct.kCompanyList)
+//
+//                let alert = UIAlertController(title: nil, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
+//
+//                let ok = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
+//
                     let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
-                    
-                    driverVC.setData(companyData: self.aryOfCompany)
-                    
-                    
-                    
-                    //                    let x = self.view.frame.size.width
-                    //                    driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
-                    driverVC.segmentController.selectedIndex = 1
-                   
+//
+//                    driverVC.setData(companyData: self.aryOfCompany)
+//
+        
+                    let x = self.view.frame.size.width
+                    driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
+//                    driverVC.segmentController.selectedIndex = 1
+                    driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
+                    driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
                     self.userDefault.set(self.txtEmailId.text, forKey: savedDataForRegistration.kKeyEmail)
                     self.userDefault.set(self.txtEmailId.text, forKey: RegistrationFinalKeys.kEmail)
                     self.userDefault.set(1, forKey: savedDataForRegistration.kPageNumber)
                     
-                })
+//                })
                 
            
-                alert.addAction(ok)
-                self.present(alert, animated: true, completion: nil)
-            }
-            else
-            {
-                print(result)
-                let alert = UIAlertController(title: nil, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
-                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(ok)
-                self.present(alert, animated: true, completion: nil)
-            }
-            
-            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
-
-        }
+//                alert.addAction(ok)
+//                self.present(alert, animated: true, completion: nil)
+//            }
+//            else
+//            {
+//                print(result)
+//                let alert = UIAlertController(title: nil, message: result.object(forKey: "message") as? String, preferredStyle: .alert)
+//                let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+//                alert.addAction(ok)
+//                self.present(alert, animated: true, completion: nil)
+//            }
+//
+//            NVActivityIndicatorPresenter.sharedInstance.stopAnimating()
+//
+//        }
     }
     
 }

@@ -41,8 +41,8 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
             UtilityClass.showAlert(appName.kAPPName, message: "Internet connection not available", vc: self)
         }
         
-        webserviceOfAppSetting()
-        
+//        webserviceOfAppSetting()
+//        
     }
     
     override func viewDidLoad() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000D8FEC202C495300A02C45 /* DriverRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928EC202AE2BF00A399E2 /* DriverRegistrationViewController.swift */; };
 		005A36DE202B1CE700502672 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A36DD202B1CE700502672 /* Constants.swift */; };
 		00A0E0AB1FED464F00DB5549 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0AA1FED464F00DB5549 /* Accelerate.framework */; };
 		00A0E0AD1FED465900DB5549 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0AC1FED465900DB5549 /* CoreTelephony.framework */; };
@@ -24,12 +25,9 @@
 		00E929D7202AE2C100A399E2 /* DriverEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928E9202AE2BF00A399E2 /* DriverEmailViewController.swift */; };
 		00E929D8202AE2C100A399E2 /* DriverOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928EA202AE2BF00A399E2 /* DriverOTPViewController.swift */; };
 		00E929D9202AE2C100A399E2 /* DriverPersonelDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928EB202AE2BF00A399E2 /* DriverPersonelDetailsViewController.swift */; };
-		00E929DA202AE2C100A399E2 /* DriverRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928EC202AE2BF00A399E2 /* DriverRegistrationViewController.swift */; };
 		00E929DB202AE2C100A399E2 /* DriverSelectVehicleTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928ED202AE2BF00A399E2 /* DriverSelectVehicleTypesViewController.swift */; };
 		00E929DC202AE2C100A399E2 /* DriverVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928EE202AE2BF00A399E2 /* DriverVehiclesViewController.swift */; };
 		00E929DD202AE2C100A399E2 /* DriverVehicleTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928EF202AE2BF00A399E2 /* DriverVehicleTypesViewController.swift */; };
-		00E929DE202AE2C100A399E2 /* ServiceProviderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928F1202AE2BF00A399E2 /* ServiceProviderViewController.swift */; };
-		00E929DF202AE2C100A399E2 /* SignUpOptionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928F2202AE2BF00A399E2 /* SignUpOptionsViewController.swift */; };
 		00E929E0202AE2C100A399E2 /* DummyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928F3202AE2BF00A399E2 /* DummyData.swift */; };
 		00E929E1202AE2C100A399E2 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928F6202AE2BF00A399E2 /* HeaderView.swift */; };
 		00E929E2202AE2C100A399E2 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00E928F7202AE2BF00A399E2 /* HeaderView.xib */; };
@@ -220,8 +218,6 @@
 		00E928ED202AE2BF00A399E2 /* DriverSelectVehicleTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverSelectVehicleTypesViewController.swift; sourceTree = "<group>"; };
 		00E928EE202AE2BF00A399E2 /* DriverVehiclesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverVehiclesViewController.swift; sourceTree = "<group>"; };
 		00E928EF202AE2BF00A399E2 /* DriverVehicleTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverVehicleTypesViewController.swift; sourceTree = "<group>"; };
-		00E928F1202AE2BF00A399E2 /* ServiceProviderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceProviderViewController.swift; sourceTree = "<group>"; };
-		00E928F2202AE2BF00A399E2 /* SignUpOptionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpOptionsViewController.swift; sourceTree = "<group>"; };
 		00E928F3202AE2BF00A399E2 /* DummyData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DummyData.swift; sourceTree = "<group>"; };
 		00E928F6202AE2BF00A399E2 /* HeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		00E928F7202AE2BF00A399E2 /* HeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
@@ -507,7 +503,6 @@
 				00E928EE202AE2BF00A399E2 /* DriverVehiclesViewController.swift */,
 				00E928EF202AE2BF00A399E2 /* DriverVehicleTypesViewController.swift */,
 				00E928F0202AE2BF00A399E2 /* ServiceProvider */,
-				00E928F2202AE2BF00A399E2 /* SignUpOptionsViewController.swift */,
 			);
 			path = DriverRegistration;
 			sourceTree = "<group>";
@@ -515,7 +510,6 @@
 		00E928F0202AE2BF00A399E2 /* ServiceProvider */ = {
 			isa = PBXGroup;
 			children = (
-				00E928F1202AE2BF00A399E2 /* ServiceProviderViewController.swift */,
 			);
 			path = ServiceProvider;
 			sourceTree = "<group>";
@@ -1425,9 +1419,7 @@
 				00E92A03202AE2C100A399E2 /* ContentViewController.swift in Sources */,
 				00E92A5F202AE2C100A399E2 /* UpdateProfileAccountVC.swift in Sources */,
 				00E92A08202AE2C100A399E2 /* WeeklyEarningViewController.swift in Sources */,
-				00E929DE202AE2C100A399E2 /* ServiceProviderViewController.swift in Sources */,
 				00E92A02202AE2C100A399E2 /* ChangePasswordViewController.swift in Sources */,
-				00E929DA202AE2C100A399E2 /* DriverRegistrationViewController.swift in Sources */,
 				00E92A0F202AE2C100A399E2 /* PendingJobsListTableViewCell.swift in Sources */,
 				00E92A59202AE2C100A399E2 /* DriverVehicleListViewController.swift in Sources */,
 				00E92A6B202AE2C100A399E2 /* webViewVC.swift in Sources */,
@@ -1472,11 +1464,11 @@
 				00E92A48202AE2C100A399E2 /* SideContainmentSegue.swift in Sources */,
 				00E929D7202AE2C100A399E2 /* DriverEmailViewController.swift in Sources */,
 				00E92A2A202AE2C100A399E2 /* SPDelay.swift in Sources */,
+				000D8FEC202C495300A02C45 /* DriverRegistrationViewController.swift in Sources */,
 				00E92A40202AE2C100A399E2 /* SPPageItemsScalingCollectionLayout.swift in Sources */,
 				00E929F9202AE2C100A399E2 /* VerifyPasswordViewController.swift in Sources */,
 				00E92A22202AE2C100A399E2 /* CreditCardValidationType.swift in Sources */,
 				00E92A5C202AE2C100A399E2 /* updateDriverSelectVehicleTypesViewControllerViewController.swift in Sources */,
-				00E929DF202AE2C100A399E2 /* SignUpOptionsViewController.swift in Sources */,
 				00E92A16202AE2C100A399E2 /* ACHUD+Animation.swift in Sources */,
 				00E929FB202AE2C100A399E2 /* InVoiceReceiptViewController.swift in Sources */,
 				00E92A6A202AE2C100A399E2 /* WalletViewController.swift in Sources */,

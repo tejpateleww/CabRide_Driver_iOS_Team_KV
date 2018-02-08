@@ -40,35 +40,37 @@ class DriverOTPViewController: UIViewController {
     
     @IBAction func btnNext(_ sender: Any) {
         
-        if userDefault.object(forKey: OTPCodeStruct.kOTPCode) == nil {
-            otpCode = 0
-        }
-        else {
-            otpCode = userDefault.object(forKey: OTPCodeStruct.kOTPCode) as! Int
-        }
-        
-        if txtOTP.text == String(otpCode)
-        {
+//        if userDefault.object(forKey: OTPCodeStruct.kOTPCode) == nil {
+//            otpCode = 0
+//        }
+//        else {
+//            otpCode = userDefault.object(forKey: OTPCodeStruct.kOTPCode) as! Int
+//        }
+//
+//        if txtOTP.text == String(otpCode)
+//        {
             let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
+        
             let personalDetailsVC = driverVC.childViewControllers[2] as! DriverPersonelDetailsViewController
-            
-            //            let x = self.view.frame.size.width * 2
-            //            driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
-            driverVC.segmentController.selectedIndex = 2
+        driverVC.viewDriverBank.backgroundColor = ThemeYellowColor
+        driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
+                        let x = self.view.frame.size.width * 2
+                        driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
+//            driverVC.segmentController.selectedIndex = 2
             personalDetailsVC.setDataForProfile()
             self.userDefault.set(self.txtOTP.text, forKey: savedDataForRegistration.kKeyOTP)
             self.userDefault.set(2, forKey: savedDataForRegistration.kPageNumber)
-        }
-        else
-        {
-            let alert = UIAlertController(title: "Wrong OTP", message: "Please check your OTP code", preferredStyle: .alert)
-            
-            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
-           
-            alert.addAction(ok)
-       
-            self.present(alert, animated: true, completion: nil)
-        }
+//        }
+//        else
+//        {
+//            let alert = UIAlertController(title: "Wrong OTP", message: "Please check your OTP code", preferredStyle: .alert)
+//
+//            let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
+//
+//            alert.addAction(ok)
+//
+//            self.present(alert, animated: true, completion: nil)
+//        }
        
     }
     @IBAction func btnLogin(_ sender: Any) {

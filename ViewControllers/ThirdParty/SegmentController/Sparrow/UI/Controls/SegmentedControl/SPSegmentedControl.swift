@@ -111,7 +111,7 @@ class SPSegmentedControl: UIControl {
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.borderWidth = 0
         
-        self.indicatorView.backgroundColor = UIColor.black
+        self.indicatorView.backgroundColor = UIColor.clear
         self.addSubview(indicatorView)
         
         panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(SPSegmentedControl.pan(_:)))

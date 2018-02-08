@@ -55,14 +55,14 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPickNGologo" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-ef-zRN">
-                                        <rect key="frame" x="100" y="40" width="120" height="120"/>
+                                        <rect key="frame" x="90" y="60" width="140" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Jn1-ef-zRN" secondAttribute="height" multiplier="1:1" id="ujJ-hQ-nlK"/>
-                                            <constraint firstAttribute="height" constant="120" id="wU8-FK-hhR"/>
+                                            <constraint firstAttribute="height" constant="140" id="wU8-FK-hhR"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PoJ-hG-bO5" customClass="ACFloatingTextfield" customModule="ACFloatingTextfield_Swift">
-                                        <rect key="frame" x="20" y="185" width="280" height="40"/>
+                                        <rect key="frame" x="20" y="225" width="280" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="eeM-dF-otf"/>
@@ -94,13 +94,13 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomLine" translatesAutoresizingMaskIntoConstraints="NO" id="Ih1-2X-aW5">
-                                        <rect key="frame" x="20" y="226" width="280" height="1"/>
+                                        <rect key="frame" x="20" y="266" width="280" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Jor-e9-BaZ"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3aW-oE-AnE" customClass="ACFloatingTextfield" customModule="ACFloatingTextfield_Swift">
-                                        <rect key="frame" x="20" y="240" width="280" height="40"/>
+                                        <rect key="frame" x="20" y="280" width="280" height="40"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -129,16 +129,16 @@
                                         </userDefinedRuntimeAttributes>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bottomLine" translatesAutoresizingMaskIntoConstraints="NO" id="4lm-yH-7Hb">
-                                        <rect key="frame" x="20" y="296" width="280" height="1"/>
+                                        <rect key="frame" x="20" y="336" width="280" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="bL5-Db-E6c"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUW-bu-JLG">
-                                        <rect key="frame" x="20" y="347" width="280" height="50"/>
+                                        <rect key="frame" x="20" y="387" width="280" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="LgL-yG-aGN"/>
+                                            <constraint firstAttribute="height" constant="40" id="LgL-yG-aGN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="LOGIN">
@@ -149,13 +149,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-zO-vt5">
-                                        <rect key="frame" x="0.0" y="412" width="320" height="16"/>
+                                        <rect key="frame" x="0.0" y="442" width="320" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yek-XY-8iq">
-                                        <rect key="frame" x="214" y="281" width="86" height="15"/>
+                                        <rect key="frame" x="214" y="321" width="86" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="2FC-4o-1xv"/>
                                         </constraints>
@@ -168,10 +168,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTl-ae-wsp">
-                                        <rect key="frame" x="20" y="443" width="280" height="50"/>
+                                        <rect key="frame" x="20" y="473" width="280" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="ht8-RS-rKO"/>
+                                            <constraint firstAttribute="height" constant="40" id="ht8-RS-rKO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="SIGN UP">
@@ -190,7 +190,7 @@
                                     <constraint firstItem="FBE-zO-vt5" firstAttribute="top" secondItem="tUW-bu-JLG" secondAttribute="bottom" constant="15" id="2CP-Og-DeF"/>
                                     <constraint firstItem="Ih1-2X-aW5" firstAttribute="top" secondItem="PoJ-hG-bO5" secondAttribute="bottom" constant="1" id="2yQ-pG-7ge"/>
                                     <constraint firstItem="tUW-bu-JLG" firstAttribute="top" secondItem="4lm-yH-7Hb" secondAttribute="bottom" constant="50" id="5b9-Ad-2NM"/>
-                                    <constraint firstItem="Jn1-ef-zRN" firstAttribute="top" secondItem="Ctx-cG-B5U" secondAttribute="top" constant="40" id="7WC-fX-IZQ"/>
+                                    <constraint firstItem="Jn1-ef-zRN" firstAttribute="top" secondItem="Ctx-cG-B5U" secondAttribute="top" constant="60" id="7WC-fX-IZQ"/>
                                     <constraint firstItem="3aW-oE-AnE" firstAttribute="leading" secondItem="PoJ-hG-bO5" secondAttribute="leading" id="9Id-z8-gT8"/>
                                     <constraint firstItem="WhO-Oo-P5p" firstAttribute="centerX" secondItem="Ctx-cG-B5U" secondAttribute="centerX" id="DTh-1z-0ST"/>
                                     <constraint firstItem="4lm-yH-7Hb" firstAttribute="top" secondItem="Yek-XY-8iq" secondAttribute="bottom" id="FCw-WR-XjN"/>
@@ -8086,14 +8086,6 @@
             </objects>
             <point key="canvasLocation" x="1658" y="1986"/>
         </scene>
-        <!--SignUpOptionsViewController-->
-        <scene sceneID="x3K-kX-jM3">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="SignUpOptionsViewController" storyboardName="Registration" referencedIdentifier="SignUpOptionsViewController" id="gNw-2H-uSx" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Muy-nh-Ceg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="789" y="-1310"/>
-        </scene>
         <!--DriverSelectVehicleTypesViewController-->
         <scene sceneID="Vwh-gh-t1k">
             <objects>
@@ -8157,14 +8149,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d87-X7-Usb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6834" y="-1353"/>
-        </scene>
-        <!--ServiceProviderViewController-->
-        <scene sceneID="UMN-Ob-MTK">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ServiceProviderViewController" storyboardName="Registration" referencedIdentifier="ServiceProviderViewController" id="c3O-l4-nUC" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ScT-mN-v1g" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1009" y="-2057"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QVD-Zf-lhZ">

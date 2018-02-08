@@ -318,137 +318,137 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     
     func checkFields()
     {
-        let sb = Snackbar()
-        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
-        
-        
-        if txtEmail.text == "" {
-            sb.createWithAction(text: "Email Id not available", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtFullName.text == "" {
-            sb.createWithAction(text: "Enter Full Name", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtMobileNumber.text == "" {
-            sb.createWithAction(text: "Enter Mobile Number", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtPassword.text == "" {
-            sb.createWithAction(text: "Enter Password", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtPassword.text!.count <= 7 {
-            sb.createWithAction(text: "password 8 characters minimum", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtAccountHolderName.text == "" {
-            sb.createWithAction(text: "Enter Account Holder Name", actionTitle: "OK", action: { print("Button is push") })
-        }
-        
-        else if txtAddress.text == "" {
-             sb.createWithAction(text: "Enter Address", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtSuburb.text == "" {
-            sb.createWithAction(text: "Enter Suburb", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtPostCode.text == "" {
-            sb.createWithAction(text: "Enter Post Code", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtCity.text == "" {
-            sb.createWithAction(text: "Enter City", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtState.text == "" {
-            sb.createWithAction(text: "Enter State", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtCountry.text == "" {
-            sb.createWithAction(text: "Enter Country", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtCompanyId.text == "" {
-            sb.createWithAction(text: "Select Company ", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtABN.text == "" {
-            sb.createWithAction(text: "Enter ABN", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtServiceDescription.text == "" {
-            sb.createWithAction(text: "Enter Service Description", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtBSB.text == "" {
-            sb.createWithAction(text: "Enter BSB", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtBankName.text == "" {
-            sb.createWithAction(text: "Enter Bank Name", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if txtBankAccountNo.text == "" {
-             sb.createWithAction(text: "Enter Bank Account No", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else if imgProfile.image == UIImage(named: "iconProfileLocation") {
-            sb.createWithAction(text: "Please Choose Image", actionTitle: "OK", action: { print("Button is push") })
-        }
-        else {
+//        let sb = Snackbar()
+//        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
+//
+//
+//        if txtEmail.text == "" {
+//            sb.createWithAction(text: "Email Id not available", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtFullName.text == "" {
+//            sb.createWithAction(text: "Enter Full Name", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtMobileNumber.text == "" {
+//            sb.createWithAction(text: "Enter Mobile Number", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtPassword.text == "" {
+//            sb.createWithAction(text: "Enter Password", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtPassword.text!.count <= 7 {
+//            sb.createWithAction(text: "password 8 characters minimum", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtAccountHolderName.text == "" {
+//            sb.createWithAction(text: "Enter Account Holder Name", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//
+//        else if txtAddress.text == "" {
+//             sb.createWithAction(text: "Enter Address", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtSuburb.text == "" {
+//            sb.createWithAction(text: "Enter Suburb", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtPostCode.text == "" {
+//            sb.createWithAction(text: "Enter Post Code", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtCity.text == "" {
+//            sb.createWithAction(text: "Enter City", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtState.text == "" {
+//            sb.createWithAction(text: "Enter State", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtCountry.text == "" {
+//            sb.createWithAction(text: "Enter Country", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtCompanyId.text == "" {
+//            sb.createWithAction(text: "Select Company ", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtABN.text == "" {
+//            sb.createWithAction(text: "Enter ABN", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtServiceDescription.text == "" {
+//            sb.createWithAction(text: "Enter Service Description", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtBSB.text == "" {
+//            sb.createWithAction(text: "Enter BSB", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtBankName.text == "" {
+//            sb.createWithAction(text: "Enter Bank Name", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if txtBankAccountNo.text == "" {
+//             sb.createWithAction(text: "Enter Bank Account No", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else if imgProfile.image == UIImage(named: "iconProfileLocation") {
+//            sb.createWithAction(text: "Please Choose Image", actionTitle: "OK", action: { print("Button is push") })
+//        }
+//        else {
             setData()
-        }
+//        }
         
-        sb.show()
+//        sb.show()
     }
     
     func setDataForProfile()
     {
-        txtEmail.text = userDefault.object(forKey: RegistrationFinalKeys.kEmail) as? String
-        aryCompanyIDS = userDefault.object(forKey: OTPCodeStruct.kCompanyList) as! [[String : AnyObject]]
-        thePicker.reloadAllComponents()
-        
-        
-        txtCompanyId.text = aryCompanyIDS[0]["CompanyName"] as? String
-        companyID = (aryCompanyIDS[0]["Id"] as? String)!
-        txtCity.text = aryCompanyIDS[0]["City"] as? String
-        txtState.text = aryCompanyIDS[0]["State"] as? String
-        txtCountry.text = aryCompanyIDS[0]["Country"] as? String
+//        txtEmail.text = userDefault.object(forKey: RegistrationFinalKeys.kEmail) as? String
+//        aryCompanyIDS = userDefault.object(forKey: OTPCodeStruct.kCompanyList) as! [[String : AnyObject]]
+//        thePicker.reloadAllComponents()
+//
+//
+//        txtCompanyId.text = aryCompanyIDS[0]["CompanyName"] as? String
+//        companyID = (aryCompanyIDS[0]["Id"] as? String)!
+//        txtCity.text = aryCompanyIDS[0]["City"] as? String
+//        txtState.text = aryCompanyIDS[0]["State"] as? String
+//        txtCountry.text = aryCompanyIDS[0]["Country"] as? String
     }
     
     func setData()
     {
-        if companyID == "" {
-            companyID = "0"
-        }
-        
-        let imageData: NSData = UIImagePNGRepresentation(imgProfile.image!)! as NSData
-        let myEncodedImageData: NSData = NSKeyedArchiver.archivedData(withRootObject: imageData) as NSData
-        userDefault.set(myEncodedImageData, forKey: RegistrationFinalKeys.kDriverImage)
-        
-        userDefault.set(txtMobileNumber.text, forKey: RegistrationFinalKeys.kMobileNo)
-        userDefault.set(txtFullName.text, forKey: RegistrationFinalKeys.kFullname)
-        //        userDefault.set(<#T##value: Any?##Any?#>, forKey: RegistrationFinalKeys.kGender)
-        userDefault.set(txtPassword.text, forKey: RegistrationFinalKeys.kPassword)
-        userDefault.set(txtAddress.text, forKey: RegistrationFinalKeys.kAddress)
-        userDefault.set(txtInviteCode.text, forKey: RegistrationFinalKeys.kReferralCode)
-        userDefault.set(strLatitude, forKey: RegistrationFinalKeys.kLat)
-        userDefault.set(strLongitude, forKey: RegistrationFinalKeys.kLng)
-        userDefault.set(txtPostCode.text, forKey: RegistrationFinalKeys.kZipcode)
-
-        
-        userDefault.set(txtCity.text, forKey: RegistrationFinalKeys.kCity)
-        userDefault.set(txtState.text, forKey: RegistrationFinalKeys.kState)
-        userDefault.set(txtCountry.text, forKey: RegistrationFinalKeys.kCountry)
-        
-        userDefault.set(txtSuburb.text, forKey: RegistrationFinalKeys.kSuburb)
-        userDefault.set(companyID, forKey: RegistrationFinalKeys.kCompanyID)
-        userDefault.set(txtAccountHolderName.text, forKey: RegistrationFinalKeys.kbankHolderName)
-        
-        userDefault.set(txtABN.text, forKey: RegistrationFinalKeys.kABN)
-        userDefault.set(txtServiceDescription.text, forKey: RegistrationFinalKeys.kServiceDescription)
-        
-        userDefault.set(txtBSB.text, forKey: RegistrationFinalKeys.kBSB)
-        userDefault.set(txtBankName.text, forKey: RegistrationFinalKeys.kBankName)
-        userDefault.set(txtBankAccountNo.text, forKey: RegistrationFinalKeys.kBankAccountNo)
-        
-        if (btnMale.currentImage?.isEqual(UIImage(named: "iconCheckMarkSelected")))! {
-            userDefault.set("Male", forKey: RegistrationFinalKeys.kGender)
-        }
-        else if (btnFemale.currentImage?.isEqual(UIImage(named: "iconCheckMarkSelected")))! {
-            userDefault.set("Female", forKey: RegistrationFinalKeys.kGender)
-        }
-        else if (btnOthers.currentImage?.isEqual(UIImage(named: "iconCheckMarkSelected")))! {
-            userDefault.set("Other", forKey: RegistrationFinalKeys.kGender)
-        }
-        else {
-            userDefault.set("Male", forKey: RegistrationFinalKeys.kGender)
-        }
+//        if companyID == "" {
+//            companyID = "0"
+//        }
+//        
+//        let imageData: NSData = UIImagePNGRepresentation(imgProfile.image!)! as NSData
+//        let myEncodedImageData: NSData = NSKeyedArchiver.archivedData(withRootObject: imageData) as NSData
+//        userDefault.set(myEncodedImageData, forKey: RegistrationFinalKeys.kDriverImage)
+//        
+//        userDefault.set(txtMobileNumber.text, forKey: RegistrationFinalKeys.kMobileNo)
+//        userDefault.set(txtFullName.text, forKey: RegistrationFinalKeys.kFullname)
+//        //        userDefault.set(<#T##value: Any?##Any?#>, forKey: RegistrationFinalKeys.kGender)
+//        userDefault.set(txtPassword.text, forKey: RegistrationFinalKeys.kPassword)
+//        userDefault.set(txtAddress.text, forKey: RegistrationFinalKeys.kAddress)
+//        userDefault.set(txtInviteCode.text, forKey: RegistrationFinalKeys.kReferralCode)
+//        userDefault.set(strLatitude, forKey: RegistrationFinalKeys.kLat)
+//        userDefault.set(strLongitude, forKey: RegistrationFinalKeys.kLng)
+//        userDefault.set(txtPostCode.text, forKey: RegistrationFinalKeys.kZipcode)
+//
+//        
+//        userDefault.set(txtCity.text, forKey: RegistrationFinalKeys.kCity)
+//        userDefault.set(txtState.text, forKey: RegistrationFinalKeys.kState)
+//        userDefault.set(txtCountry.text, forKey: RegistrationFinalKeys.kCountry)
+//        
+//        userDefault.set(txtSuburb.text, forKey: RegistrationFinalKeys.kSuburb)
+//        userDefault.set(companyID, forKey: RegistrationFinalKeys.kCompanyID)
+//        userDefault.set(txtAccountHolderName.text, forKey: RegistrationFinalKeys.kbankHolderName)
+//        
+//        userDefault.set(txtABN.text, forKey: RegistrationFinalKeys.kABN)
+//        userDefault.set(txtServiceDescription.text, forKey: RegistrationFinalKeys.kServiceDescription)
+//        
+//        userDefault.set(txtBSB.text, forKey: RegistrationFinalKeys.kBSB)
+//        userDefault.set(txtBankName.text, forKey: RegistrationFinalKeys.kBankName)
+//        userDefault.set(txtBankAccountNo.text, forKey: RegistrationFinalKeys.kBankAccountNo)
+//        
+//        if (btnMale.currentImage?.isEqual(UIImage(named: "iconCheckMarkSelected")))! {
+//            userDefault.set("Male", forKey: RegistrationFinalKeys.kGender)
+//        }
+//        else if (btnFemale.currentImage?.isEqual(UIImage(named: "iconCheckMarkSelected")))! {
+//            userDefault.set("Female", forKey: RegistrationFinalKeys.kGender)
+//        }
+//        else if (btnOthers.currentImage?.isEqual(UIImage(named: "iconCheckMarkSelected")))! {
+//            userDefault.set("Other", forKey: RegistrationFinalKeys.kGender)
+//        }
+//        else {
+//            userDefault.set("Male", forKey: RegistrationFinalKeys.kGender)
+//        }
 
         navigateToNext()
     }
@@ -456,10 +456,11 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     func navigateToNext()
     {
         let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
-        //        let x = self.view.frame.size.width * 3
-        //        driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
-        driverVC.segmentController.selectedIndex = 3
-        
+                let x = self.view.frame.size.width * 3
+                driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
+//        driverVC.segmentController.selectedIndex = 3
+        driverVC.viewBankCar.backgroundColor = ThemeYellowColor
+        driverVC.imgCar.image = UIImage.init(named: iconCarSelect)
         if (self.saveAllDataInArray().count != 0)
         {
             UserDefaults.standard.set(self.saveAllDataInArray(), forKey: savedDataForRegistration.kKeyAllUserDetails)
