@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewControllers/DriverRegistration/DriverRegistrationViewController.swift"
-            timestampString = "539935333.881361"
+            filePath = "ViewControllers/HomeScreens/DispatchJobs/CarAndTaxiesVC.swift"
+            timestampString = "539945697.6940759"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "viewDidLayoutSubviews()"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "btnOK(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewControllers/DriverRegistration/DriverRegistrationViewController.swift"
-            timestampString = "539935333.881422"
+            filePath = "ViewControllers/HomeScreens/DispatchJobs/CarAndTaxiesVC.swift"
+            timestampString = "539945697.694333"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "viewDidLayoutSubviews()"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "btnOK(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewControllers/DriverRegistration/DriverRegistrationViewController.swift"
-            timestampString = "539935333.881469"
+            filePath = "ViewControllers/DriverRegistration/DriverSelectVehicleTypesViewController.swift"
+            timestampString = "539945697.6943901"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "viewDidLayoutSubviews()"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "setDataInCarType()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,61 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewControllers/DriverRegistration/DriverRegistrationViewController.swift"
-            timestampString = "539935333.881511"
+            filePath = "ViewControllers/DriverRegistration/DriverCertificatesViewController.swift"
+            timestampString = "539945697.6945781"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "viewDidLayoutSubviews()"
+            startingLineNumber = "524"
+            endingLineNumber = "524"
+            landmarkName = "webserviceForRegistration()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PickNGo_Driver.DriverCertificatesViewController.webserviceForRegistration() -&gt; ()"
+                  moduleName = "PickNGo-Driver"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/excellentwebworld/Documents/Palak/PickNGo/PickNGo-Driver/Code/ViewControllers/DriverRegistration/DriverCertificatesViewController.swift"
+                  timestampString = "539945697.842976"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "524"
+                  endingLineNumber = "524"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.AnyObject, Swift.Bool) -&gt; () in PickNGo_Driver.DriverCertificatesViewController.webserviceForRegistration() -&gt; ()"
+                  moduleName = "PickNGo-Driver"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/excellentwebworld/Documents/Palak/PickNGo/PickNGo-Driver/Code/ViewControllers/DriverRegistration/DriverCertificatesViewController.swift"
+                  timestampString = "539945697.8449841"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "529"
+                  endingLineNumber = "529"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ViewControllers/DriverRegistration/DriverCertificatesViewController.swift"
+            timestampString = "539945697.695097"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "529"
+            endingLineNumber = "529"
+            landmarkName = "webserviceForRegistration()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

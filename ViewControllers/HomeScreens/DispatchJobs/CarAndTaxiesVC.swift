@@ -24,9 +24,12 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     //-------------------------------------------------------------
     // MARK: - Global Declaration
     //-------------------------------------------------------------
-    
+    var aryChooseCareModel = [String]()
+     var aryChooseCarName = [String]()
     var aryData = NSArray()
-    var selectedCells = NSMutableArray()
+//    var selectedCells = NSMutableArray()
+    
+    var selectedCells:[Int] = []
     
     weak var delegate: getVehicleIdAndNameDelegate!
 
@@ -42,13 +45,12 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - Base Methods
     //-------------------------------------------------------------
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
-        viewMain.layer.cornerRadius = 3
+        viewMain.layer.cornerRadius = 8
         viewMain.layer.masksToBounds = true
-        btnOK.layer.cornerRadius = 3
-        btnOK.layer.masksToBounds = true
 
         tableView.delegate = self
         tableView.dataSource = self
@@ -95,26 +97,60 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
 
         cell.btnTickMark.setImage(UIImage.init(named: "iconCheckMarkUnSelected"), for: .normal)
 
-        if (indexPathSample as IndexPath == indexPath)
+        if selectedCells.count != 0
         {
-      
-            cell.btnTickMark.setImage(UIImage.init(named: "iconCheckMarkSelected"), for: .normal)
+            print(selectedCells)
+            print(indexPath.row)
             
-            strId = dictData.object(forKey: "Id") as! String
-            strType = dictData.object(forKey: "Name") as! String
-           
+            if self.selectedCells.contains(indexPath.row)
+            {
+                cell.btnTickMark.setImage(UIImage.init(named: "iconCheckMarkSelected"), for: .normal)
+            }
+            else
+            {
+                cell.btnTickMark.setImage(UIImage.init(named: "iconCheckMarkUnSelected"), for: .normal)
+            }
         }
         
         return cell
         
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
+    {
 
-         indexPathSample = indexPath as NSIndexPath
+        let dictData = aryData.object(at: indexPath.row) as! NSDictionary
+        
+        if self.selectedCells.count == 3
+        {
+            if self.selectedCells.contains(indexPath.row) {
+                self.aryChooseCareModel.remove(at: self.selectedCells.index(of: indexPath.row)!)
+                self.aryChooseCarName.remove(at: self.selectedCells.index(of: indexPath.row)!)
+                self.selectedCells.remove(at: self.selectedCells.index(of: indexPath.row)!)
+            }
+            else
+            {
+                let sb = Snackbar()
+                sb.createWithAction(text: "You can select only three types.", actionTitle: "DISMISS", action: { print("Button is push") })
+                sb.show()
+            }
+            
+        } else {
+            if self.selectedCells.contains(indexPath.row)
+            {
+                self.aryChooseCareModel.remove(at: self.selectedCells.index(of: indexPath.row)!)
+                self.aryChooseCarName.remove(at: self.selectedCells.index(of: indexPath.row)!)
+                self.selectedCells.remove(at: self.selectedCells.index(of: indexPath.row)!)
+            }
+            else {
+                self.selectedCells.append(indexPath.row)
+                self.aryChooseCareModel.append(dictData["Id"] as! String)
+                self.aryChooseCarName.append(dictData["Name"] as! String)
+            }
+        }
         
         tableView.reloadData()
-        
+       
     }
 
     
@@ -123,9 +159,20 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     //-------------------------------------------------------------
 
     @IBOutlet weak var btnOK: UIButton!
-    @IBAction func btnOK(_ sender: UIButton) {
+    @IBAction func btnOK(_ sender: UIButton)
+    {
  
-            delegate.didgetIdAndName(id: strId, Name: strType)
+        let joined = aryChooseCareModel.joined(separator: ",")
+        UserDefaults.standard.set(joined, forKey: RegistrationFinalKeys.kVehicleClass)
+        
+        let joinedName = aryChooseCarName.joined(separator: ",")
+        UserDefaults.standard.set(joinedName, forKey: RegistrationFinalKeys.kCarThreeTypeName)
+        
+        if strId != nil
+        {
+            delegate?.didgetIdAndName(id: strId, Name: strType)
+        }
+        NotificationCenter.default.post(name: Notification.Name("setCarType"), object: nil)
 //            delegateForBookLater.didgetIdAndName(id: strId, Name: strType)
 //            delegateForEstimateNow?.didSelectVehicleModelNow()
             delegateForEstimate?.didSelectVehicleModel()

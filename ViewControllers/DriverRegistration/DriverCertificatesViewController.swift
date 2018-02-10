@@ -589,35 +589,35 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         let address: String = (userDefault.object(forKey: RegistrationFinalKeys.kAddress) as? String)!
             dictData[RegistrationFinalKeys.kAddress] = address as AnyObject
        
-        let suburd: String = (userDefault.object(forKey: RegistrationFinalKeys.kSuburb) as? String)!
-            dictData[RegistrationFinalKeys.kSuburb] = suburd as AnyObject
+//        let suburd: String = (userDefault.object(forKey: RegistrationFinalKeys.kSuburb) as? String)!
+//            dictData[RegistrationFinalKeys.kSuburb] = suburd as AnyObject
         
          let postcode: String = userDefault.object(forKey: RegistrationFinalKeys.kZipcode) as! String
             dictData[RegistrationFinalKeys.kZipcode] = postcode as AnyObject
       
-         let city: String = userDefault.object(forKey: RegistrationFinalKeys.kCity) as! String
-            dictData[RegistrationFinalKeys.kCity] = city as AnyObject
-      
-         let state: String = userDefault.object(forKey: RegistrationFinalKeys.kState) as! String
-            dictData[RegistrationFinalKeys.kState] = state as AnyObject
-       
-         let Country: String = userDefault.object(forKey: RegistrationFinalKeys.kCountry) as! String
-            dictData[RegistrationFinalKeys.kCountry] = Country as AnyObject
+//         let city: String = userDefault.object(forKey: RegistrationFinalKeys.kCity) as! String
+//            dictData[RegistrationFinalKeys.kCity] = city as AnyObject
+//
+//         let state: String = userDefault.object(forKey: RegistrationFinalKeys.kState) as! String
+//            dictData[RegistrationFinalKeys.kState] = state as AnyObject
+//
+//         let Country: String = userDefault.object(forKey: RegistrationFinalKeys.kCountry) as! String
+//            dictData[RegistrationFinalKeys.kCountry] = Country as AnyObject
       
         
         
-         let companyID: String = userDefault.object(forKey: RegistrationFinalKeys.kCompanyID) as! String
-            dictData[RegistrationFinalKeys.kCompanyID] = companyID as AnyObject
-      
-         let ABN: String = userDefault.object(forKey: RegistrationFinalKeys.kABN) as! String
-            dictData[RegistrationFinalKeys.kABN] = ABN as AnyObject
-       
-        let ServiceDescription = userDefault.object(forKey: RegistrationFinalKeys.kServiceDescription) as! String
-            dictData[RegistrationFinalKeys.kServiceDescription] = ServiceDescription as AnyObject
-              
+         let DOB: String = userDefault.object(forKey: RegistrationFinalKeys.kKeyDOB) as! String
+            dictData[RegistrationFinalKeys.kKeyDOB] = DOB as AnyObject
+//
+//         let ABN: String = userDefault.object(forKey: RegistrationFinalKeys.kABN) as! String
+//            dictData[RegistrationFinalKeys.kABN] = ABN as AnyObject
+//
+//        let ServiceDescription = userDefault.object(forKey: RegistrationFinalKeys.kServiceDescription) as! String
+//            dictData[RegistrationFinalKeys.kServiceDescription] = ServiceDescription as AnyObject
+        
          let BSB: String = userDefault.object(forKey: RegistrationFinalKeys.kBSB) as! String
             dictData[RegistrationFinalKeys.kBSB] = BSB as AnyObject
-       
+//
          let BankName: String = userDefault.object(forKey: RegistrationFinalKeys.kBankName) as! String
             dictData[RegistrationFinalKeys.kBankName] = BankName as AnyObject
      

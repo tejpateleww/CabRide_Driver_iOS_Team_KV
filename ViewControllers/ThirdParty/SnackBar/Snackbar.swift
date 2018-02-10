@@ -18,8 +18,8 @@ class Snackbar: NSObject {
     // settings snackbar
     var snackbarHeight: CGFloat     = 50
     var backgroundColor: UIColor    = .black
-    var textColor: UIColor          = UIColor(red: 204/255, green: 3/255, blue: 0/255, alpha: 1.0)
-    var buttonColor:UIColor         = UIColor(red: 204/255, green: 3/255, blue: 0/255, alpha: 1.0)
+    var textColor: UIColor          = ThemeYellowColor //UIColor(red: 204/255, green: 3/255, blue: 0/255, alpha: 1.0)
+    var buttonColor:UIColor         = ThemeYellowColor //UIColor(red: 204/255, green: 3/255, blue: 0/255, alpha: 1.0)
     var buttonColorPressed:UIColor  = .gray
     var sbLenght: SBAnimationLength = .shot
     

@@ -55,6 +55,8 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
         viewDeliveryService.isHidden = true
         
         self.webserviceforGetCarModels()
+        NotificationCenter.default.addObserver(self, selector: #selector(setDataInCarType), name: Notification.Name("setCarType"), object: nil)
+
         
     }
 
@@ -66,6 +68,7 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+       
         
     }
     override func viewDidLayoutSubviews()
@@ -75,39 +78,21 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
         btnNext.clipsToBounds = true
     }
     
-    
+    @objc func setDataInCarType()
+    {
+        if UserDefaults.standard.object(forKey: RegistrationFinalKeys.kCarThreeTypeName) != nil
+        {
+            let carType: String = UserDefaults.standard.object(forKey: RegistrationFinalKeys.kCarThreeTypeName) as! String
+            txtCarType.text = carType
+        }
+        
+    }
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
     {
         if textField == txtCarType
         {
-            
-            Singletons.sharedInstance.boolTaxiModel = true
-            userDefault.set(Singletons.sharedInstance.boolTaxiModel, forKey: "boolTaxiModel")
-            
-            let sb = Snackbar()
-            if txtVehicleRegistrationNumber.text == "" {
-                
-                sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK", action: { print("Button is push") })
-                sb.show()
-            }
-            else if txtCompany.text == "" {
-                
-                sb.createWithAction(text: "Enter Car model", actionTitle: "OK", action: { print("Button is push") })
-                sb.show()
-            }
-//            else if txtCarType.text == "" {
-//
-//                sb.createWithAction(text: "Enter Car Type", actionTitle: "OK", action: { print("Button is push") })
-//                sb.show()
-//            }
-            else if imgVehicle.image == nil {
-                
-                sb.createWithAction(text: "Please Choose Image", actionTitle: "OK", action: { print("Button is push") })
-                sb.show()
-            } else {
-                CarAndTexis()
-            }
-            
+            self.view.endEditing(true)
+            CarAndTexis()
             return false
         }
         
@@ -179,14 +164,50 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
     }
     @IBAction func btnNext(_ sender: Any)
     {
-        let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
+        Singletons.sharedInstance.boolTaxiModel = true
+        userDefault.set(Singletons.sharedInstance.boolTaxiModel, forKey: "boolTaxiModel")
         
-        driverVC.viewCarAttachment.backgroundColor = ThemeYellowColor
-        driverVC.imgAttachment.image = UIImage.init(named: iconAttachmentSelect)
-        let x = self.view.frame.size.width * 4
-        driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
+        let sb = Snackbar()
+        
+        if txtVehicleRegistrationNumber.text == "" {
+            
+            sb.createWithAction(text: "Enter Vehicle Registration No.", actionTitle: "OK", action: { print("Button is push") })
+            sb.show()
+        }
+        else if txtCompany.text == "" {
+            
+            sb.createWithAction(text: "Enter Car model", actionTitle: "OK", action: { print("Button is push") })
+            sb.show()
+        }
+        else if txtCarType.text == "" {
+            
+            sb.createWithAction(text: "Enter Car Type", actionTitle: "OK", action: { print("Button is push") })
+            sb.show()
+        }
+        else if imgVehicle.image == nil {
+            
+            sb.createWithAction(text: "Please Choose Image", actionTitle: "OK", action: { print("Button is push") })
+            sb.show()
+        }
+        else
+        {
+            setData()
+            let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
+            
+            driverVC.viewCarAttachment.backgroundColor = ThemeYellowColor
+            driverVC.imgAttachment.image = UIImage.init(named: iconAttachmentSelect)
+            let x = self.view.frame.size.width * 4
+            driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
+            UserDefaults.standard.set(4, forKey: savedDataForRegistration.kPageNumber)
+        }
+        
+        
+        
+        
+        
     }
-    @IBAction func btnDELIVERYservice(_ sender: UIButton) {
+    @IBAction func btnDELIVERYservice(_ sender: UIButton)
+    {
         
         Singletons.sharedInstance.boolTaxiModel = false
         userDefault.set(Singletons.sharedInstance.boolTaxiModel, forKey: "boolTaxiModel")

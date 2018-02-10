@@ -26,7 +26,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     var companyID = String()
     
     var aryCompanyIDS = [[String:AnyObject]]()
-    
+        let myDatePicker: UIDatePicker = UIDatePicker()
 
     //-------------------------------------------------------------
     // MARK: - Outlets
@@ -67,7 +67,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         
 
         txtDOB.delegate = self
-        
+        txtDOB.inputView = myDatePicker
         txtPostCode.delegate = self
 
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width / 2
@@ -248,7 +248,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     func checkFields()
     {
         let sb = Snackbar()
-        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
+//        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
 
         if txtFullName.text == "" {
             sb.createWithAction(text: "Enter Full Name", actionTitle: "OK", action: { print("Button is push") })
@@ -355,4 +355,50 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         return true
     }
   
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
+    {
+        if textField == txtDOB
+        {
+            self.view.endEditing(true)
+            Calendar()
+            return false
+        }
+        
+        return true
+    }
+    
+
+    func Calendar()
+    {
+        // make DatePicker
+        
+        
+        // setting properties of the datePicker
+        myDatePicker.frame = CGRect(x:0, y: 50,width: self.view.frame.width, height: 200)
+        myDatePicker.timeZone = NSTimeZone.local
+        myDatePicker.backgroundColor = UIColor.white
+        myDatePicker.layer.cornerRadius = 5.0
+        myDatePicker.layer.shadowOpacity = 0.5
+        
+        // add an event called when value is changed.
+        myDatePicker.addTarget(self, action: #selector(self.onDidChangeDate(sender:)), for: .valueChanged)
+        
+        // add DataPicker to the view
+        self.view.addSubview(myDatePicker)
+    }
+    
+    // called when the date picker called.
+    internal func onDidChangeDate(sender: UIDatePicker){
+        
+        // date format
+        let myDateFormatter: DateFormatter = DateFormatter()
+        myDateFormatter.dateFormat = "yyyy/MM/dd"
+        
+        // get the date string applied date format
+        let mySelectedDate: NSString = myDateFormatter.string(from: sender.date) as NSString
+        txtDOB.text = mySelectedDate as String
+        
+        self.myDatePicker.removeFromSuperview()
+    }
+    
 }

@@ -41,7 +41,9 @@ class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UIT
        
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    
+    {
         super.viewWillAppear(animated)
         webserviceForVehicleTypes()
     }

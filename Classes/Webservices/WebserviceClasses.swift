@@ -184,7 +184,7 @@ func sendImage(_ dictParams: [String:AnyObject], image1: UIImage, image2: UIImag
     
 //    print("The webservice call is\(url) and the params are \(dictParams)")
 
-    let headers: HTTPHeaders = ["key": "TicktocApp123*"]
+//    let headers: HTTPHeaders = ["key": headers]
 //    let aryImagesName = ["DriverLicence","CarRegistration","AccreditationCertificate","VehicleInsuranceCertificate"]
 
 //    let activityData = ActivityData()
@@ -238,7 +238,7 @@ func sendImage(_ dictParams: [String:AnyObject], image1: UIImage, image2: UIImag
                 multipartFormData.append(String(describing: value).data(using: .utf8)!, withName: key)
             }
         }
-    }, usingThreshold: 10 * 1024 * 1024, to: url, method: .post, headers: headers) { (encodingResult) in
+    }, usingThreshold: 10 * 1024 * 1024, to: url, method: .post, headers: header) { (encodingResult) in
         switch encodingResult
         {
         case .success(let upload, _, _):
@@ -291,7 +291,7 @@ func DeiverInfo(_ dictParams: [String:AnyObject], image1: UIImage, nsURL: String
     let url = BaseURL + nsURL
     
     
-    let headers: HTTPHeaders = ["key": "TicktocApp123*"]
+//    let headers: HTTPHeaders = ["key": "TicktocApp123*"]
     //    let aryImagesName = ["DriverLicence","CarRegistration","AccreditationCertificate","VehicleInsuranceCertificate"]
     
     //    HUD.dimsBackground = false
@@ -320,7 +320,7 @@ func DeiverInfo(_ dictParams: [String:AnyObject], image1: UIImage, nsURL: String
                 multipartFormData.append(String(describing: value).data(using: .utf8)!, withName: key)
         
         }
-    }, usingThreshold: 10 * 1024 * 1024, to: url, method: .post, headers: headers) { (encodingResult) in
+    }, usingThreshold: 10 * 1024 * 1024, to: url, method: .post, headers: header) { (encodingResult) in
         switch encodingResult
         {
         case .success(let upload, _, _):
@@ -370,7 +370,7 @@ func sendUpdateDriverDocument(_ dictParams: [String:AnyObject], image: UIImage, 
     let url = BaseURL + nsURL
     
     
-    let headers: HTTPHeaders = ["key": "TicktocApp123*"]
+//    let headers: HTTPHeaders = ["key": "TicktocApp123*"]
     //    let aryImagesName = ["DriverLicence","CarRegistration","AccreditationCertificate","VehicleInsuranceCertificate"]
     
     //    HUD.dimsBackground = false
@@ -405,7 +405,7 @@ func sendUpdateDriverDocument(_ dictParams: [String:AnyObject], image: UIImage, 
                 multipartFormData.append(String(describing: value).data(using: .utf8)!, withName: key)
             }
         }
-    }, usingThreshold: 10 * 1024 * 1024, to: url, method: .post, headers: headers) { (encodingResult) in
+    }, usingThreshold: 10 * 1024 * 1024, to: url, method: .post, headers: header) { (encodingResult) in
         switch encodingResult
         {
         case .success(let upload, _, _):

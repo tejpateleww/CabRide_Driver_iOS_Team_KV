@@ -11,7 +11,7 @@ import Foundation
 
 struct WebserviceURLs {
     static let kBaseURL                                 = "http://54.169.45.134/web/Drvier_Api/"
-    static let kImageBaseURL                            = "http://54.206.55.185/web/"
+    static let kImageBaseURL                            = "http://54.169.45.134/web/"
     static let kOTPForDriverRegister                    = "OtpForRegister"
     static let kVehicalModelList                        = "TaxiModel/"
     static let kDriverRegister                          = "Register"
@@ -164,6 +164,7 @@ struct RegistrationFinalKeys {
     static let kReferralCode = "ReferralCode" //Done
     static let kLat = "Lat"//Done
     static let kLng = "Lng"//Done
+    static let kCarThreeTypeName = "CarTypeName"
 }
 
 struct socketApiKeys {

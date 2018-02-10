@@ -65,7 +65,7 @@ class DriverBankDetailsViewController: UIViewController
             
             self.userDefault.set(self.txtAccountHolderName.text, forKey: RegistrationFinalKeys.kbankHolderName)
             self.userDefault.set(self.txtBankName.text, forKey: RegistrationFinalKeys.kBankName)
-            self.userDefault.set(self.txtBankBranch.text, forKey: RegistrationFinalKeys.kBankBranch)
+            self.userDefault.set(self.txtBankBranch.text, forKey: RegistrationFinalKeys.kBSB)
             self.userDefault.set(self.txtAccountNumber.text, forKey: RegistrationFinalKeys.kBankAccountNo)
             self.userDefault.set(3, forKey: savedDataForRegistration.kPageNumber)
             
@@ -78,7 +78,7 @@ class DriverBankDetailsViewController: UIViewController
     func CheckValidation() -> Bool
     {
         let sb = Snackbar()
-        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
+//        sb.createWithAction(text: "Upload Car Registration", actionTitle: "OK", action: { print("Button is push") })
         
         if txtAccountHolderName.text == "" {
             sb.createWithAction(text: "Enter Account Holder Name", actionTitle: "OK", action: { print("Button is push") })
