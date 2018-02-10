@@ -16,6 +16,9 @@
 		00A0E0B31FED466D00DB5549 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0B21FED466D00DB5549 /* ImageIO.framework */; };
 		00A0E0B51FED467400DB5549 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0B41FED467400DB5549 /* OpenGLES.framework */; };
 		00A0E0B71FED467B00DB5549 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0B61FED467B00DB5549 /* QuartzCore.framework */; };
+		00DEC65F202D6B0D005565A7 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00DEC65E202D6B0D005565A7 /* Raleway-Light.ttf */; };
+		00DEC661202D6E96005565A7 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC660202D6E96005565A7 /* SplashViewController.swift */; };
+		00DEC663202DA037005565A7 /* DriverBankDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC662202DA037005565A7 /* DriverBankDetailsViewController.swift */; };
 		00E929D0202AE2C100A399E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00E928DB202AE2BE00A399E2 /* Assets.xcassets */; };
 		00E929D1202AE2C100A399E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00E928DD202AE2BF00A399E2 /* GoogleService-Info.plist */; };
 		00E929D3202AE2C100A399E2 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00E928DF202AE2BF00A399E2 /* Main.strings */; };
@@ -200,6 +203,9 @@
 		00A0E0B21FED466D00DB5549 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		00A0E0B41FED467400DB5549 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		00A0E0B61FED467B00DB5549 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		00DEC65E202D6B0D005565A7 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		00DEC660202D6E96005565A7 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		00DEC662202DA037005565A7 /* DriverBankDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverBankDetailsViewController.swift; sourceTree = "<group>"; };
 		00DFF5F21F8CE29A00BABF96 /* TTSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E5CEA31F8B402C004409A4 /* PickNGo-Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PickNGo-Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E928DB202AE2BE00A399E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -401,6 +407,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00DEC65D202D6B0D005565A7 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				00DEC65E202D6B0D005565A7 /* Raleway-Light.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		00E5CE9A1F8B402C004409A4 = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +443,7 @@
 		00E928DA202AE2BE00A399E2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				00DEC65D202D6B0D005565A7 /* Font */,
 				00E928DB202AE2BE00A399E2 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -479,6 +494,7 @@
 				00E929A7202AE2C000A399E2 /* UpdateDriverProfile */,
 				00E929B0202AE2C000A399E2 /* ViewController.swift */,
 				00E929B1202AE2C000A399E2 /* Wallet */,
+				00DEC660202D6E96005565A7 /* SplashViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -495,10 +511,11 @@
 			isa = PBXGroup;
 			children = (
 				00E928E8202AE2BF00A399E2 /* DriverCertificatesViewController.swift */,
+				00E928EC202AE2BF00A399E2 /* DriverRegistrationViewController.swift */,
 				00E928E9202AE2BF00A399E2 /* DriverEmailViewController.swift */,
 				00E928EA202AE2BF00A399E2 /* DriverOTPViewController.swift */,
 				00E928EB202AE2BF00A399E2 /* DriverPersonelDetailsViewController.swift */,
-				00E928EC202AE2BF00A399E2 /* DriverRegistrationViewController.swift */,
+				00DEC662202DA037005565A7 /* DriverBankDetailsViewController.swift */,
 				00E928ED202AE2BF00A399E2 /* DriverSelectVehicleTypesViewController.swift */,
 				00E928EE202AE2BF00A399E2 /* DriverVehiclesViewController.swift */,
 				00E928EF202AE2BF00A399E2 /* DriverVehicleTypesViewController.swift */,
@@ -1283,6 +1300,7 @@
 				00E92A79202AE2C100A399E2 /* Registration.storyboard in Resources */,
 				00E92A75202AE2C100A399E2 /* Jobs.storyboard in Resources */,
 				00E929D1202AE2C100A399E2 /* GoogleService-Info.plist in Resources */,
+				00DEC65F202D6B0D005565A7 /* Raleway-Light.ttf in Resources */,
 				00E92A76202AE2C100A399E2 /* LaunchScreen.storyboard in Resources */,
 				00E929D3202AE2C100A399E2 /* Main.strings in Resources */,
 				00E92A19202AE2C100A399E2 /* ACProgressView.xib in Resources */,
@@ -1426,6 +1444,7 @@
 				00E92A07202AE2C100A399E2 /* webViewForNewsViewController.swift in Sources */,
 				00E929F3202AE2C100A399E2 /* FutureBookingVC.swift in Sources */,
 				00E92A1B202AE2C100A399E2 /* BalloonMarker.swift in Sources */,
+				00DEC663202DA037005565A7 /* DriverBankDetailsViewController.swift in Sources */,
 				00E92A37202AE2C100A399E2 /* SPIconsButton.swift in Sources */,
 				00E929D8202AE2C100A399E2 /* DriverOTPViewController.swift in Sources */,
 				00E92A4D202AE2C100A399E2 /* TransitionAnimator.swift in Sources */,
@@ -1535,6 +1554,7 @@
 				00E92A46202AE2C100A399E2 /* CenterContainmentSegue.swift in Sources */,
 				00E92A38202AE2C100A399E2 /* SPLinesCircleButtonsView.swift in Sources */,
 				00E92A54202AE2C100A399E2 /* NSDateComponents+Timepiece.swift in Sources */,
+				00DEC661202D6E96005565A7 /* SplashViewController.swift in Sources */,
 				00E92A4E202AE2C100A399E2 /* UIKitExtensions.swift in Sources */,
 				00E929DB202AE2C100A399E2 /* DriverSelectVehicleTypesViewController.swift in Sources */,
 				00E92A2F202AE2C100A399E2 /* SPLaunchAnimationTwitterExtenshion.swift in Sources */,

@@ -12,6 +12,7 @@ import UIKit
 class DriverCertificatesViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate,WWCalendarTimeSelectorProtocol  {
 
     
+    @IBOutlet var btnDone: UIButton!
     let datePicker: UIDatePicker = UIDatePicker()
     
     var imagePicker = UIImagePickerController()
@@ -59,6 +60,12 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        btnDone.layer.cornerRadius = btnDone.frame.size.height/2
+        btnDone.clipsToBounds = true
     }
     
 

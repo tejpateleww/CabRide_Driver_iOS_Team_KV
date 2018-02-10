@@ -25,7 +25,12 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var btnSignUp: UIButton!
     
-    override func loadView() {
+    
+    
+    
+    
+    override func loadView()
+    {
         super.loadView()
 //        if(Singletons.sharedInstance.isDriverLoggedIN)
 //        {
@@ -33,7 +38,8 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
 //            self.navigationController?.pushViewController(next, animated: true)
 //        }
         
-        if Connectivity.isConnectedToInternet() {
+        if Connectivity.isConnectedToInternet()
+        {
             print("Yes! internet is available.")
             // do some tasks..
         }
@@ -47,6 +53,8 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+      
         
 //        if UIDevice.current.name == "Excellent Web's iPhone 5s" {
 //
@@ -95,8 +103,14 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
     }
 
-    override func viewDidLayoutSubviews() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         self.navigationController?.isNavigationBarHidden = true
+    }
+    override func viewDidLayoutSubviews()
+    {
         super.viewDidLayoutSubviews()
+        
         btnSignUp.layer.cornerRadius = btnSignUp.frame.size.height/2
         btnSignUp.clipsToBounds = true
         

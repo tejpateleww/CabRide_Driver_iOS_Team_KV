@@ -10,7 +10,7 @@ import Foundation
 
 
 struct WebserviceURLs {
-    static let kBaseURL                                 = "http://54.206.55.185/web/Drvier_Api/"
+    static let kBaseURL                                 = "http://54.169.45.134/web/Drvier_Api/"
     static let kImageBaseURL                            = "http://54.206.55.185/web/"
     static let kOTPForDriverRegister                    = "OtpForRegister"
     static let kVehicalModelList                        = "TaxiModel/"
@@ -102,6 +102,7 @@ struct profileKeys {
 struct RegistrationProfileKeys {
     static let kKeyEmail = "email"
     static let kKeyFullName = "fullName"
+    static let kKeyDOB = "DOB"
     static let kKeyMobileNumber = "mobileNumber"
     static let kKeyPassword = "password"
     static let kKeyAddress = "address"
@@ -125,7 +126,8 @@ struct RegistrationFinalKeys {
     
     static let kCompanyID = "CompanyId" // Done
     // ------------------------------------------------------------
-    
+    static let kKeyDOB = "DOB"
+
     static let kMobileNo = "MobileNo"// Done
     static let kFullname = "Fullname"// Done
     static let kGender = "Gender"// Done
@@ -134,7 +136,7 @@ struct RegistrationFinalKeys {
     
      static let kSuburb = "Suburb"// Done
     
-    
+    static let kBankBranch = "BankBranch"// Done
     static let kCity = "City"// Done
     static let kState = "State"// Done
     static let kCountry = "Country"// Done
@@ -202,7 +204,7 @@ struct socketApiKeys {
 }
 
 struct appName {
-    static let kAPPName = "TiCKTOC"
+    static let kAPPName = "Pick'N'Go"
 
     
 }

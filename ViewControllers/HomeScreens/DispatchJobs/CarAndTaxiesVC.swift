@@ -91,7 +91,7 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         let dictData = aryData.object(at: indexPath.row) as! NSDictionary
         
         cell.lblCarModelClass.text = dictData.object(forKey: "Name") as? String
-        cell.lblCarModelDescription.text = dictData.object(forKey: "Description") as? String
+        cell.lblCarModelDescription.text = ""//dictData.object(forKey: "Description") as? String
 
         cell.btnTickMark.setImage(UIImage.init(named: "iconCheckMarkUnSelected"), for: .normal)
 

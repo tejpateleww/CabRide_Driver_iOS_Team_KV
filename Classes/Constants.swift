@@ -24,7 +24,7 @@ let Appdelegate = UIApplication.shared.delegate as! AppDelegate
 
 
 let ThemeYellowColor : UIColor = UIColor.init(hex: "ffa300")
-let ThemeGrayColor : UIColor = UIColor.init(hex:  "2a2727")
+let ThemeGrayColor : UIColor = UIColor.init(hex:  "8e8c80")
 
 let navigationBarHeightIphoneX = 84
 

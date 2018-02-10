@@ -19,7 +19,7 @@ import NVActivityIndicatorView
 let BaseURL = WebserviceURLs.kBaseURL
 var request : Request!
 
-let header: [String:String] = ["key":"TicktocApp123*"]
+let header: [String:String] = ["key":"PickNGo123*#*"]
 
 
 //-------------------------------------------------------------

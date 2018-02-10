@@ -36,7 +36,7 @@ class DriverOTPViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet var txtOTP: UITextField!
+//    @IBOutlet var txtOTP: UITextField!
     
     @IBAction func btnNext(_ sender: Any) {
         
@@ -58,8 +58,8 @@ class DriverOTPViewController: UIViewController {
                         driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
 //            driverVC.segmentController.selectedIndex = 2
             personalDetailsVC.setDataForProfile()
-            self.userDefault.set(self.txtOTP.text, forKey: savedDataForRegistration.kKeyOTP)
-            self.userDefault.set(2, forKey: savedDataForRegistration.kPageNumber)
+//            self.userDefault.set(self.txtOTP.text, forKey: savedDataForRegistration.kKeyOTP)
+//            self.userDefault.set(2, forKey: savedDataForRegistration.kPageNumber)
 //        }
 //        else
 //        {

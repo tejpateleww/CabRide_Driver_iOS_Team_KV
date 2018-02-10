@@ -18,6 +18,12 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
     private let backgroundColor: UIColor = UIColor(hue: 1, saturation: 0, brightness: 1, alpha: 0.08)
     
     
+    @IBOutlet var viewBank: UIView!
+    @IBOutlet var viewDriver: UIView!
+    @IBOutlet var viewEmail: UIView!
+    @IBOutlet var viewCar: UIView!
+    @IBOutlet var viewAttachment: UIView!
+    @IBOutlet var viewMainLine: UIView!
     @IBOutlet var imgDriver: UIImageView!
     @IBOutlet var imgMail: UIImageView!
     @IBOutlet var imgBank: UIImageView!
@@ -44,6 +50,70 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         super.viewWillLayoutSubviews()
     }
     
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+//        print(UserDefaults.standard.object(forKey: savedDataForRegistration.kPageNumber))
+        
+        if UserDefaults.standard.object(forKey: savedDataForRegistration.kPageNumber) != nil
+        {
+            let pageNO = UserDefaults.standard.object(forKey: savedDataForRegistration.kPageNumber) as! Int
+            
+            let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
+
+          if pageNO == 1
+            {
+                driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
+                driverVC.imgMail.image = UIImage.init(named: iconMailSelect)
+                driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
+            }
+            else if pageNO == 2
+            {
+                driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
+                driverVC.imgMail.image = UIImage.init(named: iconMailSelect)
+                driverVC.viewDriverBank.backgroundColor = ThemeYellowColor
+                driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
+                driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
+            }
+            else if pageNO == 3
+            {
+                driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
+                driverVC.imgMail.image = UIImage.init(named: iconMailSelect)
+                driverVC.viewDriverBank.backgroundColor = ThemeYellowColor
+                driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
+                driverVC.viewBankCar.backgroundColor = ThemeYellowColor
+                driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
+                driverVC.imgCar.image = UIImage.init(named: iconCarSelect)
+            }
+            else if pageNO == 4
+            {
+                driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
+                driverVC.viewDriverBank.backgroundColor = ThemeYellowColor
+                driverVC.viewBankCar.backgroundColor = ThemeYellowColor
+                driverVC.viewCarAttachment.backgroundColor = ThemeYellowColor
+                driverVC.imgMail.image = UIImage.init(named: iconMailSelect)
+                driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
+                driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
+                driverVC.imgCar.image = UIImage.init(named: iconCarSelect)
+                driverVC.imgAttachment.image = UIImage.init(named: iconAttachmentSelect)
+
+            }
+            
+            
+            let page = self.view.frame.size.width * CGFloat(pageNO)
+            self.scrollObj.setContentOffset(CGPoint(x: page, y: 0), animated: true)
+        
+        //                = UserDefaults.standard.object(forKey: savedDataForRegistration.kPageNumber) as! Int
+        }
+    
+        
+    
+        
+        viewBank.clipsToBounds = true
+        viewDriver.clipsToBounds = true
+        viewEmail.clipsToBounds = true
+    }
+    
     
     override func viewDidLoad()
     {
@@ -54,21 +124,26 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         imgCar.image = UIImage.init(named: iconCarUnselect)
         imgAttachment.image = UIImage.init(named: iconAttachmentUnselect)
         
+        viewMainLine.backgroundColor = UIColor.clear
         viewEmailDriver.backgroundColor = ThemeGrayColor
         viewDriverBank.backgroundColor = ThemeGrayColor
         viewBankCar.backgroundColor = ThemeGrayColor
         viewCarAttachment.backgroundColor = ThemeGrayColor
-
+        
+       
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        
     }
+    
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(true)
         self.setNavigationBar()
+
+
     }
     
     func setNavigationBar()
@@ -76,7 +151,6 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationBar.isOpaque = true
         self.navigationController?.navigationBar.isTranslucent = true
-        
 
         if self.selectedIndex == 0
         {
