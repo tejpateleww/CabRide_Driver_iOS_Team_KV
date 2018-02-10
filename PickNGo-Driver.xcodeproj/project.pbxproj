@@ -133,15 +133,6 @@
 		00E92A43202AE2C100A399E2 /* SPGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9298C202AE2C000A399E2 /* SPGradientView.swift */; };
 		00E92A44202AE2C100A399E2 /* SPUILabelExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9298D202AE2C000A399E2 /* SPUILabelExtenshion.swift */; };
 		00E92A45202AE2C100A399E2 /* SPUIViewExtenshion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9298E202AE2C000A399E2 /* SPUIViewExtenshion.swift */; };
-		00E92A46202AE2C100A399E2 /* CenterContainmentSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E92991202AE2C000A399E2 /* CenterContainmentSegue.swift */; };
-		00E92A47202AE2C100A399E2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00E92992202AE2C000A399E2 /* Info.plist */; };
-		00E92A48202AE2C100A399E2 /* SideContainmentSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E92993202AE2C000A399E2 /* SideContainmentSegue.swift */; };
-		00E92A49202AE2C100A399E2 /* SideMenuController+CustomTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E92994202AE2C000A399E2 /* SideMenuController+CustomTypes.swift */; };
-		00E92A4A202AE2C100A399E2 /* SideMenuController+SideOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E92995202AE2C000A399E2 /* SideMenuController+SideOver.swift */; };
-		00E92A4B202AE2C100A399E2 /* SideMenuController+SideUnder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E92996202AE2C000A399E2 /* SideMenuController+SideUnder.swift */; };
-		00E92A4C202AE2C100A399E2 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E92998202AE2C000A399E2 /* SideMenuController.swift */; };
-		00E92A4D202AE2C100A399E2 /* TransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E92999202AE2C000A399E2 /* TransitionAnimator.swift */; };
-		00E92A4E202AE2C100A399E2 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9299A202AE2C000A399E2 /* UIKitExtensions.swift */; };
 		00E92A4F202AE2C100A399E2 /* Snackbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9299C202AE2C000A399E2 /* Snackbar.swift */; };
 		00E92A50202AE2C100A399E2 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9299E202AE2C000A399E2 /* Duration.swift */; };
 		00E92A51202AE2C100A399E2 /* Int+Timepiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9299F202AE2C000A399E2 /* Int+Timepiece.swift */; };
@@ -326,16 +317,6 @@
 		00E9298C202AE2C000A399E2 /* SPGradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPGradientView.swift; sourceTree = "<group>"; };
 		00E9298D202AE2C000A399E2 /* SPUILabelExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUILabelExtenshion.swift; sourceTree = "<group>"; };
 		00E9298E202AE2C000A399E2 /* SPUIViewExtenshion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SPUIViewExtenshion.swift; sourceTree = "<group>"; };
-		00E92991202AE2C000A399E2 /* CenterContainmentSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CenterContainmentSegue.swift; sourceTree = "<group>"; };
-		00E92992202AE2C000A399E2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E92993202AE2C000A399E2 /* SideContainmentSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideContainmentSegue.swift; sourceTree = "<group>"; };
-		00E92994202AE2C000A399E2 /* SideMenuController+CustomTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SideMenuController+CustomTypes.swift"; sourceTree = "<group>"; };
-		00E92995202AE2C000A399E2 /* SideMenuController+SideOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SideMenuController+SideOver.swift"; sourceTree = "<group>"; };
-		00E92996202AE2C000A399E2 /* SideMenuController+SideUnder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SideMenuController+SideUnder.swift"; sourceTree = "<group>"; };
-		00E92997202AE2C000A399E2 /* SideMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SideMenuController.h; sourceTree = "<group>"; };
-		00E92998202AE2C000A399E2 /* SideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
-		00E92999202AE2C000A399E2 /* TransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionAnimator.swift; sourceTree = "<group>"; };
-		00E9299A202AE2C000A399E2 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		00E9299C202AE2C000A399E2 /* Snackbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Snackbar.swift; sourceTree = "<group>"; };
 		00E9299E202AE2C000A399E2 /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
 		00E9299F202AE2C000A399E2 /* Int+Timepiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Timepiece.swift"; sourceTree = "<group>"; };
@@ -715,7 +696,6 @@
 				00E92942202AE2C000A399E2 /* ChartPodsWithExtraFiles */,
 				00E9294C202AE2C000A399E2 /* CreditCardValidator */,
 				00E9294F202AE2C000A399E2 /* SegmentController */,
-				00E9298F202AE2C000A399E2 /* SideMenu */,
 				00E9299B202AE2C000A399E2 /* SnackBar */,
 				00E9299D202AE2C000A399E2 /* WWCalendarTimeSelector */,
 			);
@@ -1053,31 +1033,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		00E9298F202AE2C000A399E2 /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				00E92990202AE2C000A399E2 /* Source */,
-			);
-			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		00E92990202AE2C000A399E2 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				00E92991202AE2C000A399E2 /* CenterContainmentSegue.swift */,
-				00E92992202AE2C000A399E2 /* Info.plist */,
-				00E92993202AE2C000A399E2 /* SideContainmentSegue.swift */,
-				00E92994202AE2C000A399E2 /* SideMenuController+CustomTypes.swift */,
-				00E92995202AE2C000A399E2 /* SideMenuController+SideOver.swift */,
-				00E92996202AE2C000A399E2 /* SideMenuController+SideUnder.swift */,
-				00E92997202AE2C000A399E2 /* SideMenuController.h */,
-				00E92998202AE2C000A399E2 /* SideMenuController.swift */,
-				00E92999202AE2C000A399E2 /* TransitionAnimator.swift */,
-				00E9299A202AE2C000A399E2 /* UIKitExtensions.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		00E9299B202AE2C000A399E2 /* SnackBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1289,7 +1244,6 @@
 			files = (
 				00E92A6F202AE2C100A399E2 /* ringTone.mp3 in Resources */,
 				00E929F1202AE2C100A399E2 /* ExpandDispatchedJobsViewController.xib in Resources */,
-				00E92A47202AE2C100A399E2 /* Info.plist in Resources */,
 				00E929D0202AE2C100A399E2 /* Assets.xcassets in Resources */,
 				21A5A2CB1FBC61960047E9AA /* Location.gpx in Resources */,
 				00E92A77202AE2C100A399E2 /* Main.storyboard in Resources */,
@@ -1447,7 +1401,6 @@
 				00DEC663202DA037005565A7 /* DriverBankDetailsViewController.swift in Sources */,
 				00E92A37202AE2C100A399E2 /* SPIconsButton.swift in Sources */,
 				00E929D8202AE2C100A399E2 /* DriverOTPViewController.swift in Sources */,
-				00E92A4D202AE2C100A399E2 /* TransitionAnimator.swift in Sources */,
 				00E929EA202AE2C100A399E2 /* DispatchJobsViewController.swift in Sources */,
 				00E92A36202AE2C100A399E2 /* SPParalaxTableViewController.swift in Sources */,
 				00E92A1C202AE2C100A399E2 /* RadarMarkerView.swift in Sources */,
@@ -1480,7 +1433,6 @@
 				00E929D5202AE2C100A399E2 /* ComingSoonVC.swift in Sources */,
 				00E92A32202AE2C100A399E2 /* SPRandom.swift in Sources */,
 				00E92A31202AE2C100A399E2 /* SPLaunchAnimation.swift in Sources */,
-				00E92A48202AE2C100A399E2 /* SideContainmentSegue.swift in Sources */,
 				00E929D7202AE2C100A399E2 /* DriverEmailViewController.swift in Sources */,
 				00E92A2A202AE2C100A399E2 /* SPDelay.swift in Sources */,
 				000D8FEC202C495300A02C45 /* DriverRegistrationViewController.swift in Sources */,
@@ -1527,7 +1479,6 @@
 				00E92A67202AE2C100A399E2 /* WalletTopUpVC.swift in Sources */,
 				00E92A1D202AE2C100A399E2 /* XYMarkerView.swift in Sources */,
 				00E92A14202AE2C100A399E2 /* WalletCardsTableViewCell.swift in Sources */,
-				00E92A49202AE2C100A399E2 /* SideMenuController+CustomTypes.swift in Sources */,
 				00E92A69202AE2C100A399E2 /* WalletTransferViewController.swift in Sources */,
 				00E929FD202AE2C100A399E2 /* TickPayAlertViewController.swift in Sources */,
 				00E92A25202AE2C100A399E2 /* SPAnimationSpring.swift in Sources */,
@@ -1543,7 +1494,6 @@
 				00E92A66202AE2C100A399E2 /* WalletHistoryViewController.swift in Sources */,
 				00E929E6202AE2C100A399E2 /* DeliverServiceTableViewCell.swift in Sources */,
 				00E929F7202AE2C100A399E2 /* LoginViewController.swift in Sources */,
-				00E92A4C202AE2C100A399E2 /* SideMenuController.swift in Sources */,
 				00E92A60202AE2C100A399E2 /* UpdateProfilePersonelDetailsVC.swift in Sources */,
 				00E92A12202AE2C100A399E2 /* updateDriverVehicleTypesViewControllerTableViewCell.swift in Sources */,
 				00E929FE202AE2C100A399E2 /* TickPayRegistrationViewController.swift in Sources */,
@@ -1551,17 +1501,13 @@
 				00E92A62202AE2C100A399E2 /* WalletAddCardsViewController.swift in Sources */,
 				00E92A3B202AE2C100A399E2 /* SPSegmentControlProtocol.swift in Sources */,
 				00E92A0C202AE2C100A399E2 /* DriverVehicleTypesTableViewCell.swift in Sources */,
-				00E92A46202AE2C100A399E2 /* CenterContainmentSegue.swift in Sources */,
 				00E92A38202AE2C100A399E2 /* SPLinesCircleButtonsView.swift in Sources */,
 				00E92A54202AE2C100A399E2 /* NSDateComponents+Timepiece.swift in Sources */,
 				00DEC661202D6E96005565A7 /* SplashViewController.swift in Sources */,
-				00E92A4E202AE2C100A399E2 /* UIKitExtensions.swift in Sources */,
 				00E929DB202AE2C100A399E2 /* DriverSelectVehicleTypesViewController.swift in Sources */,
 				00E92A2F202AE2C100A399E2 /* SPLaunchAnimationTwitterExtenshion.swift in Sources */,
 				00E92A04202AE2C100A399E2 /* CustomSideMenuViewController.swift in Sources */,
-				00E92A4A202AE2C100A399E2 /* SideMenuController+SideOver.swift in Sources */,
 				00E92A51202AE2C100A399E2 /* Int+Timepiece.swift in Sources */,
-				00E92A4B202AE2C100A399E2 /* SideMenuController+SideUnder.swift in Sources */,
 				00E92A64202AE2C100A399E2 /* WalletCardsVC.swift in Sources */,
 				00E92A3A202AE2C100A399E2 /* SPSegmentControllCell.swift in Sources */,
 				00E92A50202AE2C100A399E2 /* Duration.swift in Sources */,

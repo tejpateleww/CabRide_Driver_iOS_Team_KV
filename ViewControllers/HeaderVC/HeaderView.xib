@@ -123,7 +123,7 @@
                     </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="dfC-RT-f77" firstAttribute="trailing" secondItem="PWX-Ie-XfJ" secondAttribute="trailing" id="2zZ-sB-ENh"/>
                 <constraint firstItem="dfC-RT-f77" firstAttribute="top" secondItem="PWX-Ie-XfJ" secondAttribute="top" id="4hg-2V-xKA"/>

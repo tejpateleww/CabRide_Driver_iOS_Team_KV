@@ -181,6 +181,11 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         
         
     }
+    
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return false
+    }
+    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController)
     {
         print(viewController)
