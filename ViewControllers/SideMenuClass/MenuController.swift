@@ -27,9 +27,11 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
 
         getDataFromSingleton()
         
-        aryItemNames = ["Payment Option", "My Wallet", "TiCKPay", "Weekly Earning", "Driver News","Invite Drivers", "Change Password", "Settings", "Log Out"]
+//        aryItemNames = ["Payment Option", "My Wallet", "TiCKPay", "Weekly Earning", "Driver News","Invite Drivers", "Change Password", "Settings", "Log Out"]
+           aryItemNames = ["Log Out"]
         
-        aryItemIcons = ["iconPayment","iconWallet", "iconTickPay","iconEarnings","iconNews","iconInvite", "iconChangePassword", "iconSettings", "iconSignOut"]
+//        aryItemIcons = ["iconPayment","iconWallet", "iconTickPay","iconEarnings","iconNews","iconInvite", "iconChangePassword", "iconSettings", "iconSignOut"]
+         aryItemIcons = ["iconSignOut"]
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(MenuController.setRating), name: NSNotification.Name(rawValue: "rating"), object: nil)
@@ -109,19 +111,20 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
         if indexPath.section == 1
         {
             if indexPath.row == 0 {
-                if(Singletons.sharedInstance.CardsVCHaveAryData.count == 0)
-                {
-                      let viewController = self.storyboard?.instantiateViewController(withIdentifier: "WalletAddCardsViewController") as! WalletAddCardsViewController
-                    self.navigationController?.pushViewController(viewController, animated: true)
-
-                }
-                else
-                {
-                    let viewController = self.storyboard?.instantiateViewController(withIdentifier: "WalletCardsVC") as! WalletCardsVC
-                    self.navigationController?.pushViewController(viewController, animated: true)
-
-
-                }
+                  self.webserviceOFSignOut()
+//                if(Singletons.sharedInstance.CardsVCHaveAryData.count == 0)
+//                {
+//                      let viewController = self.storyboard?.instantiateViewController(withIdentifier: "WalletAddCardsViewController") as! WalletAddCardsViewController
+//                    self.navigationController?.pushViewController(viewController, animated: true)
+//
+//                }
+//                else
+//                {
+//                    let viewController = self.storyboard?.instantiateViewController(withIdentifier: "WalletCardsVC") as! WalletCardsVC
+//                    self.navigationController?.pushViewController(viewController, animated: true)
+//
+//
+//                }
             }
             else if indexPath.row == 1 {
                 

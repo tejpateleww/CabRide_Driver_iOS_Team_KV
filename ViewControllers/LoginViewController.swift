@@ -56,21 +56,21 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
         
       
         
-//        if UIDevice.current.name == "Excellent Web's iPhone 5s" {
-//
-//            txtEmailAddress.text = "bhavesh@excellentwebworld.info"
-//            txtPassword.text = "12345678"
-//        }
-//
-//        self.viewMain.isHidden = false
-//
-//        checkPass()
-//
-//        if UIDevice.current.name == "Bhavesh iPhone" {
-//
-//            txtEmailAddress.text = "bhavesh@excellentwebworld.info"
-//            txtPassword.text = "12345678"
-//        }
+        if UIDevice.current.name == "Excellent Web's iPhone 5s" {
+
+            txtEmailAddress.text = "palak@excellentwebworld.info"
+            txtPassword.text = "12345678"
+        }
+
+        self.viewMain.isHidden = false
+
+        checkPass()
+
+        if UIDevice.current.name == "Bhavesh iPhone" {
+
+            txtEmailAddress.text = "palak@excellentwebworld.info"
+            txtPassword.text = "12345678"
+        }
         
 
         imgFacebook.layer.cornerRadius = imgFacebook.frame.width / 2
