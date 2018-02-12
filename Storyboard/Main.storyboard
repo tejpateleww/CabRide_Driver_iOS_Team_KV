@@ -494,7 +494,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.63" colorSpace="custom" customColorSpace="sRGB"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <color key="sectionIndexBackgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuIDriverProfile" rowHeight="180" id="cL2-To-wcL" customClass="SideMenuTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="180"/>
@@ -557,7 +557,7 @@
                                                             <rect key="frame" x="130" y="25" width="60" height="60"/>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29917059075342473" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="nCL-xh-2AA" firstAttribute="centerX" secondItem="KzP-1l-Hl8" secondAttribute="centerX" id="0KV-Bu-45o"/>
                                                         <constraint firstItem="fnr-ZC-ms9" firstAttribute="centerX" secondItem="Fpb-Ti-Ih5" secondAttribute="centerX" id="0pd-a6-fxy"/>
@@ -574,7 +574,7 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
                                                 <constraint firstItem="Fpb-Ti-Ih5" firstAttribute="top" secondItem="SKF-wE-ePO" secondAttribute="top" id="AdS-3V-mIa"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fpb-Ti-Ih5" secondAttribute="trailing" id="f8f-XZ-TVp"/>
@@ -582,7 +582,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="Fpb-Ti-Ih5" secondAttribute="bottom" id="x3m-QR-T0n"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="btnUpdateProfile" destination="XAu-nX-ufU" id="Lj5-r0-ZCw"/>
                                             <outlet property="imgProfile" destination="fnr-ZC-ms9" id="S2x-fl-QB9"/>
@@ -735,7 +735,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sYv-ld-j8d">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mOg-Yb-dNx">
@@ -842,7 +842,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0C-EL-tQq" customClass="CustonView" customModule="PickNGo_Driver" customModuleProvider="target">
-                                <rect key="frame" x="16" y="84" width="288" height="40"/>
+                                <rect key="frame" x="16" y="20" width="288" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqn-Ra-84l" customClass="MarqueeLabel" customModule="MarqueeLabel">
                                         <rect key="frame" x="31" y="10" width="249" height="21"/>
@@ -901,7 +901,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8av-LE-zhe">
-                                <rect key="frame" x="269" y="134" width="35" height="35"/>
+                                <rect key="frame" x="269" y="70" width="35" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="DXf-Gz-HI9"/>
                                     <constraint firstAttribute="width" constant="35" id="hLJ-ks-NLI"/>
@@ -928,16 +928,11 @@
                             <constraint firstItem="O0C-EL-tQq" firstAttribute="leading" secondItem="iqr-Tj-SOf" secondAttribute="leading" constant="16" id="oEc-Q2-G5N"/>
                             <constraint firstAttribute="trailing" secondItem="O0C-EL-tQq" secondAttribute="trailing" constant="16" id="puc-oQ-qLd"/>
                             <constraint firstItem="Iin-IP-JwY" firstAttribute="top" secondItem="sYv-ld-j8d" secondAttribute="bottom" id="sUK-xL-a1K"/>
-                            <constraint firstItem="sYv-ld-j8d" firstAttribute="top" secondItem="7El-cf-3IY" secondAttribute="bottom" constant="44" id="zqW-D8-Xdp"/>
+                            <constraint firstItem="sYv-ld-j8d" firstAttribute="top" secondItem="iqr-Tj-SOf" secondAttribute="top" id="zqW-D8-Xdp"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Home" image="iconHomeTab" id="Bfa-ld-k2F"/>
                     <navigationItem key="navigationItem" id="tvw-zC-PLz"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="showsBackButton" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="showTitleLabelView" value="NO"/>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="hideSwitchButton" value="YES"/>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="BottomButtonView" destination="mOg-Yb-dNx" id="AGN-em-5Wz"/>
                         <outlet property="StartTripView" destination="CMK-n6-jct" id="8ew-H1-ayw"/>

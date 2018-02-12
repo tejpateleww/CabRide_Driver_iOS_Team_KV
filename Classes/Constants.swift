@@ -27,7 +27,7 @@ let ThemeYellowColor : UIColor = UIColor.init(hex: "ffa300")
 let ThemeGrayColor : UIColor = UIColor.init(hex:  "8e8c80")
 
 let navigationBarHeightIphoneX = 84
-
+var utility = Utilities()
 let kBackIcon : String = "iconArrow"
 let kMenuIcon : String = "menu"
 let kRighticon : String = "right_start_icon"

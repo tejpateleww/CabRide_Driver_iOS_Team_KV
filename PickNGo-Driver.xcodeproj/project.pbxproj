@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		000D8FEC202C495300A02C45 /* DriverRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928EC202AE2BF00A399E2 /* DriverRegistrationViewController.swift */; };
 		005A36DE202B1CE700502672 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A36DD202B1CE700502672 /* Constants.swift */; };
+		0082BF2E2031572A00EC36D7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082BF2D2031572900EC36D7 /* Utilities.swift */; };
 		00A0E0AB1FED464F00DB5549 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0AA1FED464F00DB5549 /* Accelerate.framework */; };
 		00A0E0AD1FED465900DB5549 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0AC1FED465900DB5549 /* CoreTelephony.framework */; };
 		00A0E0AF1FED466100DB5549 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0AE1FED466100DB5549 /* CoreText.framework */; };
@@ -185,6 +186,7 @@
 		000439D71F94C0060002EB1F /* TCPickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TCPickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		005A36DD202B1CE700502672 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		006178611FAC8F480094651F /* SRCountdownTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SRCountdownTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0082BF2D2031572900EC36D7 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		009BCB9A1FA0795B00CAC67E /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		009BCBA21FA09F1700CAC67E /* WWCalendarTimeSelector.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WWCalendarTimeSelector.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00A0E0AA1FED464F00DB5549 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -1092,6 +1094,7 @@
 			isa = PBXGroup;
 			children = (
 				005A36DD202B1CE700502672 /* Constants.swift */,
+				0082BF2D2031572900EC36D7 /* Utilities.swift */,
 				00E929BD202AE2C000A399E2 /* UtilityCalss */,
 				00E929C4202AE2C000A399E2 /* Webservices */,
 			);
@@ -1466,6 +1469,7 @@
 				00E92A53202AE2C100A399E2 /* NSDate+Timepiece.swift in Sources */,
 				00E92A11202AE2C100A399E2 /* updateDriverVehiclesViewControllerTableViewCell.swift in Sources */,
 				00E92A2E202AE2C100A399E2 /* SPInternetConnection.swift in Sources */,
+				0082BF2E2031572A00EC36D7 /* Utilities.swift in Sources */,
 				00E929E3202AE2C100A399E2 /* ParentViewController.swift in Sources */,
 				00E929EF202AE2C100A399E2 /* ExpandDispatchedJobs.swift in Sources */,
 				00E929E9202AE2C100A399E2 /* DispatchJobsBookNowViewController.swift in Sources */,

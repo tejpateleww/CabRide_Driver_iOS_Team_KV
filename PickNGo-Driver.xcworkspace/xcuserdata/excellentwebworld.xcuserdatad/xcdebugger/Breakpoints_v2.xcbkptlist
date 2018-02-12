@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewControllers/HomeScreens/DispatchJobs/CarAndTaxiesVC.swift"
-            timestampString = "539949538.661062"
+            filePath = "Classes/Utilities.swift"
+            timestampString = "540107831.086691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "btnOK(_:)"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "setNavigationBar(strTitle:imgNavigation:navigationController:isTranslucent:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,221 +25,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewControllers/HomeScreens/DispatchJobs/CarAndTaxiesVC.swift"
-            timestampString = "539949538.661389"
+            filePath = "Classes/Utilities.swift"
+            timestampString = "540107831.086955"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
-            landmarkName = "btnOK(_:)"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "setNavigationBar(strTitle:imgNavigation:navigationController:isTranslucent:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewControllers/DriverRegistration/DriverSelectVehicleTypesViewController.swift"
-            timestampString = "539949538.661494"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "setDataInCarType()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewControllers/DriverRegistration/DriverCertificatesViewController.swift"
-            timestampString = "539949538.661759"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "524"
-            endingLineNumber = "524"
-            landmarkName = "webserviceForRegistration()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PickNGo_Driver.DriverCertificatesViewController.webserviceForRegistration() -&gt; ()"
-                  moduleName = "PickNGo-Driver"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/excellentwebworld/Documents/Palak/PickNGo/PickNGo-Driver/Code/ViewControllers/DriverRegistration/DriverCertificatesViewController.swift"
-                  timestampString = "539949543.52858"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "524"
-                  endingLineNumber = "524"
-                  offsetFromSymbolStart = "28">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.AnyObject, Swift.Bool) -&gt; () in PickNGo_Driver.DriverCertificatesViewController.webserviceForRegistration() -&gt; ()"
-                  moduleName = "PickNGo-Driver"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/excellentwebworld/Documents/Palak/PickNGo/PickNGo-Driver/Code/ViewControllers/DriverRegistration/DriverCertificatesViewController.swift"
-                  timestampString = "539949543.530578"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "529"
-                  endingLineNumber = "529"
-                  offsetFromSymbolStart = "40">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewControllers/DriverRegistration/DriverCertificatesViewController.swift"
-            timestampString = "539949538.661954"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "529"
-            endingLineNumber = "529"
-            landmarkName = "webserviceForRegistration()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/SideMenuController/Source/CenterContainmentSegue.swift"
-            timestampString = "539949538.662028"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "perform()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/SideMenuController/Source/CenterContainmentSegue.swift"
-            timestampString = "539949538.662248"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
-            landmarkName = "perform()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewControllers/SideMenuClass/CustomSideMenuViewController.swift"
-            timestampString = "539949538.662303"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ViewControllers/SideMenuClass/CustomSideMenuViewController.swift"
-            timestampString = "539949538.662751"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Pods/SideMenuController/Source/CenterContainmentSegue.swift"
-            timestampString = "539949792.833508"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "6"
-            endingLineNumber = "6"
-            landmarkName = "unknown"
-            landmarkType = "0">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SideMenuController.CenterContainmentSegue.__deallocating_deinit"
-                  moduleName = "SideMenuController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/excellentwebworld/Documents/Palak/PickNGo/PickNGo-Driver/Code/Pods/SideMenuController/Source/CenterContainmentSegue.swift"
-                  timestampString = "539949792.84866"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SideMenuController.CenterContainmentSegue.__allocating_init(identifier: Swift.Optional&lt;Swift.String&gt;, source: __ObjC.UIViewController, destination: __ObjC.UIViewController) -&gt; SideMenuController.CenterContainmentSegue"
-                  moduleName = "SideMenuController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/excellentwebworld/Documents/Palak/PickNGo/PickNGo-Driver/Code/Pods/SideMenuController/Source/CenterContainmentSegue.swift"
-                  timestampString = "539949792.850543"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SideMenuController.CenterContainmentSegue.init(identifier: Swift.Optional&lt;Swift.String&gt;, source: __ObjC.UIViewController, destination: __ObjC.UIViewController) -&gt; SideMenuController.CenterContainmentSegue"
-                  moduleName = "SideMenuController"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/excellentwebworld/Documents/Palak/PickNGo/PickNGo-Driver/Code/Pods/SideMenuController/Source/CenterContainmentSegue.swift"
-                  timestampString = "539949792.852396"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "296">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

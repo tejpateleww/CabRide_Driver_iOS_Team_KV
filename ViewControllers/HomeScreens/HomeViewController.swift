@@ -32,7 +32,7 @@ protocol CompleterTripInfoDelegate {
 
 // ------------------------------------------------------------
 
-class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarMovementDelegate, SRCountdownTimerDelegate, ReceiveRequestDelegate,GMSMapViewDelegate,CompleterTripInfoDelegate,UITabBarControllerDelegate
+class HomeViewController: UIViewController, CLLocationManagerDelegate,ARCarMovementDelegate, SRCountdownTimerDelegate, ReceiveRequestDelegate,GMSMapViewDelegate,CompleterTripInfoDelegate,UITabBarControllerDelegate
 {
     
     
@@ -42,7 +42,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     
     var window: UIWindow?
     
-    
+    var switchControl = UISwitch()
     var moveMent: ARCarMovement!
     
     
@@ -176,13 +176,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         }
         //TODO: uncomment in production
         self.webserviceOfCurrentBooking()
-        
-        
-        
-        
     }
     
-    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool
+    {
         return false
     }
     
@@ -212,17 +209,65 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     }
     
     // MARK:-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(true)
+//        self.navigationController?.isNavigationBarHidden = false
+//        self.navigationController?.navigationBar.isOpaque = true
+//        self.navigationController?.navigationBar.isTranslucent = true
+//
+//        self.navigationItem.titleView = nil
+//        let img = UIImage(named: kNavIcon)
+//        let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+//        imgView.image = img
+//        imgView.contentMode = .scaleAspectFit
+//        self.navigationItem.titleView = imgView
+//
+//        self.navigationController?.navigationBar.barTintColor = UIColor.clear
+//        self.navigationController?.navigationBar.tintColor = UIColor.white
+//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+//        self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(), for: UIBarMetrics.default)
+//        self.navigationController?.navigationBar.shadowImage = UIImage.init()
+//        self.navigationController?.view.backgroundColor = UIColor.clear
+        
+        utility.setNavigationBar(strTitle: "", imgNavigation: UIImage(named: kNavIcon)!, navigationController: self.navigationController!, isTranslucent: false)
         
         
+        let btnSideMenu:UIBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: kMenuIcon), style: UIBarButtonItemStyle.plain, target: self, action: #selector(btnSidemenuClicked(_:)))
+        self.navigationItem.leftBarButtonItem = btnSideMenu
+        
+        switchControl = UISwitch(frame:CGRect (x: 0, y: 0, width: 51, height: 31))
+        switchControl.isOn = true
+//        switchControl.onTintColor = K.Color.AppBackgroundColor
+        switchControl.setOn(true, animated: false)
+        switchControl.addTarget(self, action: #selector(switchValueDidChange(_:)), for: .valueChanged)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: switchControl)
+
     }
     
+    
+    @IBAction func btnSidemenuClicked(_ sender: Any)
+    {
+        //        self.revealViewController() .revealToggle(animated: true)
+    }
+    
+    @objc func switchValueDidChange(_ sender:UISwitch!)
+    {
+        if sender.isOn
+        {
+            webserviceForChangeDutyStatus()
+            print("on")
+        } else{
+            webserviceForChangeDutyStatus()
+            print("off")
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
@@ -2543,6 +2588,86 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         }
     }
     
+    
+    //-------------------------------------------------------------
+    // MARK: - Webservice for Duty Change
+    //-------------------------------------------------------------
+    func webserviceForChangeDutyStatus()
+    {
+        let profile = NSMutableDictionary(dictionary: (Singletons.sharedInstance.dictDriverProfile as NSDictionary).object(forKey: "profile") as! NSDictionary)
+        let vehicle = profile.object(forKey: "Vehicle") as! NSDictionary
+        
+        var dictData = [String:AnyObject]()
+        dictData[profileKeys.kDriverId] = vehicle.object(forKey: "DriverId") as AnyObject
+        
+        if Singletons.sharedInstance.latitude == nil || Singletons.sharedInstance.longitude == nil || Singletons.sharedInstance.latitude == 0 || Singletons.sharedInstance.longitude == 0
+        {
+            UtilityClass.showAlert("Location Missing", message: "Please turn on location", vc: self)
+        }
+        else
+        {
+            
+            dictData[RegistrationFinalKeys.kLat] = Singletons.sharedInstance.latitude as AnyObject
+            dictData[RegistrationFinalKeys.kLng] = Singletons.sharedInstance.longitude as AnyObject
+            
+            webserviceForDriverChangeDutyStatusOrShiftDutyStatus(dictData as AnyObject) { (result, status) in
+                
+                if (status) {
+                    
+                    print(result)
+//                    self.headerView?.btnSwitch.isEnabled = true
+                    
+                    if ((result as! NSDictionary).object(forKey: "duty") as! String == "off")
+                    {
+//                        self.headerView?.btnSwitch.setImage(UIImage(named: "iconOffSwitch"), for: .normal)
+                        self.switchControl.isOn = false
+                        Singletons.sharedInstance.driverDuty = "0"
+                        UtilityClass.showAlert((result as! NSDictionary).object(forKey: "message") as! String, message: "", vc: self)
+                        UIApplication.shared.isIdleTimerDisabled = false
+                        let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
+                        socket.disconnect()
+                        
+                    }
+                    else
+                    {
+//                        self.headerView?.btnSwitch.setImage(UIImage(named: "iconOnSwitch"), for: .normal)
+                        self.switchControl.isOn = true
+                        Singletons.sharedInstance.driverDuty = "1"
+                        
+                        let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
+                        socket.connect()
+                        UIApplication.shared.isIdleTimerDisabled = true
+                        
+                        UtilityClass.showAlert((result as! NSDictionary).object(forKey: "message") as! String, message: "", vc: self)
+                        
+                        let contentVC = (self.navigationController?.childViewControllers[0] as! TabbarController).childViewControllers[0] as! HomeViewController
+                        contentVC.UpdateDriverLocation()
+                        
+                    }
+                    UserDefaults.standard.set(Singletons.sharedInstance.driverDuty, forKey: "DriverDuty")
+                }
+                else
+                {
+                    print(result)
+                    
+                    
+                    if let res = result as? String {
+                        UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+                    }
+                    else if let resDict = result as? NSDictionary {
+                        UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                    }
+                    else if let resAry = result as? NSArray {
+                        UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                    }
+                    
+//                    self.headerView?.btnSwitch.isEnabled = true
+                    
+                    
+                }
+            }
+        }
+    }
     
     //-------------------------------------------------------------
     // MARK: - Trip Bookings
