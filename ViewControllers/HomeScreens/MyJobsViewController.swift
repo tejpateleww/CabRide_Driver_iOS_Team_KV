@@ -42,7 +42,6 @@ class MyJobsViewController: ParentViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
         if Singletons.sharedInstance.isPresentVC == true {
         
             let PendingJobsList = self.storyboard?.instantiateViewController(withIdentifier: "PendingJobsListVC") as! PendingJobsListVC

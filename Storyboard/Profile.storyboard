@@ -14,7 +14,7 @@
         <!--Update Profile AccountVC-->
         <scene sceneID="wdn-VK-7zK">
             <objects>
-                <viewController storyboardIdentifier="UpdateProfileAccountVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ajE-iZ-fGK" customClass="UpdateProfileAccountVC" customModule="TiCKTOC_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateProfileAccountVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ajE-iZ-fGK" customClass="UpdateProfileAccountVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vez-Jc-Hq7"/>
                         <viewControllerLayoutGuide type="bottom" id="EPG-1t-q5g"/>
@@ -137,7 +137,7 @@
         <!--Update Profile Personel DetailsVC-->
         <scene sceneID="b6w-vP-LO0">
             <objects>
-                <viewController storyboardIdentifier="UpdateProfilePersonelDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ed2-r5-hVe" customClass="UpdateProfilePersonelDetailsVC" customModule="TiCKTOC_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateProfilePersonelDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ed2-r5-hVe" customClass="UpdateProfilePersonelDetailsVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ABN-Bd-3W5"/>
                         <viewControllerLayoutGuide type="bottom" id="MFP-sW-TNt"/>
@@ -203,19 +203,19 @@
                                                                 <rect key="frame" x="0.0" y="50" width="365" height="40"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Ikj-eN-89i">
-                                                                        <rect key="frame" x="8" y="9.5" width="347" height="22"/>
+                                                                        <rect key="frame" x="8" y="4" width="347" height="33"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Dtu-gj-UQz">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="89" height="22"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="89" height="33"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e7i-cT-yul">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="22"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="33"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                         <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vg9-1I-qEs">
-                                                                                        <rect key="frame" x="62" y="0.0" width="27" height="22"/>
+                                                                                        <rect key="frame" x="62" y="0.0" width="27" height="33"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="27" id="JLq-7k-3Mz"/>
                                                                                         </constraints>
@@ -230,16 +230,16 @@
                                                                                 </constraints>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="m2A-aL-SSe">
-                                                                                <rect key="frame" x="129" y="0.0" width="89" height="22"/>
+                                                                                <rect key="frame" x="129" y="0.0" width="89" height="33"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83s-wj-6gh">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="22"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="33"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                         <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBB-lo-ba1">
-                                                                                        <rect key="frame" x="62" y="0.0" width="27" height="22"/>
+                                                                                        <rect key="frame" x="62" y="0.0" width="27" height="33"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="27" id="nyl-3U-Cc5"/>
                                                                                         </constraints>
@@ -254,16 +254,16 @@
                                                                                 </constraints>
                                                                             </stackView>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bxw-li-5aB">
-                                                                                <rect key="frame" x="258" y="0.0" width="89" height="22"/>
+                                                                                <rect key="frame" x="258" y="0.0" width="89" height="33"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Other" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oRa-lM-xjm">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="22"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="33"/>
                                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                         <color key="textColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x03-Oa-x0a">
-                                                                                        <rect key="frame" x="62" y="0.0" width="27" height="22"/>
+                                                                                        <rect key="frame" x="62" y="0.0" width="27" height="33"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="width" constant="27" id="VCw-z4-O8G"/>
                                                                                         </constraints>
@@ -467,7 +467,7 @@
         <!--My Jobs-->
         <scene sceneID="EXK-Kx-nwX">
             <objects>
-                <viewController storyboardIdentifier="EditDriverProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nUE-tb-k0d" customClass="EditDriverProfileVC" customModule="TiCKTOC_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditDriverProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nUE-tb-k0d" customClass="EditDriverProfileVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pc8-Wo-tAc"/>
                         <viewControllerLayoutGuide type="bottom" id="cNg-ek-uj8"/>
@@ -499,7 +499,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Profile" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3JN-VD-Flu">
                                                                 <rect key="frame" x="8" y="98.5" width="141.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MTk-bB-mYP">
@@ -510,7 +510,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="3JN-VD-Flu" firstAttribute="top" secondItem="ZWj-W2-7w1" secondAttribute="bottom" constant="8" id="6Cp-6c-POf"/>
                                                             <constraint firstItem="ZWj-W2-7w1" firstAttribute="centerY" secondItem="Ey3-6l-9SC" secondAttribute="centerY" constant="-10" id="Bm2-5A-cwp"/>
@@ -537,7 +537,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle Option" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsg-HI-yva">
                                                                 <rect key="frame" x="8" y="98.5" width="141.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGh-zr-ZBM">
@@ -548,7 +548,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="b6Q-zP-3D2" firstAttribute="centerX" secondItem="E5K-lz-cUH" secondAttribute="centerX" id="3hs-4Q-77h"/>
                                                             <constraint firstItem="cGh-zr-ZBM" firstAttribute="height" secondItem="E5K-lz-cUH" secondAttribute="height" id="3kp-uh-V85"/>
@@ -580,7 +580,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Account" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMh-eY-bsV">
                                                                 <rect key="frame" x="8" y="98.5" width="141.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wM0-uU-2kk">
@@ -591,7 +591,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="lMh-eY-bsV" firstAttribute="top" secondItem="U2T-nc-1FV" secondAttribute="bottom" constant="8" id="0qT-bp-CEL"/>
                                                             <constraint firstItem="lMh-eY-bsV" firstAttribute="leading" secondItem="rKW-YB-YDo" secondAttribute="leading" constant="8" id="0rV-vA-LaH"/>
@@ -618,7 +618,7 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Document" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyx-gq-vIV">
                                                                 <rect key="frame" x="8" y="98.5" width="141.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <nil key="textColor"/>
+                                                                <color key="textColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Eh-f4-rcv">
@@ -629,7 +629,7 @@
                                                                 </connections>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="eyx-gq-vIV" firstAttribute="leading" secondItem="bqR-Nb-Vfk" secondAttribute="leading" constant="8" id="AYa-LP-cZm"/>
                                                             <constraint firstItem="E6e-Eh-9HL" firstAttribute="centerY" secondItem="bqR-Nb-Vfk" secondAttribute="centerY" constant="-10" id="Io4-Tw-NMp"/>
@@ -657,7 +657,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="kDZ-yD-vuF" firstAttribute="centerY" secondItem="uwa-EW-fzN" secondAttribute="centerY" id="EIB-cM-bES"/>
                             <constraint firstAttribute="trailing" secondItem="kDZ-yD-vuF" secondAttribute="trailing" constant="20" id="F7T-b0-FAg"/>
@@ -683,7 +683,7 @@
         <!--Update Certificates View Controller-->
         <scene sceneID="tOz-jY-Zrc">
             <objects>
-                <viewController storyboardIdentifier="updateCertificatesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R89-Dr-0Kg" customClass="updateCertificatesViewController" customModule="TiCKTOC_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateCertificatesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R89-Dr-0Kg" customClass="updateCertificatesViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uQo-O7-lAg"/>
                         <viewControllerLayoutGuide type="bottom" id="Gu5-x2-bjs"/>
@@ -737,15 +737,11 @@
                                     <constraint firstAttribute="height" constant="64" id="uEH-Uq-QmU"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconEditProfile" translatesAutoresizingMaskIntoConstraints="NO" id="Cue-Ml-Kif">
-                                <rect key="frame" x="123" y="86" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="Gjn-2M-82h"/>
-                                    <constraint firstAttribute="width" secondItem="Cue-Ml-Kif" secondAttribute="height" multiplier="1:1" id="LSZ-hw-KhY"/>
-                                </constraints>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconCarPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Cue-Ml-Kif">
+                                <rect key="frame" x="15" y="84" width="305" height="104"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="X4Y-jN-ml7">
-                                <rect key="frame" x="7" y="211.5" width="306" height="215"/>
+                                <rect key="frame" x="7" y="208" width="306" height="215"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-Oo-yKG">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="50"/>
@@ -950,29 +946,29 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TUG-HZ-5V5">
-                                <rect key="frame" x="7" y="446.5" width="97" height="28"/>
+                                <rect key="frame" x="7" y="443" width="97" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="Jhf-TX-EPk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <state key="normal" title="Need a Vehicle?">
-                                    <color key="titleColor" red="0.80000000000000004" green="0.01176470588" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check all files you save are clear and readable including the Expiry Dates. Example pictures and tips." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjj-Td-Cyh">
-                                <rect key="frame" x="7" y="482.5" width="308" height="50.5"/>
+                                <rect key="frame" x="7" y="479" width="692" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Yj-YE-klf">
-                                <rect key="frame" x="123" y="85.5" width="75" height="75"/>
+                                <rect key="frame" x="335" y="127" width="35" height="30"/>
                                 <connections>
                                     <action selector="btnUploadVehicleImage:" destination="R89-Dr-0Kg" eventType="touchUpInside" id="xDo-uz-pd6"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconEditProfile" translatesAutoresizingMaskIntoConstraints="NO" id="P1y-eC-yhq">
-                                <rect key="frame" x="183" y="145" width="15" height="15"/>
+                                <rect key="frame" x="355" y="141.5" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="L5K-mf-oD9"/>
                                     <constraint firstAttribute="width" constant="15" id="rTb-BI-y3T"/>
@@ -982,25 +978,23 @@
                         <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Sdv-H1-YG9" firstAttribute="top" secondItem="uQo-O7-lAg" secondAttribute="bottom" constant="-20" id="04y-nf-yy1"/>
+                            <constraint firstItem="Cue-Ml-Kif" firstAttribute="leading" secondItem="c6p-88-MwT" secondAttribute="leading" constant="15" id="1qr-Fp-6JK"/>
                             <constraint firstItem="0Yj-YE-klf" firstAttribute="centerX" secondItem="Xjj-Td-Cyh" secondAttribute="centerX" id="2UI-0n-mgE"/>
                             <constraint firstItem="TUG-HZ-5V5" firstAttribute="leading" secondItem="X4Y-jN-ml7" secondAttribute="leading" id="2fZ-bv-ag3"/>
-                            <constraint firstItem="0Yj-YE-klf" firstAttribute="leading" secondItem="Cue-Ml-Kif" secondAttribute="leading" id="5Wt-hg-Pyp"/>
-                            <constraint firstItem="0Yj-YE-klf" firstAttribute="trailing" secondItem="Cue-Ml-Kif" secondAttribute="trailing" id="6l9-cx-Y4M"/>
                             <constraint firstItem="X4Y-jN-ml7" firstAttribute="top" secondItem="0Yj-YE-klf" secondAttribute="bottom" constant="51" id="9Ji-I5-wck"/>
                             <constraint firstAttribute="trailing" secondItem="X4Y-jN-ml7" secondAttribute="trailing" constant="7" id="9dF-IN-WPU"/>
                             <constraint firstAttribute="trailing" secondItem="Sdv-H1-YG9" secondAttribute="trailing" id="CJe-fH-vuT"/>
-                            <constraint firstItem="0Yj-YE-klf" firstAttribute="height" secondItem="Cue-Ml-Kif" secondAttribute="height" id="FWO-9V-ySR"/>
+                            <constraint firstItem="0Yj-YE-klf" firstAttribute="leading" secondItem="Cue-Ml-Kif" secondAttribute="trailing" constant="15" id="Fhd-BQ-asI"/>
                             <constraint firstItem="P1y-eC-yhq" firstAttribute="trailing" secondItem="0Yj-YE-klf" secondAttribute="trailing" id="IQT-pB-Go1"/>
                             <constraint firstItem="P1y-eC-yhq" firstAttribute="bottom" secondItem="0Yj-YE-klf" secondAttribute="bottom" id="UgL-qT-wA4"/>
-                            <constraint firstItem="Cue-Ml-Kif" firstAttribute="top" secondItem="Sdv-H1-YG9" secondAttribute="bottom" constant="22" id="YOc-7H-fEh"/>
-                            <constraint firstItem="Cue-Ml-Kif" firstAttribute="centerX" secondItem="c6p-88-MwT" secondAttribute="centerX" id="Zbj-3S-Dch"/>
-                            <constraint firstItem="0Yj-YE-klf" firstAttribute="centerY" secondItem="Cue-Ml-Kif" secondAttribute="centerY" id="cQb-mq-NoX"/>
+                            <constraint firstItem="0Yj-YE-klf" firstAttribute="leading" secondItem="c6p-88-MwT" secondAttribute="trailing" constant="15" id="Wkt-NG-itx"/>
                             <constraint firstItem="X4Y-jN-ml7" firstAttribute="leading" secondItem="c6p-88-MwT" secondAttribute="leading" constant="7" id="d9r-DD-Vpg"/>
+                            <constraint firstItem="X4Y-jN-ml7" firstAttribute="top" secondItem="Cue-Ml-Kif" secondAttribute="bottom" constant="20" id="f3l-fX-apd"/>
                             <constraint firstItem="Sdv-H1-YG9" firstAttribute="leading" secondItem="c6p-88-MwT" secondAttribute="leading" id="keU-nn-JQu"/>
                             <constraint firstItem="Xjj-Td-Cyh" firstAttribute="top" secondItem="TUG-HZ-5V5" secondAttribute="bottom" constant="8" id="lts-0e-exl"/>
-                            <constraint firstItem="0Yj-YE-klf" firstAttribute="width" secondItem="Cue-Ml-Kif" secondAttribute="width" id="lxp-bf-wNU"/>
                             <constraint firstItem="Xjj-Td-Cyh" firstAttribute="leading" secondItem="TUG-HZ-5V5" secondAttribute="leading" id="nim-rL-6aR"/>
                             <constraint firstItem="TUG-HZ-5V5" firstAttribute="top" secondItem="X4Y-jN-ml7" secondAttribute="bottom" constant="20" id="nzz-sW-Lym"/>
+                            <constraint firstItem="Cue-Ml-Kif" firstAttribute="top" secondItem="Sdv-H1-YG9" secondAttribute="bottom" constant="20" id="tif-0t-mtF"/>
                         </constraints>
                     </view>
                     <size key="freeformSize" width="320" height="568"/>
@@ -1026,12 +1020,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKF-Gt-iIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2146" y="1903"/>
+            <point key="canvasLocation" x="2145.5999999999999" y="1902.5487256371816"/>
         </scene>
         <!--Update Driver Vehicle Types View Controller-->
         <scene sceneID="ISE-IC-bdy">
             <objects>
-                <viewController storyboardIdentifier="updateDriverVehicleTypesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s3e-hA-t9o" customClass="updateDriverVehicleTypesViewController" customModule="TiCKTOC_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateDriverVehicleTypesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s3e-hA-t9o" customClass="updateDriverVehicleTypesViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ugk-kj-QYR"/>
                         <viewControllerLayoutGuide type="bottom" id="v36-mY-pEL"/>
@@ -1044,7 +1038,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehicleTypesTOP" rowHeight="80" id="9RQ-bt-3Ls" customClass="updateDriverVehicleTypesViewControllerTableViewCell" customModule="TiCKTOC_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehicleTypesTOP" rowHeight="80" id="9RQ-bt-3Ls" customClass="updateDriverVehicleTypesViewControllerTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9RQ-bt-3Ls" id="LxV-vv-idk">
@@ -1074,7 +1068,7 @@ You must be 21 years of age or over.</string>
                                             <outlet property="lblTopDetails" destination="x7k-bh-Fly" id="kY9-fT-2s5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehicleTypesData" rowHeight="95" id="6kq-3B-xkq" customClass="updateDriverVehicleTypesViewControllerTableViewCell" customModule="TiCKTOC_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehicleTypesData" rowHeight="95" id="6kq-3B-xkq" customClass="updateDriverVehicleTypesViewControllerTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="108" width="375" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6kq-3B-xkq" id="fdk-HD-JuA">
@@ -1161,7 +1155,7 @@ You must be 21 years of age or over.</string>
         <!--Update Driver Vehicles View Controller-->
         <scene sceneID="RGi-Dx-wn9">
             <objects>
-                <viewController storyboardIdentifier="updateDriverVehiclesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YZP-oT-kqN" customClass="updateDriverVehiclesViewController" customModule="TiCKTOC_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateDriverVehiclesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YZP-oT-kqN" customClass="updateDriverVehiclesViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Td3-kr-nhl"/>
                         <viewControllerLayoutGuide type="bottom" id="mRG-dm-O9e"/>
@@ -1174,7 +1168,7 @@ You must be 21 years of age or over.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehiclesTableViewCellTop" rowHeight="122" id="Uf9-J0-7tH" customClass="updateDriverVehiclesViewControllerTableViewCell" customModule="TiCKTOC_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehiclesTableViewCellTop" rowHeight="122" id="Uf9-J0-7tH" customClass="updateDriverVehiclesViewControllerTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uf9-J0-7tH" id="cnh-sD-Eep">
@@ -1229,7 +1223,7 @@ You must be 21 years of age or over.</string>
                                             <outlet property="lblTopDetails" destination="EeN-yW-wxv" id="VMb-I5-Wz9"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="100" reuseIdentifier="updateDriverVehiclesTableViewCellData" rowHeight="66" id="z7E-Cr-Kxl" customClass="updateDriverVehiclesViewControllerTableViewCell" customModule="TiCKTOC_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="100" reuseIdentifier="updateDriverVehiclesTableViewCellData" rowHeight="66" id="z7E-Cr-Kxl" customClass="updateDriverVehiclesViewControllerTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="150" width="375" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z7E-Cr-Kxl" id="CSo-P2-YCU">
@@ -1304,7 +1298,7 @@ You must be 21 years of age or over.</string>
         <!--Driver Vehicle List View Controller-->
         <scene sceneID="mXl-Tb-4BF">
             <objects>
-                <viewController storyboardIdentifier="DriverListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bsN-Hz-8sd" customClass="DriverVehicleListViewController" customModule="TiCKTOC_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DriverListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bsN-Hz-8sd" customClass="DriverVehicleListViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="okK-uO-fY7"/>
                         <viewControllerLayoutGuide type="bottom" id="N6A-xN-su0"/>
@@ -1427,7 +1421,7 @@ You must be 21 years of age or over.</string>
         <!--Update Driver Select Vehicle Types View Controller View Controller-->
         <scene sceneID="DF5-xT-beF">
             <objects>
-                <viewController storyboardIdentifier="updateDriverSelectVehicleTypesViewControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hC5-5v-puM" customClass="updateDriverSelectVehicleTypesViewControllerViewController" customModule="TiCKTOC_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateDriverSelectVehicleTypesViewControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hC5-5v-puM" customClass="updateDriverSelectVehicleTypesViewControllerViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2kI-pZ-jr4"/>
                         <viewControllerLayoutGuide type="bottom" id="BWq-XB-NHP"/>
@@ -1698,14 +1692,15 @@ You must be 21 years of age or over.</string>
     </scenes>
     <resources>
         <image name="iconAccount" width="42" height="42"/>
-        <image name="iconArrow" width="21" height="21"/>
+        <image name="iconArrow" width="28" height="28"/>
         <image name="iconCamera-1" width="27" height="20"/>
-        <image name="iconCheckMarkSelected" width="21" height="21"/>
-        <image name="iconCheckMarkUnSelected" width="21" height="21"/>
+        <image name="iconCarPlaceholder" width="225" height="104"/>
+        <image name="iconCheckMarkSelected" width="33" height="33"/>
+        <image name="iconCheckMarkUnSelected" width="33" height="33"/>
         <image name="iconDocument" width="42" height="42"/>
-        <image name="iconEditProfile" width="100" height="100"/>
+        <image name="iconEditProfile" width="32" height="32"/>
         <image name="iconMyJobsTab" width="21" height="21"/>
-        <image name="iconProfileLocation" width="47" height="47"/>
+        <image name="iconProfileLocation" width="42" height="42"/>
         <image name="iconSave" width="42" height="42"/>
         <image name="iconVehicleOptions" width="42" height="42"/>
     </resources>

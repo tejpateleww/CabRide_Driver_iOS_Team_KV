@@ -10,12 +10,15 @@ import UIKit
 
 class TabbarController: UITabBarController {
 
+//       var switchControl = UISwitch()
+     var btnRightSwitch = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tabBar.tintColor = UIColor.red
-        tabBar.backgroundColor = UIColor.black
-        
+        tabBar.tintColor = ThemeYellowColor
+        tabBar.backgroundColor = ThemeGrayColor
+        UIApplication.shared.statusBarStyle = .default
+      
         // Do any additional setup after loading the view.
     }
 
@@ -24,7 +27,19 @@ class TabbarController: UITabBarController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(true)
+      
+    }
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(true)
+        
+        
+    }
+    
+ 
     /*
     // MARK: - Navigation
 
@@ -34,5 +49,7 @@ class TabbarController: UITabBarController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
 
 }

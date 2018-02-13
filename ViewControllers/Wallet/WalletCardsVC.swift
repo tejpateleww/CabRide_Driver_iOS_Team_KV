@@ -123,14 +123,15 @@ class WalletCardsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             
             cell.lblCardType.text = "Credit Card"
             
-            cell.viewCards.layer.cornerRadius = 5
+            cell.viewCards.layer.cornerRadius = 10
             cell.viewCards.layer.masksToBounds = true
             
             let type = dictData["Type"] as! String
             
             cell.imgCardIcon.image = UIImage(named: setCreditCardImage(str: type))
             
-            if (indexPath.row % 2) == 0 {
+            if (indexPath.row % 2) == 0
+            {
                 cell.viewCards.backgroundColor = UIColor.orange
                 cell.lblBankName.text = dictData["Alias"] as? String
                 cell.lblCardNumber.text = dictData["CardNum2"] as? String
@@ -201,7 +202,7 @@ class WalletCardsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
         if indexPath.section == 0 {
-            return 120
+            return 160
         }
         else {
             return 75

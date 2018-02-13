@@ -36,9 +36,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         Messaging.messaging().delegate = self
         SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "menu")
         SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
-        SideMenuController.preferences.drawing.sidePanelWidth = (window?.frame.width)! - 120
+        SideMenuController.preferences.drawing.sidePanelWidth = (window?.frame.width)! - 80
         SideMenuController.preferences.drawing.centerPanelShadow = true
         SideMenuController.preferences.animating.statusBarBehaviour = .showUnderlay
+         UIApplication.shared.statusBarStyle = .default
+       
+        
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 //        let tabbarVC = storyboard.instantiateViewController(withIdentifier: "TabbarController") as! TabbarController
 

@@ -83,7 +83,8 @@ class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidLayoutSubviews()
+    {
         super.viewDidLayoutSubviews()
         
         for viewTextFields in viewOfTextFields
@@ -232,7 +233,8 @@ class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource
 //
 //                self.cardTypeLabel.text = "Enter card number"
 //                self.cardTypeLabel.textColor = UIColor.black
-            } else {
+            } else
+            {
                 validateCardNumber(number: number)
                 detectCardNumberType(number: number)
             }
@@ -267,7 +269,8 @@ class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource
         }
     }
     
-    func detectCardNumberType(number: String) {
+    func detectCardNumberType(number: String)
+    {
         if let type = creditCardValidator.type(from: number) {
             
             isCreditCardValid = true

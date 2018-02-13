@@ -12,7 +12,7 @@ import GooglePlaces
 import NVActivityIndicatorView
 
 
-class DispatchJobsBookNowViewController: ParentViewController, getVehicleIdAndNameDelegate, getVehicleServiceIdAndNameDelegate , UITextFieldDelegate, GMSAutocompleteViewControllerDelegate,getEstimateFareForDispatchJobsNow, UINavigationControllerDelegate ,getEstimateFareForDispatchJobs{
+class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDelegate, getVehicleServiceIdAndNameDelegate , UITextFieldDelegate, GMSAutocompleteViewControllerDelegate,getEstimateFareForDispatchJobsNow, UINavigationControllerDelegate ,getEstimateFareForDispatchJobs{
    
     
    

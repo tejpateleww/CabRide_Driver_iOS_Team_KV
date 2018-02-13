@@ -14,6 +14,7 @@ class ChangePasswordViewController: ParentViewController {
     // MARK: - Base Methods
     //-------------------------------------------------------------
     
+    @IBOutlet var btnSubmit: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,7 +28,13 @@ class ChangePasswordViewController: ParentViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        
+        btnSubmit.layer.cornerRadius = btnSubmit.frame.size.height/2
+        btnSubmit.clipsToBounds = true
+    }
     //-------------------------------------------------------------
     // MARK: - Outlets
     //-------------------------------------------------------------

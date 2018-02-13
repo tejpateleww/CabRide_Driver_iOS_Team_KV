@@ -213,16 +213,16 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage.init()
         self.navigationController?.view.backgroundColor = UIColor.clear
-        if self.navigationController?.viewControllers.count == 1
-        {
-            let btnSideMenu:UIBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: kMenuIcon), style: UIBarButtonItemStyle.plain, target: self, action: #selector(btnSidemenuClicked(_:)))
-            self.navigationItem.leftBarButtonItem = btnSideMenu
-        }
-        else
-        {
+//        if self.navigationController?.viewControllers.count == 1
+//        {
+//            let btnSideMenu:UIBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: kMenuIcon), style: UIBarButtonItemStyle.plain, target: self, action: #selector(btnSidemenuClicked(_:)))
+//            self.navigationItem.leftBarButtonItem = btnSideMenu
+//        }
+//        else
+//        {
             let btnBack:UIBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: kBackIcon), style: UIBarButtonItemStyle.plain, target: self, action: #selector(btnBackClicked(_:)))
             self.navigationItem.leftBarButtonItem = btnBack
-        }
+//        }
     }
     //-------------------------------------------------------------
     // MARK: - Outlets

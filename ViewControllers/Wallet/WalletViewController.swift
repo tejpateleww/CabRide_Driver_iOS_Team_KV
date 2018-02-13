@@ -44,7 +44,12 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(true)
+        UIApplication.shared.statusBarStyle = .default
+        self.lblCurrentBalance.text = "$\(Singletons.sharedInstance.strCurrentBalance)"
+    }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
         //        pageCtrl.currentPage = Int(pageNumber)
@@ -52,12 +57,7 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        self.lblCurrentBalance.text = "$\(Singletons.sharedInstance.strCurrentBalance)"
-        
-    }
+   
     
     //-------------------------------------------------------------
     // MARK: - Outlets

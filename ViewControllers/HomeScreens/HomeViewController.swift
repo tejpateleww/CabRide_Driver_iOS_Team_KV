@@ -32,7 +32,7 @@ protocol CompleterTripInfoDelegate {
 
 // ------------------------------------------------------------
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate,ARCarMovementDelegate, SRCountdownTimerDelegate, ReceiveRequestDelegate,GMSMapViewDelegate,CompleterTripInfoDelegate,UITabBarControllerDelegate
+class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarMovementDelegate, SRCountdownTimerDelegate, ReceiveRequestDelegate,GMSMapViewDelegate,CompleterTripInfoDelegate,UITabBarControllerDelegate
 {
     
     
@@ -44,7 +44,9 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate,ARCarMovem
     
     var switchControl = UISwitch()
     var moveMent: ARCarMovement!
+  
     
+
     
     let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
     
@@ -180,7 +182,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate,ARCarMovem
     
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool
     {
-        return false
+        return true
     }
     
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController)
@@ -212,60 +214,29 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate,ARCarMovem
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(true)
-//        self.navigationController?.isNavigationBarHidden = false
-//        self.navigationController?.navigationBar.isOpaque = true
-//        self.navigationController?.navigationBar.isTranslucent = true
-//
-//        self.navigationItem.titleView = nil
-//        let img = UIImage(named: kNavIcon)
-//        let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-//        imgView.image = img
-//        imgView.contentMode = .scaleAspectFit
-//        self.navigationItem.titleView = imgView
-//
-//        self.navigationController?.navigationBar.barTintColor = UIColor.clear
-//        self.navigationController?.navigationBar.tintColor = UIColor.white
-//        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-//        self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(), for: UIBarMetrics.default)
-//        self.navigationController?.navigationBar.shadowImage = UIImage.init()
-//        self.navigationController?.view.backgroundColor = UIColor.clear
-        
-        utility.setNavigationBar(strTitle: "", imgNavigation: UIImage(named: kNavIcon)!, navigationController: self.navigationController!, isTranslucent: false)
-        
-        
-        let btnSideMenu:UIBarButtonItem = UIBarButtonItem.init(image: UIImage.init(named: kMenuIcon), style: UIBarButtonItemStyle.plain, target: self, action: #selector(btnSidemenuClicked(_:)))
-        self.navigationItem.leftBarButtonItem = btnSideMenu
-        
-        switchControl = UISwitch(frame:CGRect (x: 0, y: 0, width: 51, height: 31))
-        switchControl.isOn = true
-//        switchControl.onTintColor = K.Color.AppBackgroundColor
-        switchControl.setOn(true, animated: false)
-        switchControl.addTarget(self, action: #selector(switchValueDidChange(_:)), for: .valueChanged)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: switchControl)
-
     }
     
     
     @IBAction func btnSidemenuClicked(_ sender: Any)
     {
-        //        self.revealViewController() .revealToggle(animated: true)
+        sideMenuController?.toggle()
     }
     
-    @objc func switchValueDidChange(_ sender:UISwitch!)
+    @objc func btnRightSideClicked(_ sender:Any)
     {
-        if sender.isOn
-        {
-            webserviceForChangeDutyStatus()
-            print("on")
-        } else{
-            webserviceForChangeDutyStatus()
-            print("off")
-        }
+//        if sender.isOn
+//        {
+//            webserviceForChangeDutyStatus()
+//            print("on")
+//        } else{
+//            webserviceForChangeDutyStatus()
+//            print("off")
+//        }
     }
     
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -283,8 +254,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate,ARCarMovem
     
     var driverIDTimer : String!
     var passengerIDTimer : String!
-     var timerToGetDriverLocation : Timer!
-    func sendPassengerIDAndDriverIDToGetLocation(driverID : String , passengerID: String) {
+    var timerToGetDriverLocation : Timer!
+    
+    func sendPassengerIDAndDriverIDToGetLocation(driverID : String , passengerID: String)
+    {
         
         
         driverIDTimer = driverID
@@ -349,11 +322,10 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate,ARCarMovem
         }
     
         
-        if mapView.isHidden {
+        if mapView.isHidden
+        {
             mapView.isHidden = false
-            
             self.socketMethods()
-            
         }
         else
         {
@@ -2351,44 +2323,56 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate,ARCarMovem
                 }
                 self.webserviceOFGetAllCards()
             }
-            else {
+            else
+            {
                 
-                let resultData = (result as! NSDictionary)
-                Singletons.sharedInstance.strCurrentBalance = Double(resultData.object(forKey: "balance") as! String)!
-                var rating = String()
-                if let ratingTemp = resultData.object(forKey: "rating") as? String
+                if let res = result as? String
                 {
-                    if (ratingTemp == "")
-                    {
-                        rating = "0.0"
-                    }
-                    else
-                    {
-                        rating = ratingTemp
-                    }
+                    UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
                 }
-                
-                Singletons.sharedInstance.strRating = rating
-                let nc = NotificationCenter.default
-                nc.post(name: Notification.Name("rating"), object: nil)
-                self.aryCurrentBookingData.add(resultData)
-                
-                self.aryPassengerData = self.aryCurrentBookingData
-                
-                if let loginStatus = (self.aryCurrentBookingData.object(at: 0) as! NSDictionary).object(forKey: "login") as? Bool {
+                else if result is NSDictionary
+                {
+                    let resultData = (result as! NSDictionary)
+                    Singletons.sharedInstance.strCurrentBalance = Double(resultData.object(forKey: "balance") as! String)!
+                    var rating = String()
+                    if let ratingTemp = resultData.object(forKey: "rating") as? String
+                    {
+                        if (ratingTemp == "")
+                        {
+                            rating = "0.0"
+                        }
+                        else
+                        {
+                            rating = ratingTemp
+                        }
+                    }
                     
-                    if (loginStatus) {
+                    Singletons.sharedInstance.strRating = rating
+                    let nc = NotificationCenter.default
+                    nc.post(name: Notification.Name("rating"), object: nil)
+                    self.aryCurrentBookingData.add(resultData)
+                    
+                    self.aryPassengerData = self.aryCurrentBookingData
+                    
+                    if let loginStatus = (self.aryCurrentBookingData.object(at: 0) as! NSDictionary).object(forKey: "login") as? Bool {
                         
-                    }
-                    else {
-                        UtilityClass.showAlertWithCompletion("Multiple login", message: "Please Re-Login", vc: self, completionHandler: { ACTION in
+                        if (loginStatus) {
                             
-                            self.webserviceOFSignOut()
-                        })
+                        }
+                        else {
+                            UtilityClass.showAlertWithCompletion("Multiple login", message: "Please Re-Login", vc: self, completionHandler: { ACTION in
+                                
+                                self.webserviceOFSignOut()
+                            })
+                        }
                     }
+                    
+                    self.webserviceOFGetAllCards()
                 }
-                
-                self.webserviceOFGetAllCards()
+                else if let resAry = result as? NSArray {
+                    UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+                }
+             
             }
             
             
@@ -2589,85 +2573,83 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate,ARCarMovem
     }
     
     
-    //-------------------------------------------------------------
-    // MARK: - Webservice for Duty Change
-    //-------------------------------------------------------------
-    func webserviceForChangeDutyStatus()
-    {
-        let profile = NSMutableDictionary(dictionary: (Singletons.sharedInstance.dictDriverProfile as NSDictionary).object(forKey: "profile") as! NSDictionary)
-        let vehicle = profile.object(forKey: "Vehicle") as! NSDictionary
-        
-        var dictData = [String:AnyObject]()
-        dictData[profileKeys.kDriverId] = vehicle.object(forKey: "DriverId") as AnyObject
-        
-        if Singletons.sharedInstance.latitude == nil || Singletons.sharedInstance.longitude == nil || Singletons.sharedInstance.latitude == 0 || Singletons.sharedInstance.longitude == 0
-        {
-            UtilityClass.showAlert("Location Missing", message: "Please turn on location", vc: self)
-        }
-        else
-        {
-            
-            dictData[RegistrationFinalKeys.kLat] = Singletons.sharedInstance.latitude as AnyObject
-            dictData[RegistrationFinalKeys.kLng] = Singletons.sharedInstance.longitude as AnyObject
-            
-            webserviceForDriverChangeDutyStatusOrShiftDutyStatus(dictData as AnyObject) { (result, status) in
-                
-                if (status) {
-                    
-                    print(result)
-//                    self.headerView?.btnSwitch.isEnabled = true
-                    
-                    if ((result as! NSDictionary).object(forKey: "duty") as! String == "off")
-                    {
-//                        self.headerView?.btnSwitch.setImage(UIImage(named: "iconOffSwitch"), for: .normal)
-                        self.switchControl.isOn = false
-                        Singletons.sharedInstance.driverDuty = "0"
-                        UtilityClass.showAlert((result as! NSDictionary).object(forKey: "message") as! String, message: "", vc: self)
-                        UIApplication.shared.isIdleTimerDisabled = false
-                        let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
-                        socket.disconnect()
-                        
-                    }
-                    else
-                    {
-//                        self.headerView?.btnSwitch.setImage(UIImage(named: "iconOnSwitch"), for: .normal)
-                        self.switchControl.isOn = true
-                        Singletons.sharedInstance.driverDuty = "1"
-                        
-                        let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
-                        socket.connect()
-                        UIApplication.shared.isIdleTimerDisabled = true
-                        
-                        UtilityClass.showAlert((result as! NSDictionary).object(forKey: "message") as! String, message: "", vc: self)
-                        
-                        let contentVC = (self.navigationController?.childViewControllers[0] as! TabbarController).childViewControllers[0] as! HomeViewController
-                        contentVC.UpdateDriverLocation()
-                        
-                    }
-                    UserDefaults.standard.set(Singletons.sharedInstance.driverDuty, forKey: "DriverDuty")
-                }
-                else
-                {
-                    print(result)
-                    
-                    
-                    if let res = result as? String {
-                        UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
-                    }
-                    else if let resDict = result as? NSDictionary {
-                        UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
-                    }
-                    else if let resAry = result as? NSArray {
-                        UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
-                    }
-                    
-//                    self.headerView?.btnSwitch.isEnabled = true
-                    
-                    
-                }
-            }
-        }
-    }
+//    //-------------------------------------------------------------
+//    // MARK: - Webservice for Duty Change
+//    //-------------------------------------------------------------
+//    func webserviceForChangeDutyStatus()
+//    {
+//        let profile = NSMutableDictionary(dictionary: (Singletons.sharedInstance.dictDriverProfile as NSDictionary).object(forKey: "profile") as! NSDictionary)
+//        let vehicle = profile.object(forKey: "Vehicle") as! NSDictionary
+//
+//        var dictData = [String:AnyObject]()
+//        dictData[profileKeys.kDriverId] = vehicle.object(forKey: "DriverId") as AnyObject
+//
+//        if Singletons.sharedInstance.latitude == nil || Singletons.sharedInstance.longitude == nil || Singletons.sharedInstance.latitude == 0 || Singletons.sharedInstance.longitude == 0
+//        {
+//            UtilityClass.showAlert("Location Missing", message: "Please turn on location", vc: self)
+//        }
+//        else
+//        {
+//
+//            dictData[RegistrationFinalKeys.kLat] = Singletons.sharedInstance.latitude as AnyObject
+//            dictData[RegistrationFinalKeys.kLng] = Singletons.sharedInstance.longitude as AnyObject
+//
+//            webserviceForDriverChangeDutyStatusOrShiftDutyStatus(dictData as AnyObject) { (result, status) in
+//
+//                if (status) {
+//
+//                    print(result)
+////                    self.headerView?.btnSwitch.isEnabled = true
+//
+//                    if ((result as! NSDictionary).object(forKey: "duty") as! String == "off")
+//                    {
+////                        self.headerView?.btnSwitch.setImage(UIImage(named: "iconOffSwitch"), for: .normal)
+//                        self.switchControl.isOn = false
+//                        Singletons.sharedInstance.driverDuty = "0"
+//                        UtilityClass.showAlert((result as! NSDictionary).object(forKey: "message") as! String, message: "", vc: self)
+//                        UIApplication.shared.isIdleTimerDisabled = false
+//                        let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
+//                        socket.disconnect()
+//
+//                    }
+//                    else
+//                    {
+////                        self.headerView?.btnSwitch.setImage(UIImage(named: "iconOnSwitch"), for: .normal)
+//                        self.switchControl.isOn = true
+//                        Singletons.sharedInstance.driverDuty = "1"
+//
+//                        let socket = (UIApplication.shared.delegate as! AppDelegate).SocketManager
+//                        socket.connect()
+//                        UIApplication.shared.isIdleTimerDisabled = true
+//
+//                        UtilityClass.showAlert((result as! NSDictionary).object(forKey: "message") as! String, message: "", vc: self)
+//
+//                        let contentVC = (self.navigationController?.childViewControllers[0] as! TabbarController).childViewControllers[0] as! HomeViewController
+//                        contentVC.UpdateDriverLocation()
+//
+//                    }
+//                    UserDefaults.standard.set(Singletons.sharedInstance.driverDuty, forKey: "DriverDuty")
+//                }
+//                else
+//                {
+//                    print(result)
+//
+//
+//                    if let res = result as? String {
+//                        UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
+//                    }
+//                    else if let resDict = result as? NSDictionary {
+//                        UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+//                    }
+//                    else if let resAry = result as? NSArray {
+//                        UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
+//                    }
+//
+////                    self.headerView?.btnSwitch.isEnabled = true
+//                }
+//            }
+//        }
+//    }
     
     //-------------------------------------------------------------
     // MARK: - Trip Bookings

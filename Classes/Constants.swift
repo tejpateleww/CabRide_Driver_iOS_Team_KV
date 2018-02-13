@@ -12,17 +12,6 @@ import UIKit
 
 let Appdelegate = UIApplication.shared.delegate as! AppDelegate
 
-//let SCREEN_MAX_LENGTH = max(UIScreen.screenWidth, UIScreen.screenHeight)
-//let SCREEN_MIN_LENGTH = min(UIScreen.screenWidth, UIScreen.screenHeight)
-//
-//let IS_IPHONE_4_OR_LESS = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH < 568.0
-//let IS_IPHONE_5 = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH == 568.0
-//let IS_IPHONE_6 = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH == 667.0
-//let IS_IPHONE_6P = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH == 736.0
-//let IS_IPAD = UIDevice.current.userInterfaceIdiom == .pad && SCREEN_MAX_LENGTH == 1024.0
-//let IS_IPHONE_X = UIDevice.current.userInterfaceIdiom == .phone && SCREEN_MAX_LENGTH == 812.0
-
-
 let ThemeYellowColor : UIColor = UIColor.init(hex: "ffa300")
 let ThemeGrayColor : UIColor = UIColor.init(hex:  "8e8c80")
 

@@ -16,7 +16,7 @@ protocol getEstimateFareForDispatchJobs {
     func didSelectVehicleModel()
 }
 
-class DispatchJobsBookLaterViewController: ParentViewController, getVehicleServiceIdAndNameDelegate, getVehicleIdAndNameDelegate, UITextFieldDelegate, GMSAutocompleteViewControllerDelegate, UINavigationControllerDelegate, WWCalendarTimeSelectorProtocol, getEstimateFareForDispatchJobs {
+class DispatchJobsBookLaterViewController: UIViewController, getVehicleServiceIdAndNameDelegate, getVehicleIdAndNameDelegate, UITextFieldDelegate, GMSAutocompleteViewControllerDelegate, UINavigationControllerDelegate, WWCalendarTimeSelectorProtocol, getEstimateFareForDispatchJobs {
     
     // From Car and Taxi
     func didgetIdAndName(id: String, Name: String) {

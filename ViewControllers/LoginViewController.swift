@@ -32,11 +32,11 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     override func loadView()
     {
         super.loadView()
-//        if(Singletons.sharedInstance.isDriverLoggedIN)
-//        {
-//            let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
-//            self.navigationController?.pushViewController(next, animated: true)
-//        }
+        if(Singletons.sharedInstance.isDriverLoggedIN)
+        {
+            let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
+            self.navigationController?.pushViewController(next, animated: false)
+        }
         
         if Connectivity.isConnectedToInternet()
         {
@@ -55,6 +55,8 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
       
+        txtEmailAddress.text = "palak@excellentwebworld.info"
+        txtPassword.text = "12345678"
         
         if UIDevice.current.name == "Excellent Web's iPhone 5s" {
 

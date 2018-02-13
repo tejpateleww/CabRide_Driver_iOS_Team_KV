@@ -208,8 +208,9 @@ class Utilities: NSObject
             
             navigationController.navigationItem.titleView = nil
             let img = imgNavigation
-            let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
-            imgView.image = img
+            let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+            imgView.image = img.withRenderingMode(.alwaysTemplate)
+            imgView.tintColor = ThemeYellowColor
             imgView.contentMode = .scaleAspectFit
             navigationController.navigationItem.titleView = imgView
         }
@@ -218,18 +219,18 @@ class Utilities: NSObject
             navigationController.navigationItem.titleView = nil
             let lblTitle = UILabel.init(frame: CGRect (x: 0, y: 0, width: 100, height: 30))
             lblTitle.text = strTitle
-            lblTitle.textColor = UIColor.white
+            lblTitle.textColor = ThemeYellowColor
             lblTitle.textAlignment = .center
             lblTitle.font = UIFont.init(name: CustomeFontProximaNovaBold, size: 11)
             navigationController.navigationItem.titleView = lblTitle
         }
         
         navigationController.navigationBar.barTintColor = UIColor.white
-        navigationController.navigationBar.tintColor = UIColor.white
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
-//        navigationController.navigationBar.setBackgroundImage(UIImage.init(), for: UIBarMetrics.default)
-//        navigationController.navigationBar.shadowImage = UIImage.init()
-//        navigationController.view.backgroundColor = UIColor.clear
+        navigationController.navigationBar.tintColor = ThemeYellowColor
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemeYellowColor]
+        navigationController.navigationBar.setBackgroundImage(UIImage.init(), for: UIBarMetrics.default)
+        navigationController.navigationBar.shadowImage = UIImage.init()
+        navigationController.view.backgroundColor = UIColor.clear
         
         
     }
