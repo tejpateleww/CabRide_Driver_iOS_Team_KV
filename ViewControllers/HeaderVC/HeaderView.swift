@@ -51,7 +51,8 @@ class HeaderView: UIView {
     // MARK: - Actions
     //-------------------------------------------------------------
     
-    class func headerView(withDelegate delegate: HeaderViewDelegate?) -> HeaderView {
+    class func headerView(withDelegate delegate: HeaderViewDelegate?) -> HeaderView
+    {
 //        print("Hello")
         var arr: [Any] = Bundle.main.loadNibNamed("HeaderView", owner: self, options: nil)!
         let hView: HeaderView? = (arr[0] as? HeaderView)
@@ -64,19 +65,18 @@ class HeaderView: UIView {
         {
             hView?.btnSwitch.setImage(UIImage(named: "iconOffSwitch"), for: .normal)
         }
-        
         return hView!
     }
     
     
     //HeaderView 1
-    @IBAction func btnSignOut(_ sender: UIButton) {
+    @IBAction func btnSignOut(_ sender: UIButton)
+    {
         delegate?.didSignOutClicked()
     }
     
-    
-    @IBAction func btnSwitch(_ sender: UIButton) {
-        
+    @IBAction func btnSwitch(_ sender: UIButton)
+    {
         sender.isSelected = !sender.isSelected
         btnSwitch.isEnabled = false
         

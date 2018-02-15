@@ -8,10 +8,9 @@
 
 import UIKit
 
-class webViewForNewsViewController: ParentViewController, UIWebViewDelegate {
+class webViewForNewsViewController: ParentViewController, UIWebViewDelegate
+{
 
-    
-    
     var strURL = String()
     
     //-------------------------------------------------------------
@@ -32,9 +31,9 @@ class webViewForNewsViewController: ParentViewController, UIWebViewDelegate {
         
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        
     }
     
     //-------------------------------------------------------------

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ACFloatingTextfield_Swift
 
 class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate
 {
@@ -34,6 +35,8 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        AppDelegate.isFromRegistration = true
+        Singletons.sharedInstance.isFromRegistration = true
         
         viewbtnCarsAndTexis.layer.borderWidth = 1
         viewbtnDeliveryService.layer.borderWidth = 1
@@ -53,6 +56,7 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
         
         viewCarsAndTexis.isHidden = true
         viewDeliveryService.isHidden = true
+        
         
         self.webserviceforGetCarModels()
         NotificationCenter.default.addObserver(self, selector: #selector(setDataInCarType), name: Notification.Name("setCarType"), object: nil)
@@ -105,9 +109,9 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
     
     @IBOutlet weak var imgVehicle: UIImageView!
     
-    @IBOutlet weak var txtVehicleRegistrationNumber: UITextField!
-    @IBOutlet weak var txtCompany: UITextField!
-    @IBOutlet weak var txtCarType: UITextField!
+    @IBOutlet weak var txtVehicleRegistrationNumber: ACFloatingTextfield!
+    @IBOutlet weak var txtCompany: ACFloatingTextfield!
+    @IBOutlet weak var txtCarType: ACFloatingTextfield!
     
     
     @IBOutlet weak var btnCarsAndTexis: UIButton!
@@ -139,7 +143,7 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
         }
         else if txtCarType.text == "" {
             
-            sb.createWithAction(text: "Enter Car Color", actionTitle: "OK", action: { print("Button is push") })
+            sb.createWithAction(text: "Enter Car Type", actionTitle: "OK", action: { print("Button is push") })
             sb.show()
         }
         else if txtVehicleRegistrationNumber.text == "" {
@@ -417,7 +421,7 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
         
         userDefault.set(vehicleNumber, forKey: RegistrationFinalKeys.kVehicleRegistrationNo)
         userDefault.set(VehiclaName, forKey: RegistrationFinalKeys.kCompanyModel)
-        userDefault.set(vehicleColor, forKey: RegistrationFinalKeys.kVehicleColor)
+        userDefault.set(vehicleColor, forKey: RegistrationFinalKeys.kCarThreeTypeName)
        
     }
     

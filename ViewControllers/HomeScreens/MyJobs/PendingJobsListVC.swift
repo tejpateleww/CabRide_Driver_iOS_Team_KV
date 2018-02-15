@@ -10,7 +10,7 @@ import UIKit
 import NVActivityIndicatorView
 import SocketIO
 
-class PendingJobsListVC: ParentViewController, UITableViewDataSource, UITableViewDelegate {
+class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
 //    let socket = UtilityClass.socketManager()
@@ -62,7 +62,6 @@ class PendingJobsListVC: ParentViewController, UITableViewDataSource, UITableVie
        
        // UtilityClass.showACProgressHUD()
         
-        headerView?.btnBack.addTarget(self, action: #selector(self.dismissSelf), for: .touchUpInside)
         
         
         tableView.dataSource = self

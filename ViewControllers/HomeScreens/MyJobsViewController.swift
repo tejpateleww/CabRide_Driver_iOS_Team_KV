@@ -16,6 +16,22 @@ class MyJobsViewController: ParentViewController {
     var shadowOffsetWidth = Int()
     var shadowOffsetHeight = Int()
     
+    @IBOutlet var viewSelection: UIView!
+    @IBOutlet var scrollView: UIScrollView!
+    
+    @IBOutlet var btnFutureBooking: UIButton!
+    
+    @IBOutlet var btnPendingJobs: UIButton!
+    
+    @IBOutlet var btnPastJobs: UIButton!
+    
+    @IBOutlet var constrainSelectionX_position: NSLayoutConstraint!
+    var pageControl = UIPageControl()
+    
+//    @IBOutlet var Conmmstain_btnStackViewY_posistion: NSLayoutConstraint!
+//
+//    @IBOutlet var constrasin_viewSelection_y_position: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +41,7 @@ class MyJobsViewController: ParentViewController {
         shadowOffsetWidth = 0
         shadowOffsetHeight = 1
         
-        giveCornorRadiosToView()
+//        giveCornorRadiosToView()
         // Do any additional setup after loading the view.
     }
 
@@ -41,7 +57,8 @@ class MyJobsViewController: ParentViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.navigationController?.isNavigationBarHidden = true
+
         if Singletons.sharedInstance.isPresentVC == true {
         
             let PendingJobsList = self.storyboard?.instantiateViewController(withIdentifier: "PendingJobsListVC") as! PendingJobsListVC
@@ -62,62 +79,79 @@ class MyJobsViewController: ParentViewController {
         if Singletons.sharedInstance.isFromNotification == true {
             Singletons.sharedInstance.isFromNotification = false
             self.btnFutureBookings(UIButton.init())
-            
         }
-        
     }
+    
+    /*func scrollViewDidScroll(_ scrollView: UIScrollView)
+    {
+        let pageWidth : CGFloat = scrollView.frame.size.width
+        let page : Int  = Int(floor((scrollView.contentOffset.x - pageWidth / 2) / pageWidth) + 1)
+        //        pageControl.currentPage = page
+
+        if page == 0
+        {
+            btnFutureBooking.isSelected = true
+            btnPendingJobs.isSelected = false
+            btnPastJobs.isSelected = false
+            self.constrainSelectionX_position.constant = 0
+
+
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
+                self.btnFutureBooking.setTitleColor(UIColor.white, for: .normal)
+                self.btnPendingJobs.setTitleColor(UIColor.lightGray, for: .normal)
+                self.btnPastJobs.setTitleColor(UIColor.lightGray, for: .normal)
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+        else if page == 1
+        {
+            btnFutureBooking.isSelected = false
+            btnPendingJobs.isSelected = true
+            btnPastJobs.isSelected = false
+            self.constrainSelectionX_position.constant = self.btnPendingJobs.frame.size.width
+
+
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
+                self.btnFutureBooking.setTitleColor(UIColor.lightGray, for: .normal)
+                self.btnPendingJobs.setTitleColor(UIColor.white, for: .normal)
+                self.btnPastJobs.setTitleColor(UIColor.lightGray, for: .normal)
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+        else
+        {
+            btnFutureBooking.isSelected = false
+            btnPendingJobs.isSelected = false
+            btnPastJobs.isSelected = true
+
+            self.constrainSelectionX_position.constant = self.btnPastJobs.frame.size.width*2
+
+
+            UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
+                self.btnFutureBooking.setTitleColor(UIColor.lightGray, for: .normal)
+                self.btnPendingJobs.setTitleColor(UIColor.lightGray, for: .normal)
+                self.btnPastJobs.setTitleColor(UIColor.white, for: .normal)
+                self.view.layoutIfNeeded()
+            }, completion: nil)
+        }
+    }
+    */
     
     //-------------------------------------------------------------
     // MARK: - Outlets
     //-------------------------------------------------------------
     
     
-     @IBOutlet var btnPending: UIButton!
-    @IBOutlet var viewDispatchedJobs: UIView!
-    @IBOutlet var viewPastJobs: UIView!
-    @IBOutlet var viewFutureJobs: UIView!
-    @IBOutlet var viewPendingJobs: UIView!
+//     @IBOutlet var btnPending: UIButton!
+//    @IBOutlet var viewDispatchedJobs: UIView!
+//    @IBOutlet var viewPastJobs: UIView!
+//    @IBOutlet var viewFutureJobs: UIView!
+//    @IBOutlet var viewPendingJobs: UIView!
     
     //-------------------------------------------------------------
     // MARK: - Custom Methods
     //-------------------------------------------------------------
-    
-    func giveCornorRadiosToView()
-    {
-        viewDispatchedJobs.layer.cornerRadius = crnRadios
-        viewPastJobs.layer.cornerRadius = crnRadios
-        viewFutureJobs.layer.cornerRadius = crnRadios
-        viewPendingJobs.layer.cornerRadius = crnRadios
-        
-       
-        viewDispatchedJobs.layer.shadowOpacity = shadowOpacity
-        viewDispatchedJobs.layer.shadowRadius = shadowRadius
-        viewDispatchedJobs.layer.shadowColor = UIColor.black.cgColor
-        viewDispatchedJobs.layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight)
-        
-        viewPastJobs.layer.shadowOpacity = shadowOpacity
-        viewPastJobs.layer.shadowRadius = shadowRadius
-        viewPastJobs.layer.shadowColor = UIColor.black.cgColor
-        viewPastJobs.layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight)
-        
-        viewFutureJobs.layer.shadowOpacity = shadowOpacity
-        viewFutureJobs.layer.shadowRadius = shadowRadius
-        viewFutureJobs.layer.shadowColor = UIColor.black.cgColor
-        viewFutureJobs.layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight)
-        
-        viewPendingJobs.layer.shadowOpacity = shadowOpacity
-        viewPendingJobs.layer.shadowRadius = shadowRadius
-        viewPendingJobs.layer.shadowColor = UIColor.black.cgColor
-        viewPendingJobs.layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight)
-        
 
-        viewDispatchedJobs.layer.masksToBounds = false
-        viewPastJobs.layer.masksToBounds = false
-        viewFutureJobs.layer.masksToBounds = false
-        viewPendingJobs.layer.masksToBounds = false
- 
-    }
-    
     @IBAction func btnDispatchedJobs(_ sender: UIButton) {
         
 
@@ -158,6 +192,62 @@ class MyJobsViewController: ParentViewController {
        
         
     }
+    @IBAction func btnFutureBookingClicked(_ sender: Any)
+    {
+        btnFutureBooking.isSelected = true
+        btnPendingJobs.isSelected = false
+        btnPastJobs.isSelected = false
+        self.constrainSelectionX_position.constant = 0
+        
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations:
+            {
+                
+                self.btnFutureBooking.setTitleColor(ThemeYellowColor, for: .normal)
+                self.btnPendingJobs.setTitleColor(ThemeGrayColor, for: .normal)
+                self.btnPastJobs.setTitleColor(ThemeGrayColor, for: .normal)
+                self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
+                
+                self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    @IBAction func btnPendingJobsClicked(_ sender: Any)
+    {
+        btnFutureBooking.isSelected = false
+        btnPendingJobs.isSelected = true
+        btnPastJobs.isSelected = false
+        self.constrainSelectionX_position.constant = self.btnPendingJobs.frame.size.width
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
+            
+            self.btnFutureBooking.setTitleColor(ThemeGrayColor, for: .normal)
+            self.btnPendingJobs.setTitleColor(ThemeYellowColor, for: .normal)
+            self.btnPastJobs.setTitleColor(ThemeGrayColor, for: .normal)
+            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width, y: 0)
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    @IBAction func btnPastJobsClicked(_ sender: Any)
+    {
+        btnFutureBooking.isSelected = false
+        btnPendingJobs.isSelected = false
+        btnPastJobs.isSelected = true
+        
+        self.constrainSelectionX_position.constant = self.btnPastJobs.frame.size.width*2
+        
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations:
+            {
+            
+            self.btnFutureBooking.setTitleColor(ThemeGrayColor, for: .normal)
+                self.btnPendingJobs.setTitleColor(ThemeGrayColor, for: .normal)
+            self.btnPastJobs.setTitleColor(ThemeYellowColor, for: .normal)
+            self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width * 2, y: 0)
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
     
     func callSocket() {
         

@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class UpdateProfileAccountVC: UIViewController {
     
     var strDriverID = String()
@@ -62,15 +63,15 @@ class UpdateProfileAccountVC: UIViewController {
     //-------------------------------------------------------------
     
     
-    @IBAction func btnBack(_ sender: UIButton) {
-        
+    @IBAction func btnBack(_ sender: UIButton)
+    {
         self.navigationController?.popViewController(animated: true)
-        
     }
     
     @IBAction func btnSaveData(_ sender: UIButton) {
         
-        if (validationForAccount()) {
+        if (validationForAccount())
+        {
             
             sendData[profileKeys.kDriverId] = strDriverID as AnyObject
             sendData[RegistrationFinalKeys.kbankHolderName] = txtAccountHolderName.text as AnyObject

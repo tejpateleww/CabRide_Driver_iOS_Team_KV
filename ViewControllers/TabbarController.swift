@@ -15,10 +15,10 @@ class TabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tabBar.tintColor = ThemeYellowColor
-        tabBar.backgroundColor = ThemeGrayColor
+        self.tabBar.tintColor = ThemeYellowColor
+        self.tabBar.backgroundColor = UIColor.black
+        
         UIApplication.shared.statusBarStyle = .default
-      
         // Do any additional setup after loading the view.
     }
 
@@ -30,6 +30,7 @@ class TabbarController: UITabBarController {
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = true
       
     }
     override func viewDidAppear(_ animated: Bool)

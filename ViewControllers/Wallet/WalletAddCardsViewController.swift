@@ -10,7 +10,10 @@ import UIKit
 
 import FormTextField
 
-class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource, UIPickerViewDelegate, CardIOPaymentViewControllerDelegate {
+class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource, UIPickerViewDelegate, CardIOPaymentViewControllerDelegate
+{
+    
+    
     
     @IBOutlet var viewOfTextFields: [UIView]!
     
@@ -58,10 +61,13 @@ class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource
         super.viewDidLoad()
         
         crnRadios = 5
-        shadowOpacity = 0.2
+        shadowOpacity = 0.5
         shadowRadius = 1
         shadowOffsetWidth = 0
         
+        txtCardNumber.leftMargin = 0.0
+        txtValidThrough.leftMargin = 0.0
+        txtCVVNumber.leftMargin = 0.0
         btnAddPaymentMethods.layer.cornerRadius = 5
         btnAddPaymentMethods.layer.masksToBounds = true
         
@@ -73,6 +79,7 @@ class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource
         
 //        aryMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"]
 //        aryMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]
+        
         aryMonth = ["01","02","03","04","05","06","07","08","09","10","11","12"]
         
         aryYear = ["2017","2018","2019","2020","2021","2022","2023","2024","2025","2026","2027","2028","2029","2030"]
@@ -90,11 +97,16 @@ class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource
         for viewTextFields in viewOfTextFields
         {
             viewTextFields.layer.cornerRadius = 5.0
-            viewTextFields.layer.borderColor = UIColor.gray.cgColor
-            viewTextFields.layer.borderWidth = 1.0
-            viewTextFields.layer.masksToBounds = true
+//            viewTextFields.layer.borderColor = UIColor.gray.cgColor
+//            viewTextFields.layer.borderWidth = 1.0
+//            viewTextFields.layer.masksToBounds = true
+            viewTextFields.layer.shadowOpacity = shadowOpacity
+            viewTextFields.layer.shadowRadius = shadowRadius
+            viewTextFields.layer.shadowColor = UIColor.black.cgColor
+            viewTextFields.layer.shadowOffset = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight)
         }
         
+        viewScanCard.layer.cornerRadius = 5
         viewScanCard.layer.shadowOpacity = shadowOpacity
         viewScanCard.layer.shadowRadius = shadowRadius
         viewScanCard.layer.shadowColor = UIColor.black.cgColor
@@ -268,7 +280,7 @@ class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource
 //            self.cardValidationLabel.textColor = UIColor.red
         }
     }
-    
+  
     func detectCardNumberType(number: String)
     {
         if let type = creditCardValidator.type(from: number) {
@@ -281,8 +293,11 @@ class WalletAddCardsViewController: ParentViewController, UIPickerViewDataSource
             
             imgCard.image = UIImage(named: type.name)
             
+         
 //            self.cardTypeLabel.textColor = UIColor.green
-        } else {
+        }
+        else
+        {
             
             imgCard.image = UIImage(named: "iconDummyCard")
             

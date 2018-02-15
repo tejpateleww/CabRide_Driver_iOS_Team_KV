@@ -118,21 +118,23 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
         
     }
     
-    func setButtonTotal() {
-        btnTotal.setTitleColor(UIColor.init(red: 204/255, green: 3/255, blue: 0, alpha: 1.0), for: .normal)
-        btnRides.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
-        btnTickPay.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
-        btnDispatch.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
+    func setButtonTotal()
+    {
+        
+        btnTotal.setTitleColor(ThemeYellowColor, for: .normal)
+        btnRides.setTitleColor(ThemeGrayColor, for: .normal)
+        btnTickPay.setTitleColor(ThemeGrayColor, for: .normal)
+        btnDispatch.setTitleColor(ThemeGrayColor, for: .normal)
         
         self.setDataCount(dataString: "total", indexOfPosition: 0)
 
     }
     
     func setButtonRides() {
-        btnTotal.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
-        btnRides.setTitleColor(UIColor.init(red: 204/255, green: 3/255, blue: 0, alpha: 1.0), for: .normal)
-        btnTickPay.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
-        btnDispatch.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
+        btnTotal.setTitleColor(ThemeGrayColor, for: .normal)
+        btnRides.setTitleColor(ThemeYellowColor, for: .normal)
+        btnTickPay.setTitleColor(ThemeGrayColor, for: .normal)
+        btnDispatch.setTitleColor(ThemeGrayColor, for: .normal)
         self.setDataCount(dataString: "rides", indexOfPosition: 1)
 
         
@@ -140,19 +142,19 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
     }
     
     func setButtonTickPay() {
-        btnTotal.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
-        btnRides.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
-        btnTickPay.setTitleColor(UIColor.init(red: 204/255, green: 3/255, blue: 0, alpha: 1.0), for: .normal)
-        btnDispatch.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
+        btnTotal.setTitleColor(ThemeGrayColor, for: .normal)
+        btnRides.setTitleColor(ThemeGrayColor, for: .normal)
+        btnTickPay.setTitleColor(ThemeYellowColor, for: .normal)
+        btnDispatch.setTitleColor(ThemeGrayColor, for: .normal)
         self.setDataCount(dataString: "tickpay", indexOfPosition: 2)
 
     }
     
     func setButtonDispatch() {
-        btnTotal.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
-        btnRides.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
-        btnTickPay.setTitleColor(UIColor.init(red: 192/255, green: 192/255, blue: 192/255, alpha: 1.0), for: .normal)
-        btnDispatch.setTitleColor(UIColor.init(red: 204/255, green: 3/255, blue: 0, alpha: 1.0), for: .normal)
+        btnTotal.setTitleColor(ThemeGrayColor, for: .normal)
+        btnRides.setTitleColor(ThemeGrayColor, for: .normal)
+        btnTickPay.setTitleColor(ThemeGrayColor, for: .normal)
+        btnDispatch.setTitleColor(ThemeYellowColor, for: .normal)
         self.setDataCount(dataString: "dispatch", indexOfPosition: 3)
 
     }

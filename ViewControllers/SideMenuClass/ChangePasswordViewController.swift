@@ -14,12 +14,16 @@ class ChangePasswordViewController: ParentViewController {
     // MARK: - Base Methods
     //-------------------------------------------------------------
     
+    @IBOutlet var iconPassword: UIImageView!
     @IBOutlet var btnSubmit: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
         headerView?.btnBack.addTarget(self, action: #selector(self.nevigateToBack), for: .touchUpInside)
-        
+        headerView?.backgroundColor = UIColor.clear
+        headerView?.lblHeaderTitle.textColor = UIColor.white
+        iconPassword.image = UIImage.init(named: "iconLock")?.withRenderingMode(.alwaysTemplate)
+        iconPassword.tintColor = UIColor.white
 
         // Do any additional setup after loading the view.
     }

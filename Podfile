@@ -34,5 +34,5 @@ pod 'FloatRatingView'
 pod 'Firebase/Core'
 pod 'Firebase/Messaging'
 pod 'MarqueeLabel/Swift'
-
+#pod 'ChameleonFramework/Swift'
 end

@@ -17,7 +17,7 @@ class Singletons: NSObject {
     var strPromocode = String()
     var strPaymentType = String()
     var strRating = String()
-
+    var isFromRegistration = Bool()
     static let sharedInstance = Singletons()
     var vehicleClass: String!
      var strTickPayAmt: String!
@@ -89,6 +89,8 @@ class Singletons: NSObject {
     var passengerNote = String()
     var strBookingType = String()
     var passengerPaymentType = String()
+    
+
 }
 /*
 if let passengerType = BookingInfo.object(forKey: "PassengerType") as? String {

@@ -59,12 +59,57 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.allowsMultipleSelection = false
         indexPathSample = NSIndexPath(row: 23, section: 0)
+        
+        
+        print(aryData.count)
+        
+        if Singletons.sharedInstance.isFromRegistration == false
+        {
+            for (i,_) in self.aryData.enumerated()
+            {
+                let dictData = aryData.object(at: i) as! NSDictionary
+                
+                if self.selectedCells.count == 3
+                {
+                    if self.selectedCells.contains(i)
+                    {
+                        self.aryChooseCareModel.remove(at: self.selectedCells.index(of: i)!)
+                        self.aryChooseCarName.remove(at: self.selectedCells.index(of: i)!)
+                        self.selectedCells.remove(at: self.selectedCells.index(of: i)!)
+                    }
+                    else
+                    {
+//                        let sb = Snackbar()
+//                        sb.createWithAction(text: "You can select only three types.", actionTitle: "DISMISS", action: { print("Button is push") })
+//                        sb.show()
+                    }
+                    
+                }
+                else
+                {
+                    if self.selectedCells.contains(i)
+                    {
+                        self.aryChooseCareModel.remove(at: self.selectedCells.index(of: i)!)
+                        self.aryChooseCarName.remove(at: self.selectedCells.index(of: i)!)
+                        self.selectedCells.remove(at: self.selectedCells.index(of: i)!)
+                    }
+                    else
+                    {
+                        self.selectedCells.append(i)
+                        self.aryChooseCareModel.append(dictData["Id"] as! String)
+                        self.aryChooseCarName.append(dictData["Name"] as! String)
+                    }
+                }
+            }
+           
+        }
+        
 
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
-        
     }
     
 
@@ -135,7 +180,9 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
                 sb.show()
             }
             
-        } else {
+        }
+        else
+        {
             if self.selectedCells.contains(indexPath.row)
             {
                 self.aryChooseCareModel.remove(at: self.selectedCells.index(of: indexPath.row)!)
@@ -172,7 +219,15 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         {
             delegate?.didgetIdAndName(id: strId, Name: strType)
         }
-        NotificationCenter.default.post(name: Notification.Name("setCarType"), object: nil)
+        if Singletons.sharedInstance.isFromRegistration == true
+        {
+            NotificationCenter.default.post(name: Notification.Name("setCarType"), object: nil)
+        }
+        else
+        {
+            NotificationCenter.default.post(name: Notification.Name("setCarTypeUpdate"), object: nil)
+        }
+        
 //            delegateForBookLater.didgetIdAndName(id: strId, Name: strType)
 //            delegateForEstimateNow?.didSelectVehicleModelNow()
             delegateForEstimate?.didSelectVehicleModel()

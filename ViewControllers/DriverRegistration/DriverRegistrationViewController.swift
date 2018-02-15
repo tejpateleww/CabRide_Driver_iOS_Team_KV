@@ -52,9 +52,9 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
     
     override func viewDidLayoutSubviews()
     {
+        
         super.viewDidLayoutSubviews()
 //        print(UserDefaults.standard.object(forKey: savedDataForRegistration.kPageNumber))
-        
         if UserDefaults.standard.object(forKey: savedDataForRegistration.kPageNumber) != nil
         {
             let pageNO = UserDefaults.standard.object(forKey: savedDataForRegistration.kPageNumber) as! Int

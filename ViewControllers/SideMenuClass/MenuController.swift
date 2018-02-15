@@ -22,23 +22,34 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     private var previousIndex: NSIndexPath?
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         getDataFromSingleton()
         
-        aryItemNames = ["Payment Option", "My Wallet", "Weekly Earning", "Driver News","Invite Drivers", "Change Password", "Settings", "Log Out"]//, "TiCKPay"
+        aryItemNames = ["Payment Option", "My Wallet", "Driver News","Invite Drivers", "Change Password", "Settings", "Log Out"]//, "TiCKPay"
         
-        aryItemIcons = ["iconPayment","iconWallet","iconEarnings","iconNews","iconInvite", "iconChangePassword", "iconSettings", "iconSignOut"]//, "iconTickPay"
+        aryItemIcons = ["iconPayment","iconWallet","iconNews","iconInvite", "iconChangePassword", "iconSettings", "iconSignOut"]//, "iconTickPay"
 
 
         let notificationCenter = NotificationCenter.default
         notificationCenter.addObserver(self, selector: #selector(MenuController.setRating), name: NSNotification.Name(rawValue: "rating"), object: nil)
 
+
+    }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
         
-        let colorTop =  UIColor(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 1.0).cgColor
-        let colorMiddle =  UIColor(red: 60.0/255.0, green: 39.0/255.0, blue: 1.0/255.0, alpha: 0.5).cgColor
-        let colorBottom = UIColor(red: 116.0/255.0, green: 75.0/255.0, blue: 1.0/255.0, alpha: 0.8).cgColor
+        giveGradientColor()
+    }
+    func giveGradientColor()
+    {
+        
+        let colorTop =  UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+        let colorMiddle =  UIColor(red: 36/255, green: 24/255, blue: 3/255, alpha: 0.5).cgColor
+        let colorBottom = UIColor(red: 64/255, green: 43/255, blue: 6/255, alpha: 0.8).cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [ colorTop, colorMiddle, colorBottom]
@@ -46,16 +57,22 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
         gradientLayer.frame = self.view.bounds
         self.view.layer.insertSublayer(gradientLayer, at: 0)
         
-        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
-        
-        statusBar.backgroundColor = UIColor.clear
     }
-    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+         UIApplication.shared.statusBarStyle = .lightContent
+    }
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        super.viewWillDisappear(animated)
+         UIApplication.shared.statusBarStyle = .default
+    }
     func setRating() {
         self.tableView.reloadData()
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         
     }
@@ -97,6 +114,8 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             cellProfile.imgProfile.layer.cornerRadius = cellProfile.imgProfile.frame.width / 2
             cellProfile.imgProfile.layer.masksToBounds = true
+            cellProfile.imgProfile.layer.borderColor = ThemeYellowColor.cgColor
+            cellProfile.imgProfile.layer.borderWidth = 1.0
             cellProfile.lblDriverName.text = driverFullName
             cellProfile.lblContactNumber.text = driverMobileNo
             cellProfile.lblRating.text = Singletons.sharedInstance.strRating
@@ -197,36 +216,36 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
 //                }
 //
 //            }
+//            else if indexPath.row == 2 {
+////                 self.moveToComingSoon()
+//
+//                let viewController = self.storyboard?.instantiateViewController(withIdentifier: "WeeklyEarningViewController") as! WeeklyEarningViewController
+//                self.navigationController?.pushViewController(viewController, animated: true)
+//            }
             else if indexPath.row == 2 {
-//                 self.moveToComingSoon()
-               
-                let viewController = self.storyboard?.instantiateViewController(withIdentifier: "WeeklyEarningViewController") as! WeeklyEarningViewController
-                self.navigationController?.pushViewController(viewController, animated: true)
-            }
-            else if indexPath.row == 3 {
 //                self.moveToComingSoon()
 
                 let viewController = self.storyboard?.instantiateViewController(withIdentifier: "DriverNewsViewController") as! DriverNewsViewController
                 self.navigationController?.pushViewController(viewController, animated: true)
                 
             }
-           else if indexPath.row == 4 {
+           else if indexPath.row == 3 {
                 let viewController = self.storyboard?.instantiateViewController(withIdentifier: "InviteDriverViewController") as! InviteDriverViewController
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
-            else if indexPath.row == 5 {
+            else if indexPath.row == 4 {
                 
                 let viewController = self.storyboard?.instantiateViewController(withIdentifier: "ChangePasswordViewController") as! ChangePasswordViewController
                 self.navigationController?.pushViewController(viewController, animated: true)
                 
             }
-            else if indexPath.row == 6 {
-                
+            else if indexPath.row == 5 {
+
                 let viewController = self.storyboard?.instantiateViewController(withIdentifier: "SettingPasscodeVC") as! SettingPasscodeVC
                 self.navigationController?.pushViewController(viewController, animated: true)
                 
             }
-            else if indexPath.row == 7
+            else if indexPath.row == 6
             {
                self.webserviceOFSignOut()
             }

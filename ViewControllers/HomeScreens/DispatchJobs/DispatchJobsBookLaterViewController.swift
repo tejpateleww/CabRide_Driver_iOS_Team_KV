@@ -63,6 +63,9 @@ class DispatchJobsBookLaterViewController: UIViewController, getVehicleServiceId
    
     var vehicleTypeData: (Id: String, Name: String) = (Id: "", Name: "")
     
+    @IBOutlet var btnBack: UIButton!
+    @IBOutlet var btnSubmit: UIButton!
+    
     var allElemsContained_Cars_and_taxi = Bool()
     var allElemsContained_Delivery_services = Bool()
     
@@ -86,6 +89,12 @@ class DispatchJobsBookLaterViewController: UIViewController, getVehicleServiceId
         webserviceforGetCarModels()
         
         paymentType = "account"
+        
+        btnBack.layer.cornerRadius = 5
+        btnBack.layer.masksToBounds = true
+        
+        btnSubmit.layer.cornerRadius = 5
+        btnSubmit.layer.masksToBounds = true
         
 //        if UIDevice.current.name == "Bhavesh iPhone" {
 //            

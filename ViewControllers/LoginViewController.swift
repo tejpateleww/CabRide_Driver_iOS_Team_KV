@@ -8,12 +8,12 @@
 
 import UIKit
 import CoreLocation
- import ACFloatingTextfield_Swift
-
+import ACFloatingTextfield_Swift
+ 
 class LoginViewController: UIViewController, CLLocationManagerDelegate {
 
     let manager = CLLocationManager()
-    
+
     var currentLocation = CLLocation()
     
     var strLatitude = Double()
@@ -32,6 +32,9 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     override func loadView()
     {
         super.loadView()
+        
+        
+        Utilities.setStatusBarColor(color: UIColor.clear)
         if(Singletons.sharedInstance.isDriverLoggedIN)
         {
             let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
@@ -55,33 +58,21 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
       
-        txtEmailAddress.text = "palak@excellentwebworld.info"
-        txtPassword.text = "12345678"
+//        txtMobile.text = "0773282020"
+//        txtPassword.text = "12345678"
         
-        if UIDevice.current.name == "Excellent Web's iPhone 5s" {
+        imgMobile.image = UIImage.init(named: "iconMobile")?.withRenderingMode(.alwaysTemplate)
+        imgMobile.tintColor = UIColor.white
+        imgPassword.image = UIImage.init(named: "iconLock")?.withRenderingMode(.alwaysTemplate)
+        imgPassword.tintColor = UIColor.white
 
-            txtEmailAddress.text = "palak@excellentwebworld.info"
-            txtPassword.text = "12345678"
-        }
-
+        
         self.viewMain.isHidden = false
 
         checkPass()
-
-        if UIDevice.current.name == "Bhavesh iPhone" {
-
-            txtEmailAddress.text = "palak@excellentwebworld.info"
-            txtPassword.text = "12345678"
-        }
-        
-
         imgFacebook.layer.cornerRadius = imgFacebook.frame.width / 2
         imgFacebook.layer.masksToBounds = true
 
-   /*
-        txtEmailAddress.text = "developer.eww@gmail.com"
-        txtPassword.text = "123456"
-   */
         strLatitude = 0
         strLongitude = 0
         
@@ -129,8 +120,10 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     //-------------------------------------------------------------
     
 
+    @IBOutlet var imgPassword: UIImageView!
+    @IBOutlet var imgMobile: UIImageView!
     @IBOutlet var imgFacebook: UIImageView!
-    @IBOutlet weak var txtEmailAddress: ACFloatingTextfield!
+    @IBOutlet weak var txtMobile: ACFloatingTextfield!
     @IBOutlet weak var txtPassword: ACFloatingTextfield!
     
     @IBOutlet weak var viewLogin: UIView!
@@ -143,7 +136,8 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func btnLogin(_ sender: UIButton) {
 //        CustomSideMenuViewController
         
-        if (validateAllFields()) {
+        if (validateAllFields())
+        {
             webserviceForLoginDrivers()
         }
        
@@ -230,7 +224,7 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     
     func webserviceForLoginDrivers()
     {
-        dictData["Username"] = txtEmailAddress.text as AnyObject
+        dictData["Username"] = txtMobile.text as AnyObject
         dictData["Password"] = txtPassword.text as AnyObject
         
         if strLatitude == 0 {
@@ -445,21 +439,19 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     
     func validateAllFields() -> Bool
     {
-        let isEmailAddressValid = isValidEmailAddress(emailID: txtEmailAddress.text!)
+//        let isEmailAddressValid = isValidEmailAddress(emailID: txtEmailAddress.text!)
         //        let providePassword = txtPassword.text
         
         //        let isPasswordValid = isPwdLenth(password: providePassword!)
         
         
-        if txtEmailAddress.text!.count == 0
+        if txtMobile.text!.count == 0
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Email Id", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Mobile Number", vc: self)
             return false
         }
-        else if (!isEmailAddressValid)
-        {
-            UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Valid Email ID", vc: self)
-            
+        else if txtMobile.text!.count != 10 {
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid mobile number of 10 digits.", vc: self)
             return false
         }
         else if txtPassword.text!.count == 0

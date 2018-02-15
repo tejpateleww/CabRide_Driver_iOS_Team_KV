@@ -67,7 +67,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         btnDone.layer.cornerRadius = btnDone.frame.size.height/2
         btnDone.clipsToBounds = true
     }
-    
+   
 
     //-------------------------------------------------------------
     // MARK: - Outlets
@@ -652,8 +652,8 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
         let vehicleRegistrationNumber: String = userDefault.object(forKey: RegistrationFinalKeys.kVehicleRegistrationNo) as! String
         dictData[RegistrationFinalKeys.kVehicleRegistrationNo] = vehicleRegistrationNumber as AnyObject
         
-        let vehicleColor: String = userDefault.object(forKey: RegistrationFinalKeys.kVehicleColor) as! String
-        dictData[RegistrationFinalKeys.kVehicleColor] = vehicleColor as AnyObject
+        let vehicleColor: String = userDefault.object(forKey: RegistrationFinalKeys.kCarThreeTypeName) as! String
+        dictData[RegistrationFinalKeys.kCarThreeTypeName] = vehicleColor as AnyObject
         
         
         let vehicleClass: String = userDefault.object(forKey: RegistrationFinalKeys.kVehicleClass) as! String

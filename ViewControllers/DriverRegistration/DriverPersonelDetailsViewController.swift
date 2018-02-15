@@ -8,7 +8,7 @@
 
 import UIKit
 import CoreLocation
-
+import ACFloatingTextfield_Swift
 class DriverPersonelDetailsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITextFieldDelegate  {
     
     @IBOutlet var btnNext: UIButton!
@@ -22,11 +22,11 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     
     var userDefault =  UserDefaults.standard
     
-    
+     let datePicker = UIDatePicker()
     var companyID = String()
     
     var aryCompanyIDS = [[String:AnyObject]]()
-        let myDatePicker: UIDatePicker = UIDatePicker()
+//        let myDatePicker: UIDatePicker = UIDatePicker()
 
     //-------------------------------------------------------------
     // MARK: - Outlets
@@ -38,12 +38,12 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     @IBOutlet weak var viewGender: UIView!
     @IBOutlet weak var imgProfile: UIImageView!
     
-    @IBOutlet weak var txtFullName: UITextField!
-    @IBOutlet weak var txtDOB: UITextField!
-    @IBOutlet weak var txtAddress: UITextField!
-    @IBOutlet weak var txtPostCode: UITextField!
+    @IBOutlet weak var txtFullName: ACFloatingTextfield!
+    @IBOutlet weak var txtDOB: ACFloatingTextfield!
+    @IBOutlet weak var txtAddress: ACFloatingTextfield!
+    @IBOutlet weak var txtPostCode: ACFloatingTextfield!
    
-    @IBOutlet weak var txtInviteCode: UITextField!
+    @IBOutlet weak var txtInviteCode: ACFloatingTextfield!
 
     
     var emailID = String()
@@ -65,9 +65,8 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         super.viewDidLoad()
         
         
-
+        showDatePicker()
         txtDOB.delegate = self
-        txtDOB.inputView = myDatePicker
         txtPostCode.delegate = self
 
         imgProfile.layer.cornerRadius = imgProfile.frame.size.width / 2
@@ -95,7 +94,39 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         
         selectedMale()
     }
-    
+    func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.bordered, target: self, action: "donedatePicker")
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.bordered, target: self, action: "cancelDatePicker")
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        // add toolbar to textField
+        txtDOB.inputAccessoryView = toolbar
+        // add datepicker to textField
+        txtDOB.inputView = datePicker
+        
+    }
+    func donedatePicker(){
+        //For date formate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        txtDOB.text = formatter.string(from: datePicker.date)
+        //dismiss date picker dialog
+        self.view.endEditing(true)
+    }
+    func cancelDatePicker()
+    {
+        //cancel button dismiss datepicker dialog
+        self.view.endEditing(true)
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -357,12 +388,12 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
   
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool
     {
-        if textField == txtDOB
-        {
-            self.view.endEditing(true)
-            Calendar()
-            return false
-        }
+//        if textField == txtDOB
+//        {
+//            self.view.endEditing(true)
+//            Calendar()
+//            return false
+//        }
         
         return true
     }
@@ -374,31 +405,31 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         
         
         // setting properties of the datePicker
-        myDatePicker.frame = CGRect(x:0, y: 50,width: self.view.frame.width, height: 200)
-        myDatePicker.timeZone = NSTimeZone.local
-        myDatePicker.backgroundColor = UIColor.white
-        myDatePicker.layer.cornerRadius = 5.0
-        myDatePicker.layer.shadowOpacity = 0.5
-        
-        // add an event called when value is changed.
-        myDatePicker.addTarget(self, action: #selector(self.onDidChangeDate(sender:)), for: .valueChanged)
-        
-        // add DataPicker to the view
-        self.view.addSubview(myDatePicker)
+//        myDatePicker.frame = CGRect(x:0, y: 50,width: self.view.frame.width, height: 200)
+//        myDatePicker.timeZone = NSTimeZone.local
+//        myDatePicker.backgroundColor = UIColor.white
+//        myDatePicker.layer.cornerRadius = 5.0
+//        myDatePicker.layer.shadowOpacity = 0.5
+//        myDatePicker.datePickerMode = .date
+//        // add an event called when value is changed.
+//        myDatePicker.addTarget(self, action: #selector(self.onDidChangeDate(sender:)), for: .valueChanged)
+//
+//        // add DataPicker to the view
+//        self.view.addSubview(myDatePicker)
     }
     
     // called when the date picker called.
     internal func onDidChangeDate(sender: UIDatePicker){
         
         // date format
-        let myDateFormatter: DateFormatter = DateFormatter()
-        myDateFormatter.dateFormat = "yyyy/MM/dd"
-        
-        // get the date string applied date format
-        let mySelectedDate: NSString = myDateFormatter.string(from: sender.date) as NSString
-        txtDOB.text = mySelectedDate as String
-        
-        self.myDatePicker.removeFromSuperview()
+//        let myDateFormatter: DateFormatter = DateFormatter()
+//        myDateFormatter.dateFormat = "yyyy/MM/dd"
+//        
+//        // get the date string applied date format
+//        let mySelectedDate: NSString = myDateFormatter.string(from: sender.date) as NSString
+//        txtDOB.text = mySelectedDate as String
+//        
+//        self.myDatePicker.removeFromSuperview()
     }
     
 }

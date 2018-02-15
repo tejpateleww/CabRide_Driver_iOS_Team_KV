@@ -20,7 +20,7 @@ class WalletCardsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
     weak var delegateForTransferToBank: SelectBankCardDelegate!
     
     var aryData = [[String:AnyObject]]()
-    
+     var creditCardValidator: CreditCardValidator!
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
@@ -65,6 +65,8 @@ class WalletCardsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             }
         }
         
+        
+        
     }
     
     override func viewDidLoad() {
@@ -72,7 +74,7 @@ class WalletCardsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         self.tableView.separatorStyle = .none
         tableView.tableFooterView = UIView()
-        
+         creditCardValidator = CreditCardValidator()
         self.tableView.addSubview(self.refreshControl)
         
     }
@@ -125,10 +127,12 @@ class WalletCardsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             
             cell.viewCards.layer.cornerRadius = 10
             cell.viewCards.layer.masksToBounds = true
+            let number = dictData["CardNum"] as! String
+             cell.imgCardIcon.image = detectCardNumberType(number: number)
             
             let type = dictData["Type"] as! String
             
-            cell.imgCardIcon.image = UIImage(named: setCreditCardImage(str: type))
+           
             
             if (indexPath.row % 2) == 0
             {
@@ -163,12 +167,25 @@ class WalletCardsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             
             return cell
         }
-        else {
+        else
+        {
+            cell2.imgArrow.image = UIImage.init(named: "iconArrowGrey")?.withRenderingMode(.alwaysTemplate)
+            cell2.imgArrow.tintColor = UIColor.white
             
             return cell2
         }
     }
-    
+    func detectCardNumberType(number: String) -> UIImage
+    {
+        if let type = creditCardValidator.type(from: number)
+        {
+            return UIImage(named: type.name)!
+        }
+        else
+        {
+            return UIImage(named: "iconDummyCard")!
+        }
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
@@ -205,7 +222,7 @@ class WalletCardsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
             return 160
         }
         else {
-            return 75
+            return 55
         }
     }
     
@@ -257,7 +274,8 @@ class WalletCardsVC: UIViewController, UITableViewDataSource, UITableViewDelegat
         tableView.reloadData()
     }
     
-    func setCreditCardImage(str: String) -> String {
+    func setCreditCardImage(str: String) -> String
+    {
         
         //   visa , mastercard , amex , diners , discover , jcb , other
         

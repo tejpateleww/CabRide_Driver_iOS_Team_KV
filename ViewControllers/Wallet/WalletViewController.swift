@@ -24,8 +24,6 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewTop.layer.cornerRadius = 5
-        viewTop.layer.masksToBounds = true
  
         viewOptions.layer.cornerRadius = 5
         viewOptions.layer.masksToBounds = true
@@ -48,7 +46,7 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
     {
         super.viewWillAppear(true)
         UIApplication.shared.statusBarStyle = .default
-        self.lblCurrentBalance.text = "$\(Singletons.sharedInstance.strCurrentBalance)"
+        self.lblCurrentBalance.text = "Balance  $\(Singletons.sharedInstance.strCurrentBalance)"
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
@@ -185,7 +183,7 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
                 Singletons.sharedInstance.strCurrentBalance = ((result as! NSDictionary).object(forKey: "walletBalance") as AnyObject).doubleValue
                 let currentRatio = Double(Singletons.sharedInstance.strCurrentBalance)
                 
-                self.lblCurrentBalance.text = "$\(String(format: "%.2f", currentRatio))"
+                self.lblCurrentBalance.text = "Balance  $\(String(format: "%.2f", currentRatio))"
 //                self.lblCurrentBalance.text = "$\(Singletons.sharedInstance.strCurrentBalance)"
                 
 //                self.lblAvailableFundsDesc.text = "$\(Singletons.sharedInstance.strCurrentBalance)"
@@ -273,8 +271,8 @@ class BpayVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewTop.layer.cornerRadius = 5
-        viewTop.layer.masksToBounds = true
+//        viewTop.layer.cornerRadius = 5
+//        viewTop.layer.masksToBounds = true
         
         btnSubmit.layer.cornerRadius = 5
         btnSubmit.layer.masksToBounds = true

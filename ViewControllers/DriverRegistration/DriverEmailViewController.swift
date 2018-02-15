@@ -8,6 +8,7 @@
 
 import UIKit
 import NVActivityIndicatorView
+import ACFloatingTextfield_Swift
 
 class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActivityIndicatorViewable 
 {
@@ -21,11 +22,11 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
     @IBOutlet var viewOTP: UIView!
     @IBOutlet var lblHaveAccount: UILabel!
     
-    @IBOutlet var txtOTP: UITextField!
-    @IBOutlet var txtPassword: UITextField!
+    @IBOutlet var txtOTP: ACFloatingTextfield!
+    @IBOutlet var txtPassword: ACFloatingTextfield!
     
-    @IBOutlet var txtConPassword: UITextField!
-    @IBOutlet var txtMobile: UITextField!
+    @IBOutlet var txtConPassword: ACFloatingTextfield!
+    @IBOutlet var txtMobile: ACFloatingTextfield!
     @IBOutlet var viewEmailData: UIView!
     @IBOutlet var btnLogin: UIButton!
     
@@ -128,6 +129,11 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
             UtilityClass.showAlert(appName.kAPPName, message: "Please Enter Mobile Number", vc: self)
             return false
         }
+        else if txtMobile.text!.count != 10
+        {
+            UtilityClass.showAlert(appName.kAPPName, message: "Please enter valid mobile number of 10 digits.", vc: self)
+            return false
+        }
         else if txtConPassword.text! != txtPassword.text
         {
             UtilityClass.showAlert(appName.kAPPName, message: "Password does not match", vc: self)
@@ -172,7 +178,8 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
     {
         var dictData = [String:AnyObject]()
         dictData["Email"] = txtEmailId.text as AnyObject
-        
+//        kMobileNo
+        dictData[RegistrationFinalKeys.kMobileNo] = txtMobile.text as AnyObject
         
         webserviceForOTPDriverRegister(dictData as AnyObject) { (result, status) in
             

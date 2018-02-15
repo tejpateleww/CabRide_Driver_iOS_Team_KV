@@ -110,17 +110,14 @@ class EditDriverProfileVC: ParentViewController {
 extension UIView {
     
     // OUTPUT 1
-    func dropShadow() {
-        
-        self.layer.cornerRadius = 20
+    func dropShadow()
+    {
+        self.layer.cornerRadius = 5
         self.layer.shadowColor = UIColor.gray.cgColor
         self.layer.shadowOpacity = 0.5
         self.layer.shadowOffset = CGSize(width: -1, height: 1)
         self.layer.shadowRadius = 1
-        
         self.layer.masksToBounds = true
-        
-    
         self.layer.shadowPath = UIBezierPath(rect: self.bounds).cgPath
         self.layer.shouldRasterize = true
 //        self.layer.rasterizationScale = scale ? UIScreen.main.scale : 1

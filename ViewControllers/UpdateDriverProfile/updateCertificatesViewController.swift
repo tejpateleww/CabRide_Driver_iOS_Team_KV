@@ -26,13 +26,17 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         super.viewDidLoad()
 
         
-        imgVehicleImage.layer.cornerRadius = imgVehicleImage.frame.width / 2
-        imgVehicleImage.layer.masksToBounds = true
+//        imgVehicleImage.layer.cornerRadius = imgVehicleImage.frame.width / 2
+//        imgVehicleImage.layer.masksToBounds = true
         
         imgVehicleImage.layer.borderWidth = 1.0
-        imgVehicleImage.layer.borderColor = UIColor.black.cgColor
+        imgVehicleImage.layer.borderColor = ThemeYellowColor.cgColor
         
-        
+        imgVehicleImage.image = UIImage.init(named: "iconCarPlaceholder")
+        imgDriverLicence.image = UIImage.init(named: "iconEditProfile")
+        imgCarRegistration.image = UIImage.init(named: "iconEditProfile")
+        imgVehicleInsurance.image = UIImage.init(named: "iconEditProfile")
+        imgAccreditationCerti.image = UIImage.init(named: "iconEditProfile")
         // Do any additional setup after loading the view.
     }
     
@@ -234,8 +238,8 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
         imageView.sd_setShowActivityIndicatorView(true)
         imageView.sd_setIndicatorStyle(.gray)
         imageView.sd_setImage(with: URL(string: url)) { (image, error, cacheType, url) in
-        imageView.layer.cornerRadius = imageView.frame.size.width/2
-        imageView.layer.masksToBounds = true
+//        imageView.layer.cornerRadius = imageView.frame.size.width/2
+//        imageView.layer.masksToBounds = true
             
         }
         

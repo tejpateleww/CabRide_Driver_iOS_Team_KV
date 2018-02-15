@@ -12,15 +12,35 @@ import QuartzCore
 
 class Utilities: NSObject
 {
+   
+    class func SetLeftSIDEImage(TextField: UITextField, ImageName: String)
+    {
+        
+        let leftImageView = UIImageView()
+        leftImageView.contentMode = .scaleAspectFit
+        
+        let leftView = UIView()
+        
+        leftView.frame = CGRect(x: 10, y: 0, width: 30, height: 20)
+        leftImageView.frame = CGRect(x: 13, y: 3, width: 15, height: 20)
+        TextField.leftViewMode = .always
+        TextField.leftView = leftView
+        leftView.backgroundColor = UIColor.gray
+        let image = UIImage(named: ImageName)?.withRenderingMode(.alwaysTemplate)
+        leftImageView.image = image
+        leftImageView.tintColor = UIColor.white
+        leftImageView.tintColorDidChange()
+        
+        leftView.addSubview(leftImageView)
+    }
 
-//    func showActivityIndicator()
-//    {
-//        SVProgressHUD.show()
-//    }
-//    func hideActivityIndicator()
-//    {
-//        SVProgressHUD.dismiss()
-//    }
+
+    class func setStatusBarColor(color: UIColor)
+    {
+        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+        statusBar.backgroundColor = UIColor.clear
+    }
+  
     
     func isEmpty(str: String) -> Bool
     {
@@ -35,17 +55,17 @@ class Utilities: NSObject
         {
             return true
         }
-        if newString == nil
+        if newString == ""
         {
             return true
         }
-        else if (newString.count ?? 0) == 0 {
+        else if (newString.count ) == 0 {
             return true
         }
         else
         {
             newString = newString.trimmingCharacters(in: .whitespacesAndNewlines)
-            if (str.count ?? 0) == 0 {
+            if (str.count ) == 0 {
                 return true
                 
             }
@@ -64,7 +84,7 @@ class Utilities: NSObject
             cString.remove(at: cString.startIndex)
         }
         
-        if ((cString.characters.count) != 6) {
+        if ((cString.count) != 6) {
             return UIColor.gray
         }
         

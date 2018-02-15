@@ -31,6 +31,9 @@ class RatingViewController: UIViewController,FloatRatingViewDelegate {
         strBookingID = (dictData["details"]! as! [String : AnyObject])["Id"] as! String
         lblDetail.text = "How was your experience with \((dictPassengerInfo!.object(forKey: "Fullname") as! String))?"// (dictPassengerInfo!.object(forKey: "Fullname") as! String)
         // Do any additional setup after loading the view.
+        
+        btnSubmit.layer.cornerRadius = 5
+        btnSubmit.layer.masksToBounds = true
     }
     @IBAction func btnGiveRating(_ sender: Any) {
         

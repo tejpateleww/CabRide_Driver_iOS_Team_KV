@@ -11,9 +11,21 @@ import UIKit
 class DispatchJobsViewController: ParentViewController
 {
 
+    
+    @IBOutlet var btnBookNow: UIButton!
+    
+    @IBOutlet var btnBookLater: UIButton!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        btnBookNow.layer.cornerRadius = btnBookNow.frame.size.height/2
+        btnBookNow.layer.masksToBounds = true
+        
+        btnBookLater.layer.cornerRadius = btnBookLater.frame.size.height/2
+        btnBookLater.layer.masksToBounds = true
+        
         // Do any additional setup after loading the view.
     }
 

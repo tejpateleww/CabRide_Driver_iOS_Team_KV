@@ -9,7 +9,7 @@
 import UIKit
 import NVActivityIndicatorView
 
-class FutureBookingVC: ParentViewController, UITableViewDataSource, UITableViewDelegate {
+class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
    
@@ -351,16 +351,16 @@ class FutureBookingVC: ParentViewController, UITableViewDataSource, UITableViewD
 //                    self.stopSound()
                      Singletons.sharedInstance.isPresentVC = true
                     
-                    if self.isModal() {
-                        self.dismiss(animated: true, completion: {
-                            
-                        })
-                        
-                    }
-                    else {
-                        
-                        self.navigationController?.popViewController(animated: true)
-                    }
+//                    if self.isModal() {
+//                        self.dismiss(animated: true, completion: {
+//                            
+//                        })
+//                        
+//                    }
+//                    else {
+//                        
+//                        self.navigationController?.popViewController(animated: true)
+//                    }
                     
                  })
                 alert.addAction(OK)

@@ -117,12 +117,30 @@ import UIKit
     }
 
     // MARK:- Text Rect Management
-    override open func textRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x:4, y:4, width:bounds.size.width, height:bounds.size.height);
+    override open func textRect(forBounds bounds: CGRect) -> CGRect
+    {
+        var left : CGFloat = 0
+        var right : CGFloat = 0
+        if leftViewMode == .unlessEditing || leftViewMode == .always {
+            left = (leftView?.bounds.size.width)! + 10
+        }
+        if rightViewMode == .unlessEditing || rightViewMode == .always {
+            right = rightView?.bounds.size.width ?? 0.0
+        }
+        return CGRect(x: 4 + left, y: 1, width: bounds.size.width - left - right, height: bounds.size.height)
     }
 
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x:4, y:4, width:bounds.size.width, height:bounds.size.height);
+        
+        var left : CGFloat = 0
+        var right : CGFloat = 0
+        if leftViewMode == .whileEditing || leftViewMode == .always {
+            left = (leftView?.bounds.size.width)! + 10
+        }
+        if rightViewMode == .whileEditing || rightViewMode == .always {
+            right = rightView?.bounds.size.width ?? 0.0
+        }
+        return CGRect(x: 4 + left, y: 1, width: bounds.size.width - left - right, height: bounds.size.height)
     }
 
     //MARK:- UITextfield Becomes First Responder

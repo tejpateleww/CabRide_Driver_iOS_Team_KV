@@ -1203,7 +1203,7 @@
 				TargetAttributes = {
 					00E5CEA21F8B402C004409A4 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = LNR2265795;
+						DevelopmentTeam = HS8349WC4W;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -1642,11 +1642,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = LNR2265795;
+				DEVELOPMENT_TEAM = HS8349WC4W;
 				INFOPLIST_FILE = "$(SRCROOT)/Other Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eww.PickNGo.driver;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pickngo.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1664,11 +1664,11 @@
 				CODE_SIGN_ENTITLEMENTS = "Other Resources/PickNGo-Driver.entitlements";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = LNR2265795;
+				DEVELOPMENT_TEAM = HS8349WC4W;
 				INFOPLIST_FILE = "$(SRCROOT)/Other Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.eww.PickNGo.driver;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pickngo.driver;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";

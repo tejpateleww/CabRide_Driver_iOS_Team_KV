@@ -108,6 +108,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         
         btnCurrentlocation.layer.cornerRadius = 5
         btnCurrentlocation.layer.masksToBounds = true
+        viewLocationDetails.layer.cornerRadius = 5
         
         BottomButtonView.isHidden = true
         StartTripView.isHidden = true
@@ -214,6 +215,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(true)
+        self.navigationController?.isNavigationBarHidden = true
+
     }
     
     

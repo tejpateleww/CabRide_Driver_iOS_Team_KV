@@ -11,7 +11,7 @@ import NVActivityIndicatorView
 
 
 
-class PastJobsListVC: ParentViewController, UITableViewDataSource, UITableViewDelegate {
+class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
     override func loadView() {
@@ -55,12 +55,9 @@ class PastJobsListVC: ParentViewController, UITableViewDataSource, UITableViewDe
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-        
-        headerView?.btnBack.addTarget(self, action: #selector(self.dismissSelf), for: .touchUpInside)
-        
-        
         tableView.dataSource = self
         tableView.delegate = self
             

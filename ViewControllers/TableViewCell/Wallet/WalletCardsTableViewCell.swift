@@ -44,6 +44,7 @@ class WalletCardsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var lblAddCard: UILabel!
     
+    @IBOutlet var imgArrow: UIImageView!
     
     
 }

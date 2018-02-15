@@ -17,7 +17,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
      var dictData = [String:AnyObject]()
 
     let thePicker = UIPickerView()
-
+    let datePicker = UIDatePicker()
     //-------------------------------------------------------------
     // MARK: - Base Methods
     //-------------------------------------------------------------
@@ -26,19 +26,52 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     override func viewDidLoad() {
         super.viewDidLoad()
         thePicker.delegate = self
-
-        viewGenders.layer.borderWidth = 1
-        viewGenders.layer.masksToBounds = true
-        viewGenders.layer.borderColor = UIColor.gray.cgColor
+        showDatePicker()
+//        viewGenders.layer.borderWidth = 1
+//        viewGenders.layer.masksToBounds = true
+//        viewGenders.layer.borderColor = UIColor.gray.cgColor
         
-        txtMobileNumber.delegate = self
+        txtMobile.delegate = self
         txtPostCode.delegate = self
         
         webserviceCallToGetCompanyList()
-        //setData()
+        setData()
         
     }
+    func showDatePicker(){
+        //Formate Date
+        datePicker.datePickerMode = .date
+        
+        //ToolBar
+        let toolbar = UIToolbar();
+        toolbar.sizeToFit()
+        
+        //done button & cancel button
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.bordered, target: self, action: "donedatePicker")
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.bordered, target: self, action: "cancelDatePicker")
+        toolbar.setItems([doneButton,spaceButton,cancelButton], animated: false)
+        
+        // add toolbar to textField
+        txtDOB.inputAccessoryView = toolbar
+        // add datepicker to textField
+        txtDOB.inputView = datePicker
+        
+    }
+    func donedatePicker(){
+        //For date formate
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd/MM/yyyy"
+        txtDOB.text = formatter.string(from: datePicker.date)
+        //dismiss date picker dialog
+        self.view.endEditing(true)
+    }
     
+    func cancelDatePicker(){
+        //cancel button dismiss datepicker dialog
+        self.view.endEditing(true)
+    }
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         
@@ -46,7 +79,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         btnEditProfileIPic.layer.cornerRadius = btnEditProfileIPic.frame.size.width / 2
         btnEditProfileIPic.layer.masksToBounds = true
         imgProfile.layer.borderWidth = 1.0
-        imgProfile.layer.borderColor = UIColor.black.cgColor
+        imgProfile.layer.borderColor = ThemeYellowColor.cgColor
         imgProfile.layer.masksToBounds = true
     }
     
@@ -72,9 +105,9 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     @IBOutlet weak var viewGenders: UIView!
     
     @IBOutlet weak var txtCompanyID: UITextField!
-    @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtMobile: UITextField!
     @IBOutlet weak var txtFullName: UITextField!
-    @IBOutlet weak var txtMobileNumber: UITextField!
+    @IBOutlet weak var txtDOB: UITextField!
     @IBOutlet weak var txtAddress: UITextField!
     @IBOutlet weak var txtPostCode: UITextField!
     @IBOutlet weak var txtCity: UITextField!
@@ -151,19 +184,20 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     }
     
     // For Mobile Number
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
+    {
         
-        if textField == txtMobileNumber {
-            let resultText: String? = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
-//            return (resultText?.count ?? 0) <= 10
-            
-            if resultText!.count >= 11 {
-                return false
-            }
-            else {
-                return true
-            }
-        }
+//        if textField == txtMobileNumber {
+//            let resultText: String? = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
+////            return (resultText?.count ?? 0) <= 10
+//
+//            if resultText!.count >= 11 {
+//                return false
+//            }
+//            else {
+//                return true
+//            }
+//        }
         
 //         if textField == txtPostCode {
 //            let resText: String? = (textField.text as NSString?)?.replacingCharacters(in: range, with: string)
@@ -180,37 +214,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     }
 
     
-    //-------------------------------------------------------------
-    // MARK: - Picker Methods
-    //-------------------------------------------------------------
-    
-    
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView( _ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-   
-        return aryCompanyIDS.count
-        
-    }
-    
-    func pickerView( _ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        return aryCompanyIDS[row]["CompanyName"] as? String
-        
-    }
-    
-    func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        self.txtCompanyID.text = aryCompanyIDS[row]["CompanyName"] as? String
-        companyID = (aryCompanyIDS[row]["Id"] as? String)!
-        
-        txtCity.text = aryCompanyIDS[row]["City"] as? String
-        txtState.text = aryCompanyIDS[row]["State"] as? String
-        txtCountry.text = aryCompanyIDS[row]["Country"] as? String
-        
-    }
+
     
     
     
@@ -220,8 +224,6 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     
     @IBAction func txtCompanyId(_ sender: UITextField) {
         
-        thePicker.selectedRow(inComponent: 0)
-        self.txtCompanyID.inputView = thePicker
         
     }
     
@@ -287,26 +289,26 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
             //aryCompanyIDS = UserDefaults.standard.object(forKey: OTPCodeStruct.kCompanyList) as! [[String : AnyObject]]
 
             
-            txtEmail.text           = profile.object(forKey: "Email") as? String
+            txtMobile.text           = profile.object(forKey: "MobileNo") as? String
             txtFullName.text        = profile.object(forKey: "Fullname") as? String
-            txtMobileNumber.text    = profile.object(forKey: "MobileNo") as? String
+//            txtMobileNumber.text    = profile.object(forKey: "MobileNo") as? String
             txtAddress.text         = profile.object(forKey: "Address") as? String
             txtPostCode.text        = profile.object(forKey: "ZipCode") as? String
-            txtCity.text            = profile.object(forKey: "City") as? String
-            txtState.text           = profile.object(forKey: "State") as? String
-            txtCountry.text         = profile.object(forKey: "Country") as? String
-            txtSuburb.text          = profile.object(forKey: "SubUrb") as? String
+//            txtCity.text            = profile.object(forKey: "City") as? String
+//            txtState.text           = profile.object(forKey: "State") as? String
+//            txtCountry.text         = profile.object(forKey: "Country") as? String
+//            txtSuburb.text          = profile.object(forKey: "SubUrb") as? String
         
-        let array = self.aryCompanyIDS as NSArray
+//        let array = self.aryCompanyIDS as NSArray
         
-        for id in array
-        {
-            if ((id as! NSDictionary).object(forKey: "Id") as! String == profile.object(forKey: "CompanyId") as! String )
-            {
-                self.txtCompanyID.text = (id as! NSDictionary).object(forKey: "CompanyName") as? String
-                self.companyID = ((id as! NSDictionary).object(forKey: "Id") as? String)!
-            }
-        }
+//        for id in array
+//        {
+//            if ((id as! NSDictionary).object(forKey: "Id") as! String == profile.object(forKey: "CompanyId") as! String )
+//            {
+////                self.txtCompanyID.text = (id as! NSDictionary).object(forKey: "CompanyName") as? String
+////                self.companyID = ((id as! NSDictionary).object(forKey: "Id") as? String)!
+//            }
+//        }
 
 //         txtCompanyID.text       = (self.aryCompanyIDS as NSArray).filtered(using: "") as? String
         
@@ -356,16 +358,12 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         
         dictData["DriverId"] = driverID as AnyObject
         dictData["CompanyId"] = companyID as AnyObject
-        
         dictData["Fullname"] = txtFullName.text as AnyObject
         dictData["Gender"] = genderSet as AnyObject
-        //        dictData[""] = txtMobileNumber.text as? AnyObject
         dictData["Address"] = txtAddress.text as AnyObject
-        dictData["Suburb"] = txtSuburb.text as AnyObject
+        dictData["DOB"] = txtDOB.text as AnyObject
         dictData["Zipcode"] = txtPostCode.text as AnyObject
-        dictData["City"] = txtCity.text as AnyObject
-        dictData["State"] = txtState.text as AnyObject
-        dictData["Country"] = txtCountry.text as AnyObject
+
         
         if imgProfile.image == nil {
             UtilityClass.showAlert("Missing", message: "Profile picture is required", vc: self)
@@ -430,8 +428,29 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
                 if let res = result as? String {
                     UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
                 }
-                else if let resDict = result as? NSDictionary {
-                    UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
+                else if let resDict = result as? NSDictionary
+                {
+//                    if (newString as? NSNull) == NSNull()
+                    
+                    if (resDict.object(forKey: "message")  as? NSNull) != nil
+                    {
+                         UtilityClass.showAlert(appName.kAPPName, message: "Something went wrong!", vc: self)
+                    }
+                    else
+                    {
+                         UtilityClass.showAlert(appName.kAPPName, message: (resDict.object(forKey: "message") as? String)!, vc: self)
+                    }
+                    
+//                    if(((resDict.object(forKey: "message") as! String)as? NSNull) == NSNull())
+//                        {
+//                             UtilityClass.showAlert(appName.kAPPName, message: "Something went wrong!", vc: self)
+//                        }
+//                        else
+//
+//                        {
+//                         UtilityClass.showAlert(appName.kAPPName, message: (resDict.object(forKey: "message") as? String)!, vc: self)
+//                        }
+                   
                 }
                 else if let resAry = result as? NSArray {
                     UtilityClass.showAlert(appName.kAPPName, message: (resAry.object(at: 0) as! NSDictionary).object(forKey: "message") as! String, vc: self)
@@ -444,35 +463,15 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     
     func validations() -> Bool
     {
-        if(txtEmail.text?.count == 0)
-        {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter email", vc: self)
-            return false
-        }
-        else if(txtCity.text?.count == 0)
-        {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter city", vc: self)
-            return false
-        
-        }
-        else if (txtState.text?.count == 0)
-        {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter State", vc: self)
-            return false
-        }
-        else if (txtSuburb.text?.count == 0)
-        {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Suburb", vc: self)
-            return false
-        }
-        else if (txtAddress.text?.count == 0)
+
+        if (txtAddress.text?.count == 0)
         {
             UtilityClass.showAlert(appName.kAPPName, message: "Enter Address", vc: self)
             return false
         }
-        else if (txtCountry.text?.count == 0)
+        else if (txtDOB.text?.count == 0)
         {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Country", vc: self)
+            UtilityClass.showAlert(appName.kAPPName, message: "Enter Date of Birth", vc: self)
             return false
         }
         else if (txtFullName.text?.count == 0)
@@ -483,16 +482,6 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         else if (txtPostCode.text?.count == 0)
         {
             UtilityClass.showAlert(appName.kAPPName, message: "Enter Post Code", vc: self)
-            return false
-        }
-        else if (txtCompanyID.text?.count == 0)
-        {
-            UtilityClass.showAlert(appName.kAPPName, message: "Select Company", vc: self)
-            return false
-        }
-        else if (txtMobileNumber.text?.count == 0)
-        {
-            UtilityClass.showAlert(appName.kAPPName, message: "Enter Mobile Number", vc: self)
             return false
         }
         

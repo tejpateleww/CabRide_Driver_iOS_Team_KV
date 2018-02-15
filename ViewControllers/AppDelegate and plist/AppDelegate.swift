@@ -19,11 +19,14 @@ import SocketIO
 import Firebase
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate,MessagingDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate, UNUserNotificationCenterDelegate,MessagingDelegate
+{
 
     var window: UIWindow?
     let manager = CLLocationManager()
     var bgTask : UIBackgroundTaskIdentifier!
+    
+   
     
     let SocketManager = SocketIOClient(socketURL: URL(string: "http://54.206.55.185:8080")!, config: [.log(false), .compress])
     
