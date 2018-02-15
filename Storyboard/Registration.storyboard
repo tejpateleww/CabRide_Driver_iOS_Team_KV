@@ -2160,7 +2160,7 @@ You must be 21 years of age or over.</string>
                         <viewControllerLayoutGuide type="top" id="8Tj-ha-RAJ"/>
                         <viewControllerLayoutGuide type="bottom" id="cME-eS-Y7J"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bQ-5u-CDr">
+                    <view key="view" contentMode="scaleToFill" id="8bQ-5u-CDr" customClass="IQPreviousNextView" customModule="IQKeyboardManagerSwift">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="533"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

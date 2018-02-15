@@ -359,6 +359,7 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
                 }
                 
                 UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+                Singletons.sharedInstance.isDriverLoggedIN = false                                                                                                                                                                                                                                                        
                 self.performSegue(withIdentifier: "SignOutFromSideMenu", sender: (Any).self)
                 
             }
