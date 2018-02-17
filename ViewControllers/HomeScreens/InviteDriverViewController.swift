@@ -33,7 +33,7 @@ class InviteDriverViewController: ParentViewController, MFMailComposeViewControl
         
         if let RefarMoney = (profileData?.object(forKey: "profile") as! NSDictionary).object(forKey: "ReferralAmount") as? Double {
             strReferralMoney = String(RefarMoney)
-            lblReferralMoney.text = "$ \(strReferralMoney)"
+            lblReferralMoney.text = "\(currency) \(strReferralMoney)"
         }
         
         if let imgProfile = (profileData?.object(forKey: "profile") as! NSDictionary).object(forKey: "Image") as? String {

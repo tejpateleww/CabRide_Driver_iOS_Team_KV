@@ -19,6 +19,9 @@ let ThemeStatusBarColor : UIColor = UIColor.init(hex:  "cccccc")
 
 let navigationBarHeightIphoneX = 84
 var utility = Utilities()
+
+let currency : String = "LKR"
+let RingToneSound : String = "PickNGo"
 let kBackIcon : String = "iconArrow"
 let kMenuIcon : String = "menu"
 let kRighticon : String = "right_start_icon"

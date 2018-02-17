@@ -46,7 +46,7 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
     {
         super.viewWillAppear(true)
         UIApplication.shared.statusBarStyle = .default
-        self.lblCurrentBalance.text = "Balance  $\(Singletons.sharedInstance.strCurrentBalance)"
+        self.lblCurrentBalance.text = "Balance  \(currency)\(Singletons.sharedInstance.strCurrentBalance)"
     }
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let pageNumber = round(scrollView.contentOffset.x / scrollView.frame.size.width)
@@ -183,10 +183,10 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
                 Singletons.sharedInstance.strCurrentBalance = ((result as! NSDictionary).object(forKey: "walletBalance") as AnyObject).doubleValue
                 let currentRatio = Double(Singletons.sharedInstance.strCurrentBalance)
                 
-                self.lblCurrentBalance.text = "Balance  $\(String(format: "%.2f", currentRatio))"
-//                self.lblCurrentBalance.text = "$\(Singletons.sharedInstance.strCurrentBalance)"
+                self.lblCurrentBalance.text = "Balance  \(currency)\(String(format: "%.2f", currentRatio))"
+//                self.lblCurrentBalance.text = "\(currency)\(Singletons.sharedInstance.strCurrentBalance)"
                 
-//                self.lblAvailableFundsDesc.text = "$\(Singletons.sharedInstance.strCurrentBalance)"
+//                self.lblAvailableFundsDesc.text = "\(currency)\(Singletons.sharedInstance.strCurrentBalance)"
                 
 //                self.aryData = (result as! NSDictionary).object(forKey: "history") as! [[String:AnyObject]]
                 

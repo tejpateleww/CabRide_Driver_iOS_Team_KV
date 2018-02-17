@@ -9,6 +9,9 @@
 import UIKit
 
 class Singletons: NSObject {
+    
+    
+//    var isOnTabbarView = Bool()
     var dictDriverProfile : NSMutableDictionary!
     var arrVehicleClass: NSMutableArray!
     var isDriverLoggedIN : Bool!

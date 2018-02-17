@@ -90,7 +90,7 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
             print(strDropoffLocation)
             print(strFlightNumber)
             print(strNotes)
-            lblGrandTotal.text = "Grand Total is $\(strGrandTotal)"
+            lblGrandTotal.text = "Grand Total is \(currency) \(strGrandTotal)"
             lblPickupLocation.text = strPickupLocation
             lblDropoffLocation.text = strDropoffLocation
             
@@ -136,7 +136,7 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     
     func playSound() {
         
-        guard let url = Bundle.main.url(forResource: "ringTone", withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: "\(RingToneSound)", withExtension: "mp3") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -144,7 +144,7 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
             
             //            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
             audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer.numberOfLoops = -1
+            audioPlayer.numberOfLoops = 4
             audioPlayer.play()
         }
         catch let error {
@@ -154,7 +154,7 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
     
     func stopSound() {
         
-        guard let url = Bundle.main.url(forResource: "ringTone", withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: "\(RingToneSound)", withExtension: "mp3") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)

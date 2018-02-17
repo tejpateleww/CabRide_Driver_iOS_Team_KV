@@ -50,10 +50,11 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
             aryData = Singletons.sharedInstance.walletHistoryData
             let currentRatio = Double(Singletons.sharedInstance.strCurrentBalance)
             
-            self.lblAvailableFundsDesc.text = "$\(String(format: "%.2f", currentRatio))"
+            self.lblAvailableFundsDesc.text = "\(currency)\(String(format: "%.2f", currentRatio))"
             
         }
-       
+       imgLKR.image = UIImage.init(named: "roundDollar")?.withRenderingMode(.alwaysTemplate)
+        imgLKR.tintColor = UIColor.gray
     }
     
     override func viewWillLayoutSubviews() {
@@ -83,7 +84,8 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
     @IBOutlet weak var lblAvailableFunds: UILabel!
     @IBOutlet weak var lblAvailableFundsDesc: UILabel!
     
-  
+    @IBOutlet var imgLKR: UIImageView!
+    
     @IBOutlet weak var viewCenter: UIView!
     
     @IBOutlet weak var imgTopUp: UIImageView!
@@ -178,7 +180,7 @@ class WalletBalanceMainVC: ParentViewController, UITableViewDataSource, UITableV
                 
                 let currentRatio = Double(Singletons.sharedInstance.strCurrentBalance)
                 
-                self.lblAvailableFundsDesc.text = "$\(String(format: "%.2f", currentRatio))"
+                self.lblAvailableFundsDesc.text = "\(currency)\(String(format: "%.2f", currentRatio))"
                 
                 self.aryData = (result as! NSDictionary).object(forKey: "history") as! [[String:AnyObject]]
                 

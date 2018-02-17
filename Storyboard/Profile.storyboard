@@ -223,7 +223,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLU-Ck-0jX">
-                                        <rect key="frame" x="5" y="25" width="46" height="32"/>
+                                        <rect key="frame" x="12" y="25" width="46" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="vPW-gG-Yav"/>
                                         </constraints>
@@ -257,7 +257,7 @@
                                     <constraint firstAttribute="height" constant="64" id="GCJ-PP-5EZ"/>
                                     <constraint firstAttribute="bottom" secondItem="5BY-qE-6v6" secondAttribute="bottom" constant="10" id="IGb-p9-Kxi"/>
                                     <constraint firstItem="wJ3-i9-zDp" firstAttribute="centerY" secondItem="wLU-Ck-0jX" secondAttribute="centerY" id="Qy5-Q8-Gm3"/>
-                                    <constraint firstItem="wLU-Ck-0jX" firstAttribute="leading" secondItem="Oib-sl-coK" secondAttribute="leading" constant="5" id="YWI-ce-u64"/>
+                                    <constraint firstItem="wLU-Ck-0jX" firstAttribute="leading" secondItem="Oib-sl-coK" secondAttribute="leading" constant="12" id="YWI-ce-u64"/>
                                     <constraint firstItem="wLU-Ck-0jX" firstAttribute="top" secondItem="5BY-qE-6v6" secondAttribute="top" id="dxm-Iu-wj1"/>
                                     <constraint firstItem="5BY-qE-6v6" firstAttribute="top" secondItem="Oib-sl-coK" secondAttribute="top" constant="25" id="gWq-1Q-pzw"/>
                                 </constraints>
@@ -268,7 +268,7 @@
                             <constraint firstItem="Bc2-jC-XWB" firstAttribute="top" secondItem="Vez-Jc-Hq7" secondAttribute="bottom" constant="44" id="5j0-RA-5Jy"/>
                             <constraint firstItem="Oib-sl-coK" firstAttribute="leading" secondItem="nnp-3I-ZXo" secondAttribute="leading" id="Fjl-5W-Xkt"/>
                             <constraint firstItem="Bc2-jC-XWB" firstAttribute="leading" secondItem="nnp-3I-ZXo" secondAttribute="leading" id="GU4-l3-G6R"/>
-                            <constraint firstItem="Oib-sl-coK" firstAttribute="top" secondItem="nnp-3I-ZXo" secondAttribute="top" id="QsO-ti-Soe"/>
+                            <constraint firstItem="Oib-sl-coK" firstAttribute="top" secondItem="Vez-Jc-Hq7" secondAttribute="bottom" constant="-20" id="QsO-ti-Soe"/>
                             <constraint firstItem="MqF-wK-z5A" firstAttribute="top" secondItem="Vez-Jc-Hq7" secondAttribute="bottom" constant="70" id="ZWo-Uh-m3s"/>
                             <constraint firstAttribute="trailing" secondItem="MqF-wK-z5A" secondAttribute="trailing" constant="10" id="auI-Te-tzo"/>
                             <constraint firstAttribute="trailing" secondItem="Oib-sl-coK" secondAttribute="trailing" id="g64-AG-vyD"/>
@@ -811,7 +811,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkR-zU-vJM">
-                                        <rect key="frame" x="10" y="25" width="46" height="32"/>
+                                        <rect key="frame" x="12" y="25" width="46" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="Oeh-wU-4iE"/>
                                         </constraints>
@@ -844,7 +844,7 @@
                                     <constraint firstAttribute="height" constant="64" id="2Rh-1z-5Xu"/>
                                     <constraint firstItem="UVz-Qo-8KH" firstAttribute="top" secondItem="oOG-L8-vg1" secondAttribute="top" constant="25" id="4e9-TQ-gfE"/>
                                     <constraint firstAttribute="bottom" secondItem="nkR-zU-vJM" secondAttribute="bottom" constant="7" id="DTG-8H-kd4"/>
-                                    <constraint firstItem="nkR-zU-vJM" firstAttribute="leading" secondItem="oOG-L8-vg1" secondAttribute="leading" constant="10" id="G19-5M-RSg"/>
+                                    <constraint firstItem="nkR-zU-vJM" firstAttribute="leading" secondItem="oOG-L8-vg1" secondAttribute="leading" constant="12" id="G19-5M-RSg"/>
                                     <constraint firstAttribute="bottom" secondItem="UVz-Qo-8KH" secondAttribute="bottom" constant="10" id="QOj-Np-vVp"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="RFm-YR-YQB"/>
                                     <constraint firstAttribute="trailing" secondItem="UVz-Qo-8KH" secondAttribute="trailing" constant="10" id="lHQ-rW-FHD"/>
@@ -1151,21 +1151,11 @@
                                     <constraint firstAttribute="bottom" secondItem="4T1-Um-yeV" secondAttribute="bottom" id="wYt-sZ-GhU"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navHairLine" translatesAutoresizingMaskIntoConstraints="NO" id="8gm-Rz-4GC">
-                                <rect key="frame" x="0.0" y="62" width="320" height="2"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="6Wy-Xr-1TK"/>
-                                    <constraint firstAttribute="height" constant="2" id="EOh-Ua-8vn"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="8gm-Rz-4GC" firstAttribute="top" secondItem="uwa-EW-fzN" secondAttribute="top" constant="62" id="1hB-db-QRg"/>
-                            <constraint firstItem="8gm-Rz-4GC" firstAttribute="leading" secondItem="uwa-EW-fzN" secondAttribute="leading" id="7CG-Ue-DZQ"/>
                             <constraint firstItem="kDZ-yD-vuF" firstAttribute="top" secondItem="pc8-Wo-tAc" secondAttribute="bottom" constant="75" id="JYi-cx-JPV"/>
                             <constraint firstItem="kDZ-yD-vuF" firstAttribute="leading" secondItem="uwa-EW-fzN" secondAttribute="leadingMargin" id="KDC-bf-euN"/>
-                            <constraint firstAttribute="trailing" secondItem="8gm-Rz-4GC" secondAttribute="trailing" id="P2k-Cj-0wo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kDZ-yD-vuF" secondAttribute="trailing" id="Qf3-z4-Hsl"/>
                         </constraints>
                     </view>
@@ -1207,7 +1197,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ACt-nu-P7B">
-                                        <rect key="frame" x="5" y="25" width="46" height="32"/>
+                                        <rect key="frame" x="12" y="25" width="46" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="lVc-Px-xSU"/>
                                         </constraints>
@@ -1238,7 +1228,7 @@
                                     <constraint firstAttribute="bottom" secondItem="ACt-nu-P7B" secondAttribute="bottom" constant="7" id="f5Q-JR-yCy"/>
                                     <constraint firstAttribute="trailing" secondItem="ySn-6L-NW0" secondAttribute="trailing" constant="10" id="gaN-Il-jfP"/>
                                     <constraint firstAttribute="bottom" secondItem="ySn-6L-NW0" secondAttribute="bottom" constant="10" id="iZc-KR-mjA"/>
-                                    <constraint firstItem="ACt-nu-P7B" firstAttribute="leading" secondItem="Sdv-H1-YG9" secondAttribute="leading" constant="5" id="jh4-53-t1i"/>
+                                    <constraint firstItem="ACt-nu-P7B" firstAttribute="leading" secondItem="Sdv-H1-YG9" secondAttribute="leading" constant="12" id="jh4-53-t1i"/>
                                     <constraint firstAttribute="height" constant="64" id="uEH-Uq-QmU"/>
                                 </constraints>
                             </view>
@@ -1256,20 +1246,20 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconCarPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Cue-Ml-Kif">
-                                <rect key="frame" x="10" y="77" width="300" height="104"/>
+                                <rect key="frame" x="10" y="77" width="300" height="110"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="104" id="tM1-Et-YiQ"/>
+                                    <constraint firstAttribute="height" constant="110" id="tM1-Et-YiQ"/>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconEditProfile" translatesAutoresizingMaskIntoConstraints="NO" id="P1y-eC-yhq">
-                                <rect key="frame" x="148" y="168.5" width="25" height="25"/>
+                                <rect key="frame" x="148" y="174.5" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="XUg-CP-km3"/>
                                     <constraint firstAttribute="height" constant="25" id="yLg-wE-cHa"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="X4Y-jN-ml7">
-                                <rect key="frame" x="7" y="203.5" width="306" height="219"/>
+                                <rect key="frame" x="7" y="209.5" width="306" height="219"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5M-Oo-yKG">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="51"/>
@@ -2011,10 +2001,13 @@ You must be 21 years of age or over.</string>
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="392"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconCarPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="Ukz-MO-OCt">
-                                                        <rect key="frame" x="10" y="74" width="300" height="104"/>
+                                                        <rect key="frame" x="10" y="74" width="300" height="110"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="110" id="mmu-52-Nxo"/>
+                                                        </constraints>
                                                     </imageView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconEditProfile" translatesAutoresizingMaskIntoConstraints="NO" id="3gQ-9Z-tSp">
-                                                        <rect key="frame" x="147" y="165.5" width="25" height="25"/>
+                                                        <rect key="frame" x="147" y="171.5" width="25" height="25"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="CKP-4S-FmI"/>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="QR9-rW-xOp"/>
@@ -2023,7 +2016,7 @@ You must be 21 years of age or over.</string>
                                                         </constraints>
                                                     </imageView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7Aa-vp-Sls">
-                                                        <rect key="frame" x="10" y="206" width="300" height="146"/>
+                                                        <rect key="frame" x="10" y="212" width="300" height="146"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M8n-DL-CqP">
                                                                 <rect key="frame" x="0.0" y="0.0" width="300" height="42"/>
@@ -2208,7 +2201,7 @@ You must be 21 years of age or over.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5rz-mk-ElG">
-                                        <rect key="frame" x="5" y="25" width="46" height="32"/>
+                                        <rect key="frame" x="12" y="25" width="46" height="32"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="46" id="StS-TL-oh8"/>
                                         </constraints>
@@ -2244,7 +2237,7 @@ You must be 21 years of age or over.</string>
                                     <constraint firstItem="Uq3-2U-QLh" firstAttribute="centerY" secondItem="5rz-mk-ElG" secondAttribute="centerY" id="N33-E7-ZJ5"/>
                                     <constraint firstAttribute="bottom" secondItem="8Qe-pF-xKW" secondAttribute="bottom" constant="10" id="Xd4-ut-XuM"/>
                                     <constraint firstAttribute="bottom" secondItem="5rz-mk-ElG" secondAttribute="bottom" constant="7" id="ltp-IN-ITh"/>
-                                    <constraint firstItem="5rz-mk-ElG" firstAttribute="leading" secondItem="S69-QT-fDR" secondAttribute="leading" constant="5" id="wXe-l6-sou"/>
+                                    <constraint firstItem="5rz-mk-ElG" firstAttribute="leading" secondItem="S69-QT-fDR" secondAttribute="leading" constant="12" id="wXe-l6-sou"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2261,6 +2254,7 @@ You must be 21 years of age or over.</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgVehicle" destination="Ukz-MO-OCt" id="vyI-km-oir"/>
                         <outlet property="txtCarType" destination="fAC-yP-EJb" id="GpT-Tp-ziS"/>
                         <outlet property="txtCompany" destination="jL9-Dh-XTY" id="NaQ-9T-iIW"/>
                         <outlet property="txtVehicleRegistrationNumber" destination="arv-4X-CCH" id="i3O-a3-DU4"/>

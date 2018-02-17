@@ -39,6 +39,7 @@ class HeaderView: UIView {
     @IBOutlet var btnBack: UIButton!
     @IBOutlet var lblTitle: UILabel!
     
+    @IBOutlet var imgBottomLine: UIImageView!
     
     
     //HeaderView 2

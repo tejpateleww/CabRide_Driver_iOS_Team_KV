@@ -68,7 +68,7 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         self.tableView.isHidden = true
         
         self.tableView.tableFooterView = UIView()
-        self.webserviceofPendingJobs()
+       
         
         self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
@@ -80,7 +80,10 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
         super.didReceiveMemoryWarning()
         
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         self.webserviceofPendingJobs()
+    }
     func handleRefresh(_ refreshControl: UIRefreshControl) {
         
 //        aryPastJobs.removeAllObjects()

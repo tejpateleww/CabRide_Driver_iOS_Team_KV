@@ -41,7 +41,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
-        
+        datePicker.maximumDate = Date()
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
@@ -61,7 +61,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
     func donedatePicker(){
         //For date formate
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "yyyy-mm-dd"
         txtDOB.text = formatter.string(from: datePicker.date)
         //dismiss date picker dialog
         self.view.endEditing(true)

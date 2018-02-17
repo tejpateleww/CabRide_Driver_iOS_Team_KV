@@ -25,7 +25,7 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
     // MARK: - Global Declaration
     //-------------------------------------------------------------
     var aryChooseCareModel = [String]()
-     var aryChooseCarName = [String]()
+    var aryChooseCarName = [String]()
     var aryData = NSArray()
 //    var selectedCells = NSMutableArray()
     
@@ -65,43 +65,21 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
         
         if Singletons.sharedInstance.isFromRegistration == false
         {
-            for (i,_) in self.aryData.enumerated()
+            for i in 0..<self.aryData.count
             {
-                let dictData = aryData.object(at: i) as! NSDictionary
-                
-                if self.selectedCells.count == 3
+                let vehicleID = ((self.aryData as NSArray).object(at: i) as! NSDictionary).object(forKey: "Id") as! String
+                let anotherVehicleID : Int = Int(vehicleID)!
+                for j in 0..<Singletons.sharedInstance.arrVehicleClass.count
                 {
-                    if self.selectedCells.contains(i)
+                    if (anotherVehicleID == (Singletons.sharedInstance.arrVehicleClass.object(at: j)) as! Int)
                     {
-                        self.aryChooseCareModel.remove(at: self.selectedCells.index(of: i)!)
-                        self.aryChooseCarName.remove(at: self.selectedCells.index(of: i)!)
-                        self.selectedCells.remove(at: self.selectedCells.index(of: i)!)
-                    }
-                    else
-                    {
-//                        let sb = Snackbar()
-//                        sb.createWithAction(text: "You can select only three types.", actionTitle: "DISMISS", action: { print("Button is push") })
-//                        sb.show()
-                    }
-                    
-                }
-                else
-                {
-                    if self.selectedCells.contains(i)
-                    {
-                        self.aryChooseCareModel.remove(at: self.selectedCells.index(of: i)!)
-                        self.aryChooseCarName.remove(at: self.selectedCells.index(of: i)!)
-                        self.selectedCells.remove(at: self.selectedCells.index(of: i)!)
-                    }
-                    else
-                    {
+                        self.aryChooseCareModel.append(((self.aryData as NSArray).object(at: i) as! NSDictionary).object(forKey: "Id") as! String)
+                        self.aryChooseCarName.append(((self.aryData as NSArray).object(at: i) as! NSDictionary).object(forKey: "Name") as! String)
                         self.selectedCells.append(i)
-                        self.aryChooseCareModel.append(dictData["Id"] as! String)
-                        self.aryChooseCarName.append(dictData["Name"] as! String)
                     }
                 }
+                
             }
-           
         }
         
 
@@ -211,6 +189,8 @@ class CarAndTaxiesVC: UIViewController, UITableViewDataSource, UITableViewDelega
  
         let joined = aryChooseCareModel.joined(separator: ",")
         UserDefaults.standard.set(joined, forKey: RegistrationFinalKeys.kVehicleClass)
+        
+        Singletons.sharedInstance.vehicleClass = joined
         
         let joinedName = aryChooseCarName.joined(separator: ",")
         UserDefaults.standard.set(joinedName, forKey: RegistrationFinalKeys.kCarThreeTypeName)

@@ -367,49 +367,49 @@ class PayViewController: ParentViewController, UIPickerViewDataSource, UIPickerV
         
         if let amountString = txtAmount.text?.currencyInputFormatting() {
             txtAmount.text = amountString
- 
-            let unfiltered = amountString   //  "!   !! yuahl! !"
-            
-            // Array of Characters to remove
-            let removal: [Character] = ["$",","," "]    // ["!"," "]
-            
-            // turn the string into an Array
-            let unfilteredCharacters = unfiltered
-            
-            // return an Array without the removal Characters
-            let filteredCharacters = unfilteredCharacters.filter { !removal.contains($0) }
-            
-            // build a String with the filtered Array
-            let filtered = String(filteredCharacters)
-            
-            print(filtered) // => "yeah"
-            
-            // combined to a single line
-            print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
-            
-            strAmount = String(unfiltered.filter { !removal.contains($0) })
-            print("amount : \(strAmount)")
-
-            let amt = strAmount.trimmingCharacters(in: .whitespacesAndNewlines)
-            
-            let doubleAmt = (amt as NSString).doubleValue
-            let doubleValue = (steGetTickPayRate as NSString).doubleValue
-            
-            let countPercenteage = (doubleAmt * doubleValue)/100
-            
-            let finalValue = ((strAmount as NSString).doubleValue)
-            
-            txtFinalMount.text = "\(finalValue + countPercenteage)"
-            strAmountOfTotal = "\(finalValue + countPercenteage)"
-            
-            if(finalValue < 100)
-            {
-                txtCVV.isHidden = true
-            }
-            else
-            {
-                txtCVV.isHidden = false
-            }
+//
+//            let unfiltered = amountString   //  "!   !! yuahl! !"
+//
+//            // Array of Characters to remove
+//            let removal: [Character] = ["LKR",","," "]    // ["!"," "]
+//
+//            // turn the string into an Array
+//            let unfilteredCharacters = unfiltered
+//
+//            // return an Array without the removal Characters
+//            let filteredCharacters = unfilteredCharacters.filter { !removal.contains($0) }
+//
+//            // build a String with the filtered Array
+//            let filtered = String(filteredCharacters)
+//
+//            print(filtered) // => "yeah"
+//
+//            // combined to a single line
+//            print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
+//
+//            strAmount = String(unfiltered.filter { !removal.contains($0) })
+//            print("amount : \(strAmount)")
+//
+//            let amt = strAmount.trimmingCharacters(in: .whitespacesAndNewlines)
+//
+//            let doubleAmt = (amt as NSString).doubleValue
+//            let doubleValue = (steGetTickPayRate as NSString).doubleValue
+//
+//            let countPercenteage = (doubleAmt * doubleValue)/100
+//
+//            let finalValue = ((strAmount as NSString).doubleValue)
+//
+//            txtFinalMount.text = "\(finalValue + countPercenteage)"
+//            strAmountOfTotal = "\(finalValue + countPercenteage)"
+//
+//            if(finalValue < 100)
+//            {
+//                txtCVV.isHidden = true
+//            }
+//            else
+//            {
+//                txtCVV.isHidden = false
+//            }
             
         }
         

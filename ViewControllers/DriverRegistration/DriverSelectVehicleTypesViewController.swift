@@ -204,12 +204,8 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
             driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
             UserDefaults.standard.set(4, forKey: savedDataForRegistration.kPageNumber)
         }
-        
-        
-        
-        
-        
     }
+    
     @IBAction func btnDELIVERYservice(_ sender: UIButton)
     {
         

@@ -254,8 +254,6 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
             let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
             
 //            let personalDetailsVC = driverVC.childViewControllers[2] as! DriverPersonelDetailsViewController
-            driverVC.viewDriverBank.backgroundColor = ThemeYellowColor
-            driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
 
             let x = self.view.frame.size.width
             driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)

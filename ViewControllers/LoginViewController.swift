@@ -33,8 +33,11 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     {
         super.loadView()
         
+        txtMobile.text = ""
+        txtPassword.text = ""
         
         Utilities.setStatusBarColor(color: UIColor.clear)
+        
         if(Singletons.sharedInstance.isDriverLoggedIN)
         {
             let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
@@ -54,7 +57,8 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
 //        
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
       
@@ -146,11 +150,11 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func btnForgotPassword(_ sender: UIButton) {
         
         //1. Create the alert controller.
-        let alert = UIAlertController(title: "Forgot Password?", message: "Enter E-Mail address", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Forgot Password?", message: "Enter Your Mobile Here", preferredStyle: .alert)
         
         //2. Add the text field. You can configure it however you need.
         alert.addTextField { (textField) in
-            textField.placeholder = "E-Mail"
+            textField.placeholder = "Mobile No (e.g. 0777XXXXXX)"
         }
         
         // 3. Grab the value from the text field, and print it when the user clicks OK.
@@ -191,7 +195,7 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
     
     func showAlertForPasswordWrong() {
         
-        UtilityClass.showAlert(appName.kAPPName, message: "Enter Email", vc: self)
+        UtilityClass.showAlert(appName.kAPPName, message: "Enter Your Mobile Number", vc: self)
     }
     
     // ------------------------------------------------------------
@@ -366,7 +370,8 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
                     alert.addAction(Cancel)
                     self.present(alert, animated: true, completion: nil)
                 }
-                else {
+                else
+                {
                     
                     if(Singletons.sharedInstance.isDriverLoggedIN)
                     {

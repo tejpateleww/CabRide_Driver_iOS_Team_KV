@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		000D8FEC202C495300A02C45 /* DriverRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928EC202AE2BF00A399E2 /* DriverRegistrationViewController.swift */; };
 		005A36DE202B1CE700502672 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 005A36DD202B1CE700502672 /* Constants.swift */; };
+		005CC1912037F9720090CAED /* PickNGo.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 005CC1902037F9710090CAED /* PickNGo.mp3 */; };
+		005CC19320380EDD0090CAED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 005CC19220380EDD0090CAED /* GoogleService-Info.plist */; };
 		0082BF2E2031572A00EC36D7 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0082BF2D2031572900EC36D7 /* Utilities.swift */; };
 		00A0E0AB1FED464F00DB5549 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0AA1FED464F00DB5549 /* Accelerate.framework */; };
 		00A0E0AD1FED465900DB5549 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00A0E0AC1FED465900DB5549 /* CoreTelephony.framework */; };
@@ -20,7 +22,6 @@
 		00DEC65F202D6B0D005565A7 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 00DEC65E202D6B0D005565A7 /* Raleway-Light.ttf */; };
 		00DEC663202DA037005565A7 /* DriverBankDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00DEC662202DA037005565A7 /* DriverBankDetailsViewController.swift */; };
 		00E929D0202AE2C100A399E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00E928DB202AE2BE00A399E2 /* Assets.xcassets */; };
-		00E929D1202AE2C100A399E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 00E928DD202AE2BF00A399E2 /* GoogleService-Info.plist */; };
 		00E929D3202AE2C100A399E2 /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 00E928DF202AE2BF00A399E2 /* Main.strings */; };
 		00E929D4202AE2C100A399E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928E5202AE2BF00A399E2 /* AppDelegate.swift */; };
 		00E929D5202AE2C100A399E2 /* ComingSoonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E928E6202AE2BF00A399E2 /* ComingSoonVC.swift */; };
@@ -183,6 +184,8 @@
 /* Begin PBXFileReference section */
 		000439D71F94C0060002EB1F /* TCPickerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TCPickerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		005A36DD202B1CE700502672 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		005CC1902037F9710090CAED /* PickNGo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = PickNGo.mp3; sourceTree = "<group>"; };
+		005CC19220380EDD0090CAED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		006178611FAC8F480094651F /* SRCountdownTimer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SRCountdownTimer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0082BF2D2031572900EC36D7 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		009BCB9A1FA0795B00CAC67E /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -199,7 +202,6 @@
 		00DFF5F21F8CE29A00BABF96 /* TTSegmentedControl.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TTSegmentedControl.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E5CEA31F8B402C004409A4 /* PickNGo-Driver.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PickNGo-Driver.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E928DB202AE2BE00A399E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		00E928DD202AE2BF00A399E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		00E928DE202AE2BF00A399E2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E928DF202AE2BF00A399E2 /* Main.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Main.strings; sourceTree = "<group>"; };
 		00E928E0202AE2BF00A399E2 /* PickNGo-Driver-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PickNGo-Driver-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -431,7 +433,7 @@
 		00E928DC202AE2BF00A399E2 /* Other Resources */ = {
 			isa = PBXGroup;
 			children = (
-				00E928DD202AE2BF00A399E2 /* GoogleService-Info.plist */,
+				005CC19220380EDD0090CAED /* GoogleService-Info.plist */,
 				00E928DE202AE2BF00A399E2 /* Info.plist */,
 				00E928DF202AE2BF00A399E2 /* Main.strings */,
 				00E928E0202AE2BF00A399E2 /* PickNGo-Driver-Bridging-Header.h */,
@@ -1103,6 +1105,7 @@
 				00E929BF202AE2C000A399E2 /* CustonView.swift */,
 				00E929C0202AE2C000A399E2 /* RequestConfirm.mp3 */,
 				00E929C1202AE2C000A399E2 /* ringTone.mp3 */,
+				005CC1902037F9710090CAED /* PickNGo.mp3 */,
 				00E929C2202AE2C000A399E2 /* Singletons.swift */,
 				00E929C3202AE2C000A399E2 /* UtilityClass.swift */,
 			);
@@ -1242,14 +1245,15 @@
 				00E92A6F202AE2C100A399E2 /* ringTone.mp3 in Resources */,
 				00E929F1202AE2C100A399E2 /* ExpandDispatchedJobsViewController.xib in Resources */,
 				00E929D0202AE2C100A399E2 /* Assets.xcassets in Resources */,
+				005CC19320380EDD0090CAED /* GoogleService-Info.plist in Resources */,
 				21A5A2CB1FBC61960047E9AA /* Location.gpx in Resources */,
+				005CC1912037F9720090CAED /* PickNGo.mp3 in Resources */,
 				00E92A77202AE2C100A399E2 /* Main.storyboard in Resources */,
 				00E929E2202AE2C100A399E2 /* HeaderView.xib in Resources */,
 				00E92A6E202AE2C100A399E2 /* RequestConfirm.mp3 in Resources */,
 				00E92A56202AE2C100A399E2 /* WWCalendarTimeSelector.storyboard in Resources */,
 				00E92A78202AE2C100A399E2 /* Profile.storyboard in Resources */,
 				00E92A79202AE2C100A399E2 /* Registration.storyboard in Resources */,
-				00E929D1202AE2C100A399E2 /* GoogleService-Info.plist in Resources */,
 				00DEC65F202D6B0D005565A7 /* Raleway-Light.ttf in Resources */,
 				00E92A76202AE2C100A399E2 /* LaunchScreen.storyboard in Resources */,
 				00E929D3202AE2C100A399E2 /* Main.strings in Resources */,

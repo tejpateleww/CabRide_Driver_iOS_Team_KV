@@ -89,53 +89,53 @@ class WalletTopUpVC: ParentViewController, SelectCardDelegate {
             
 //            txtAmount.text = amountString
             
-            
-            let unfiltered1 = amountString   //  "!   !! yuahl! !"
-            
-            // Array of Characters to remove
-            let removal1: [Character] = ["$"," "]    // ["!"," "]
-            
-            // turn the string into an Array
-            let unfilteredCharacters1 = unfiltered1
-            
-            // return an Array without the removal Characters
-            let filteredCharacters1 = unfilteredCharacters1.filter { !removal1.contains($0) }
-            
-            // build a String with the filtered Array
-            let filtered1 = String(filteredCharacters1)
-            
-            print(filtered1) // => "yeah"
-            
-            // combined to a single line
-            print(String(unfiltered1.filter { !removal1.contains($0) })) // => "yuahl"
-            
-            txtAmount.text = String(unfiltered1.filter { !removal1.contains($0) })
-            
-            
-            
-            // ----------------------------------------------------------------------
-            // ----------------------------------------------------------------------
-            let unfiltered = amountString   //  "!   !! yuahl! !"
-            
-            // Array of Characters to remove
-            let removal: [Character] = ["$",","," "]    // ["!"," "]
-            
-            // turn the string into an Array
-            let unfilteredCharacters = unfiltered
-            
-            // return an Array without the removal Characters
-            let filteredCharacters = unfilteredCharacters.filter { !removal.contains($0) }
-            
-            // build a String with the filtered Array
-            let filtered = String(filteredCharacters)
-            
-            print(filtered) // => "yeah"
-            
-            // combined to a single line
-            print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
-            
-            strAmt = String(unfiltered.filter { !removal.contains($0) })
-            print("amount : \(strAmt)")
+//            
+//            let unfiltered1 = amountString   //  "!   !! yuahl! !"
+//            
+//            // Array of Characters to remove
+//            let removal1: [Character] = ["\(currency)"," "]    // ["!"," "]
+//            
+//            // turn the string into an Array
+//            let unfilteredCharacters1 = unfiltered1
+//            
+//            // return an Array without the removal Characters
+//            let filteredCharacters1 = unfilteredCharacters1.filter { !removal1.contains($0) }
+//            
+//            // build a String with the filtered Array
+//            let filtered1 = String(filteredCharacters1)
+//            
+//            print(filtered1) // => "yeah"
+//            
+//            // combined to a single line
+//            print(String(unfiltered1.filter { !removal1.contains($0) })) // => "yuahl"
+//            
+//            txtAmount.text = String(unfiltered1.filter { !removal1.contains($0) })
+//            
+//            
+//            
+//            // ----------------------------------------------------------------------
+//            // ----------------------------------------------------------------------
+//            let unfiltered = amountString   //  "!   !! yuahl! !"
+//            
+//            // Array of Characters to remove
+//            let removal: [Character] = ["\(currency)",","," "]    // ["!"," "]
+//            
+//            // turn the string into an Array
+//            let unfilteredCharacters = unfiltered
+//            
+//            // return an Array without the removal Characters
+//            let filteredCharacters = unfilteredCharacters.filter { !removal.contains($0) }
+//            
+//            // build a String with the filtered Array
+//            let filtered = String(filteredCharacters)
+//            
+//            print(filtered) // => "yeah"
+//            
+//            // combined to a single line
+//            print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
+//            
+//            strAmt = String(unfiltered.filter { !removal.contains($0) })
+//            print("amount : \(strAmt)")
             
             
             

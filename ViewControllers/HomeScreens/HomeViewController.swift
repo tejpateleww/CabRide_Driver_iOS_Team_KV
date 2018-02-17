@@ -16,12 +16,13 @@ import SocketIO
 import SRCountdownTimer
 import NVActivityIndicatorView
 import MarqueeLabel
-
+import Alamofire
 //-------------------------------------------------------------
 // MARK: - Protocol
 //-------------------------------------------------------------
 
-@objc protocol ReceiveRequestDelegate {
+@objc protocol ReceiveRequestDelegate
+{
     func didAcceptedRequest()
     func didRejectedRequest()
 }
@@ -246,6 +247,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         // print ("\(#function) -- \(self)")
+        Singletons.sharedInstance.isFromNotification = true
     }
     
     func presentAction() {
@@ -301,6 +303,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             mapView.camera = camera
             Singletons.sharedInstance.isFirstTimeDidupdateLocation = false
         }
+        
         
         Singletons.sharedInstance.latitude = defaultLocation.coordinate.latitude
         Singletons.sharedInstance.longitude = defaultLocation.coordinate.longitude
@@ -481,10 +484,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 if let DropoffLocation = ((data as NSArray).object(at: 0) as! NSDictionary).object(forKey: "DropoffLocation") as? String {
                     next.strDropoffLocation = DropoffLocation
                 }
-                self.playSound(strName: "ringTone")
+                self.playSound(strName: "\(RingToneSound)")
                 (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.present(next, animated: true, completion: { ACTION in
                     Singletons.sharedInstance.firstRequestIsAccepted = true
-                    
+//                    self.stopSound()
                 })
                 
             })
@@ -556,7 +559,13 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             let okAction = UIAlertAction(title: "Open", style: .default, handler: { (action) in
                 
                 Singletons.sharedInstance.isFromNotification = true
-                self.tabBarController?.selectedIndex = 2
+                self.tabBarController?.selectedIndex = 1
+                
+                
+                
+//                let myJobs = (self.navigationController?.childViewControllers[0] as! TabbarController).childViewControllers.last as! MyJobsViewController
+                
+//                myJobs.btnFutureBookingClicked(myJobs.btnFutureBooking)
             })
 
             
@@ -608,7 +617,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     {
         let bounds = GMSCoordinateBounds(coordinate: CLLocationCoordinate2D(latitude: Double(PickupLat), longitude: Double(PickupLng)), coordinate: CLLocationCoordinate2D(latitude: Double(DropOffLat)!, longitude: Double(DropOffLon)!))
         
-        let update = GMSCameraUpdate.fit(bounds, withPadding: CGFloat(150))
+        let update = GMSCameraUpdate.fit(bounds, withPadding: CGFloat(40))
         
         self.mapView.animate(with: update)
         
@@ -683,7 +692,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         }
         next.strPassengerName =  self.strPassengerName
         next.strPassengerMobileNumber =  self.strPassengerMobileNo
-        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.present(next, animated: true, completion: nil)
+//        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.present(next, animated: true, completion: nil)
         
         
     }
@@ -699,9 +708,15 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         
         self.aryPassengerData = NSArray(array: data)
         //
-        oldCoordinate = CLLocationCoordinate2DMake(Singletons.sharedInstance.latitude ,Singletons.sharedInstance.longitude)
         var BookingInfo = NSMutableDictionary()
         var PassengerInfo = NSMutableDictionary()
+        
+        if Singletons.sharedInstance.latitude != nil
+        {
+                 oldCoordinate = CLLocationCoordinate2DMake(Singletons.sharedInstance.latitude ,Singletons.sharedInstance.longitude)
+    
+  
+       
         
         if((((self.aryPassengerData as NSArray).object(at: 0) as! NSDictionary).object(forKey: "BookingInfo") as? NSDictionary) == nil)
         {
@@ -713,7 +728,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             if PassengerType == "" || PassengerType == nil{
                 Singletons.sharedInstance.passengerType = ""
             }
-            else {
+            else
+            {
                 Singletons.sharedInstance.passengerType = PassengerType!
             }
             
@@ -821,6 +837,13 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             
         }
         return (BookingInfo,PassengerInfo)
+        }
+        else
+        {
+//            webserviceOfCurrentBooking()
+//            self.getBookingAndPassengerInfo(data: data)
+            return (BookingInfo,PassengerInfo)
+        }
     }
     
     
@@ -983,7 +1006,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         }
         next.strPassengerName =  self.strPassengerName
         next.strPassengerMobileNumber =  self.strPassengerMobileNo
-        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.present(next, animated: true, completion: nil)
+//        (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.present(next, animated: true, completion: nil)
         
     }
     
@@ -1002,7 +1025,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
          */
         
         UtilityClass.showACProgressHUD()
-        
+        self.stopSound()
         if isAdvanceBooking {
             
             self.AcceptBookLaterBookingRequest()
@@ -1387,7 +1410,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     
     func stopSound() {
         
-        guard let url = Bundle.main.url(forResource: "ringTone", withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: "\(RingToneSound)", withExtension: "mp3") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -1409,10 +1432,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     
     func setPaddingView(txtField: UITextField){
         
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 15, height: 18))
-        label.text = "$"
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 18))
+        label.text = "\(currency)"
 
-        let paddingView: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: 15, height: 18))
+        let paddingView: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: 45, height: 18))
         txtField.leftViewMode = .always
         txtField.addSubview(label)
         txtField.leftView = paddingView
@@ -1493,28 +1516,30 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
             UtilityClass.showAlert("Hold Trip Active", message: "Please stop holding trip", vc: self)
             
         }
-        else {
+        else
+        {
             
-            DispatchQueue.main.async {
+            DispatchQueue.main.async
+                {
                 
-                let PickupLat = Singletons.sharedInstance.startedTripLatitude
-                let PickupLng = Singletons.sharedInstance.startedTripLongitude
-                let DropOffLat = self.defaultLocation.coordinate.latitude
-                let DropOffLon = self.defaultLocation.coordinate.longitude
+//                let PickupLat = Singletons.sharedInstance.startedTripLatitude
+//                let PickupLng = Singletons.sharedInstance.startedTripLongitude
+//                let DropOffLat = self.defaultLocation.coordinate.latitude
+//                let DropOffLon = self.defaultLocation.coordinate.longitude
+//
+//                let dummyLatitude = Double(PickupLat) - Double(DropOffLat)
+//                let dummyLongitude = Double(PickupLng) - Double(DropOffLon)
+//
+//                let waypointLatitude = self.defaultLocation.coordinate.latitude - dummyLatitude
+//                let waypointSetLongitude = self.defaultLocation.coordinate.longitude - dummyLongitude
+//
+//                let pickupCordinate = "\(Singletons.sharedInstance.startedTripLatitude),\(Singletons.sharedInstance.startedTripLongitude)"
+//                let destinationCordinate = "\(self.defaultLocation.coordinate.latitude),\(self.defaultLocation.coordinate.longitude)"
                 
-                let dummyLatitude = Double(PickupLat) - Double(DropOffLat)
-                let dummyLongitude = Double(PickupLng) - Double(DropOffLon)
-                
-                let waypointLatitude = self.defaultLocation.coordinate.latitude - dummyLatitude
-                let waypointSetLongitude = self.defaultLocation.coordinate.longitude - dummyLongitude
-                
-                let pickupCordinate = "\(Singletons.sharedInstance.startedTripLatitude),\(Singletons.sharedInstance.startedTripLongitude)"
-                let destinationCordinate = "\(self.defaultLocation.coordinate.latitude),\(self.defaultLocation.coordinate.longitude)"
-                
-                
-                self.getDirectionsCompleteTripInfo(origin: pickupCordinate, destination: destinationCordinate, waypoints: ["\(waypointLatitude),\(waypointSetLongitude)"], travelMode: nil, completionHandler: { (message, status) in
-                    print("getDirectionsCompleteTripInfo : \(message)")
-                })
+                self.webserviceCallToGetDistanceByBackend()
+//                self.getDirectionsCompleteTripInfo(origin: pickupCordinate, destination: destinationCordinate, waypoints: ["\(waypointLatitude),\(waypointSetLongitude)"], travelMode: nil, completionHandler: { (message, status) in
+//                    print("getDirectionsCompleteTripInfo : \(message)")
+//                })
                 
             }
         }
@@ -1525,7 +1550,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         if sumOfFinalDistance != 0 {
             
             var dictOFParam = [String:AnyObject]()
-            let tollfee = self.tollFee.replacingOccurrences(of: "$", with: "")
+            let tollfee = self.tollFee.replacingOccurrences(of: "\(currency)", with: "")
             dictOFParam["TripDistance"] = sumOfFinalDistance as AnyObject
             dictOFParam["NightFareApplicable"] = 0 as AnyObject
             dictOFParam["PromoCode"] = "" as AnyObject
@@ -1541,7 +1566,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 
                 webserviceCallForAdvanceCompleteTrip(dictOFParam: dictOFParam as AnyObject)
             }
-            else {
+            else
+            {
                 
                 dictOFParam["BookingId"] = bookingID as AnyObject
                 
@@ -1551,7 +1577,65 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         }
     }
     
+    //=========================================================
     
+    func webserviceCallToGetDistanceByBackend()
+    {
+        let url = "http://54.206.55.185/web/Drvier_Api/FindDistance"
+        let pickupCordinate = "\(Singletons.sharedInstance.startedTripLatitude),\(Singletons.sharedInstance.startedTripLongitude)"
+        let destinationCordinate = "\(self.defaultLocation.coordinate.latitude),\(self.defaultLocation.coordinate.longitude)"
+        
+        var dictParams = [String:AnyObject]()
+        dictParams["PickupLocation"] = pickupCordinate as AnyObject
+        dictParams["DropoffLocation"] = destinationCordinate as AnyObject
+        
+        if UIDevice.current.name == "Rahul's iPhone" {
+            
+            dictParams["DropoffLocation"] = "23.08327370,72.54679840" as AnyObject
+        }
+        let headerTemp: [String:String] = ["key":"TicktocApp123*"]
+
+        Alamofire.request(url, method: .post, parameters: dictParams, encoding: URLEncoding.default, headers: headerTemp)
+            .validate()
+            .responseJSON
+            { (response) in
+                
+                
+                if let JSON = response.result.value
+                {
+                    
+                    if (JSON as AnyObject).object(forKey:("status")) as! Bool == false
+                    {
+                        //                        completion(JSON as AnyObject, false)
+                        self.webserviceCallToGetDistanceByBackend()
+                        UtilityClass.hideACProgressHUD()
+                        
+                    }
+                    else
+                    {
+                        //                        completion(JSON as AnyObject, true)
+                        self.sumOfFinalDistance = (JSON as AnyObject).object(forKey:("distance")) as! Double
+                        DispatchQueue.main.async {
+                            //                                        UtilityClass.hideACProgressHUD()
+                            self.completeTripFinalSubmit()
+                            
+                            print("Function: \(#function), line: \(#line)")
+                            
+                        }
+                        UtilityClass.hideACProgressHUD()
+                        
+                    }
+                }
+                else
+                {
+                    UtilityClass.hideACProgressHUD()
+                    self.webserviceCallToGetDistanceByBackend()
+                    
+                    //                    completion(response.error?.localizedDescription as AnyObject, false)
+                }
+                
+        }
+    }
     //MARK:- ResetMap View
     func resetMapView()
     {
@@ -1766,7 +1850,9 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     //-------------------------------------------------------------
     // MARK: - ARCar Movement Delegate Method
     //-------------------------------------------------------------
-    func ARCarMovementMoved(_ Marker: GMSMarker) {
+    func ARCarMovementMoved(_ Marker: GMSMarker)
+    {
+        self.driverMarker = nil
         driverMarker = Marker
         driverMarker.map = mapView
         
@@ -1847,7 +1933,6 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                                         self.driverMarker.icon = UIImage(named: Singletons.sharedInstance.strSetCar)
                                         self.driverMarker.map = self.mapView
                                         
-                                        
                                     }
                                     
                                 }
@@ -1915,7 +2000,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                                 
                                 
                                 self.pickupPassengerFromLocation()
-                                UtilityClass.showAlert(appName.kAPPName, message: "OVER_QUERY_LIMIT", vc: self)
+                               // UtilityClass.showAlert(appName.kAPPName, message: "OVER_QUERY_LIMIT", vc: self)
                                 print("OVER_QUERY_LIMIT")
                                 
                                 
@@ -2067,9 +2152,9 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                                 })
                                 
                                 //
-                                UtilityClass.showAlert(appName.kAPPName, message: "OVER_QUERY_LIMIT", vc: self)
+//                                UtilityClass.showAlert(appName.kAPPName, message: "OVER_QUERY_LIMIT", vc: self)
                                 print("Function: \(#function), line: \(#line) OVER_QUERY_LIMIT")
-
+                                self.pickupPassengerFromLocation()
                                 DispatchQueue.main.async {
                                     UtilityClass.hideACProgressHUD()
                                     print("Function: \(#function), line: \(#line)")
@@ -2128,36 +2213,38 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         let profile: NSMutableDictionary = NSMutableDictionary(dictionary: (Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") as? NSDictionary)!)
         let Vehicle: NSMutableDictionary = NSMutableDictionary(dictionary: profile.object(forKey: "Vehicle") as! NSDictionary)
         let VehicleName = Vehicle.object(forKey: "VehicleClass") as! String
-        if VehicleName.range(of:"First Class") != nil {
+        
+        if VehicleName.range(of:"First Class") != nil
+        {
             print("First Class")
-            Singletons.sharedInstance.strSetCar = "imgFirstClass"
+            //Singletons.sharedInstance.strSetCar = "imgFirstClass"
         }
         else if (VehicleName.range(of:"Business Class") != nil) {
             print("First Class")
-            Singletons.sharedInstance.strSetCar = "imgBusinessClass"
+           // Singletons.sharedInstance.strSetCar = "imgBusinessClass"
             
         }
         else if (VehicleName.range(of:"Economy") != nil) {
             print("First Class")
-            Singletons.sharedInstance.strSetCar = "imgEconomy"
+           // Singletons.sharedInstance.strSetCar = "imgEconomy"
             
         }
         else if (VehicleName.range(of:"Taxi") != nil) {
             print("First Class")
-            Singletons.sharedInstance.strSetCar = "imgTaxi"
+           // Singletons.sharedInstance.strSetCar = "imgTaxi"
             
         }
         else if (VehicleName.range(of:"LUX-VAN") != nil) {
             print("First Class")
-            Singletons.sharedInstance.strSetCar = "imgLUXVAN"
+           // Singletons.sharedInstance.strSetCar = "imgLUXVAN"
             
         }
         else if (VehicleName.range(of:"Disability") != nil) {
             print("First Class")
-            Singletons.sharedInstance.strSetCar = "imgDisability"
+            //Singletons.sharedInstance.strSetCar = "imgDisability"
             
         }
-        
+         Singletons.sharedInstance.strSetCar = "dummyCar"
         
         print(VehicleName)
     }
@@ -2280,8 +2367,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 
                 if bookingType != "" {
                     
-                    if bookingType == "BookNow" {
-                        if statusOfRequest == "accepted" {
+                    if bookingType == "BookNow"
+                    {
+                        if statusOfRequest == "accepted"
+                        {
                             
                             self.bookingID = self.dictCurrentBookingInfoData.object(forKey: "Id") as! String
                             self.driverID = Singletons.sharedInstance.strDriverID
@@ -2407,7 +2496,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 if Singletons.sharedInstance.passengerPaymentType == "cash" || Singletons.sharedInstance.passengerPaymentType == "Cash" {
                     
                     
-                    self.playSound(strName: "ringTone")
+                    self.playSound(strName: "\(RingToneSound)")
                     UtilityClass.showAlertWithCompletion("Alert! This is a cash job", message: "Please Collect Money From Passenger", vc: self, completionHandler: { ACTION in
                         
                         DispatchQueue.main.async {
@@ -2469,12 +2558,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 
                 self.setCarAfterTrip()
                 
-                if Singletons.sharedInstance.passengerType == "other" || Singletons.sharedInstance.passengerType == "others" {
+              
                     self.completeTripInfo()
-                }
-                else {
-                    self.performSegue(withIdentifier: "seguePresentRatings", sender: nil)
-                }
+//                    self.performSegue(withIdentifier: "seguePresentRatings", sender: nil)
+               
                 
             }
             else {
@@ -2553,7 +2640,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
                 socket.off(socketApiKeys.kAdvancedBookingDriverCancelTripNotification)
                 
                 socket.disconnect()
-                
+                Singletons.sharedInstance.isDriverLoggedIN = false
                 UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
                 
                 self.performSegue(withIdentifier: "SignOutFromHome", sender: (Any).self)
@@ -2676,7 +2763,8 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
         
     }
     
-    func bookingStatusTraveling() {
+    func bookingStatusTraveling()
+    {
         
         btnStartTripAction()
     }
@@ -2738,7 +2826,7 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
 //        }
 //        else {
         
-            Singletons.sharedInstance.passengerType = ""
+           
             
             let next = self.storyboard?.instantiateViewController(withIdentifier: "TripInfoCompletedTripVC") as! TripInfoCompletedTripVC
             next.dictData = self.dictCompleteTripData

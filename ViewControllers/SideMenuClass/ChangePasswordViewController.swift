@@ -20,8 +20,7 @@ class ChangePasswordViewController: ParentViewController {
         super.viewDidLoad()
         
         headerView?.btnBack.addTarget(self, action: #selector(self.nevigateToBack), for: .touchUpInside)
-        headerView?.backgroundColor = UIColor.clear
-        headerView?.lblHeaderTitle.textColor = UIColor.white
+
         iconPassword.image = UIImage.init(named: "iconLock")?.withRenderingMode(.alwaysTemplate)
         iconPassword.tintColor = UIColor.white
 
@@ -35,7 +34,10 @@ class ChangePasswordViewController: ParentViewController {
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
-        
+        headerView?.backgroundColor = UIColor.clear
+        headerView?.imgBottomLine.isHidden = true
+        headerView?.lblTitle.textColor = ThemeYellowColor
+
         btnSubmit.layer.cornerRadius = btnSubmit.frame.size.height/2
         btnSubmit.clipsToBounds = true
     }

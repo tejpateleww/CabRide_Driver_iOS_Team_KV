@@ -69,7 +69,8 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         }
         
     }
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool)
+    {
         super.viewWillAppear(animated)
         getData()
         
@@ -253,13 +254,11 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         
         txtVehicleRegistrationNumber.text = Vehicle.object(forKey: "VehicleRegistrationNo") as? String
         txtCompany.text = Vehicle.object(forKey: "Company") as? String
-//        txtCarColor.text = Vehicle.object(forKey: "Color") as? String
-        if UserDefaults.standard.object(forKey: RegistrationFinalKeys.kCarThreeTypeName) != nil
-        {
-            let carType = UserDefaults.standard.object(forKey: RegistrationFinalKeys.kCarThreeTypeName) as! String
-            txtCarType.text = carType
-        }
-        
+
+        let carType = Vehicle.object(forKey: "VehicleClass") as? String
+        txtCarType.text = carType
+
+        imgVehicle.sd_setImage(with: URL.init(string: Vehicle.object(forKey: "VehicleImage") as! String), completed: nil)
     }
     
     // ------------------------------------------------------------
@@ -372,6 +371,15 @@ class updateDriverSelectVehicleTypesViewControllerViewController: UIViewControll
         if let destinationOfCarAndTaxi = segue.destination as? CarAndTaxiesVC
         {
             destinationOfCarAndTaxi.aryData = self.aryDataCarsAndTaxi as NSArray
+//            let profile: NSMutableDictionary = NSMutableDictionary(dictionary: (Singletons.sharedInstance.dictDriverProfile.object(forKey: "profile") as! NSDictionary))
+//            let Vehicle: NSMutableDictionary = NSMutableDictionary(dictionary: profile.object(forKey: "Vehicle") as! NSDictionary )
+//
+//            let carType = Vehicle.object(forKey: "VehicleClass") as? String
+//            let carTypeID = Vehicle.object(forKey: "VehicleModel") as? String
+//            let arryCarName = carType?.components(separatedBy: ",")
+//            let arryCarID = carTypeID?.components(separatedBy: ",")
+//            destinationOfCarAndTaxi.aryChooseCarName = arryCarName!
+//            destinationOfCarAndTaxi.aryChooseCareModel = arryCarID!
         }
     }
     func webserviceCallForProfileUpdate()

@@ -30,10 +30,11 @@ func postData(_ dictParams: AnyObject, nsURL: String, completion: @escaping (_ r
 {
     let url = BaseURL + nsURL
 
-//    print("The webservice call is\(url) and the params are \(dictParams)")
+    print("The webservice call is \(url) and the params are \(dictParams)")
     
     
-    DispatchQueue.main.async {
+    DispatchQueue.main.async
+        {
         UtilityClass.showACProgressHUD()
 
     }
@@ -139,7 +140,7 @@ func getDataOfHistory(_ dictParams: AnyObject, nsURL: String,  completion: @esca
         
     }
    
-//    print("The webservice call is\(url) and the params are \(dictParams)")
+    print("The webservice call is\(url) and the params are \(dictParams)")
     
     Alamofire.request(url, method: .get, parameters: dictParams as? [String : AnyObject], encoding: URLEncoding.default, headers: header)
         .validate()

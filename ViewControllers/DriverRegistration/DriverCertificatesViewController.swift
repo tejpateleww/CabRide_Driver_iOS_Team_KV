@@ -545,7 +545,7 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
 //                    let next = self.storyboard?.instantiateViewController(withIdentifier: "CustomSideMenuViewController") as! CustomSideMenuViewController
 //                    self.navigationController?.pushViewController(next, animated: true)
                     
-                    
+                    self.navigationController?.isNavigationBarHidden = true
                     self.performSegue(withIdentifier: "afterCompleteRegistration", sender: nil)
                     
                 }
@@ -553,10 +553,12 @@ class DriverCertificatesViewController: UIViewController,UIImagePickerController
             else
             {
               
-                if let res = result as? String {
+                if let res = result as? String
+                {
                     UtilityClass.showAlert(appName.kAPPName, message: res, vc: self)
                 }
-                else if let resDict = result as? NSDictionary {
+                else if let resDict = result as? NSDictionary
+                {
                     UtilityClass.showAlert(appName.kAPPName, message: resDict.object(forKey: "message") as! String, vc: self)
                 }
                 else if let resAry = result as? NSArray {

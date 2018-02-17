@@ -218,27 +218,29 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
         if let amountString = txtFareAmount.text?.currencyInputFormatting() {
             txtFareAmount.text = amountString
             
-            let unfiltered = amountString   //  "!   !! yuahl! !"
+//            let unfiltered = amountString   //  "!   !! yuahl! !"
             
+            let y = amountString.replacingOccurrences(of: "LKR, ", with: "", options: .regularExpression, range: nil)
+            print(y)
             // Array of Characters to remove
-            let removal: [Character] = ["$",","," "]    // ["!"," "]
-            
-            // turn the string into an Array
-            let unfilteredCharacters = unfiltered
-            
-            // return an Array without the removal Characters
-            let filteredCharacters = unfilteredCharacters.filter { !removal.contains($0) }
-            
-            // build a String with the filtered Array
-            let filtered = String(filteredCharacters)
-            
-            print(filtered) // => "yeah"
-            
-            // combined to a single line
-            print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
-            
-            strAmounts = String(unfiltered.filter { !removal.contains($0) })
-            print("amount : \(strAmounts)")
+//            let removal: [Character] = ["LKR",","," "]    // ["!"," "]
+//
+//            // turn the string into an Array
+//            let unfilteredCharacters = unfiltered
+//
+//            // return an Array without the removal Characters
+//            let filteredCharacters = unfilteredCharacters.filter { !removal.contains($0) }
+//
+//            // build a String with the filtered Array
+//            let filtered = String(filteredCharacters)
+//
+//            print(filtered) // => "yeah"
+//
+//            // combined to a single line
+//            print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
+//
+//            strAmounts = String(unfiltered.filter { !removal.contains($0) })
+            print("amount : \(y)")
             
         }
     }
@@ -570,9 +572,9 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
         dictParam["PassengerName"] = txtContactName.text as AnyObject
         dictParam["PassengerContact"] = txtMobileNumber.text as AnyObject
         dictParam["PassengerEmail"] = txtCustomerEmail.text as AnyObject
-        dictParam["FareAmount"] = txtFareAmount.text!.replacingOccurrences(of: "$", with: "") as AnyObject
+        dictParam["FareAmount"] = txtFareAmount.text!.replacingOccurrences(of: "\(currency)", with: "") as AnyObject
         dictParam["PaymentType"] = paymentType as AnyObject
-        dictParam["TripFare"] = txtFareAmount.text!.replacingOccurrences(of: "$", with: "") as AnyObject
+        dictParam["TripFare"] = txtFareAmount.text!.replacingOccurrences(of: "\(currency)", with: "") as AnyObject
         
         dictParam["FlightNumber"] = txtFlightNumber.text as AnyObject
         dictParam["Notes"] = txtNotes.text as AnyObject
@@ -635,15 +637,15 @@ class DispatchJobsBookNowViewController: UIViewController, getVehicleIdAndNameDe
                     
                 }
                 if let dataTotalFare = ((result as! NSDictionary).object(forKey: "estimate_fare") as! NSDictionary).object(forKey: "total") as? Double {
-                    self.txtFareAmount.text = "$\(dataTotalFare)"
+                    self.txtFareAmount.text = "\(currency)\(dataTotalFare)"
                     self.totalEastimateFare = Double(dataTotalFare)
                 }
                 else if let stringTotalFare = ((result as! NSDictionary).object(forKey: "estimate_fare") as! NSDictionary).object(forKey: "total") as? String {
-                    self.txtFareAmount.text = "$\(stringTotalFare)"
+                    self.txtFareAmount.text = "\(currency)\(stringTotalFare)"
                     self.totalEastimateFare = Double(stringTotalFare)!
                 }
                 else if let floatTotalFare = ((result as! NSDictionary).object(forKey: "estimate_fare") as! NSDictionary).object(forKey: "total") as? Float {
-                    self.txtFareAmount.text = "$\(floatTotalFare)"
+                    self.txtFareAmount.text = "\(currency)\(floatTotalFare)"
                     self.totalEastimateFare = Double(floatTotalFare)
                     
                 }

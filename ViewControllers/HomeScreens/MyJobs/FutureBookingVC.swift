@@ -39,7 +39,8 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         return refreshControl
     }()
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         tableView.dataSource = self
@@ -53,13 +54,18 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.view.addSubview(labelNoData)
         self.tableView.isHidden = true
         
-        webserviceOFFurureBooking()
+        
         self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         
         self.tableView.addSubview(self.refreshControl)
 
     }
-    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        webserviceOFFurureBooking()
+        
+    }
     override func loadView() {
         super.loadView()
         
@@ -314,7 +320,7 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func stopSound() {
         
-        guard let url = Bundle.main.url(forResource: "ringTone", withExtension: "mp3") else { return }
+        guard let url = Bundle.main.url(forResource: "\(RingToneSound)", withExtension: "mp3") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -349,7 +355,13 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                 let alert = UIAlertController(title: "Booking Accepted", message: "", preferredStyle: .alert)
                 let OK = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
 //                    self.stopSound()
-                     Singletons.sharedInstance.isPresentVC = true
+//                     Singletons.sharedInstance.isPresentVC = true
+                    
+                    
+                    let myJobs = (self.navigationController?.childViewControllers[0] as! TabbarController).childViewControllers.last as! MyJobsViewController
+    
+                    myJobs.btnPendingJobsClicked(myJobs.btnPendingJobs)
+                    
                     
 //                    if self.isModal() {
 //                        self.dismiss(animated: true, completion: {

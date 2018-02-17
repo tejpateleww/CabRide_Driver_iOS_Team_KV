@@ -101,7 +101,7 @@ class TripInfoCompletedTripVC: UIViewController {
         lblPickupLocation.text = dictData.object(forKey: "PickupLocation") as? String
         lblDropOffLocation.text = dictData.object(forKey: "DropoffLocation") as? String
         lblTollFree.text = dictData.object(forKey: "TollFee") as? String
-        lblGrandTotal.text = dictData.object(forKey: "CompanyAmount") as? String
+        lblGrandTotal.text = dictData.object(forKey: "GrandTotal") as? String
         
     }
     
@@ -111,7 +111,16 @@ class TripInfoCompletedTripVC: UIViewController {
     
     @IBAction func btnOK(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
-        self.delegate.didRatingCompleted()
+        if Singletons.sharedInstance.passengerType == "other" || Singletons.sharedInstance.passengerType == "others"
+        {
+//            self.completeTripInfo()
+        }
+        else
+        {
+            self.delegate.didRatingCompleted()
+
+        }
+         Singletons.sharedInstance.passengerType = ""
 
     }
     

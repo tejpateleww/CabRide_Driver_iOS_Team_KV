@@ -7,34 +7,34 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>1086560102226-96dinvs0cjjek5aeo43pt2ucgt7v73ak.apps.googleusercontent.com</string>
+	<string>681702825424-qrodkd45ab9t9sa0omrlksbm603fl576.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1086560102226-96dinvs0cjjek5aeo43pt2ucgt7v73ak</string>
+	<string>com.googleusercontent.apps.681702825424-qrodkd45ab9t9sa0omrlksbm603fl576</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC8q2G8NK3WCwC1EDQiBYWO7B1LmQ8PEn4</string>
+	<string>AIzaSyAPVKUbLmI7myrRSMUC5jN0t4nVMHpjYFA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1086560102226</string>
+	<string>681702825424</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.ticktocd.driver</string>
+	<string>com.pickngo.driver</string>
 	<key>PROJECT_ID</key>
-	<string>ticktoc-app</string>
+	<string>pickngo-194413</string>
 	<key>STORAGE_BUCKET</key>
-	<string>ticktoc-app.appspot.com</string>
+	<string>pickngo-194413.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false/>
+	<false></false>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true/>
+	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1086560102226:ios:65ef82fb30abe9c3</string>
+	<string>1:681702825424:ios:dcb8db2ae1554f77</string>
 	<key>DATABASE_URL</key>
-	<string>https://ticktoc-app.firebaseio.com</string>
+	<string>https://pickngo-194413.firebaseio.com</string>
 </dict>
 </plist>

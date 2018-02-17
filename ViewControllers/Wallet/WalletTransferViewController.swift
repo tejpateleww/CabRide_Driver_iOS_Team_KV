@@ -212,13 +212,13 @@ extension String {
         let formatter = NumberFormatter()
         formatter.numberStyle = .currency
 //        formatter.numberStyle = .currencyAccounting
-        formatter.currencySymbol = "$"
+        formatter.currencySymbol = "\(currency)"
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         
         var amountWithPrefix = self
         
-        // remove from String: "$", ".", ","
+        // remove from String: "\(currency)", ".", ","
         let regex = try! NSRegularExpression(pattern: "[^0-9]", options: .caseInsensitive)
         amountWithPrefix = regex.stringByReplacingMatches(in: amountWithPrefix, options: NSRegularExpression.MatchingOptions(rawValue: 0), range: NSMakeRange(0, self.count), withTemplate: "")
         

@@ -27,6 +27,7 @@ let SubmitCompleteAdvancedBooking = WebserviceURLs.kSubmitCompleteAdvancedBookin
 let SubmitBookNowByDispatchJob = WebserviceURLs.kSubmitBookNowByDispatchJob
 let SubmitBookLaterByDispatchJob = WebserviceURLs.kSubmitBookLaterByDispatchJob
 let GetDriverProfile = WebserviceURLs.kGetDriverProfile
+let GetDistanceFromBackend = WebserviceURLs.kGetDistaceFromBackend
 
 let UpdateDriverBasicInfo = WebserviceURLs.KUpdateDriverBasicInfo
 
@@ -290,6 +291,18 @@ func webserviceForGetDriverProfile(_ dictParams: AnyObject, completion: @escapin
 {
     let url = GetDriverProfile + (dictParams as! String)
     getData("" as AnyObject, nsURL: url, completion: completion)
+}
+//-------------------------------------------------------------
+// MARK: - Webservice For Get Distace from Backend
+//-------------------------------------------------------------
+
+func webserviceForGetdistanceFromBackend(_ dictParams: AnyObject, completion: @escaping(_ result: AnyObject, _ success: Bool) -> Void)
+{
+    let url =  "http://54.206.55.185/web/Drvier_Api/FindDistance"//GetDistanceFromBackend
+    postData(dictParams, nsURL: url, completion: completion)
+    
+//    let url = GetDistanceFromBackend + (dictParams as! String)
+//    getData("" as AnyObject, nsURL: url, completion: completion)
 }
 
 //-------------------------------------------------------------

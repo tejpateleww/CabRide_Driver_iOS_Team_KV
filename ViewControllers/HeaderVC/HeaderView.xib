@@ -17,6 +17,12 @@
             <rect key="frame" x="0.0" y="0.0" width="374" height="61"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="navHairLine" translatesAutoresizingMaskIntoConstraints="NO" id="b5e-9v-TAA">
+                    <rect key="frame" x="0.0" y="59" width="374" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="Shd-db-ouc"/>
+                    </constraints>
+                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dfC-RT-f77">
                     <rect key="frame" x="0.0" y="0.0" width="374" height="61"/>
                     <subviews>
@@ -127,7 +133,10 @@
             <constraints>
                 <constraint firstItem="dfC-RT-f77" firstAttribute="trailing" secondItem="PWX-Ie-XfJ" secondAttribute="trailing" id="2zZ-sB-ENh"/>
                 <constraint firstItem="dfC-RT-f77" firstAttribute="top" secondItem="PWX-Ie-XfJ" secondAttribute="top" id="4hg-2V-xKA"/>
+                <constraint firstItem="b5e-9v-TAA" firstAttribute="bottom" secondItem="PWX-Ie-XfJ" secondAttribute="bottom" id="7v9-su-2xF"/>
                 <constraint firstItem="dfC-RT-f77" firstAttribute="leading" secondItem="PWX-Ie-XfJ" secondAttribute="leading" id="9AW-s2-FqI"/>
+                <constraint firstAttribute="trailing" secondItem="b5e-9v-TAA" secondAttribute="trailing" id="Toq-gk-sHE"/>
+                <constraint firstItem="b5e-9v-TAA" firstAttribute="leading" secondItem="rkH-kk-dTZ" secondAttribute="leading" id="g5c-lh-eHe"/>
                 <constraint firstItem="PWX-Ie-XfJ" firstAttribute="bottom" secondItem="dfC-RT-f77" secondAttribute="bottom" id="sD0-1v-CFd"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -138,6 +147,7 @@
                 <outlet property="btnMenu" destination="s1E-eJ-hFL" id="kaB-xT-JwW"/>
                 <outlet property="btnSignOut" destination="0LR-Zj-Ohg" id="tzP-OA-Kqv"/>
                 <outlet property="btnSwitch" destination="2QR-5T-1ST" id="S9R-Ku-wFQ"/>
+                <outlet property="imgBottomLine" destination="b5e-9v-TAA" id="zhn-1W-tTZ"/>
                 <outlet property="imgHeaderImage" destination="nRD-B0-mZn" id="XY8-9M-T9c"/>
                 <outlet property="lblHeaderTitle" destination="iJI-dO-7NF" id="Zv8-xj-rRL"/>
                 <outlet property="lblTitle" destination="LrR-3L-xJP" id="qhA-ZK-ivd"/>
@@ -149,6 +159,7 @@
         <image name="iconArrow" width="28" height="28"/>
         <image name="iconOnSwitch" width="38" height="19"/>
         <image name="menu" width="28" height="28"/>
+        <image name="navHairLine" width="414" height="1"/>
         <image name="nav_icon" width="123" height="33"/>
     </resources>
 </document>

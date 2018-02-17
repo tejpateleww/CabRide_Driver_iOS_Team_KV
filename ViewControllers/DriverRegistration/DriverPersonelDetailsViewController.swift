@@ -57,6 +57,8 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     override func viewDidLayoutSubviews()
     {
         super.viewDidLayoutSubviews()
+        imgProfile.layer.cornerRadius = imgProfile.frame.size.width / 2
+        imgProfile.layer.masksToBounds = true
         btnNext.layer.cornerRadius = btnNext.frame.size.height/2
         btnNext.clipsToBounds = true
     }
@@ -69,8 +71,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         txtDOB.delegate = self
         txtPostCode.delegate = self
 
-        imgProfile.layer.cornerRadius = imgProfile.frame.size.width / 2
-        imgProfile.layer.masksToBounds = true
+
         
         strLatitude = 0
         strLongitude = 0
@@ -97,7 +98,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     func showDatePicker(){
         //Formate Date
         datePicker.datePickerMode = .date
-        
+        datePicker.maximumDate = Date()
         //ToolBar
         let toolbar = UIToolbar();
         toolbar.sizeToFit()
@@ -117,7 +118,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     func donedatePicker(){
         //For date formate
         let formatter = DateFormatter()
-        formatter.dateFormat = "dd/MM/yyyy"
+        formatter.dateFormat = "yyyy-mm-dd"
         txtDOB.text = formatter.string(from: datePicker.date)
         //dismiss date picker dialog
         self.view.endEditing(true)
@@ -213,7 +214,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         let picker = UIImagePickerController()
         picker.delegate = self
         
-        picker.allowsEditing = false
+        picker.allowsEditing = true
         picker.sourceType = .photoLibrary
         
         // picker.stopVideoCapture()
@@ -226,7 +227,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         let picker = UIImagePickerController()
         
         picker.delegate = self
-        picker.allowsEditing = false
+        picker.allowsEditing = true
         picker.sourceType = .camera
         picker.cameraCaptureMode = .photo
         
@@ -235,7 +236,8 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage
+        {
             imgProfile.contentMode = .scaleToFill
             imgProfile.image = pickedImage
         }

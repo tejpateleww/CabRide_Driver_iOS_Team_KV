@@ -157,7 +157,7 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
             self.navigationItem.titleView = nil
             let lblTitle = UILabel.init(frame: CGRect (x: 0, y: 0, width: 100, height: 30))
             lblTitle.text = "Pick N Go"
-            lblTitle.textColor = UIColor.white
+            lblTitle.textColor = ThemeYellowColor
             lblTitle.textAlignment = .center
             lblTitle.font = UIFont.init(name: CustomeFontProximaNovaBold, size: 11)
             self.navigationItem.titleView = lblTitle
@@ -167,7 +167,7 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
             self.navigationItem.titleView = nil
             let lblTitle = UILabel.init(frame: CGRect (x: 0, y: 0, width: 100, height: 30))
             lblTitle.text = "Pick N Go"
-            lblTitle.textColor = UIColor.white
+            lblTitle.textColor = ThemeYellowColor
             lblTitle.textAlignment = .center
             lblTitle.font = UIFont.init(name: CustomeFontProximaNovaBold, size: 11)
             self.navigationItem.titleView = lblTitle
@@ -208,8 +208,8 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         
         
         self.navigationController?.navigationBar.barTintColor = UIColor.clear
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.navigationController?.navigationBar.tintColor = ThemeYellowColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemeYellowColor]
         self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage.init()
         self.navigationController?.view.backgroundColor = UIColor.clear

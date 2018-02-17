@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol RefreshDataDelegate: class
+{
+    func refreshJobs()
+}
 class MyJobsViewController: ParentViewController {
 
     var crnRadios = CGFloat()
@@ -28,6 +32,8 @@ class MyJobsViewController: ParentViewController {
     @IBOutlet var constrainSelectionX_position: NSLayoutConstraint!
     var pageControl = UIPageControl()
     
+    
+    
 //    @IBOutlet var Conmmstain_btnStackViewY_posistion: NSLayoutConstraint!
 //
 //    @IBOutlet var constrasin_viewSelection_y_position: NSLayoutConstraint!
@@ -45,7 +51,8 @@ class MyJobsViewController: ParentViewController {
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
@@ -59,27 +66,32 @@ class MyJobsViewController: ParentViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
 
-        if Singletons.sharedInstance.isPresentVC == true {
+//        if Singletons.sharedInstance.isPresentVC == true
+//        {
+//        
+//            let PendingJobsList = self.storyboard?.instantiateViewController(withIdentifier: "PendingJobsListVC") as! PendingJobsListVC
+//            
+//            Singletons.sharedInstance.isPresentVC = false
+//
+//            self.navigationController?.pushViewController(PendingJobsList, animated: true)
+//        }
         
-            let PendingJobsList = self.storyboard?.instantiateViewController(withIdentifier: "PendingJobsListVC") as! PendingJobsListVC
-            
-            Singletons.sharedInstance.isPresentVC = false
-
-            self.navigationController?.pushViewController(PendingJobsList, animated: true)
-        }
+//        if Singletons.sharedInstance.isBackFromPending == true
+//        {
+//
+//            Singletons.sharedInstance.isBackFromPending = false
+//
+//            self.callSocket()
+//
+//        }
         
-        if Singletons.sharedInstance.isBackFromPending == true {
-            
-            Singletons.sharedInstance.isBackFromPending = false
-            
-            self.callSocket()
-            
-        }
-        
-        if Singletons.sharedInstance.isFromNotification == true {
+        if Singletons.sharedInstance.isFromNotification == true
+        {
             Singletons.sharedInstance.isFromNotification = false
-            self.btnFutureBookings(UIButton.init())
+//            self.btnFutureBookings(UIButton.init())
+            self.btnFutureBookingClicked(self.btnFutureBooking)
         }
+        
     }
     
     /*func scrollViewDidScroll(_ scrollView: UIScrollView)
@@ -162,38 +174,39 @@ class MyJobsViewController: ParentViewController {
 //         (UIApplication.shared.delegate as! AppDelegate).window?.rootViewController?.present(dispatchJobs, animated: true, completion: nil)
 
     }
-    @IBAction func btnPastJobs(_ sender: UIButton) {
-        
-        let PastJobsList = self.storyboard?.instantiateViewController(withIdentifier: "PastJobsListVC") as! PastJobsListVC
-
-        self.navigationController?.pushViewController(PastJobsList, animated: true)
-        
-//        self.navigationController?.present(PastJobsList, animated: true, completion: nil)
-        
-     
-    }
-    @IBAction func btnFutureBookings(_ sender: UIButton) {
-        
-        let FutureBooking = self.storyboard?.instantiateViewController(withIdentifier: "FutureBookingVC") as! FutureBookingVC
-        
-        self.navigationController?.pushViewController(FutureBooking, animated: true)
-    
-//        self.navigationController?.present(FutureBooking, animated: true, completion: nil)
-        
-    }
-    
-    @IBAction func btnPendingJobs(_ sender: UIButton) {
-
-        let PendingJobsList = self.storyboard?.instantiateViewController(withIdentifier: "PendingJobsListVC") as! PendingJobsListVC
-        
-        self.navigationController?.pushViewController(PendingJobsList, animated: true)
-        
-//        self.navigationController?.present(PendingJobsList, animated: true, completion: nil)
-       
-        
-    }
+//    @IBAction func btnPastJobs(_ sender: UIButton) {
+//        
+//        let PastJobsList = self.storyboard?.instantiateViewController(withIdentifier: "PastJobsListVC") as! PastJobsListVC
+//
+//        self.navigationController?.pushViewController(PastJobsList, animated: true)
+//        
+////        self.navigationController?.present(PastJobsList, animated: true, completion: nil)
+//        
+//     
+//    }
+//    @IBAction func btnFutureBookings(_ sender: UIButton) {
+//        
+//        let FutureBooking = self.storyboard?.instantiateViewController(withIdentifier: "FutureBookingVC") as! FutureBookingVC
+//        
+//        self.navigationController?.pushViewController(FutureBooking, animated: true)
+//    
+////        self.navigationController?.present(FutureBooking, animated: true, completion: nil)
+//        
+//    }
+//    
+//    @IBAction func btnPendingJobs(_ sender: UIButton) {
+//
+//        let PendingJobsList = self.storyboard?.instantiateViewController(withIdentifier: "PendingJobsListVC") as! PendingJobsListVC
+//        PendingJobsList.webserviceofPendingJobs()
+//        self.navigationController?.pushViewController(PendingJobsList, animated: true)
+//        
+////        self.navigationController?.present(PendingJobsList, animated: true, completion: nil)
+//       
+//        
+//    }
     @IBAction func btnFutureBookingClicked(_ sender: Any)
     {
+        
         btnFutureBooking.isSelected = true
         btnPendingJobs.isSelected = false
         btnPastJobs.isSelected = false
@@ -226,6 +239,17 @@ class MyJobsViewController: ParentViewController {
             self.btnPastJobs.setTitleColor(ThemeGrayColor, for: .normal)
             self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width, y: 0)
             self.view.layoutIfNeeded()
+            
+            let PendingJobsList = ((((self.navigationController?.childViewControllers[0] as! TabbarController).childViewControllers.last)as! MyJobsViewController).childViewControllers[1])as! PendingJobsListVC
+            
+            
+            
+        
+            let deadlineTime = DispatchTime.now() + .seconds(3)
+            DispatchQueue.main.asyncAfter(deadline: deadlineTime, execute: {
+                PendingJobsList.webserviceofPendingJobs()
+            })
+            
         }, completion: nil)
     }
     
@@ -267,6 +291,11 @@ class MyJobsViewController: ParentViewController {
         socket.emit("NotifyPassengerForAdvancedTrip", with: [myJSON])
         
         print("Start Trip : \(myJSON)")
+    }
+    
+    func refreshJobs()
+    {
+        
     }
 
 }

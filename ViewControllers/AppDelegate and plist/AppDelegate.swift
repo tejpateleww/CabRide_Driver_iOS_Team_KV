@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
    
     
-    let SocketManager = SocketIOClient(socketURL: URL(string: "http://54.206.55.185:8080")!, config: [.log(false), .compress])
+    let SocketManager = SocketIOClient(socketURL: URL(string: "https://pickngolk.info:8081")!, config: [.log(false), .compress])
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -55,8 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         // AIzaSyCRaduVCKdm1ll3kHPY-ebtvwwPV2VVozo
         
-//        manager.delegate = self
-
+        manager.delegate = self
+        manager.startUpdatingLocation()
         manager.requestAlwaysAuthorization()
         
         if (UserDefaults.standard.object(forKey:  driverProfileKeys.kKeyDriverProfile) != nil)
@@ -81,7 +81,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary
         
-        if remoteNotif != nil {
+        if remoteNotif != nil
+        {
             let key = (remoteNotif as! NSDictionary).object(forKey: "gcm.notification.type")!
             NSLog("\n Custom: \(String(describing: key))")
             self.pushAfterReceiveNotification(typeKey: key as! String)
@@ -124,7 +125,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 Singletons.sharedInstance.isPasscodeON = true
             }
         }
-        else {
+        else
+        {
             
             Singletons.sharedInstance.isPasscodeON = false
             UserDefaults.standard.set(Singletons.sharedInstance.isPasscodeON, forKey: "isPasscodeON")
@@ -143,6 +145,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location: CLLocation = locations.last!
+        
+//        defaultLocation = location
+        
+        Singletons.sharedInstance.latitude = location.coordinate.latitude
+        Singletons.sharedInstance.longitude = location.coordinate.longitude
         
         if locations.first != nil {
             print("location:: (location)")
@@ -355,24 +364,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 navController?.present(notificationController ?? UIViewController(), animated: true, completion: {
                     
                 })
-            }
-        }
-        else if(typeKey == "Tickpay")
-        {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                let tabbarvc = (((((((self.window?.rootViewController as! UINavigationController).viewControllers[1].childViewControllers.last!) as! MenuController).navigationController)?.childViewControllers.last) as! CustomSideMenuViewController).childViewControllers[0] as! UINavigationController).childViewControllers[0] as! TabbarController
                 
-                tabbarvc.selectedIndex = 4
+              
+                
+                
             }
         }
+//        else if(typeKey == "Tickpay")
+//        {
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//                let tabbarvc = (((((((self.window?.rootViewController as! UINavigationController).viewControllers[1].childViewControllers.last!) as! MenuController).navigationController)?.childViewControllers.last) as! CustomSideMenuViewController).childViewControllers[0] as! UINavigationController).childViewControllers[0] as! TabbarController
+//
+//                tabbarvc.selectedIndex = 4
+//            }
+//        }
         else if(typeKey == "RejectDispatchJobRequest")
         {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                let navController = self.window?.rootViewController as? UINavigationController
-                let notificationController: UIViewController? = navController?.storyboard?.instantiateViewController(withIdentifier: "PastJobsListVC")
-                navController?.present(notificationController ?? UIViewController(), animated: true, completion: {
-                    
-                })
+//                let navController = self.window?.rootViewController as? UINavigationController
+//                let notificationController: UIViewController? = navController?.storyboard?.instantiateViewController(withIdentifier: "PastJobsListVC")
+//                navController?.present(notificationController ?? UIViewController(), animated: true, completion: {
+//
+//                })
+                
+                let tabBarTemp = (((self.window?.rootViewController as! UINavigationController).childViewControllers.last as! CustomSideMenuViewController).childViewControllers[0] as! UINavigationController).childViewControllers[0] as! TabbarController
+                
+                tabBarTemp.selectedIndex = 1
+                let MyJob = tabBarTemp.childViewControllers[1] as! MyJobsViewController
+                
+                MyJob.btnPastJobsClicked(MyJob.btnPastJobs)
             }
         }
         else if(typeKey == "BookLaterDriverNotify")
@@ -383,10 +403,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
 //                navController?.present(notificationController ?? UIViewController(), animated: true, completion: {
 //
                 
-                    let tabbarvc = (((((((self.window?.rootViewController as! UINavigationController).viewControllers[1].childViewControllers.last!) as! MenuController).navigationController)?.childViewControllers.last) as! CustomSideMenuViewController).childViewControllers[0] as! UINavigationController).childViewControllers[0] as! TabbarController
-                    Singletons.sharedInstance.isFromNotification = true
+//                    let tabbarvc = (((((((self.window?.rootViewController as! UINavigationController).viewControllers[1].childViewControllers.last!) as! MenuController).navigationController)?.childViewControllers.last) as! CustomSideMenuViewController).childViewControllers[0] as! UINavigationController).childViewControllers[0] as! TabbarController
+//                    Singletons.sharedInstance.isFromNotification = true
+//
+//                    tabbarvc.selectedIndex = 1
                 
-                    tabbarvc.selectedIndex = 2
+                let tabBarTemp = (((self.window?.rootViewController as! UINavigationController).childViewControllers.last as! CustomSideMenuViewController).childViewControllers[0] as! UINavigationController).childViewControllers[0] as! TabbarController
+                 Singletons.sharedInstance.isFromNotification = true
+                tabBarTemp.selectedIndex = 1
+               
 //                }
             }
         }

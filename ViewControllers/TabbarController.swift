@@ -16,21 +16,25 @@ class TabbarController: UITabBarController {
         super.viewDidLoad()
 
         self.tabBar.tintColor = ThemeYellowColor
-        self.tabBar.backgroundColor = UIColor.black
+        self.tabBar.backgroundColor = UIColor.init(hex: "303030")
         
         UIApplication.shared.statusBarStyle = .default
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+          self.navigationController?.isNavigationBarHidden = true
+    }
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(true)
-        self.navigationController?.isNavigationBarHidden = true
+      
       
     }
     override func viewDidAppear(_ animated: Bool)

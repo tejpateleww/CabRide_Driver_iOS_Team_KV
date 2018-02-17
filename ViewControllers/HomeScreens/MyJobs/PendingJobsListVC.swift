@@ -21,7 +21,7 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
     // MARK: - Global Declaration
     //-------------------------------------------------------------
 //    let activityData = ActivityData()
-
+ @IBOutlet weak var tableView: UITableView!
     var aryData = NSArray()
     var aryPendingJobs = NSMutableArray()
   
@@ -35,7 +35,8 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
     
     var labelNoData = UILabel()
     
-    lazy var refreshControl: UIRefreshControl = {
+    lazy var refreshControl: UIRefreshControl =
+        {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
             #selector(self.handleRefresh(_:)),
@@ -57,7 +58,8 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
     // MARK: - Base Methods
     //-------------------------------------------------------------
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
        
        // UtilityClass.showACProgressHUD()
@@ -77,10 +79,16 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         self.tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: false)
         self.tableView.addSubview(self.refreshControl)
         
-        webserviceofPendingJobs()
+     
         
     }
 
+    override func viewWillAppear(_ animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        webserviceofPendingJobs()
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
@@ -104,7 +112,7 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
     // MARK: - Outlets
     //-------------------------------------------------------------
     
-    @IBOutlet weak var tableView: UITableView!
+   
     
     
     //-------------------------------------------------------------
@@ -223,7 +231,8 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         
         webserviceForBookingHistry(driverID as AnyObject) { (result, status) in
             
-            if (status) {
+            if (status)
+            {
                 print(result)
                 
                 self.aryData = ((result as! NSDictionary).object(forKey: "history") as! NSArray)
@@ -234,9 +243,20 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
                     self.labelNoData.text = "Please check back later"
                     self.tableView.isHidden = true
                 }
-                else {
+                else
+                {
                     self.labelNoData.removeFromSuperview()
+                    
+                    if self.tableView != nil
+                    {
                     self.tableView.isHidden = false
+                    }
+                    else
+                    {
+                        self.tableView.delegate = self
+                        self.tableView.dataSource = self
+                        self.tableView.isHidden = false
+                    }
                 }
                 
                 self.tableView.reloadData()
@@ -281,7 +301,8 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
     // MARK: - Socket: Notify Passenger For Advance Trip
     //-------------------------------------------------------------
     
-    func strtTrip(sender: UIButton) {
+    func strtTrip(sender: UIButton)
+    {
         
         let bookingID = String((sender.tag))
         
@@ -290,12 +311,15 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         let alert = UIAlertController(title: nil, message: "Your trip is on there way.", preferredStyle: .alert)
         let OK = UIAlertAction(title: "OK", style: .default, handler: { ACTION in
             
-            Singletons.sharedInstance.isBackFromPending = true
+//            Singletons.sharedInstance.isBackFromPending = true
+            let myJobs = (self.navigationController?.childViewControllers[0] as! TabbarController).childViewControllers.last as! MyJobsViewController
             
-            self.navigationController?.popViewController(animated: true)
+            myJobs.callSocket()
+//            self.navigationController?.popViewController(animated: true)
             
             
 //            self.dismiss(animated: true, completion: nil)
+            self.tabBarController?.selectedIndex = 0
             
 //        self.navigationController?.popViewController(animated: true)
        

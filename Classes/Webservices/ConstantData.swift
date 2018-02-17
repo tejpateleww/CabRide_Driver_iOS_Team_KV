@@ -10,8 +10,8 @@ import Foundation
 
 
 struct WebserviceURLs {
-    static let kBaseURL                                 = "http://54.169.45.134/web/Drvier_Api/"
-    static let kImageBaseURL                            = "http://54.169.45.134/web/"
+    static let kBaseURL                                 = "https://pickngolk.info/web/Drvier_Api/"
+    static let kImageBaseURL                            = "https://pickngolk.info/web/"
     static let kOTPForDriverRegister                    = "OtpForRegister"
     static let kVehicalModelList                        = "TaxiModel/"
     static let kDriverRegister                          = "Register"
@@ -43,7 +43,7 @@ struct WebserviceURLs {
     static let kMyDispatchJob                           = "MyDispatchJob/"
     static let kGetDriverProfile                        = "GetDriverProfile/"
 //    static let kBookingHistory                          = "BookingHistory/"
-    
+    static let kGetDistaceFromBackend                   = "FindDistance/"
     static let kCurrentBooking                          = "CurrentBooking/"
     
     static let kAddNewCard                              = "AddNewCard"

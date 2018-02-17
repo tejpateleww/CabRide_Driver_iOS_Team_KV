@@ -189,8 +189,8 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
             let leftAxisFormatter = NumberFormatter()
             leftAxisFormatter.minimumFractionDigits = 0
             leftAxisFormatter.maximumFractionDigits = 1
-            leftAxisFormatter.negativeSuffix = "$"   // " $"
-            leftAxisFormatter.positiveSuffix = "$"   // " $"
+            leftAxisFormatter.negativeSuffix = "\(currency)"   // " $"
+            leftAxisFormatter.positiveSuffix = "\(currency)"   // " $"
             
             let leftAxis = customViews.leftAxis
             leftAxis.labelFont = .systemFont(ofSize: 10)
@@ -267,7 +267,7 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
         }
      
 
-        lblEarnings[indexOfPosition].text = String("$\(total)")
+        lblEarnings[indexOfPosition].text = String("\(currency)\(total)")
         var days = [String]()
         let yVals = (start..<(data[dataString]! as AnyObject).count).map { (i) -> BarChartDataEntry in
             let dict = data[dataString] as! [[String:AnyObject]]
@@ -303,8 +303,8 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
                 data.barWidth = 0.9
                 
                 let format = NumberFormatter()
-                format.negativePrefix = "$"
-                format.positivePrefix = "$"
+                format.negativePrefix = "\(currency)"
+                format.positivePrefix = "\(currency)"
                 
                 let formatter = DefaultValueFormatter(formatter: format)
                 data.setValueFormatter(formatter)
@@ -325,8 +325,8 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
                 data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 10)!)
                 data.barWidth = 0.9
                 let format = NumberFormatter()
-                format.negativePrefix = "$"
-                format.positivePrefix = "$"
+                format.negativePrefix = "\(currency)"
+                format.positivePrefix = "\(currency)"
                 
                 let formatter = DefaultValueFormatter(formatter: format)
                 
@@ -377,9 +377,9 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
                 
                 for label in self.lblCurrentBalance
                 {
-                    label.text = String("$ \(String(format: "%.2f",Double(currentBalance as! String)!))")
+                    label.text = String("\(currency) \(String(format: "%.2f",Double(currentBalance as! String)!))")
                 }
-//                self.lblCurrentBalance1.text = String("$ \(String(describing: (Singletons.sharedInstance.dictDriverProfile["profile"] as! [String : AnyObject])["Balance"]!))")
+//                self.lblCurrentBalance1.text = String("\(currency) \(String(describing: (Singletons.sharedInstance.dictDriverProfile["profile"] as! [String : AnyObject])["Balance"]!))")
                 let startDate = self.dataOfWeeklyEarnings["start_date"]
                 let endDate = self.dataOfWeeklyEarnings["end_date"]
                 let anotherStartDate = self.getDateAndMonth(date: startDate as! String)
