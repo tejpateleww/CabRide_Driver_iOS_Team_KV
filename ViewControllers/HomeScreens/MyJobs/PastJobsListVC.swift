@@ -150,7 +150,8 @@ class PastJobsListVC: UIViewController, UITableViewDataSource, UITableViewDelega
 //                cell.selectionStyle = .none
         
                 cell.lblPassengerName.text = data.object(forKey: "PassengerName") as? String
-                
+                cell.lblPassengerName.textColor = ThemePinkColor
+
                 //        cell.lblDropoffLocation.text = data.object(forKey: "PassengerName") as? String
                 cell.lblDropoffLocationDescription.text = data.object(forKey: "PickupLocation") as? String // DropoffLocation
                 cell.lblDateAndTime.text = data.object(forKey: "CreatedDate") as? String

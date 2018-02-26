@@ -361,7 +361,7 @@ class DriverPersonelDetailsViewController: UIViewController, UIImagePickerContro
         let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
         let x = self.view.frame.size.width * 2
         driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
-        driverVC.viewDriverBank.backgroundColor = ThemeYellowColor
+        driverVC.viewDriverBank.backgroundColor = ThemePinkColor
         driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
         if (self.saveAllDataInArray().count != 0)
         {

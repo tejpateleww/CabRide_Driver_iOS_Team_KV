@@ -38,9 +38,9 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
     var arrImageUnselected = [iconMailUnselect, iconDriverUnselect, iconBankUnselect, iconCarUnselect, iconAttachmentUnselect]
     var arrImageSelected = [iconMailSelect, iconDriverSelect, iconBankSelect, iconCarSelect, iconAttachmentSelect]
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     //-------------------------------------------------------------
     // MARK: - Base Methods
@@ -63,34 +63,34 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
 
           if pageNO == 1
             {
-                driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
+                driverVC.viewEmailDriver.backgroundColor = ThemePinkColor
                 driverVC.imgMail.image = UIImage.init(named: iconMailSelect)
                 driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
             }
             else if pageNO == 2
             {
-                driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
+                driverVC.viewEmailDriver.backgroundColor = ThemePinkColor
                 driverVC.imgMail.image = UIImage.init(named: iconMailSelect)
-                driverVC.viewDriverBank.backgroundColor = ThemeYellowColor
+                driverVC.viewDriverBank.backgroundColor = ThemePinkColor
                 driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
                 driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
             }
             else if pageNO == 3
             {
-                driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
+                driverVC.viewEmailDriver.backgroundColor = ThemePinkColor
                 driverVC.imgMail.image = UIImage.init(named: iconMailSelect)
-                driverVC.viewDriverBank.backgroundColor = ThemeYellowColor
+                driverVC.viewDriverBank.backgroundColor = ThemePinkColor
                 driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
-                driverVC.viewBankCar.backgroundColor = ThemeYellowColor
+                driverVC.viewBankCar.backgroundColor = ThemePinkColor
                 driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
                 driverVC.imgCar.image = UIImage.init(named: iconCarSelect)
             }
             else if pageNO == 4
             {
-                driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
-                driverVC.viewDriverBank.backgroundColor = ThemeYellowColor
-                driverVC.viewBankCar.backgroundColor = ThemeYellowColor
-                driverVC.viewCarAttachment.backgroundColor = ThemeYellowColor
+                driverVC.viewEmailDriver.backgroundColor = ThemePinkColor
+                driverVC.viewDriverBank.backgroundColor = ThemePinkColor
+                driverVC.viewBankCar.backgroundColor = ThemePinkColor
+                driverVC.viewCarAttachment.backgroundColor = ThemePinkColor
                 driverVC.imgMail.image = UIImage.init(named: iconMailSelect)
                 driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
                 driverVC.imgBank.image = UIImage.init(named: iconBankSelect)
@@ -156,8 +156,8 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         {
             self.navigationItem.titleView = nil
             let lblTitle = UILabel.init(frame: CGRect (x: 0, y: 0, width: 100, height: 30))
-            lblTitle.text = "Pick N Go"
-            lblTitle.textColor = ThemeYellowColor
+            lblTitle.text = "Cab Ride"
+            lblTitle.textColor = ThemePinkColor
             lblTitle.textAlignment = .center
             lblTitle.font = UIFont.init(name: CustomeFontProximaNovaBold, size: 11)
             self.navigationItem.titleView = lblTitle
@@ -166,8 +166,8 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         {
             self.navigationItem.titleView = nil
             let lblTitle = UILabel.init(frame: CGRect (x: 0, y: 0, width: 100, height: 30))
-            lblTitle.text = "Pick N Go"
-            lblTitle.textColor = ThemeYellowColor
+            lblTitle.text = "Cab Ride"
+            lblTitle.textColor = ThemePinkColor
             lblTitle.textAlignment = .center
             lblTitle.font = UIFont.init(name: CustomeFontProximaNovaBold, size: 11)
             self.navigationItem.titleView = lblTitle
@@ -208,8 +208,8 @@ class DriverRegistrationViewController: UIViewController, UIScrollViewDelegate /
         
         
         self.navigationController?.navigationBar.barTintColor = UIColor.clear
-        self.navigationController?.navigationBar.tintColor = ThemeYellowColor
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemeYellowColor]
+        self.navigationController?.navigationBar.tintColor = ThemePinkColor
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemePinkColor]
         self.navigationController?.navigationBar.setBackgroundImage(UIImage.init(), for: UIBarMetrics.default)
         self.navigationController?.navigationBar.shadowImage = UIImage.init()
         self.navigationController?.view.backgroundColor = UIColor.clear

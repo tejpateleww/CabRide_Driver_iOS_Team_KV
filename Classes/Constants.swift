@@ -14,13 +14,14 @@ let Appdelegate = UIApplication.shared.delegate as! AppDelegate
 
 let ThemeYellowColor : UIColor = UIColor.init(hex: "ffa300")
 let ThemeGrayColor : UIColor = UIColor.init(hex:  "8e8c80")
+let ThemePinkColor : UIColor = UIColor.init(hex:  "F21541")
 let ThemeStatusBarColor : UIColor = UIColor.init(hex:  "cccccc")
 
 
 let navigationBarHeightIphoneX = 84
 var utility = Utilities()
 
-let currency : String = "LKR"
+let currency : String = "$"
 let RingToneSound : String = "PickNGo"
 let kBackIcon : String = "iconArrow"
 let kMenuIcon : String = "menu"

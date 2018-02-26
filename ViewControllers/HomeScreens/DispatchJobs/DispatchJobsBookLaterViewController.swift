@@ -179,7 +179,7 @@ class DispatchJobsBookLaterViewController: UIViewController, getVehicleServiceId
             txtFareAmount.text = amountString
             
 //            let unfiltered = amountString   //  "!   !! yuahl! !"
-            let y = amountString.replacingOccurrences(of: "LKR, ", with: "", options: .regularExpression, range: nil)
+            let y = amountString.replacingOccurrences(of: "$, ", with: "", options: .regularExpression, range: nil)
             print(y)
             // Array of Characters to remove
 //            let removal: [Character] = ["LKR",","," "]    // ["!"," "]

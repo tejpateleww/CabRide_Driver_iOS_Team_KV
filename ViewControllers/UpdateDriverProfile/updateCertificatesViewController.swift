@@ -30,7 +30,7 @@ class updateCertificatesViewController: UIViewController, UIImagePickerControlle
 //        imgVehicleImage.layer.masksToBounds = true
         
         imgVehicleImage.layer.borderWidth = 1.0
-        imgVehicleImage.layer.borderColor = ThemeYellowColor.cgColor
+        imgVehicleImage.layer.borderColor = ThemePinkColor.cgColor
         
         imgVehicleImage.image = UIImage.init(named: "iconCarPlaceholder")
         imgDriverLicence.image = UIImage.init(named: "iconEditProfile")

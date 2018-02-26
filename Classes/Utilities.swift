@@ -230,7 +230,7 @@ class Utilities: NSObject
             let img = imgNavigation
             let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
             imgView.image = img.withRenderingMode(.alwaysTemplate)
-            imgView.tintColor = ThemeYellowColor
+            imgView.tintColor = ThemePinkColor
             imgView.contentMode = .scaleAspectFit
             navigationController.navigationItem.titleView = imgView
         }
@@ -239,15 +239,15 @@ class Utilities: NSObject
             navigationController.navigationItem.titleView = nil
             let lblTitle = UILabel.init(frame: CGRect (x: 0, y: 0, width: 100, height: 30))
             lblTitle.text = strTitle
-            lblTitle.textColor = ThemeYellowColor
+            lblTitle.textColor = ThemePinkColor
             lblTitle.textAlignment = .center
             lblTitle.font = UIFont.init(name: CustomeFontProximaNovaBold, size: 11)
             navigationController.navigationItem.titleView = lblTitle
         }
         
         navigationController.navigationBar.barTintColor = UIColor.white
-        navigationController.navigationBar.tintColor = ThemeYellowColor
-        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemeYellowColor]
+        navigationController.navigationBar.tintColor = ThemePinkColor
+        navigationController.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : ThemePinkColor]
         navigationController.navigationBar.setBackgroundImage(UIImage.init(), for: UIBarMetrics.default)
         navigationController.navigationBar.shadowImage = UIImage.init()
         navigationController.view.backgroundColor = UIColor.clear

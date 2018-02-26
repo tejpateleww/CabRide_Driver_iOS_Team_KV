@@ -255,7 +255,7 @@ class DriverVehiclesViewController: UIViewController, UITableViewDataSource, UIT
                 driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
         
 //        driverVC.segmentController.selectedIndex = 5
-        driverVC.viewCarAttachment.backgroundColor = ThemeYellowColor
+        driverVC.viewCarAttachment.backgroundColor = ThemePinkColor
         driverVC.imgAttachment.image = UIImage.init(named: iconAttachmentSelect)
     }
     // ------------------------------------------------------------

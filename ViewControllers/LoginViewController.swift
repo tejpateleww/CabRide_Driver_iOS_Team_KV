@@ -36,7 +36,7 @@ class LoginViewController: UIViewController, CLLocationManagerDelegate {
         txtMobile.text = ""
         txtPassword.text = ""
         
-        Utilities.setStatusBarColor(color: UIColor.clear)
+//        Utilities.setStatusBarColor(color: UIColor.clear)
         
         if(Singletons.sharedInstance.isDriverLoggedIN)
         {

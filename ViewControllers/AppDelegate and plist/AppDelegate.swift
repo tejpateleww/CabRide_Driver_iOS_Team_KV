@@ -37,12 +37,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         Fabric.with([Crashlytics.self])
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
-        SideMenuController.preferences.drawing.menuButtonImage = UIImage(named: "menu")
+        
+        
+        let img = UIImage(named: "menu")
+        let imgView = UIImageView(frame: CGRect(x: 0, y: 0, width: 44, height: 44))
+        imgView.image = img?.withRenderingMode(.alwaysTemplate)
+        imgView.tintColor = ThemePinkColor
+        imgView.contentMode = .scaleAspectFit
+        
+        SideMenuController.preferences.drawing.menuButtonImage = imgView.image
         SideMenuController.preferences.drawing.sidePanelPosition = .overCenterPanelLeft
         SideMenuController.preferences.drawing.sidePanelWidth = (window?.frame.width)! - 80
         SideMenuController.preferences.drawing.centerPanelShadow = true
         SideMenuController.preferences.animating.statusBarBehaviour = .showUnderlay
-         UIApplication.shared.statusBarStyle = .default
+         UIApplication.shared.statusBarStyle = .lightContent
        
         
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -154,7 +162,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         Singletons.sharedInstance.longitude = location.coordinate.longitude
         
         if locations.first != nil {
-            print("location:: (location)")
+//            print("location:: (location)")
         }
     }
 

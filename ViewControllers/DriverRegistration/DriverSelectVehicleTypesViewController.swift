@@ -198,7 +198,7 @@ class DriverSelectVehicleTypesViewController: UIViewController, UIImagePickerCon
             setData()
             let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
             
-            driverVC.viewCarAttachment.backgroundColor = ThemeYellowColor
+            driverVC.viewCarAttachment.backgroundColor = ThemePinkColor
             driverVC.imgAttachment.image = UIImage.init(named: iconAttachmentSelect)
             let x = self.view.frame.size.width * 4
             driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)

@@ -79,7 +79,7 @@ class UpdateProfilePersonelDetailsVC: UIViewController,UIImagePickerControllerDe
         btnEditProfileIPic.layer.cornerRadius = btnEditProfileIPic.frame.size.width / 2
         btnEditProfileIPic.layer.masksToBounds = true
         imgProfile.layer.borderWidth = 1.0
-        imgProfile.layer.borderColor = ThemeYellowColor.cgColor
+        imgProfile.layer.borderColor = ThemePinkColor.cgColor
         imgProfile.layer.masksToBounds = true
     }
     

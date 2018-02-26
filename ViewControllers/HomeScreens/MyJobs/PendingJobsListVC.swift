@@ -136,6 +136,7 @@ class PendingJobsListVC: UIViewController, UITableViewDataSource, UITableViewDel
         let data = aryPendingJobs.object(at: indexPath.row) as! NSDictionary
 
         cell.lblPassengerName.text = data.object(forKey: "PassengerName") as? String
+        cell.lblPassengerName.textColor = ThemePinkColor
 
         if let TimeAndDate: String = data.object(forKey: "PickupDateTime") as? String {
             

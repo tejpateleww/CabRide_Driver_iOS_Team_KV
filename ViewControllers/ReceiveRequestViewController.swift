@@ -63,12 +63,12 @@ class ReceiveRequestViewController: UIViewController, SRCountdownTimerDelegate {
         viewCountdownTimer.labelFont = UIFont(name: "HelveticaNeue-Light", size: 50.0)
         //                    self.timerView.timerFinishingText = "End"
         viewCountdownTimer.lineWidth = 4
-        viewCountdownTimer.lineColor = UIColor.gray
+        viewCountdownTimer.lineColor = UIColor.black
         viewCountdownTimer.trailLineColor = UIColor.red
-        viewCountdownTimer.labelTextColor = UIColor.white
+        viewCountdownTimer.labelTextColor = UIColor.black
         viewCountdownTimer.delegate = self
         viewCountdownTimer.start(beginingValue: 30, interval: 1)
-        lblMessage.text = "New booking request arrived from TiCKTOC"
+        lblMessage.text = "New booking request arrived from \(appName.kAPPName)"
         
     }
     

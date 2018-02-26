@@ -21,7 +21,7 @@
         <!--Login View Controller-->
         <scene sceneID="R36-27-Ubd">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1xt-Ui-1Dl" customClass="LoginViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1xt-Ui-1Dl" customClass="LoginViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Eh-wn-ZhS"/>
                         <viewControllerLayoutGuide type="bottom" id="qYF-d1-UbH"/>
@@ -60,7 +60,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_bg_img" translatesAutoresizingMaskIntoConstraints="NO" id="WhO-Oo-P5p">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPickNGologo" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-ef-zRN">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconPickNGologo" translatesAutoresizingMaskIntoConstraints="NO" id="Jn1-ef-zRN">
                                         <rect key="frame" x="90" y="60" width="140" height="140"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Jn1-ef-zRN" secondAttribute="height" multiplier="1:1" id="ujJ-hQ-nlK"/>
@@ -142,7 +142,7 @@
                                             <constraint firstAttribute="height" constant="1" id="bL5-Db-E6c"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUW-bu-JLG">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tUW-bu-JLG" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="20" y="412" width="280" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -150,18 +150,43 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="Sign In">
-                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="btnLogin:" destination="1xt-Ui-1Dl" eventType="touchUpInside" id="jy9-IQ-hNN"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-zO-vt5">
-                                        <rect key="frame" x="0.0" y="467" width="320" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crr-Ob-L0z">
+                                        <rect key="frame" x="0.0" y="462" width="320" height="56"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBE-zO-vt5">
+                                                <rect key="frame" x="59" y="10" width="142" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTl-ae-wsp">
+                                                <rect key="frame" x="206" y="4.5" width="51" height="27"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <state key="normal" title="Register">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnSignUP:" destination="1xt-Ui-1Dl" eventType="touchUpInside" id="4lZ-LU-jgp"/>
+                                                    <segue destination="fbF-vU-Voj" kind="show" id="DSo-j6-hFA"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="FBE-zO-vt5" firstAttribute="centerX" secondItem="crr-Ob-L0z" secondAttribute="centerX" constant="-30" id="Igb-gi-I7i"/>
+                                            <constraint firstAttribute="height" constant="56" id="Rps-1W-s66"/>
+                                            <constraint firstItem="QTl-ae-wsp" firstAttribute="leading" secondItem="FBE-zO-vt5" secondAttribute="trailing" constant="5" id="hGV-MN-sAR"/>
+                                            <constraint firstItem="QTl-ae-wsp" firstAttribute="centerY" secondItem="FBE-zO-vt5" secondAttribute="centerY" id="spG-jM-wIN"/>
+                                            <constraint firstItem="FBE-zO-vt5" firstAttribute="top" secondItem="crr-Ob-L0z" secondAttribute="top" constant="10" id="xxG-wY-b29"/>
+                                        </constraints>
+                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yek-XY-8iq">
                                         <rect key="frame" x="214" y="341" width="86" height="17"/>
                                         <constraints>
@@ -173,21 +198,6 @@
                                         </state>
                                         <connections>
                                             <action selector="btnForgotPassword:" destination="1xt-Ui-1Dl" eventType="touchUpInside" id="IOM-ml-p5J"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QTl-ae-wsp">
-                                        <rect key="frame" x="20" y="498" width="280" height="40"/>
-                                        <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="ht8-RS-rKO"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <state key="normal" title="Register">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnSignUP:" destination="1xt-Ui-1Dl" eventType="touchUpInside" id="4lZ-LU-jgp"/>
-                                            <segue destination="fbF-vU-Voj" kind="show" id="DSo-j6-hFA"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconMobile" translatesAutoresizingMaskIntoConstraints="NO" id="hXC-Bv-tdH">
@@ -204,32 +214,29 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="tUW-bu-JLG" firstAttribute="trailing" secondItem="3aW-oE-AnE" secondAttribute="trailing" id="0JQ-5p-duk"/>
+                                    <constraint firstItem="crr-Ob-L0z" firstAttribute="leading" secondItem="Ctx-cG-B5U" secondAttribute="leading" id="0QF-le-h4F"/>
                                     <constraint firstItem="3aW-oE-AnE" firstAttribute="height" secondItem="PoJ-hG-bO5" secondAttribute="height" id="0sS-02-ohE"/>
-                                    <constraint firstItem="FBE-zO-vt5" firstAttribute="top" secondItem="tUW-bu-JLG" secondAttribute="bottom" constant="15" id="2CP-Og-DeF"/>
                                     <constraint firstItem="Ih1-2X-aW5" firstAttribute="top" secondItem="PoJ-hG-bO5" secondAttribute="bottom" constant="1" id="2yQ-pG-7ge"/>
                                     <constraint firstItem="tUW-bu-JLG" firstAttribute="top" secondItem="4lm-yH-7Hb" secondAttribute="bottom" constant="50" id="5b9-Ad-2NM"/>
                                     <constraint firstItem="Jn1-ef-zRN" firstAttribute="top" secondItem="Ctx-cG-B5U" secondAttribute="top" constant="60" id="7WC-fX-IZQ"/>
                                     <constraint firstItem="hXC-Bv-tdH" firstAttribute="centerY" secondItem="PoJ-hG-bO5" secondAttribute="centerY" id="8uS-N9-pKg"/>
                                     <constraint firstItem="3aW-oE-AnE" firstAttribute="leading" secondItem="PoJ-hG-bO5" secondAttribute="leading" id="9Id-z8-gT8"/>
+                                    <constraint firstAttribute="trailing" secondItem="crr-Ob-L0z" secondAttribute="trailing" id="DTQ-JE-dm1"/>
                                     <constraint firstItem="WhO-Oo-P5p" firstAttribute="centerX" secondItem="Ctx-cG-B5U" secondAttribute="centerX" id="DTh-1z-0ST"/>
                                     <constraint firstItem="4lm-yH-7Hb" firstAttribute="top" secondItem="Yek-XY-8iq" secondAttribute="bottom" constant="3" id="FCw-WR-XjN"/>
                                     <constraint firstAttribute="trailing" secondItem="4lm-yH-7Hb" secondAttribute="trailing" constant="20" id="Klw-YE-omP"/>
-                                    <constraint firstItem="QTl-ae-wsp" firstAttribute="trailing" secondItem="tUW-bu-JLG" secondAttribute="trailing" id="Kyo-D0-eSX"/>
                                     <constraint firstItem="WhO-Oo-P5p" firstAttribute="centerY" secondItem="Ctx-cG-B5U" secondAttribute="centerY" id="NNs-yi-n0p"/>
                                     <constraint firstItem="tUW-bu-JLG" firstAttribute="leading" secondItem="4lm-yH-7Hb" secondAttribute="leading" id="NUI-Yo-IEH"/>
-                                    <constraint firstItem="QTl-ae-wsp" firstAttribute="top" secondItem="FBE-zO-vt5" secondAttribute="bottom" constant="15" id="OkN-ln-eFl"/>
                                     <constraint firstItem="3aW-oE-AnE" firstAttribute="top" secondItem="PoJ-hG-bO5" secondAttribute="bottom" constant="15" id="SBo-xF-ySS"/>
                                     <constraint firstItem="3aW-oE-AnE" firstAttribute="centerY" secondItem="KpQ-76-xfN" secondAttribute="centerY" id="Tdl-wL-U4Z"/>
                                     <constraint firstItem="PoJ-hG-bO5" firstAttribute="top" secondItem="Jn1-ef-zRN" secondAttribute="bottom" constant="25" id="WAn-vd-nZ0"/>
-                                    <constraint firstAttribute="trailing" secondItem="FBE-zO-vt5" secondAttribute="trailing" id="YVV-tq-5bU"/>
                                     <constraint firstItem="KpQ-76-xfN" firstAttribute="leading" secondItem="hXC-Bv-tdH" secondAttribute="leading" id="a7S-WX-eXa"/>
-                                    <constraint firstItem="FBE-zO-vt5" firstAttribute="leading" secondItem="Ctx-cG-B5U" secondAttribute="leading" id="aFD-Ek-5vu"/>
+                                    <constraint firstItem="crr-Ob-L0z" firstAttribute="top" secondItem="tUW-bu-JLG" secondAttribute="bottom" constant="10" id="aWk-LG-AV4"/>
                                     <constraint firstItem="WhO-Oo-P5p" firstAttribute="width" secondItem="Ctx-cG-B5U" secondAttribute="width" id="aqh-xL-X6d"/>
                                     <constraint firstItem="3aW-oE-AnE" firstAttribute="trailing" secondItem="PoJ-hG-bO5" secondAttribute="trailing" id="boK-jT-Ogw"/>
                                     <constraint firstAttribute="trailing" secondItem="PoJ-hG-bO5" secondAttribute="trailing" constant="20" id="cMe-Mz-KN3"/>
                                     <constraint firstItem="Yek-XY-8iq" firstAttribute="top" secondItem="3aW-oE-AnE" secondAttribute="bottom" constant="1" id="hER-3K-W44"/>
                                     <constraint firstItem="Jn1-ef-zRN" firstAttribute="centerX" secondItem="Ctx-cG-B5U" secondAttribute="centerX" id="hq4-TC-fJR"/>
-                                    <constraint firstItem="QTl-ae-wsp" firstAttribute="leading" secondItem="tUW-bu-JLG" secondAttribute="leading" id="iXB-Zt-1QD"/>
                                     <constraint firstItem="Ih1-2X-aW5" firstAttribute="leading" secondItem="Ctx-cG-B5U" secondAttribute="leading" constant="20" id="koX-mS-u3g"/>
                                     <constraint firstItem="WhO-Oo-P5p" firstAttribute="height" secondItem="Ctx-cG-B5U" secondAttribute="height" id="pCD-Xi-ULi"/>
                                     <constraint firstAttribute="trailing" secondItem="Ih1-2X-aW5" secondAttribute="trailing" constant="20" id="q72-bQ-ti1"/>
@@ -324,7 +331,7 @@
         <!--Custom Side Menu View Controller-->
         <scene sceneID="jr7-HZ-jvr">
             <objects>
-                <viewController storyboardIdentifier="CustomSideMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tEC-g5-YLW" customClass="CustomSideMenuViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CustomSideMenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tEC-g5-YLW" customClass="CustomSideMenuViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vBB-CL-uS5"/>
                         <viewControllerLayoutGuide type="bottom" id="FfJ-b8-IYb"/>
@@ -362,7 +369,7 @@
         <!--Change Password View Controller-->
         <scene sceneID="5US-eq-KTe">
             <objects>
-                <viewController storyboardIdentifier="ChangePasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R0Y-qC-1zB" customClass="ChangePasswordViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R0Y-qC-1zB" customClass="ChangePasswordViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SQm-TC-mYt"/>
                         <viewControllerLayoutGuide type="bottom" id="ZVh-Ab-Jva"/>
@@ -439,7 +446,7 @@
                                             <constraint firstAttribute="bottom" secondItem="x2r-HY-erm" secondAttribute="bottom" constant="1" id="zGo-m0-eBX"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLw-R6-Das">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLw-R6-Das" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="72" width="280" height="52"/>
                                         <color key="backgroundColor" red="1" green="0.63921568627450975" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -484,7 +491,7 @@
         <!--Menu Controller-->
         <scene sceneID="4IH-G5-1xG">
             <objects>
-                <viewController storyboardIdentifier="MenuController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0S5-c9-SFh" customClass="MenuController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0S5-c9-SFh" customClass="MenuController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FDk-Wx-ywk"/>
                         <viewControllerLayoutGuide type="bottom" id="Wv0-Yn-XSV"/>
@@ -499,7 +506,7 @@
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuIDriverProfile" rowHeight="180" id="cL2-To-wcL" customClass="SideMenuTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuIDriverProfile" rowHeight="180" id="cL2-To-wcL" customClass="SideMenuTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="180"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cL2-To-wcL" id="SKF-wE-ePO">
@@ -559,7 +566,7 @@
                                             <outlet property="lblRating" destination="RY3-42-qbt" id="ZF6-Pk-PlP"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuItemsList" rowHeight="44" id="gVX-YY-a94" customClass="SideMenuTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SideMenuItemsList" rowHeight="44" id="gVX-YY-a94" customClass="SideMenuTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="208" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gVX-YY-a94" id="dwR-qo-Mtn">
@@ -670,7 +677,7 @@
         <!--Coming SoonVC-->
         <scene sceneID="KAg-Ms-JMV">
             <objects>
-                <viewController storyboardIdentifier="ComingSoonVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HEr-n1-3fB" customClass="ComingSoonVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ComingSoonVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HEr-n1-3fB" customClass="ComingSoonVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="f1f-dm-Z0p"/>
                         <viewControllerLayoutGuide type="bottom" id="URw-NY-k0o"/>
@@ -735,7 +742,7 @@
         <!--Home-->
         <scene sceneID="iGk-nZ-YPR">
             <objects>
-                <viewController storyboardIdentifier="ContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="guc-ME-SBQ" customClass="HomeViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="guc-ME-SBQ" customClass="HomeViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7El-cf-3IY"/>
                         <viewControllerLayoutGuide type="bottom" id="Iin-IP-JwY"/>
@@ -760,7 +767,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6Wl-QV-NOp">
                                         <rect key="frame" x="10" y="0.0" width="300" height="35"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEP-Hg-Nda">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEP-Hg-Nda" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="96.5" height="35"/>
                                                 <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
@@ -773,7 +780,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YC6-uc-GrR">
                                                 <rect key="frame" x="101.5" y="0.0" width="97" height="35"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                 <state key="normal" title="Passenger Info">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -784,7 +791,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-hT-txT">
                                                 <rect key="frame" x="203.5" y="0.0" width="96.5" height="35"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                 <state key="normal" title="Directions">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -812,7 +819,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="nCJ-M5-CWZ">
                                         <rect key="frame" x="20" y="0.0" width="280" height="35"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV3-kT-H09">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TV3-kT-H09" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="130" height="35"/>
                                                 <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
@@ -825,7 +832,7 @@
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hxI-Ya-adv">
                                                 <rect key="frame" x="140" y="0.0" width="0.0" height="35"/>
-                                                <color key="backgroundColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                 <state key="normal" title="Hold (Waiting)">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -836,7 +843,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nig-TU-Ejf">
                                                 <rect key="frame" x="150" y="0.0" width="130" height="35"/>
-                                                <color key="backgroundColor" red="0.55686274509803924" green="0.5490196078431373" blue="0.50196078431372548" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                                 <state key="normal" title="Directions">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -857,13 +864,23 @@
                                     <constraint firstAttribute="height" constant="35" id="pDG-cl-SPM"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0C-EL-tQq" customClass="CustonView" customModule="PickNGo_Driver" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O0C-EL-tQq" customClass="CustonView" customModule="CabRide_Driver" customModuleProvider="target">
                                 <rect key="frame" x="16" y="84" width="288" height="60"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqn-Ra-84l" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                        <rect key="frame" x="36" y="20" width="244" height="35"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <nil key="textColor"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconSampleUser" translatesAutoresizingMaskIntoConstraints="NO" id="qFg-Y2-qgz">
+                                        <rect key="frame" x="8" y="21" width="18" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="qFg-Y2-qgz" secondAttribute="height" multiplier="1:1" id="Iav-cd-Wbz"/>
+                                            <constraint firstAttribute="height" constant="18" id="vqX-zu-hgF"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Up Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nio-Kw-s9p" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                                        <rect key="frame" x="0.0" y="5" width="288" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="Wzf-De-fQQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.94901960780000005" green="0.08235294118" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
@@ -880,17 +897,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconSampleUser" translatesAutoresizingMaskIntoConstraints="NO" id="qFg-Y2-qgz">
-                                        <rect key="frame" x="8" y="21" width="18" height="18"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="qFg-Y2-qgz" secondAttribute="height" multiplier="1:1" id="Iav-cd-Wbz"/>
-                                            <constraint firstAttribute="height" constant="18" id="vqX-zu-hgF"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick Up Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nio-Kw-s9p" customClass="MarqueeLabel" customModule="MarqueeLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqn-Ra-84l" customClass="MarqueeLabel" customModule="MarqueeLabel">
+                                        <rect key="frame" x="36" y="27" width="244" height="28"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="scrollRate">
@@ -915,10 +925,10 @@
                                     <constraint firstAttribute="trailing" secondItem="nio-Kw-s9p" secondAttribute="trailing" id="92J-Le-47X"/>
                                     <constraint firstItem="qFg-Y2-qgz" firstAttribute="centerY" secondItem="O0C-EL-tQq" secondAttribute="centerY" id="98i-vZ-2jt"/>
                                     <constraint firstItem="qFg-Y2-qgz" firstAttribute="leading" secondItem="O0C-EL-tQq" secondAttribute="leading" constant="8" id="Hmx-dK-JFX"/>
-                                    <constraint firstItem="nio-Kw-s9p" firstAttribute="top" secondItem="O0C-EL-tQq" secondAttribute="top" id="QWl-rM-rej"/>
-                                    <constraint firstItem="pqn-Ra-84l" firstAttribute="top" secondItem="O0C-EL-tQq" secondAttribute="top" constant="20" id="aHD-fP-uj7"/>
+                                    <constraint firstItem="nio-Kw-s9p" firstAttribute="top" secondItem="O0C-EL-tQq" secondAttribute="top" constant="5" id="QWl-rM-rej"/>
                                     <constraint firstAttribute="trailing" secondItem="pqn-Ra-84l" secondAttribute="trailing" constant="8" id="chI-4v-4gE"/>
                                     <constraint firstItem="pqn-Ra-84l" firstAttribute="leading" secondItem="qFg-Y2-qgz" secondAttribute="trailing" constant="10" id="hJn-LY-kl9"/>
+                                    <constraint firstItem="pqn-Ra-84l" firstAttribute="top" secondItem="nio-Kw-s9p" secondAttribute="bottom" constant="5" id="pxD-yK-pXj"/>
                                     <constraint firstItem="nio-Kw-s9p" firstAttribute="leading" secondItem="O0C-EL-tQq" secondAttribute="leading" id="ul8-hn-88l"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -1004,13 +1014,13 @@
         <!--Tabbar Controller-->
         <scene sceneID="YDL-Z6-h4v">
             <objects>
-                <tabBarController storyboardIdentifier="TabbarController" id="TSr-P7-MGV" customClass="TabbarController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabbarController" id="TSr-P7-MGV" customClass="TabbarController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="LcY-Id-wmu"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" id="UgG-87-m78">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="UgG-87-m78">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.94901960780000005" green="0.08235294118" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="guc-ME-SBQ" kind="relationship" relationship="viewControllers" id="ymd-H5-vr9"/>
@@ -1024,7 +1034,7 @@
         <!--Dispatch-->
         <scene sceneID="KVL-5T-CpJ">
             <objects>
-                <viewController storyboardIdentifier="DispatchJobsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yHg-IA-kXB" customClass="DispatchJobsViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DispatchJobsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="yHg-IA-kXB" customClass="DispatchJobsViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pKK-s3-gBe"/>
                         <viewControllerLayoutGuide type="bottom" id="8jb-0Z-S91"/>
@@ -1036,7 +1046,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="id3-3Y-12V">
                                 <rect key="frame" x="20" y="224" width="280" height="120"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJF-ld-cEY">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NJF-ld-cEY" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -1094,17 +1104,17 @@
         <!--Dispatch Jobs Book Now View Controller-->
         <scene sceneID="38J-b2-hfT">
             <objects>
-                <viewController storyboardIdentifier="DispatchJobsBookNowViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c2m-so-3R8" customClass="DispatchJobsBookNowViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DispatchJobsBookNowViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c2m-so-3R8" customClass="DispatchJobsBookNowViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="92m-k4-nvH"/>
                         <viewControllerLayoutGuide type="bottom" id="pYF-zk-M81"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bVt-XR-VBB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="951"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfu-cU-kSV">
-                                <rect key="frame" x="0.0" y="84" width="320" height="435"/>
+                                <rect key="frame" x="0.0" y="84" width="320" height="867"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zue-hr-ICX">
                                         <rect key="frame" x="0.0" y="10" width="320" height="630"/>
@@ -1327,7 +1337,7 @@
                                                             <action selector="btnBack:" destination="c2m-so-3R8" eventType="touchUpInside" id="fhb-3c-wia"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYS-zg-yXB">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYS-zg-yXB" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                                         <rect key="frame" x="155" y="0.0" width="145" height="40"/>
                                                         <color key="backgroundColor" red="0.80000000000000004" green="0.01176470588" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -1394,6 +1404,7 @@
                         </constraints>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="showsBackButton" value="YES"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="showTitleLabelView" value="NO"/>
@@ -1433,17 +1444,17 @@
         <!--Dispatch Jobs Book Later View Controller-->
         <scene sceneID="CjM-VS-OJ6">
             <objects>
-                <viewController storyboardIdentifier="DispatchJobsBookLaterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c9U-Go-uFE" customClass="DispatchJobsBookLaterViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DispatchJobsBookLaterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c9U-Go-uFE" customClass="DispatchJobsBookLaterViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n62-JE-Ydo"/>
                         <viewControllerLayoutGuide type="bottom" id="S2J-TF-Iwz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bay-f6-zqn">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoW-0C-zgr">
-                                <rect key="frame" x="0.0" y="64" width="320" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="936"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jey-hg-Ud9">
                                         <rect key="frame" x="0.0" y="20" width="320" height="630"/>
@@ -1677,7 +1688,7 @@
                                                             <action selector="btnBack:" destination="c9U-Go-uFE" eventType="touchUpInside" id="6wJ-01-TyZ"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCB-Oa-TYs">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCB-Oa-TYs" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                                         <rect key="frame" x="155" y="0.0" width="145" height="40"/>
                                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -1737,7 +1748,7 @@
                             <constraint firstItem="yoW-0C-zgr" firstAttribute="leading" secondItem="bay-f6-zqn" secondAttribute="leading" id="mXr-5M-znU"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="320" height="600"/>
+                    <size key="freeformSize" width="320" height="1000"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="showsBackButton" value="YES"/>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="showTitleLabelView" value="NO"/>
@@ -1772,7 +1783,7 @@
         <!--Receive Request View Controller-->
         <scene sceneID="uhg-LQ-Jg7">
             <objects>
-                <viewController storyboardIdentifier="ReceiveRequestViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sll-hA-EVK" customClass="ReceiveRequestViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReceiveRequestViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Sll-hA-EVK" customClass="ReceiveRequestViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sB7-ZB-Cgj"/>
                         <viewControllerLayoutGuide type="bottom" id="RKN-bV-4Wr"/>
@@ -1787,15 +1798,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIT-dJ-GJI">
+                                        <visualEffectView opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIT-dJ-GJI">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" id="yXK-ot-Hgj">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             </view>
+                                            <color key="backgroundColor" red="0.050731278960000001" green="0.044859685000000003" blue="0.1237244681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <vibrancyEffect>
-                                                <blurEffect style="extraLight"/>
+                                                <blurEffect style="dark"/>
                                             </vibrancyEffect>
                                         </visualEffectView>
                                     </subviews>
@@ -1812,19 +1824,16 @@
                                             <constraint firstAttribute="height" constant="21" id="6KY-gs-gso"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message From server" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fed-ZV-7ca">
                                         <rect key="frame" x="0.0" y="51" width="288" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Total is LKR 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbj-y5-VM5">
-                                        <rect key="frame" x="74" y="74" width="139" height="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grand Total is $ 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jbj-y5-VM5">
+                                        <rect key="frame" x="83" y="74" width="121" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XeX-3F-Kdl">
@@ -1851,13 +1860,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pickup Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="220-ov-5VT">
                                                         <rect key="frame" x="37" y="15" width="211" height="17"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hzd-fX-bJ1">
                                                         <rect key="frame" x="37" y="37" width="211" height="13.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconRedDropoff" translatesAutoresizingMaskIntoConstraints="NO" id="f2X-h0-mYG">
@@ -1870,13 +1877,11 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dropoff Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="peN-hf-BiK">
                                                         <rect key="frame" x="37" y="60.5" width="211" height="16"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
-                                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8w-ud-5XF">
                                                         <rect key="frame" x="37" y="81.5" width="211" height="13.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                        <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -1909,7 +1914,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFM-hk-7iz">
                                                 <rect key="frame" x="0.0" y="0.0" width="109" height="40"/>
-                                                <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="REJECT">
                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1921,10 +1926,10 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AsY-IQ-Cjs">
                                                 <rect key="frame" x="139" y="0.0" width="109" height="40"/>
-                                                <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal" title="ACCEPT">
-                                                    <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="btnAcceped:" destination="Sll-hA-EVK" eventType="touchUpInside" id="NL5-GX-rnU"/>
@@ -1937,7 +1942,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="XeX-3F-Kdl" secondAttribute="trailing" constant="20" id="24V-gp-lDL"/>
                                     <constraint firstAttribute="bottom" secondItem="DrR-gi-vgZ" secondAttribute="bottom" constant="10" id="3OT-cI-Rq9"/>
@@ -2005,7 +2010,7 @@
         <!--My Jobs-->
         <scene sceneID="RON-Mw-Gd8">
             <objects>
-                <viewController storyboardIdentifier="MyJobsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pfO-sg-wA7" customClass="MyJobsViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MyJobsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pfO-sg-wA7" customClass="MyJobsViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2IS-OK-s8k"/>
                         <viewControllerLayoutGuide type="bottom" id="Ril-jP-Byo"/>
@@ -2182,7 +2187,7 @@
         <!--Dispatched Jobs For My JobsVC-->
         <scene sceneID="Mn4-YW-d60">
             <objects>
-                <viewController storyboardIdentifier="DispatchedJobsForMyJobsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="07M-HM-gDp" customClass="DispatchedJobsForMyJobsVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DispatchedJobsForMyJobsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="07M-HM-gDp" customClass="DispatchedJobsForMyJobsVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dGn-Nw-CDU"/>
                         <viewControllerLayoutGuide type="bottom" id="68P-ou-Mul"/>
@@ -2203,7 +2208,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DispatchedJobsForMyJobsTableViewCell" rowHeight="329" id="pi6-Lq-7eR" customClass="DispatchedJobsForMyJobsTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DispatchedJobsForMyJobsTableViewCell" rowHeight="329" id="pi6-Lq-7eR" customClass="DispatchedJobsForMyJobsTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="329"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pi6-Lq-7eR" id="xJe-Bh-Sgg">
@@ -2620,7 +2625,7 @@
                                             <outlet property="viewDetails" destination="skO-vk-xEX" id="Cnb-Pj-WSy"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataFound" id="hNw-WL-kdm" customClass="DispatchedJobsForMyJobsTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataFound" id="hNw-WL-kdm" customClass="DispatchedJobsForMyJobsTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="357" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hNw-WL-kdm" id="GTc-VG-4ny">
@@ -2670,7 +2675,7 @@
         <!--Past Jobs ListVC-->
         <scene sceneID="9Aa-qo-6js">
             <objects>
-                <viewController storyboardIdentifier="PastJobsListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MSQ-Fu-9dV" customClass="PastJobsListVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PastJobsListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MSQ-Fu-9dV" customClass="PastJobsListVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PfX-Gp-y7j"/>
                         <viewControllerLayoutGuide type="bottom" id="s4V-0K-2TU"/>
@@ -2684,7 +2689,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PastJobsListTableViewCell" rowHeight="397" id="IYW-Uz-b2o" customClass="PastJobsListTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PastJobsListTableViewCell" rowHeight="397" id="IYW-Uz-b2o" customClass="PastJobsListTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="397"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IYW-Uz-b2o" id="l8I-ek-113">
@@ -2716,7 +2721,7 @@
                                                                     <color key="textColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-3u-PUT">
+                                                                <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="cdK-3u-PUT">
                                                                     <rect key="frame" x="5" y="33" width="2" height="14"/>
                                                                     <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
@@ -2760,7 +2765,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ltW-Y1-Fyf">
                                                             <rect key="frame" x="0.0" y="67" width="320" height="310"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="afM-SK-g4v">
+                                                                <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="afM-SK-g4v">
                                                                     <rect key="frame" x="5" y="0.0" width="2" height="303"/>
                                                                     <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <constraints>
@@ -3250,7 +3255,7 @@
                                             <outlet property="viewAllDetails" destination="ltW-Y1-Fyf" id="8kr-nk-wsh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataFound" id="ISS-IR-Kck" customClass="PastJobsListTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataFound" id="ISS-IR-Kck" customClass="PastJobsListTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="425" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ISS-IR-Kck" id="vdV-3B-ffQ">
@@ -3296,7 +3301,7 @@
         <!--Setting PasscodeVC-->
         <scene sceneID="Api-0o-uzs">
             <objects>
-                <viewController storyboardIdentifier="SettingPasscodeVC" id="rWm-GV-WZD" customClass="SettingPasscodeVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SettingPasscodeVC" id="rWm-GV-WZD" customClass="SettingPasscodeVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nbw-cy-NtU"/>
                         <viewControllerLayoutGuide type="bottom" id="bQg-00-rVY"/>
@@ -3333,7 +3338,7 @@
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SCT-ja-LrT">
                                                                 <rect key="frame" x="251" y="20" width="51" height="31"/>
                                                                 <color key="onTintColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="0.69999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <color key="thumbTintColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <color key="thumbTintColor" red="0.94901960780000005" green="0.08235294118" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <connections>
                                                                     <action selector="switchPasscode:" destination="rWm-GV-WZD" eventType="valueChanged" id="ZxC-FC-AH7"/>
                                                                 </connections>
@@ -3467,7 +3472,7 @@
         <!--Pending Jobs ListVC-->
         <scene sceneID="Xjv-YN-DHt">
             <objects>
-                <viewController storyboardIdentifier="PendingJobsListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lBW-5Q-srb" customClass="PendingJobsListVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PendingJobsListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lBW-5Q-srb" customClass="PendingJobsListVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2xx-WM-oYa"/>
                         <viewControllerLayoutGuide type="bottom" id="hOv-b1-HuF"/>
@@ -3481,7 +3486,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PendingJobsListTableViewCell" rowHeight="361" id="P8v-DG-ezN" customClass="PendingJobsListTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PendingJobsListTableViewCell" rowHeight="361" id="P8v-DG-ezN" customClass="PendingJobsListTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="361"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P8v-DG-ezN" id="0PU-bq-7U5">
@@ -3503,7 +3508,7 @@
                                                                             <color key="textColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eo-pf-L1q">
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9eo-pf-L1q" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="4" width="80" height="30"/>
                                                                             <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
@@ -3512,7 +3517,7 @@
                                                                             </constraints>
                                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                             <state key="normal" title="Start Trip">
-                                                                                <color key="titleColor" red="0.5568627451" green="0.54901960780000003" blue="0.50196078430000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                             </state>
                                                                         </button>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jrF-PI-JIp">
@@ -3532,7 +3537,7 @@
                                                                                 </label>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <view contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="loi-Ky-gD0">
+                                                                        <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="loi-Ky-gD0">
                                                                             <rect key="frame" x="0.0" y="36" width="2" height="99"/>
                                                                             <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
@@ -3583,7 +3588,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Os8-RM-lfF">
                                                                     <rect key="frame" x="0.0" y="162" width="0.0" height="178.5"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="rgJ-XW-cJq">
+                                                                        <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="rgJ-XW-cJq">
                                                                             <rect key="frame" x="0.0" y="5.5" width="2" height="168.5"/>
                                                                             <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
@@ -3591,7 +3596,7 @@
                                                                             </constraints>
                                                                         </view>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="mDJ-ob-tTe">
-                                                                            <rect key="frame" x="0.0" y="5.5" width="0.0" height="168.5"/>
+                                                                            <rect key="frame" x="0.0" y="5" width="0.0" height="168.5"/>
                                                                             <subviews>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FpA-uf-nu4">
                                                                                     <rect key="frame" x="0.0" y="0.0" width="0.0" height="13"/>
@@ -3842,7 +3847,7 @@
                                             <outlet property="viewAllDetails" destination="Os8-RM-lfF" id="Zko-lR-8kI"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataFound" id="dbN-r5-7tv" customClass="PendingJobsListTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataFound" id="dbN-r5-7tv" customClass="PendingJobsListTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="389" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dbN-r5-7tv" id="LlE-hW-xvM">
@@ -3888,7 +3893,7 @@
         <!--Future BookingVC-->
         <scene sceneID="1ci-rA-Sdl">
             <objects>
-                <viewController storyboardIdentifier="FutureBookingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4sb-c0-rBE" customClass="FutureBookingVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FutureBookingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4sb-c0-rBE" customClass="FutureBookingVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Hq9-9J-EEr"/>
                         <viewControllerLayoutGuide type="bottom" id="LFO-TD-xdT"/>
@@ -3902,7 +3907,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FutureBookingTableViewCell" rowHeight="279" id="RW8-YM-qsR" customClass="FutureBookingTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FutureBookingTableViewCell" rowHeight="279" id="RW8-YM-qsR" customClass="FutureBookingTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="279"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RW8-YM-qsR" id="bWy-HJ-HFe">
@@ -3945,7 +3950,7 @@
                                                                                 </button>
                                                                             </subviews>
                                                                         </stackView>
-                                                                        <view contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="6Ax-ey-MkZ">
+                                                                        <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="6Ax-ey-MkZ">
                                                                             <rect key="frame" x="5" y="53" width="2" height="37"/>
                                                                             <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
@@ -4004,7 +4009,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXf-nn-hOC">
                                                                     <rect key="frame" x="0.0" y="110" width="320" height="158.5"/>
                                                                     <subviews>
-                                                                        <view contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="XXe-c5-il9">
+                                                                        <view hidden="YES" contentMode="scaleToFill" verticalHuggingPriority="241" translatesAutoresizingMaskIntoConstraints="NO" id="XXe-c5-il9">
                                                                             <rect key="frame" x="5" y="5" width="2" height="148.5"/>
                                                                             <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                             <constraints>
@@ -4247,7 +4252,7 @@
                                             <outlet property="viewSecond" destination="RXf-nn-hOC" id="Cxv-jD-e49"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataFound" id="nnx-Zw-adS" customClass="FutureBookingTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoDataFound" id="nnx-Zw-adS" customClass="FutureBookingTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="307" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nnx-Zw-adS" id="LlG-vO-81r">
@@ -4295,7 +4300,7 @@
         <!--Car And TaxiesVC-->
         <scene sceneID="h1i-hy-32t">
             <objects>
-                <viewController storyboardIdentifier="CarAndTaxiesVC" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HjY-ol-fz9" customClass="CarAndTaxiesVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CarAndTaxiesVC" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HjY-ol-fz9" customClass="CarAndTaxiesVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lLc-HC-bjo"/>
                         <viewControllerLayoutGuide type="bottom" id="bbD-EZ-AfQ"/>
@@ -4328,7 +4333,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarAndTaxiesTableViewCell" rowHeight="108" id="Z55-3w-Vrf" customClass="CarAndTaxiesTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarAndTaxiesTableViewCell" rowHeight="108" id="Z55-3w-Vrf" customClass="CarAndTaxiesTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="280" height="108"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Z55-3w-Vrf" id="4gu-6D-9X8">
@@ -4391,7 +4396,7 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByS-kk-qfo">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ByS-kk-qfo" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="20" y="458" width="240" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -4444,7 +4449,7 @@
         <!--Deliver ServiceVC-->
         <scene sceneID="myi-yF-C9s">
             <objects>
-                <viewController storyboardIdentifier="DeliverServiceVC" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i9i-Oc-F5K" customClass="DeliverServiceVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeliverServiceVC" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="i9i-Oc-F5K" customClass="DeliverServiceVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Ik-FK-xqA"/>
                         <viewControllerLayoutGuide type="bottom" id="ds8-aM-q2e"/>
@@ -4477,7 +4482,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeliverServiceTableViewCell" rowHeight="51" id="F9q-0K-cUd" customClass="DeliverServiceTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DeliverServiceTableViewCell" rowHeight="51" id="F9q-0K-cUd" customClass="DeliverServiceTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="280" height="51"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F9q-0K-cUd" id="rXu-q6-ofr">
@@ -4528,7 +4533,7 @@
                                             </tableViewCell>
                                         </prototypes>
                                     </tableView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eD4-hR-954">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eD4-hR-954" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="20" y="478" width="240" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -4581,7 +4586,7 @@
         <!--Invite Driver View Controller-->
         <scene sceneID="Jgm-dE-8rT">
             <objects>
-                <viewController storyboardIdentifier="InviteDriverViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3y8-7c-Q81" customClass="InviteDriverViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InviteDriverViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3y8-7c-Q81" customClass="InviteDriverViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QJe-eI-koI"/>
                         <viewControllerLayoutGuide type="bottom" id="p7o-By-6Az"/>
@@ -4695,7 +4700,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.94901960780000005" green="0.08235294118" blue="0.25490196079999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="XEV-7I-KI4" firstAttribute="leading" secondItem="LxA-kf-22e" secondAttribute="leading" constant="8" id="0EM-uW-uET"/>
                                                     <constraint firstAttribute="height" constant="30" id="fUD-bl-qyy"/>
@@ -4959,7 +4964,7 @@
         <!--Rating View Controller-->
         <scene sceneID="Ijc-sk-OUh">
             <objects>
-                <viewController storyboardIdentifier="RatingViewController" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tJ3-ot-yje" customClass="RatingViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RatingViewController" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tJ3-ot-yje" customClass="RatingViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mNq-hH-A3k"/>
                         <viewControllerLayoutGuide type="bottom" id="TaZ-j2-8wS"/>
@@ -5027,7 +5032,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="CVU-m4-9wD">
                                                 <rect key="frame" x="30" y="307" width="220" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2N-jc-ajJ">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R2N-jc-ajJ" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
                                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -5109,7 +5114,7 @@
         <!--Hailed Fare-->
         <scene sceneID="1iG-F3-YA6">
             <objects>
-                <viewController storyboardIdentifier="HailedFareViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EfJ-T1-oPc" customClass="HailedFareViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HailedFareViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="EfJ-T1-oPc" customClass="HailedFareViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ScX-5m-JWd"/>
                         <viewControllerLayoutGuide type="bottom" id="him-ra-1t3"/>
@@ -5146,7 +5151,7 @@
         <!--Trip Info Completed TripVC-->
         <scene sceneID="2ST-33-ubw">
             <objects>
-                <viewController storyboardIdentifier="TripInfoCompletedTripVC" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZoR-3T-hSL" customClass="TripInfoCompletedTripVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TripInfoCompletedTripVC" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZoR-3T-hSL" customClass="TripInfoCompletedTripVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HwX-QR-BPn"/>
                         <viewControllerLayoutGuide type="bottom" id="65O-3H-WYd"/>
@@ -5292,7 +5297,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sy-Bq-DbH">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Sy-Bq-DbH" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="50" y="247.5" width="180" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -5370,7 +5375,7 @@
         <!--Wallet View Controller-->
         <scene sceneID="vw2-0c-2Zo">
             <objects>
-                <viewController storyboardIdentifier="WalletViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FO3-r0-ViT" customClass="WalletViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FO3-r0-ViT" customClass="WalletViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8oL-Yz-XsK"/>
                         <viewControllerLayoutGuide type="bottom" id="hKB-I3-AOo"/>
@@ -5396,11 +5401,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY WALLET" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIT-ro-gcE">
                                         <rect key="frame" x="100" y="29.5" width="120.5" height="25.5"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                        <color key="textColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.050731278960000001" green="0.044859685000000003" blue="0.1237244681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="xN4-5J-ya6" firstAttribute="leading" secondItem="iCz-6N-uCM" secondAttribute="leading" constant="10" id="Ao0-Nz-5bt"/>
                                     <constraint firstItem="jIT-ro-gcE" firstAttribute="centerY" secondItem="iCz-6N-uCM" secondAttribute="centerY" constant="10" id="GVd-YA-TNp"/>
@@ -5426,6 +5431,10 @@
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="roundDollar" translatesAutoresizingMaskIntoConstraints="NO" id="60f-5m-Ndy">
                                                         <rect key="frame" x="129" y="28.5" width="43" height="43"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="60f-5m-Ndy" secondAttribute="height" multiplier="1:1" id="b6n-xL-Ws8"/>
+                                                            <constraint firstAttribute="height" constant="43" id="m40-1r-7mv"/>
+                                                        </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dd2-Nu-N8O">
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
@@ -5436,7 +5445,7 @@
                                                             <action selector="btnBalance:" destination="FO3-r0-ViT" eventType="touchUpInside" id="2iB-3G-cfZ"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance  LKR 0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJr-vp-nAR">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance  $ 0.00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJr-vp-nAR">
                                                         <rect key="frame" x="0.0" y="76.5" width="300" height="36.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5795,7 +5804,7 @@
         <!--Wallet Top UpVC-->
         <scene sceneID="kH9-n8-6dd">
             <objects>
-                <viewController storyboardIdentifier="WalletTopUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vG6-2i-y45" customClass="WalletTopUpVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletTopUpVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vG6-2i-y45" customClass="WalletTopUpVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="faX-PV-x5H"/>
                         <viewControllerLayoutGuide type="bottom" id="jDn-Oy-C86"/>
@@ -5856,8 +5865,8 @@
                                             <constraint firstItem="uA8-6E-OFR" firstAttribute="leading" secondItem="QL7-fk-hD5" secondAttribute="leading" id="qqf-eB-wlz"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LKR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUr-Hz-1CM">
-                                        <rect key="frame" x="10" y="159" width="47.5" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUr-Hz-1CM">
+                                        <rect key="frame" x="10" y="159" width="17" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="NtB-Ze-C9Z"/>
                                         </constraints>
@@ -5873,7 +5882,7 @@
                                         </constraints>
                                     </view>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="LKR 0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q16-U1-Egs">
-                                        <rect key="frame" x="62.5" y="159" width="227.5" height="40"/>
+                                        <rect key="frame" x="32" y="159" width="258" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -5881,7 +5890,7 @@
                                             <action selector="txtAmount:" destination="vG6-2i-y45" eventType="editingChanged" id="i5d-eF-a0c"/>
                                         </connections>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtc-bK-sUg">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qtc-bK-sUg" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="10" y="262" width="280" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -5944,7 +5953,7 @@
         <!--Wallet Transfer To BankVC-->
         <scene sceneID="Gux-rS-cfu">
             <objects>
-                <viewController storyboardIdentifier="WalletTransferToBankVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RoM-pe-wqW" customClass="WalletTransferToBankVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletTransferToBankVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="RoM-pe-wqW" customClass="WalletTransferToBankVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MIr-9G-WOx"/>
                         <viewControllerLayoutGuide type="bottom" id="K8L-ia-W3S"/>
@@ -5956,8 +5965,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="epU-eR-wFN">
                                 <rect key="frame" x="10" y="84" width="300" height="464"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LKR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9K-Rb-wzy">
-                                        <rect key="frame" x="27" y="71" width="47.5" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E9K-Rb-wzy">
+                                        <rect key="frame" x="27" y="71" width="17" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zkh-oA-bjG"/>
                                         </constraints>
@@ -5966,7 +5975,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="LKR 0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ygj-9U-WX0">
-                                        <rect key="frame" x="79.5" y="71" width="193.5" height="40"/>
+                                        <rect key="frame" x="49" y="71" width="224" height="40"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -6088,7 +6097,7 @@
                                             <constraint firstItem="6VT-Mb-7iI" firstAttribute="top" secondItem="wOG-iP-hAp" secondAttribute="top" id="uTS-Hh-bRV"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKL-1E-DQl">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKL-1E-DQl" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="27" y="404" width="246" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -6161,7 +6170,7 @@
         <!--Wallet CardsVC-->
         <scene sceneID="vJV-YH-KUZ">
             <objects>
-                <viewController storyboardIdentifier="WalletCardsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ddl-hL-RAE" customClass="WalletCardsVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletCardsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ddl-hL-RAE" customClass="WalletCardsVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4xw-Gu-33a"/>
                         <viewControllerLayoutGuide type="bottom" id="4oU-gZ-hX8"/>
@@ -6187,7 +6196,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CARDS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1s-2U-dOw">
                                         <rect key="frame" x="130.5" y="31" width="59" height="21"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9p-0s-6mb">
@@ -6212,7 +6221,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.050731278960000001" green="0.044859685000000003" blue="0.1237244681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="l2Y-Mx-c35" firstAttribute="leading" secondItem="cnt-tO-DZT" secondAttribute="leading" constant="5" id="1MS-wI-9KE"/>
                                     <constraint firstItem="t1s-2U-dOw" firstAttribute="centerY" secondItem="l2Y-Mx-c35" secondAttribute="centerY" id="23P-ba-fiQ"/>
@@ -6231,7 +6240,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletCardsTableViewCell" rowHeight="160" id="u8I-ZU-aEZ" customClass="WalletCardsTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletCardsTableViewCell" rowHeight="160" id="u8I-ZU-aEZ" customClass="WalletCardsTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u8I-ZU-aEZ" id="1xO-Tu-ObF">
@@ -6309,7 +6318,7 @@
                                             <outlet property="viewCards" destination="uQF-nb-hmF" id="Glm-l0-d4d"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddCard" rowHeight="55" id="A8x-lV-QV4" customClass="WalletCardsTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddCard" rowHeight="55" id="A8x-lV-QV4" customClass="WalletCardsTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="188" width="320" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A8x-lV-QV4" id="Gjh-BI-VZD">
@@ -6398,7 +6407,7 @@
         <!--Wallet Transfer View Controller-->
         <scene sceneID="w1B-hD-RU5">
             <objects>
-                <viewController storyboardIdentifier="WalletTransferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cKn-vb-6zb" customClass="WalletTransferViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletTransferViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cKn-vb-6zb" customClass="WalletTransferViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S7g-Jr-6tO"/>
                         <viewControllerLayoutGuide type="bottom" id="viv-vv-0qG"/>
@@ -6477,7 +6486,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VIL-aN-ORv">
                                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="40"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlP-gg-7CQ">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlP-gg-7CQ" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                                                         <rect key="frame" x="210" y="4" width="100" height="32"/>
                                                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <constraints>
@@ -6678,7 +6687,7 @@
         <!--Wallet History View Controller-->
         <scene sceneID="NX8-aN-lkJ">
             <objects>
-                <viewController storyboardIdentifier="WalletHistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Pz-ED-U15" customClass="WalletHistoryViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletHistoryViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1Pz-ED-U15" customClass="WalletHistoryViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6OU-7i-0OS"/>
                         <viewControllerLayoutGuide type="bottom" id="8yV-1C-0QL"/>
@@ -6691,7 +6700,7 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletHistoryTableViewCell" rowHeight="82" id="mee-zx-Yku" customClass="WalletHistoryTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletHistoryTableViewCell" rowHeight="82" id="mee-zx-Yku" customClass="WalletHistoryTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="mee-zx-Yku" id="gTV-7i-7Z3">
@@ -6769,7 +6778,7 @@
         <!--Wallet Balance MainVC-->
         <scene sceneID="q4J-bT-q0V">
             <objects>
-                <viewController storyboardIdentifier="WalletBalanceMainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eqS-8r-6Vs" customClass="WalletBalanceMainVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletBalanceMainVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eqS-8r-6Vs" customClass="WalletBalanceMainVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cc3-bn-hyk"/>
                         <viewControllerLayoutGuide type="bottom" id="hM6-Ut-Z5t"/>
@@ -6941,7 +6950,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="300" height="214.5"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletBalanceMainTableViewCell" rowHeight="73" id="zbC-uz-3Sb" customClass="WalletBalanceMainTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="WalletBalanceMainTableViewCell" rowHeight="73" id="zbC-uz-3Sb" customClass="WalletBalanceMainTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="28" width="300" height="73"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zbC-uz-3Sb" id="Ntl-CX-ocl">
@@ -7052,7 +7061,7 @@
         <!--Wallet Add Cards View Controller-->
         <scene sceneID="gTR-VW-Rt3">
             <objects>
-                <viewController storyboardIdentifier="WalletAddCardsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dHx-To-t2S" customClass="WalletAddCardsViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletAddCardsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dHx-To-t2S" customClass="WalletAddCardsViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="H0K-ca-xxq"/>
                         <viewControllerLayoutGuide type="bottom" id="c3S-on-8gM"/>
@@ -7215,7 +7224,7 @@
                                             <constraint firstAttribute="height" constant="252.5" id="47I-re-5eq"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILa-rL-1Sd">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ILa-rL-1Sd" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="10" y="348" width="300" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -7309,7 +7318,7 @@
         <!--Passenger Info View Controller-->
         <scene sceneID="s9i-Ds-0cs">
             <objects>
-                <viewController storyboardIdentifier="PassengerInfoViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FMT-DS-mDF" customClass="PassengerInfoViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PassengerInfoViewController" modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FMT-DS-mDF" customClass="PassengerInfoViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RDz-vv-ObH"/>
                         <viewControllerLayoutGuide type="bottom" id="Wo7-gt-13f"/>
@@ -7456,7 +7465,7 @@
                                                             <constraint firstItem="F3W-vF-s7b" firstAttribute="top" secondItem="ImA-3G-JFb" secondAttribute="top" id="zQ8-Ra-Yqj"/>
                                                         </constraints>
                                                     </view>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxZ-11-2Qw">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bxZ-11-2Qw" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                                         <rect key="frame" x="22" y="345" width="246" height="40"/>
                                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
@@ -7915,7 +7924,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkx-8d-4fW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hkx-8d-4fW" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="50" y="385" width="180" height="40"/>
                                         <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
@@ -8006,7 +8015,7 @@
         <!--BpayVC-->
         <scene sceneID="MCW-68-i1f">
             <objects>
-                <viewController storyboardIdentifier="BpayVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="55q-D6-2az" customClass="BpayVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BpayVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="55q-D6-2az" customClass="BpayVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3kx-c2-vnN"/>
                         <viewControllerLayoutGuide type="bottom" id="Un4-CX-cF3"/>
@@ -8036,7 +8045,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEK-8T-bVB">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pEK-8T-bVB" customClass="CustomButton" customModule="CabRide_Driver" customModuleProvider="target">
                                                 <rect key="frame" x="65" y="141" width="170" height="40"/>
                                                 <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -8147,7 +8156,7 @@
         <!--TravelVC-->
         <scene sceneID="VJQ-Xp-hj8">
             <objects>
-                <viewController storyboardIdentifier="TravelVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Di-Kw-1cQ" customClass="TravelVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TravelVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Di-Kw-1cQ" customClass="TravelVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SEi-23-24P"/>
                         <viewControllerLayoutGuide type="bottom" id="8ca-MJ-Uqy"/>
@@ -8434,7 +8443,7 @@
         <!--EntertainmentVC-->
         <scene sceneID="aKn-l9-1bH">
             <objects>
-                <viewController storyboardIdentifier="EntertainmentVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hFI-sf-zyr" customClass="EntertainmentVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EntertainmentVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hFI-sf-zyr" customClass="EntertainmentVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hur-BI-k6w"/>
                         <viewControllerLayoutGuide type="bottom" id="084-FV-kgX"/>
@@ -8718,7 +8727,7 @@
         <!--Web ViewVC-->
         <scene sceneID="XOH-8t-A2X">
             <objects>
-                <viewController storyboardIdentifier="webViewVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QJN-Or-p4g" customClass="webViewVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webViewVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QJN-Or-p4g" customClass="webViewVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hbc-fT-XMf"/>
                         <viewControllerLayoutGuide type="bottom" id="15K-st-aov"/>
@@ -8782,7 +8791,7 @@
         <!--Wallet Transfer Send-->
         <scene sceneID="Wpu-qh-xab">
             <objects>
-                <viewController storyboardIdentifier="WalletTransferSend" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nrl-ar-AjO" customClass="WalletTransferSend" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletTransferSend" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nrl-ar-AjO" customClass="WalletTransferSend" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3fv-sl-qN7"/>
                         <viewControllerLayoutGuide type="bottom" id="i3V-Za-WNG"/>
@@ -8833,7 +8842,7 @@
                                                     <constraint firstAttribute="width" constant="155" id="nve-s7-JQY"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                <color key="textColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -8894,7 +8903,7 @@
         <!--Wallet Transfer Recieve-->
         <scene sceneID="8rg-mJ-y9M">
             <objects>
-                <viewController storyboardIdentifier="WalletTransferRecieve" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vC9-9S-4k1" customClass="WalletTransferRecieve" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalletTransferRecieve" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vC9-9S-4k1" customClass="WalletTransferRecieve" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PHx-M9-OHW"/>
                         <viewControllerLayoutGuide type="bottom" id="d5h-hD-5Bi"/>
@@ -8982,7 +8991,7 @@
         <!--Driver News View Controller-->
         <scene sceneID="g0E-FE-ghT">
             <objects>
-                <viewController storyboardIdentifier="DriverNewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cxw-9V-7cq" customClass="DriverNewsViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DriverNewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cxw-9V-7cq" customClass="DriverNewsViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Hq-o4-cJK"/>
                         <viewControllerLayoutGuide type="bottom" id="FmP-XD-oPn"/>
@@ -8998,7 +9007,7 @@
                                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DriverNewsTableViewCell" rowHeight="238" id="0E4-ke-ybK" customClass="DriverNewsTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DriverNewsTableViewCell" rowHeight="238" id="0E4-ke-ybK" customClass="DriverNewsTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="320" height="238"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0E4-ke-ybK" id="JKw-Vk-NW5">
@@ -9099,7 +9108,7 @@
         <!--Web View For News View Controller-->
         <scene sceneID="Azw-kd-dAt">
             <objects>
-                <viewController storyboardIdentifier="webViewForNewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y8S-Zz-Wuj" customClass="webViewForNewsViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webViewForNewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y8S-Zz-Wuj" customClass="webViewForNewsViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cBl-NM-2yU"/>
                         <viewControllerLayoutGuide type="bottom" id="cFZ-cM-8KS"/>
@@ -9162,7 +9171,7 @@
         <!--Weekly Earning View Controller-->
         <scene sceneID="EJS-0G-vRp">
             <objects>
-                <viewController storyboardIdentifier="WeeklyEarningViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nlT-0R-2fU" customClass="WeeklyEarningViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WeeklyEarningViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nlT-0R-2fU" customClass="WeeklyEarningViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YY0-a5-kob"/>
                         <viewControllerLayoutGuide type="bottom" id="fTQ-Rt-cop"/>
@@ -9703,7 +9712,7 @@
         <!--Verify Password View Controller-->
         <scene sceneID="AtT-57-9qj">
             <objects>
-                <viewController storyboardIdentifier="VerifyPasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sBx-Xq-IVW" customClass="VerifyPasswordViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VerifyPasswordViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sBx-Xq-IVW" customClass="VerifyPasswordViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SmB-UH-uhr">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -10015,7 +10024,7 @@
         <!--Set Passcode View Controller-->
         <scene sceneID="FLl-oi-Q6X">
             <objects>
-                <viewController storyboardIdentifier="SetPasscodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CUI-YQ-J78" customClass="SetPasscodeViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetPasscodeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="CUI-YQ-J78" customClass="SetPasscodeViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wsR-aq-dtk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -10341,7 +10350,7 @@
         <image name="bottomLine" width="386" height="1"/>
         <image name="bottomLine2" width="390" height="1"/>
         <image name="iconActiveFutureBookingUser" width="42" height="42"/>
-        <image name="iconArrow" width="28" height="28"/>
+        <image name="iconArrow" width="21" height="21"/>
         <image name="iconArrowGrey" width="21" height="21"/>
         <image name="iconBus" width="85" height="85"/>
         <image name="iconCall" width="42" height="42"/>
@@ -10371,7 +10380,7 @@
         <image name="iconMovies" width="85" height="85"/>
         <image name="iconMyJobsTab" width="21" height="21"/>
         <image name="iconNews" width="42" height="42"/>
-        <image name="iconPickNGologo" width="150" height="150"/>
+        <image name="iconPickNGologo" width="124" height="121"/>
         <image name="iconProfileLocation" width="42" height="42"/>
         <image name="iconRedDropoff" width="42" height="42"/>
         <image name="iconRedPickup" width="42" height="42"/>
@@ -10389,10 +10398,10 @@
         <image name="iconTwitter" width="64" height="64"/>
         <image name="iconVline" width="85" height="85"/>
         <image name="iconWhatsApp" width="64" height="64"/>
-        <image name="login_bg_img" width="414" height="736"/>
+        <image name="login_bg_img" width="480" height="986"/>
         <image name="navHairLine" width="414" height="1"/>
         <image name="roundCard" width="85" height="85"/>
-        <image name="roundDollar" width="43" height="43"/>
+        <image name="roundDollar" width="85" height="85"/>
         <image name="roundHome" width="85" height="85"/>
     </resources>
     <inferredMetricsTieBreakers>

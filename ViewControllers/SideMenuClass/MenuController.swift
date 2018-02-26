@@ -47,9 +47,9 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
     func giveGradientColor()
     {
         
-        let colorTop =  UIColor(red: 0, green: 0, blue: 0, alpha: 1.0).cgColor
+        let colorTop =  ThemePinkColor.cgColor
         let colorMiddle =  UIColor(red: 36/255, green: 24/255, blue: 3/255, alpha: 0.5).cgColor
-        let colorBottom = UIColor(red: 64/255, green: 43/255, blue: 6/255, alpha: 0.8).cgColor
+        let colorBottom = UIColor.white.cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [ colorTop, colorMiddle, colorBottom]
@@ -60,12 +60,12 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-         UIApplication.shared.statusBarStyle = .lightContent
+//         UIApplication.shared.statusBarStyle = .lightContent
     }
     override func viewWillDisappear(_ animated: Bool)
     {
         super.viewWillDisappear(animated)
-         UIApplication.shared.statusBarStyle = .default
+//         UIApplication.shared.statusBarStyle = .default
     }
     func setRating() {
         self.tableView.reloadData()
@@ -114,7 +114,7 @@ class MenuController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             cellProfile.imgProfile.layer.cornerRadius = cellProfile.imgProfile.frame.width / 2
             cellProfile.imgProfile.layer.masksToBounds = true
-            cellProfile.imgProfile.layer.borderColor = ThemeYellowColor.cgColor
+            cellProfile.imgProfile.layer.borderColor = ThemePinkColor.cgColor
             cellProfile.imgProfile.layer.borderWidth = 1.0
             cellProfile.lblDriverName.text = driverFullName
             cellProfile.lblContactNumber.text = driverMobileNo

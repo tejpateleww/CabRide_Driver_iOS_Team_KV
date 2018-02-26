@@ -205,7 +205,7 @@ struct socketApiKeys {
 }
 
 struct appName {
-    static let kAPPName = "Pick'N'Go"
+    static let kAPPName = "Cab Ride"
 
     
 }

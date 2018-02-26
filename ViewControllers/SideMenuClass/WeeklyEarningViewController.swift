@@ -121,7 +121,7 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
     func setButtonTotal()
     {
         
-        btnTotal.setTitleColor(ThemeYellowColor, for: .normal)
+        btnTotal.setTitleColor(ThemePinkColor, for: .normal)
         btnRides.setTitleColor(ThemeGrayColor, for: .normal)
         btnTickPay.setTitleColor(ThemeGrayColor, for: .normal)
         btnDispatch.setTitleColor(ThemeGrayColor, for: .normal)
@@ -132,7 +132,7 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
     
     func setButtonRides() {
         btnTotal.setTitleColor(ThemeGrayColor, for: .normal)
-        btnRides.setTitleColor(ThemeYellowColor, for: .normal)
+        btnRides.setTitleColor(ThemePinkColor, for: .normal)
         btnTickPay.setTitleColor(ThemeGrayColor, for: .normal)
         btnDispatch.setTitleColor(ThemeGrayColor, for: .normal)
         self.setDataCount(dataString: "rides", indexOfPosition: 1)
@@ -144,7 +144,7 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
     func setButtonTickPay() {
         btnTotal.setTitleColor(ThemeGrayColor, for: .normal)
         btnRides.setTitleColor(ThemeGrayColor, for: .normal)
-        btnTickPay.setTitleColor(ThemeYellowColor, for: .normal)
+        btnTickPay.setTitleColor(ThemePinkColor, for: .normal)
         btnDispatch.setTitleColor(ThemeGrayColor, for: .normal)
         self.setDataCount(dataString: "tickpay", indexOfPosition: 2)
 
@@ -154,7 +154,7 @@ class WeeklyEarningViewController: ParentViewController, UIScrollViewDelegate, C
         btnTotal.setTitleColor(ThemeGrayColor, for: .normal)
         btnRides.setTitleColor(ThemeGrayColor, for: .normal)
         btnTickPay.setTitleColor(ThemeGrayColor, for: .normal)
-        btnDispatch.setTitleColor(ThemeYellowColor, for: .normal)
+        btnDispatch.setTitleColor(ThemePinkColor, for: .normal)
         self.setDataCount(dataString: "dispatch", indexOfPosition: 3)
 
     }

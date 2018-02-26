@@ -107,6 +107,9 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
             
             let unfiltered1 = amountString   //  "!   !! yuahl! !"
             
+            
+            let y = amountString.replacingOccurrences(of: "$, ", with: "", options: .regularExpression, range: nil)
+
             // Array of Characters to remove
             let removal1: [Character] = ["$"," "]    // ["!"," "]
             
@@ -149,7 +152,7 @@ class WalletTransferToBankVC: ParentViewController, SelectBankCardDelegate {
             // combined to a single line
             print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
             
-            strAmt = String(unfiltered.filter { !removal.contains($0) })
+            strAmt = y
             print("amount : \(strAmt)")
             
             

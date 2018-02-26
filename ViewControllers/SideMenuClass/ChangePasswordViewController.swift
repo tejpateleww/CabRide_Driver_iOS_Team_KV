@@ -36,7 +36,7 @@ class ChangePasswordViewController: ParentViewController {
         super.viewDidLayoutSubviews()
         headerView?.backgroundColor = UIColor.clear
         headerView?.imgBottomLine.isHidden = true
-        headerView?.lblTitle.textColor = ThemeYellowColor
+        headerView?.lblTitle.textColor = ThemePinkColor
 
         btnSubmit.layer.cornerRadius = btnSubmit.frame.size.height/2
         btnSubmit.clipsToBounds = true

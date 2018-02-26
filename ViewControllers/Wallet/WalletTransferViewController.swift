@@ -86,6 +86,9 @@ class WalletTransferViewController: ParentViewController, UITextFieldDelegate {
             
             let unfiltered = amountString   //  "!   !! yuahl! !"
             
+            
+            var y = amountString.replacingOccurrences(of: "$", with: "", options: .regularExpression, range: nil)
+            y = y.replacingOccurrences(of: " ", with: "")
             // Array of Characters to remove
             let removal: [Character] = ["$",","," "]    // ["!"," "]
             
@@ -103,7 +106,7 @@ class WalletTransferViewController: ParentViewController, UITextFieldDelegate {
             // combined to a single line
             print(String(unfiltered.filter { !removal.contains($0) })) // => "yuahl"
             
-            amount = String(unfiltered.filter { !removal.contains($0) })
+            amount = y
             print("amount : \(amount)")
             
             print("QRCode : \(Singletons.sharedInstance.strQRCodeForSendMoney)")

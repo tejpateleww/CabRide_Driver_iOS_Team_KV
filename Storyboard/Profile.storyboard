@@ -15,7 +15,7 @@
         <!--Update Profile AccountVC-->
         <scene sceneID="wdn-VK-7zK">
             <objects>
-                <viewController storyboardIdentifier="UpdateProfileAccountVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ajE-iZ-fGK" customClass="UpdateProfileAccountVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateProfileAccountVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ajE-iZ-fGK" customClass="UpdateProfileAccountVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Vez-Jc-Hq7"/>
                         <viewControllerLayoutGuide type="bottom" id="EPG-1t-q5g"/>
@@ -385,7 +385,7 @@
         <!--Update Profile Personel DetailsVC-->
         <scene sceneID="b6w-vP-LO0">
             <objects>
-                <viewController storyboardIdentifier="UpdateProfilePersonelDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ed2-r5-hVe" customClass="UpdateProfilePersonelDetailsVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateProfilePersonelDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ed2-r5-hVe" customClass="UpdateProfilePersonelDetailsVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ABN-Bd-3W5"/>
                         <viewControllerLayoutGuide type="bottom" id="MFP-sW-TNt"/>
@@ -940,7 +940,7 @@
         <!--My Jobs-->
         <scene sceneID="EXK-Kx-nwX">
             <objects>
-                <viewController storyboardIdentifier="EditDriverProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nUE-tb-k0d" customClass="EditDriverProfileVC" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditDriverProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nUE-tb-k0d" customClass="EditDriverProfileVC" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pc8-Wo-tAc"/>
                         <viewControllerLayoutGuide type="bottom" id="cNg-ek-uj8"/>
@@ -986,7 +986,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="MTk-bB-mYP" firstAttribute="height" secondItem="Ey3-6l-9SC" secondAttribute="height" id="KMR-OJ-nuC"/>
                                                     <constraint firstItem="MTk-bB-mYP" firstAttribute="top" secondItem="Ey3-6l-9SC" secondAttribute="top" id="RqP-Nt-dgA"/>
@@ -1033,7 +1033,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="trailing" secondItem="aAQ-D5-l2y" secondAttribute="trailing" constant="20" id="0Y2-2n-wLt"/>
                                                     <constraint firstItem="b6Q-zP-3D2" firstAttribute="leading" secondItem="E5K-lz-cUH" secondAttribute="leading" constant="35" id="1lG-Lg-Plt"/>
@@ -1080,7 +1080,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="wM0-uU-2kk" firstAttribute="leading" secondItem="rKW-YB-YDo" secondAttribute="leading" id="6ek-zP-yKD"/>
                                                     <constraint firstItem="lMh-eY-bsV" firstAttribute="leading" secondItem="U2T-nc-1FV" secondAttribute="trailing" constant="35" id="HqG-Xk-eW7"/>
@@ -1126,7 +1126,7 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="bqi-st-sQP" firstAttribute="centerY" secondItem="bqR-Nb-Vfk" secondAttribute="centerY" id="3N5-ai-7Rf"/>
                                                     <constraint firstItem="eyx-gq-vIV" firstAttribute="centerX" secondItem="bqR-Nb-Vfk" secondAttribute="centerX" id="DTh-5l-1mp"/>
@@ -1178,7 +1178,7 @@
         <!--Update Certificates View Controller-->
         <scene sceneID="tOz-jY-Zrc">
             <objects>
-                <viewController storyboardIdentifier="updateCertificatesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R89-Dr-0Kg" customClass="updateCertificatesViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateCertificatesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R89-Dr-0Kg" customClass="updateCertificatesViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uQo-O7-lAg"/>
                         <viewControllerLayoutGuide type="bottom" id="Gu5-x2-bjs"/>
@@ -1573,7 +1573,7 @@
         <!--Update Driver Vehicle Types View Controller-->
         <scene sceneID="ISE-IC-bdy">
             <objects>
-                <viewController storyboardIdentifier="updateDriverVehicleTypesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s3e-hA-t9o" customClass="updateDriverVehicleTypesViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateDriverVehicleTypesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="s3e-hA-t9o" customClass="updateDriverVehicleTypesViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ugk-kj-QYR"/>
                         <viewControllerLayoutGuide type="bottom" id="v36-mY-pEL"/>
@@ -1586,7 +1586,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehicleTypesTOP" rowHeight="80" id="9RQ-bt-3Ls" customClass="updateDriverVehicleTypesViewControllerTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehicleTypesTOP" rowHeight="80" id="9RQ-bt-3Ls" customClass="updateDriverVehicleTypesViewControllerTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9RQ-bt-3Ls" id="LxV-vv-idk">
@@ -1616,7 +1616,7 @@ You must be 21 years of age or over.</string>
                                             <outlet property="lblTopDetails" destination="x7k-bh-Fly" id="kY9-fT-2s5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehicleTypesData" rowHeight="95" id="6kq-3B-xkq" customClass="updateDriverVehicleTypesViewControllerTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehicleTypesData" rowHeight="95" id="6kq-3B-xkq" customClass="updateDriverVehicleTypesViewControllerTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="108" width="320" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6kq-3B-xkq" id="fdk-HD-JuA">
@@ -1703,7 +1703,7 @@ You must be 21 years of age or over.</string>
         <!--Update Driver Vehicles View Controller-->
         <scene sceneID="RGi-Dx-wn9">
             <objects>
-                <viewController storyboardIdentifier="updateDriverVehiclesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YZP-oT-kqN" customClass="updateDriverVehiclesViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateDriverVehiclesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YZP-oT-kqN" customClass="updateDriverVehiclesViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Td3-kr-nhl"/>
                         <viewControllerLayoutGuide type="bottom" id="mRG-dm-O9e"/>
@@ -1716,7 +1716,7 @@ You must be 21 years of age or over.</string>
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehiclesTableViewCellTop" rowHeight="122" id="Uf9-J0-7tH" customClass="updateDriverVehiclesViewControllerTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="updateDriverVehiclesTableViewCellTop" rowHeight="122" id="Uf9-J0-7tH" customClass="updateDriverVehiclesViewControllerTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="122"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Uf9-J0-7tH" id="cnh-sD-Eep">
@@ -1771,7 +1771,7 @@ You must be 21 years of age or over.</string>
                                             <outlet property="lblTopDetails" destination="EeN-yW-wxv" id="VMb-I5-Wz9"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="100" reuseIdentifier="updateDriverVehiclesTableViewCellData" rowHeight="66" id="z7E-Cr-Kxl" customClass="updateDriverVehiclesViewControllerTableViewCell" customModule="PickNGo_Driver" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="100" reuseIdentifier="updateDriverVehiclesTableViewCellData" rowHeight="66" id="z7E-Cr-Kxl" customClass="updateDriverVehiclesViewControllerTableViewCell" customModule="CabRide_Driver" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="150" width="320" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z7E-Cr-Kxl" id="CSo-P2-YCU">
@@ -1846,7 +1846,7 @@ You must be 21 years of age or over.</string>
         <!--Driver Vehicle List View Controller-->
         <scene sceneID="mXl-Tb-4BF">
             <objects>
-                <viewController storyboardIdentifier="DriverListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bsN-Hz-8sd" customClass="DriverVehicleListViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DriverListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bsN-Hz-8sd" customClass="DriverVehicleListViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="okK-uO-fY7"/>
                         <viewControllerLayoutGuide type="bottom" id="N6A-xN-su0"/>
@@ -1974,7 +1974,7 @@ You must be 21 years of age or over.</string>
         <!--Update Driver Select Vehicle Types View Controller View Controller-->
         <scene sceneID="DF5-xT-beF">
             <objects>
-                <viewController storyboardIdentifier="updateDriverSelectVehicleTypesViewControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hC5-5v-puM" customClass="updateDriverSelectVehicleTypesViewControllerViewController" customModule="PickNGo_Driver" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="updateDriverSelectVehicleTypesViewControllerViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hC5-5v-puM" customClass="updateDriverSelectVehicleTypesViewControllerViewController" customModule="CabRide_Driver" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2kI-pZ-jr4"/>
                         <viewControllerLayoutGuide type="bottom" id="BWq-XB-NHP"/>
@@ -2277,7 +2277,7 @@ You must be 21 years of age or over.</string>
     <resources>
         <image name="bottomLine2" width="390" height="1"/>
         <image name="iconAccount" width="32" height="32"/>
-        <image name="iconArrow" width="28" height="28"/>
+        <image name="iconArrow" width="21" height="21"/>
         <image name="iconArrowGrey" width="21" height="21"/>
         <image name="iconCarPlaceholder" width="225" height="104"/>
         <image name="iconCheckMarkSelected" width="33" height="33"/>

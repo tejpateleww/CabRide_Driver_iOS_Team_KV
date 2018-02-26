@@ -19,7 +19,7 @@ class ParentViewController: UIViewController, HeaderViewDelegate {
 //    var frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: screenWidth, height: CGFloat(54))
 //    frame = CGRect(x: CGFloat(0), y: CGFloat(-20), width: screenWidth, height: CGFloat(114))
 //   frame = CGRect(x: CGFloat(0), y: CGFloat(0), width: screenWidth, height: CGFloat(144))
-    let heightWithoutLabel : Int = 54
+    let heightWithoutLabel : Int = 64
     let heightWithoutLabelForX : Int = 114
     
     

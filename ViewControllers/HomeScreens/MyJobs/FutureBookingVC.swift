@@ -137,7 +137,7 @@ class FutureBookingVC: UIViewController, UITableViewDataSource, UITableViewDeleg
                  let data = aryData.object(at: indexPath.row) as! NSDictionary
                
                 cell.lblPassengerName.text = data.object(forKey: "PassengerName") as? String
-        
+                cell.lblPassengerName.textColor = ThemePinkColor
 
             if let TimeAndDate = data.object(forKey: "PickupDateTime") as? String {
                 cell.lblTimeAndDateAtTop.text = setTimeStampToDate(timeStamp: TimeAndDate)

@@ -46,6 +46,7 @@ class MyJobsViewController: ParentViewController {
         shadowRadius = 1
         shadowOffsetWidth = 0
         shadowOffsetHeight = 1
+        viewSelection.backgroundColor = ThemePinkColor
         
 //        giveCornorRadiosToView()
         // Do any additional setup after loading the view.
@@ -216,7 +217,7 @@ class MyJobsViewController: ParentViewController {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations:
             {
                 
-                self.btnFutureBooking.setTitleColor(ThemeYellowColor, for: .normal)
+                self.btnFutureBooking.setTitleColor(ThemePinkColor, for: .normal)
                 self.btnPendingJobs.setTitleColor(ThemeGrayColor, for: .normal)
                 self.btnPastJobs.setTitleColor(ThemeGrayColor, for: .normal)
                 self.scrollView.contentOffset = CGPoint(x: 0, y: 0)
@@ -235,7 +236,7 @@ class MyJobsViewController: ParentViewController {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseOut, animations: {
             
             self.btnFutureBooking.setTitleColor(ThemeGrayColor, for: .normal)
-            self.btnPendingJobs.setTitleColor(ThemeYellowColor, for: .normal)
+            self.btnPendingJobs.setTitleColor(ThemePinkColor, for: .normal)
             self.btnPastJobs.setTitleColor(ThemeGrayColor, for: .normal)
             self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width, y: 0)
             self.view.layoutIfNeeded()
@@ -266,7 +267,7 @@ class MyJobsViewController: ParentViewController {
             
             self.btnFutureBooking.setTitleColor(ThemeGrayColor, for: .normal)
                 self.btnPendingJobs.setTitleColor(ThemeGrayColor, for: .normal)
-            self.btnPastJobs.setTitleColor(ThemeYellowColor, for: .normal)
+            self.btnPastJobs.setTitleColor(ThemePinkColor, for: .normal)
             self.scrollView.contentOffset = CGPoint(x: self.view.frame.size.width * 2, y: 0)
             self.view.layoutIfNeeded()
         }, completion: nil)

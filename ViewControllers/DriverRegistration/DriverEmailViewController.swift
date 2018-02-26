@@ -257,7 +257,7 @@ class DriverEmailViewController: UIViewController, UIScrollViewDelegate, NVActiv
 
             let x = self.view.frame.size.width
             driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)
-            driverVC.viewEmailDriver.backgroundColor = ThemeYellowColor
+            driverVC.viewEmailDriver.backgroundColor = ThemePinkColor
             driverVC.imgDriver.image = UIImage.init(named: iconDriverSelect)
             
 //            personalDetailsVC.setDataForProfile()

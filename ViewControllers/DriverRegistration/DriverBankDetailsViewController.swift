@@ -56,7 +56,7 @@ class DriverBankDetailsViewController: UIViewController
             let driverVC = self.navigationController?.viewControllers.last as! DriverRegistrationViewController
             
             //        let personalDetailsVC = driverVC.childViewControllers[2] as! DriverPersonelDetailsViewController
-            driverVC.viewBankCar.backgroundColor = ThemeYellowColor
+            driverVC.viewBankCar.backgroundColor = ThemePinkColor
             driverVC.imgCar.image = UIImage.init(named: iconCarSelect)
             let x = self.view.frame.size.width * 3
             driverVC.scrollObj.setContentOffset(CGPoint(x:x, y:0), animated: true)

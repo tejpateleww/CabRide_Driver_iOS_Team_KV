@@ -15,10 +15,10 @@ class TabbarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tabBar.tintColor = ThemeYellowColor
-        self.tabBar.backgroundColor = UIColor.init(hex: "303030")
+        self.tabBar.tintColor = ThemePinkColor
+//        self.tabBar.backgroundColor = UIColor.init(hex: "303030")
         
-        UIApplication.shared.statusBarStyle = .default
+//        UIApplication.shared.statusBarStyle = .default
         // Do any additional setup after loading the view.
     }
 

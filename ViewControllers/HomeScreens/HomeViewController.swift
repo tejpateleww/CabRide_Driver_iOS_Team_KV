@@ -1432,10 +1432,10 @@ class HomeViewController: ParentViewController, CLLocationManagerDelegate,ARCarM
     
     func setPaddingView(txtField: UITextField){
         
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 50, height: 18))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 18))
         label.text = "\(currency)"
 
-        let paddingView: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: 45, height: 18))
+        let paddingView: UIView = UIView.init(frame: CGRect(x: 0, y: 0, width: 20, height: 18))
         txtField.leftViewMode = .always
         txtField.addSubview(label)
         txtField.leftView = paddingView

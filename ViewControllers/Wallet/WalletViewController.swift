@@ -183,7 +183,7 @@ class WalletViewController: UIViewController, UIScrollViewDelegate {
                 Singletons.sharedInstance.strCurrentBalance = ((result as! NSDictionary).object(forKey: "walletBalance") as AnyObject).doubleValue
                 let currentRatio = Double(Singletons.sharedInstance.strCurrentBalance)
                 
-                self.lblCurrentBalance.text = "Balance  \(currency)\(String(format: "%.2f", currentRatio))"
+                self.lblCurrentBalance.text = "Balance \(currency) \(String(format: "%.2f", currentRatio))"
 //                self.lblCurrentBalance.text = "\(currency)\(Singletons.sharedInstance.strCurrentBalance)"
                 
 //                self.lblAvailableFundsDesc.text = "\(currency)\(Singletons.sharedInstance.strCurrentBalance)"
